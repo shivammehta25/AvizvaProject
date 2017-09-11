@@ -140,6 +140,7 @@
 	overflow: hidden;
 }
 
+
 .item active{
 	height: 500px;
 	width: 100%;
@@ -158,3 +159,4 @@
 .carousel {
 	margin-bottom: 50px;
 }
+
