@@ -18,13 +18,14 @@
 	width: 100%;
 
 }
-.item{
-	height: 600px;
-	width: 100%;
-}	
-
 .carousel {
 	margin-bottom: 50px;
+}
+.item h3 {
+	color: black;
+}
+.item p {
+	color: black;
 }
 
 
@@ -69,3 +70,4 @@ p {
 .navbar-inverse .navbar-nav li a:hover {
 	background: #27A967;
 }
+
