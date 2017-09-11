@@ -51,7 +51,7 @@ p {
 	color: #fff;
 	background-color: transparent;
 	border-color: white;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 }
 
 .btn-primary:hover {
@@ -86,6 +86,9 @@ p {
 }
 .glyphicon-large {
 	font-size: 100px;
+}
+.fa-large {
+	font-size: 40px;
 }
 .call-to-action {
 	text-align: center;
