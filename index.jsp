@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="css/navbar-fixed-top.css">
 	<link rel="stylesheet" href="css/styling.css">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+	<link href="css/styling.css" rel="stylesheet">
 
 
 </head>
@@ -117,7 +118,7 @@
 								<div class="item active">
 										<img alt="Gaming Collection" src="images/slider1.jpg" style="width: 100%">
 										<div class="carousel-caption">
-										<h3>GAMING COLLECTION</h3>
+										<h3> GAMING COLLECTION</h3>
 										<p>A Large variety of games available here!!!</p>
 									</div>
 					
@@ -298,6 +299,5 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-	
 </body>
 </html>
