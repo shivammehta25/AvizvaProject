@@ -182,8 +182,8 @@
 						<img alt="Bootstrap Thumbnail First" class="img-rounded thumbnailStyling" src="http://images.performgroup.com/di/library/GOAL/79/c3/fifa-18-pack-shot_1wwbvp22h4qvb1qi01oijh784g.png?t=152792078">
 					</div>
 				</div>
-				<div class="caption" style="text-align: center;">
-					<h3>
+				<div class="overlay" style="text-align: center;">
+					<h3 class="text">
 						Games
 					</h3>
 				</div>
