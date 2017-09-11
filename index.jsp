@@ -187,6 +187,7 @@
 						Games
 					</h3>
 				</div>
+				
 
 			</div>
 			<div class="col-md-2">
@@ -255,10 +256,10 @@
 							<label><h2>GAMEZON</h2></label>
 						
 						<div>
-							<a href="#" "> About Us</A>
+							<a href="#"> About Us</A>
 							</div>
 							<div >
-								<a href="# ""> Products</A>
+								<a href="#"> Products</A>
 
 								</div>
 								<div>
