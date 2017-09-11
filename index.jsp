@@ -9,11 +9,8 @@
 	<link rel="stylesheet" href="css/navbar-fixed-top.css">
 	<link rel="stylesheet" href="css/styling.css">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-<<<<<<< HEAD
 	<link href="css/styling.css" rel="stylesheet">
-=======
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
->>>>>>> efb66e2e8a210722a3238e9d70f8bf0f48f27921
 
 
 </head>
