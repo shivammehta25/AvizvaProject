@@ -74,3 +74,7 @@ p {
 	background: #27A967;
 }
 
+.navbar .navbar-nav > li.open > a:focus {
+  background-color: teal;
+  color: #fff;
+}

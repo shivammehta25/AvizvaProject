@@ -1,9 +1,14 @@
-footer > fa {
+.pull-right .fa {
     padding: 10px;
     font-size: 30px;
     width: 50px;
     text-align: center;
     text-decoration: none;
+    
+}
+.copytext {
+    padding-top: 20px;
+    
 }
 
 .fa-facebook {
@@ -12,6 +17,22 @@ footer > fa {
 }
 
 .fa-twitter {
-    background: red;
+    background: rgb(61, 160, 226);
+    color: white;
+    padding-left: 100px;
+}
+
+.fa-instagram {
+    background: white;
+    color: red;
+}
+.fa-google-plus {
+    color: #FFFFFF;
+    background: transparent;
+    background: #db4437 ;
+}
+
+.fa-linkedin {
+    background: rgb(5, 56, 122);
     color: white;
 }
