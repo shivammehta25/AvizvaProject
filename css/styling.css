@@ -70,4 +70,26 @@ p {
 .navbar-inverse .navbar-nav li a:hover {
 	background: #27A967;
 }
+.dropdown-menu {
+	background: #2E2F31;
+	border-radius: 0;
+	border: 0;
+}
+.dropdown-menu li a {
+	padding: 10px;
+}
+.navbar-inverse .navbar-nav .dropdown-menu li a:hover {
+	background: #2C463C;
+}
+.glyphicon-large {
+	font-size: 100px;
+}
+.call-to-action {
+	text-align: center;
+}
+.call-to-action p {
+	margin-bottom: 30px;
+	font-family: sans-serif;
+}
+
 
