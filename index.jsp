@@ -30,7 +30,9 @@
 
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 							<span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-						</button> <a class="navbar-brand" href="#">GAMAZON</a>
+						</button> 
+						
+						<h1><a class="navbar-brand" href="#"><img src="logo.png" class="img-rounded" style="height:50px;width: 50px"></a></h1>
 					</div>
 
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -39,6 +41,14 @@
 						</ul>
 
 						<ul class="nav navbar-nav navbar-right">
+							<form class="navbar-form navbar-left" role="search">
+								<div class="form-group">
+									<input type="text" class="form-control">
+									<button class="btn btn-primary btn-lg" type="button">
+										<i class="fa fa-search"></i>
+									</button>
+								</div>
+							</form>
 							<li class="active">
 								<a href="#"> <i class="fa fa-lg fa-2x fa-home" aria-hidden="true"></i> Home</a>
 							</li>
@@ -69,14 +79,7 @@
 									</li>
 								</ul>
 							</li>
-							<form class="navbar-form navbar-left" role="search">
-								<div class="form-group">
-									<input type="text" class="form-control">
-									<button class="btn btn-primary" type="button">
-										<i class="fa fa-search"></i>
-									</button>
-								</div>
-							</form>
+							
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-lg fa-2x fa-cart-plus" aria-hidden="true"></i><strong class="caret"></strong></a>
 								<ul class="dropdown-menu">
@@ -282,7 +285,7 @@
 									</div>
 
 
-									<button type="submit " class="btn btn-default pull-right ">
+									<button type="submit " class="btn btn-default btn-primary pull-right ">
 										Subscribe to Updates
 									</button>
 								</form>
