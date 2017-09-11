@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="css/navbar-fixed-top.css">
 	<link rel="stylesheet" href="css/styling.css">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
 	
 </head>
@@ -256,12 +256,12 @@
 	</div>	
 
 
-	<nav class="navbar navbar-inverse" >
+	<nav class="navbar " >
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-3">
 					<div >
-						<a href="#" > <h1>Gamezon</h1> </a>
+						<a href="#" > <h1>GAMEZON</h1> </a>
 						<div >
 							<a href="#""> About Us</A>
 							</div>
@@ -299,7 +299,7 @@
 				</div>
 			</nav>
 
-			<nav class="navbar navbar-inverse">
+			<nav class=" navbar-inverse">
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-3">
