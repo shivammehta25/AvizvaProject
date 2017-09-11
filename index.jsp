@@ -8,10 +8,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" href="css/navbar-fixed-top.css">
-	<link rel="stylesheet" href="css/styling.css">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 	<link href="css/styling.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/footerstyle.css">
+	
 
 
 </head>
@@ -295,7 +296,10 @@
 				<div class="container-fluid ">
 					<div class="row ">
 						<div class="col-md-3 ">
-							<div class="pull-left "><p> Copyright © Gamezon 2017. </p></div>
+
+
+							<div class="pull-left copytext "> Copyright © Gamezon 2017. </div>
+
 						</div>
 						<div class="col-md-3 ">
 						</div>
@@ -304,6 +308,7 @@
 						<div class="col-md-3 ">
 							<div class="container-fluid ">
 								<div class="row ">
+
 									<div class="col-md-2 pull-right ">
 										<a href="# "> <span class=" fa fa-facebook fa-large">   </i> </a>
 									</div>
@@ -318,6 +323,7 @@
 									</div>
 									<div class="col-md-2 pull-right ">
 										<a href="# "> <i class=" fa fa-linkedin fa-large">   </i> </a>
+
 									</div>
 								</div>
 							</div>

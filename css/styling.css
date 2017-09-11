@@ -99,3 +99,7 @@ p {
 }
 
 
+.navbar .navbar-nav > li.open > a:focus {
+  background-color: teal;
+  color: #fff;
+}

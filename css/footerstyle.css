@@ -1,17 +1,12 @@
-footer > fa {
+.pull-right .fa {
     padding: 10px;
     font-size: 30px;
     width: 50px;
     text-align: center;
     text-decoration: none;
+    
 }
-
-.fa-facebook {
-    background: #3B5998;
-    color: white;
-}
-
-.fa-twitter {
-    background: red;
-    color: white;
+.copytext {
+    padding-top: 20px;
+    
 }
