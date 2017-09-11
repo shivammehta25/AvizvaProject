@@ -10,29 +10,3 @@
     padding-top: 20px;
     
 }
-
-.fa-facebook {
-    background: #3B5998;
-    color: white;
-}
-
-.fa-twitter {
-    background: rgb(61, 160, 226);
-    color: white;
-    padding-left: 100px;
-}
-
-.fa-instagram {
-    background: white;
-    color: red;
-}
-.fa-google-plus {
-    color: #FFFFFF;
-    background: transparent;
-    background: #db4437 ;
-}
-
-.fa-linkedin {
-    background: rgb(5, 56, 122);
-    color: white;
-}

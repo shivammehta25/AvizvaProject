@@ -29,8 +29,8 @@
 					<div class="navbar-header">
 
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-									 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-								</button> <a class="navbar-brand" href="#">GAMAZON</a>
+							<span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+						</button> <a class="navbar-brand" href="#">GAMAZON</a>
 					</div>
 
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -73,8 +73,8 @@
 								<div class="form-group">
 									<input type="text" class="form-control">
 									<button class="btn btn-primary" type="button">
-														  <i class="fa fa-search"></i>
-														</button>
+										<i class="fa fa-search"></i>
+									</button>
 								</div>
 							</form>
 							<li class="dropdown">
@@ -146,19 +146,19 @@
 					</div>
 				</div>
 				<a class="left carousel-control" href="#carousel1" data-slide="prev">
-										<span class="glyphicon glyphicon-chevron-left"></span>
-										<span class="sr-only">Previous</span>
-									</a>
+					<span class="glyphicon glyphicon-chevron-left"></span>
+					<span class="sr-only">Previous</span>
+				</a>
 				<a class="right carousel-control" href="#carousel1" data-slide="next">
-										<span class="glyphicon glyphicon-chevron-right"></span>
-										<span class="sr-only">Next</span>
-									</a>
-			</div>
+					<span class="glyphicon glyphicon-chevron-right"></span>
+					<span class="sr-only">Next</span>
+				</a>
 			</div>
 		</div>
-		<!-- End Carousel -->
+	</div>
+	<!-- End Carousel -->
 
-		<!-- Begin Thumbnails -->
+	<!-- Begin Thumbnails -->
 
 	<div class="container-fluid ">
 		<div class="row ">
@@ -246,23 +246,23 @@
 	</div>
 
 
-	<nav class="navbar ">
+	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-3">
 					<div>
-						<a href="#">
-							<h1>GAMEZON</h1>
-						</a>
+						
+							<label><h2>GAMEZON</h2></label>
+						
 						<div>
 							<a href="#" "> About Us</A>
 							</div>
 							<div >
 								<a href="# ""> Products</A>
 
-						</div>
-						<div>
-							<a href="#" > Contact Us</A>
+								</div>
+								<div>
+									<a href="#" > Contact Us</A>
 									</div>		 
 								</div>
 							</div>
@@ -274,10 +274,10 @@
 								<form role="form " >
 									<div class="form-group pull-right ">
 
-										<label for="exampleInputEmail1 ">
+										<p for="exampleInputEmail1 ">
 											Enter your email address to stay updated on all our exciting offers!
-										</label>
-										<input type="email " class="form-control " id="exampleInputEmail1 " />
+										</p>
+										<input type="email " class="form-control " id="exampleInputEmail1 " placeholder="Enter Email Here" />
 
 									</div>
 
@@ -292,11 +292,14 @@
 				</div>
 			</nav>
 
-			<nav class=" navbar-inverse ">
+			<nav class="navbar navbar-inverse ">
 				<div class="container-fluid ">
 					<div class="row ">
 						<div class="col-md-3 ">
+
+
 							<div class="pull-left copytext "> Copyright © Gamezon 2017. </div>
+
 						</div>
 						<div class="col-md-3 ">
 						</div>
@@ -305,21 +308,22 @@
 						<div class="col-md-3 ">
 							<div class="container-fluid ">
 								<div class="row ">
-									
+
 									<div class="col-md-2 pull-right ">
-										<a href="# "> <i class=" fa fa-facebook ">   </i> </a>
+										<a href="# "> <span class=" fa fa-facebook fa-large">   </i> </a>
 									</div>
 									<div class="col-md-2 pull-right ">
-										<a href="# "> <i class=" fa fa-twitter ">   </i> </a>
+										<a href="# "> <i class=" fa fa-twitter fa-large">   </i> </a>
 									</div>
 									<div class="col-md-2 pull-right ">
-										<a href="# "> <i class=" fa fa-instagram ">   </i> </a>
+										<a href="# "> <i class=" fa fa-instagram fa-large">   </i> </a>
 									</div>
 									<div class="col-md-2 pull-right ">
-										<a href="# "> <i class=" fa fa-google-plus ">   </i> </a>
+										<a href="# "> <i class=" fa fa-google-plus fa-large">   </i> </a>
 									</div>
 									<div class="col-md-2 pull-right ">
-										<a href="# "> <i class=" fa fa-linkedin ">   </i> </a>
+										<a href="# "> <i class=" fa fa-linkedin fa-large">   </i> </a>
+
 									</div>
 								</div>
 							</div>
@@ -330,9 +334,9 @@
 			</div>
 		</nav>
 
-<!-- Loading Scripts in the End to Reduce Loadtime -->
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js "></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+		<!-- Loading Scripts in the End to Reduce Loadtime -->
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js "></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
 
 
 	</body>
