@@ -40,22 +40,11 @@
 									<li>
 										<a href="#">Action</a>
 									</li>
+									<li class="divider"></li>
 									<li>
 										<a href="#">Another action</a>
 									</li>
-									<li>
-										<a href="#">Something else here</a>
-									</li>
-									<li class="divider">
-									</li>
-									<li>
-										<a href="#">Separated link</a>
-									</li>
-									<li class="divider">
-									</li>
-									<li>
-										<a href="#">One more separated link</a>
-									</li>
+							
 								</ul>
 							</li>
 						</ul>
@@ -92,26 +81,6 @@
 					</div>
 					
 				</nav>
-				<style type="text/css">
-				.item active{
-					height: 500px;
-					width: 100%;
-
-				}
-				.item{
-					height: 500px;
-					width: 100%;
-
-				}
-				.item{
-					height: 600px;
-					width: 100%;
-				}	
-
-
-
-				</style>
-
 
 
 
@@ -251,7 +220,7 @@
 							</div>
 							<div class="caption">
 								<h3>
-									Computer Accesories
+									 Accesories
 								</h3>
 								
 							</div>

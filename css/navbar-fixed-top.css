@@ -1,21 +1,28 @@
 body {
-  min-height: 2000px;
   padding-top: 125px;
 }
 
-.navbar-brand,
-.navbar-nav li a {
-    line-height: 100px;
-    height: 100px;
-    padding-top: 0;
-    padding-left: 50px;
-    padding-right: 50px;
+.navbar-header {
+  height: 100px;
 }
+
 .navbar-form {
   margin-top: 35px;
 }
 
+nav {
+  font-size: 15px;
+}
 
+.dropdown li {
+  font-size: 20px;  
+}
+
+.dropdown-menu a{
+  max-height: 400px;
+  overflow: hidden;
+  overflow-y: auto;
+}
 
 .dropdown-menu li:hover .sub-menu {
   visibility: visible;

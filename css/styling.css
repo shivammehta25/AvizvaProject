@@ -139,3 +139,22 @@
 	height:200px;
 	overflow: hidden;
 }
+
+.item active{
+	height: 500px;
+	width: 100%;
+
+}
+.item{
+	height: 500px;
+	width: 100%;
+
+}
+.item{
+	height: 600px;
+	width: 100%;
+}	
+
+.carousel {
+	margin-bottom: 50px;
+}
