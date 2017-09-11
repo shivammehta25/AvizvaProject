@@ -1,27 +1,5 @@
 body {
-  padding-top: 125px;
-}
-
-.navbar-header {
-  height: 100px;
-}
-
-.navbar-form {
-  margin-top: 35px;
-}
-
-nav {
-  font-size: 15px;
-}
-
-.dropdown li {
-  font-size: 20px;  
-}
-
-.dropdown-menu a{
-  max-height: 400px;
-  overflow: hidden;
-  overflow-y: auto;
+  padding-top: 100px;
 }
 
 .dropdown-menu li:hover .sub-menu {
@@ -32,11 +10,24 @@ nav {
   display: block;
 }
 
-
-.fa {
-   
+.navbar-fixed-top {
+  min-height: 80px;
 }
 
-li:hover{
-
+.navbar-nav > li > a {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  line-height: 80px;
 }
+
+@media (max-width: 767px) {
+  .navbar-nav > li > a {
+  line-height: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;}
+}
+
+.navbar-form {
+  margin-top: 25px;
+}
+

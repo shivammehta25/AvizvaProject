@@ -3,11 +3,14 @@
 <head>
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
-	<link href="css/navbar-fixed-top.css" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/navbar-fixed-top.css">
 	<link rel="stylesheet" href="css/styling.css">
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
+
 	
 </head>
 <body>
@@ -15,66 +18,92 @@
 	<div class="container-fluid ">
 		<div class="row">
 			<div class="col-md-12">
-				<nav class="navbar navbar-inverse navbar-fixed-top"  role="navigation">
-					<div class="navbar-header">
-						<img src="logo.png" style="height: 100px;width: 100px" class="img-thumbnail navbar-left">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-							<span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="#">Gamezon</a>
-					</div>
-					
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav">
-							<li class="active">
-								<a href="#"> <i class="fa fa-lg fa-2x fa-home" aria-hidden="true"></i> Home</a>
-							</li>
-							<li>
-								<a href="#"> <i class="fa fa-lg fa-2x fa-info-circle"></i> About</a>
-							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i class="fa fa-lg fa-2x fa-shopping-basket"></i> Products<strong class="caret"></strong></a>
-								<ul class="dropdown-menu">
-									<li>
-										<a href="#">Action</a>
-									</li>
-									<li class="divider"></li>
-									<li>
-										<a href="#">Another action</a>
-									</li>
 
+
+					<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+							<div class="navbar-header">
+								 
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+									 <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+								</button> <a class="navbar-brand" href="#">GAMAZON</a>
+							</div>
+							
+							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+								<ul class="nav navbar-nav navbar-left">
+									
 								</ul>
-							</li>
-						</ul>
-						
-						<ul class="nav navbar-nav navbar-right">
-							<form class="navbar-form col-md-10 navbar-left" role="search">
-								<div class="form-group">
-									<input type="text" class="form-control">
-									<button class="btn btn-primary" type="button">
-										<i class="fa fa-search"></i>
-									</button>
-								</div> 
-							</form>
-							<li>
-								<a href="#"></a>
-							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-lg fa-3x fa-user-circle" aria-hidden="true"></i><strong class="caret"></strong></a>
-								<ul class="dropdown-menu">
-									<li>
-										<a href="#"><i class="fa fa-2x fa-lg fa-address-book "></i> Log In</a>
-									</li>
-									<li class="divider"></li>
-									<li>
-										<a href="#"><i class="fa fa-2x fa-lg fa-user-plus"></i> Register</a>
+								
+								<ul class="nav navbar-nav navbar-right">
+										<li class="active">
+												<a href="#"> <i class="fa fa-lg fa-2x fa-home" aria-hidden="true"></i> Home</a>
+											</li>
+											<li>
+												<a href="#"><i class="fa fa-lg fa-2x fa-info-circle"></i> About Us</a>
+											</li>
+											<li class="dropdown">
+												 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-lg fa-2x fa-shopping-basket"></i> Products<strong class="caret"></strong></a>
+												<ul class="dropdown-menu">
+													<li>
+														<a href="#">Action</a>
+													</li>
+													<li>
+														<a href="#">Another action</a>
+													</li>
+													<li>
+														<a href="#">Something else here</a>
+													</li>
+													<li class="divider">
+													</li>
+													<li>
+														<a href="#">Separated link</a>
+													</li>
+													<li class="divider">
+													</li>
+													<li>
+														<a href="#">One more separated link</a>
+													</li>
+												</ul>
+											</li>
+										<form class="navbar-form navbar-left" role="search">
+												<div class="form-group">
+														<input type="text" class="form-control">
+														<button class="btn btn-primary" type="button">
+														  <i class="fa fa-search"></i>
+														</button>
+												</div>
+											</form>
+											<li class="dropdown">
+													<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-lg fa-2x fa-cart-plus" aria-hidden="true"></i><strong class="caret"></strong></a>
+													<ul class="dropdown-menu">
+														   <li>
+															   <a href="#"> Item 1</a>
+														   </li>
+														   <li>
+															   <a href="#"> Item 2</a>
+														   </li>
+														   
+													   
+													   </ul>
+											   </li>
+									<li class="dropdown">
+										 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-lg fa-2x fa-user-circle" aria-hidden="true"></i><strong class="caret"></strong></a>
+										 <ul class="dropdown-menu">
+												<li>
+													<a href="#"><i class="fa fa-2x fa-lg fa-address-book "></i> Log In</a>
+												</li>
+												<li class="divider"></li>
+												<li>
+													<a href="#"><i class="fa fa-2x fa-lg fa-user-plus"></i> Register</a>
+												</li>
+												
+											
+											</ul>
+
 									</li>
 								</ul>
-							</li>
-						</ul>
-					</div>
-				</nav>
+							</div>
+							
+						</nav>
 
 			</div>
 		</div>
