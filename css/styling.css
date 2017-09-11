@@ -3,6 +3,7 @@
 	width: 200px;
 	height: 200px;
 	overflow: hidden;
+
 }
 
 .item active {
@@ -51,7 +52,7 @@ p {
 	color: #fff;
 	background-color: transparent;
 	border-color: white;
-	margin-bottom: 10px;
+	margin-bottom: 0px;
 }
 
 .btn-primary:hover {
@@ -63,11 +64,12 @@ p {
 .navbar-inverse {
 	background: #2E2F31;
 	border: 0;
+	padding-top: 2px;
 }
 
 .navbar-inverse .navbar-nav li a {
 	color: #f7f7f7;
-	font-size: 16px;
+	
 }
 
 .navbar-inverse .navbar-nav li a:hover {
@@ -87,9 +89,7 @@ p {
 .glyphicon-large {
 	font-size: 100px;
 }
-.fa-large {
-	font-size: 40px;
-}
+
 .call-to-action {
 	text-align: center;
 }
@@ -102,4 +102,8 @@ p {
 .navbar .navbar-nav > li.open > a:focus {
   background-color: teal;
   color: #fff;
+}
+
+nav img{
+	padding: 0px;
 }
