@@ -3,6 +3,9 @@
 
 ### Eclipse ###
 
+BackEnd/target/
+FrontEnd/target/
+
 .metadata
 **/bin/
 **/tmp/
