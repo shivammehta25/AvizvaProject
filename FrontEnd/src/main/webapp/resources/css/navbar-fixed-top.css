@@ -1,0 +1,38 @@
+body {
+  padding-top: 0px;
+}
+
+.dropdown-menu li:hover .sub-menu {
+  visibility: visible;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.navbar-fixed-top {
+  min-height: 80px;
+}
+
+.navbar-nav>li>a {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  line-height: 80px;
+}
+
+/* @media (max-width: 767px) {
+  .navbar-nav>li>a {
+    line-height: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+} */
+
+.navbar-form {
+  margin: 25px 25px 0px 0px;
+}
+
+
+.navbar-form .form-control{
+  width: 350px;
+}

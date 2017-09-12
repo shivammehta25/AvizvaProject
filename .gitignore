@@ -1,0 +1,12 @@
+.metadata
+RemoteSystemsTempFiles/**
+Servers/**
+/FrontEnd/target/**
+/BackEnd/target/**
+/BackEnd/.classpath
+/BackEnd/.project
+/BackEnd/.settings/**
+/FrontEnd/.classpath
+/FrontEnd/.project
+/FrontEnd/.settings/**
+
