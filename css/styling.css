@@ -6,7 +6,6 @@
 
 }
 
-
 .item active {
 	height: 500px;
 	width: 100%;
@@ -90,6 +89,9 @@ p {
 .glyphicon-large {
 	font-size: 100px;
 }
+.fa-large {
+	font-size: 40px;
+}
 
 .call-to-action {
 	text-align: center;
@@ -105,6 +107,3 @@ p {
   color: #fff;
 }
 
-nav img{
-	padding: 0px;
-}

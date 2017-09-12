@@ -255,10 +255,10 @@
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-3">
+				<div class="col-md-4">
 					<div>
 						
-							<label><h2>GAMEZON</h2></label>
+							<label><h2><p>GAMAZON</p></h2></label>
 						
 						<div>
 							<a href="#" class="footer-text"> About Us</A>
@@ -272,10 +272,33 @@
 									</div>		 
 								</div>
 							</div>
-							<div class="col-md-3 "></div>
-							<div class="col-md-3 "></div>
+							<!-- <div class="col-md-3 "></div> -->
+							<div class="col-md-4 ">
+								<div style="text-align: center;"><p><br>Connect With Us</p> </div>
+								<div style="text-align: center;" class="container-fluid ">
+								<div class="row ">
 
-							<div class="col-md-3 ">
+									<div class="col-md-2  ">
+										<a href="# "> <span class=" fa fa-facebook fa-large">   </i> </a>
+									</div>
+									<div class="col-md-2  ">
+										<a href="# "> <i class=" fa fa-twitter fa-large">   </i> </a>
+									</div>
+									<div class="col-md-2  ">
+										<a href="# "> <i class=" fa fa-instagram fa-large">   </i> </a>
+									</div>
+									<div class="col-md-2  ">
+										<a href="# "> <i class=" fa fa-google-plus fa-large">   </i> </a>
+									</div>
+									<div class="col-md-2  ">
+										<a href="# "> <i class=" fa fa-linkedin fa-large">   </i> </a>
+
+									</div>
+								</div>
+							</div>
+							</div>
+
+							<div class="col-md-4 ">
 
 								<form role="form " >
 									<div class="form-group pull-right ">
@@ -312,27 +335,7 @@
 						<div class="col-md-3 ">
 						</div>
 						<div class="col-md-3 ">
-							<div class="container-fluid ">
-								<div class="row ">
-
-									<div class="col-md-2 pull-right ">
-										<a href="# "> <span class=" fa fa-facebook fa-large">   </i> </a>
-									</div>
-									<div class="col-md-2 pull-right ">
-										<a href="# "> <i class=" fa fa-twitter fa-large">   </i> </a>
-									</div>
-									<div class="col-md-2 pull-right ">
-										<a href="# "> <i class=" fa fa-instagram fa-large">   </i> </a>
-									</div>
-									<div class="col-md-2 pull-right ">
-										<a href="# "> <i class=" fa fa-google-plus fa-large">   </i> </a>
-									</div>
-									<div class="col-md-2 pull-right ">
-										<a href="# "> <i class=" fa fa-linkedin fa-large">   </i> </a>
-
-									</div>
-								</div>
-							</div>
+							
 						</div>
 
 					</div>
