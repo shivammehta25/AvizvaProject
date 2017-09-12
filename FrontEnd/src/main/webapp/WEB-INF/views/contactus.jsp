@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8" isELIgnored="false"%>
 
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form"  prefix="form" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -30,6 +31,15 @@
 <body>
 	<jsp:include page="/WEB-INF/views/includes/header.jsp"></jsp:include>
 
+<form:errors path ="ContactUs.*"></form:errors>
+
+
+<c:if test="${msg != null}">
+	<div class="alert col-md-offset-3 col-md-6 alert-info text-center">
+  		 <c:out value="${msg }"></c:out>
+	</div>
+	
+</c:if>
 	
 	<div class="container">
 		<div class="row">
@@ -39,7 +49,7 @@
 						<h2 class="panel-title" style="text-align: center">CONTACT US</h2>
 					</div>
 					<div class="panel-body">
-						<form class="form-horizontal" role="form">
+						<form class="form-horizontal" method=post" action="contactusmail" role="form">
 							<div class="form-group">
 
 								<label for="inputEmail3"

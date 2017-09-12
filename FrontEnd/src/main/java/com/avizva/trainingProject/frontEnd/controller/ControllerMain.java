@@ -17,7 +17,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.avizva.trainingProject.backend.dao.ContactUsDAO;
 import com.avizva.trainingProject.backend.dao.UserDAO;
+import com.avizva.trainingProject.backend.model.ContactUs;
 import com.avizva.trainingProject.backend.model.User;
 
 @Controller
@@ -28,6 +30,8 @@ public class ControllerMain {
 	@Autowired
 	private MailSender mailSender;
 
+	@Autowired
+	private ContactUsDAO contactUsDAO;
 	
 	
 	@InitBinder
@@ -71,6 +75,23 @@ public class ControllerMain {
 		}
 		
 		
+	}
+	
+	
+	@RequestMapping("/contactusmail")
+	public ModelAndView contactUsForm(@Valid @ModelAttribute ContactUs contactUs){
+		if(contactUsDAO.contactus(contactUs)){
+			SimpleMailMessage message = new SimpleMailMessage();
+			message.setFrom("Admin@GAMAZON");
+			message.setTo(contactUs.getEmail());
+			message.setSubject("Thank You for Contacting Us");
+			message.setText("Hii " + contactUs.getName() + " thank you for your time we will get back to you as soon as possible. ");
+			mailSender.send(message);
+			return new ModelAndView("contactus" , "msg" , "Thank You for Contacting Us We will get back to you shortly.");
+		}
+		else{
+			return new ModelAndView("contactus" , "msg" , "Sorry , There was some technical error , Try Again Later ");
+		}
 	}
 	
 }
