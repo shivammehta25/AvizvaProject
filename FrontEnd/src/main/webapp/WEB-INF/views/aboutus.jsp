@@ -33,20 +33,17 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
-				<h3 class="text-center text-muted">About Us</h3>
+				<h2 class="text-center" style="color: black;">About Us</h2>
 				<div class="jumbotron">
 					<h2>GAMAZON!</h2>
-					<p>This is a template for a simple marketing or informational
-						website. It includes a large callout called the hero unit and
-						three supporting pieces of content. Use it as a starting point to
-						create something more unique.</p>
-					<p>
-						<a class="btn btn-primary btn-large" href="#">Learn more</a>
-					</p>
+					<p>We are a company filled with IT Geeks for IT Geeks</p>
+					
 				</div>
-				<div class="progress progress-striped active" >
-					<div class="progress-bar progress-success" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-				</div>
+						<div class="progress progress-striped active">
+		<div class="progress-bar" style="width: 100%;">
+			<span class="sr-only">100% Complete</span>
+		</div>
+	</div>
 				<div class="row">
 					<div class="col-md-2">
 						<img alt="Bootstrap Image Preview"
@@ -60,9 +57,11 @@
 						</blockquote>
 					</div>
 				</div>
-				<div class="progress active progress-striped">
-					<div class="progress-bar progress-success"></div>
-				</div>
+				<div class="progress progress-striped active">
+		<div class="progress-bar" style="width: 100%;">
+			<span class="sr-only">100% Complete</span>
+		</div>
+	</div>
 				<div class="row">
 					<div class="col-md-10">
 						<blockquote>
@@ -76,9 +75,11 @@
 							src="http://lorempixel.com/140/140/" class="img-circle" />
 					</div>
 				</div>
-				<div class="progress progress-striped active">
-					<div class="progress-bar progress-success"></div>
-				</div>
+					<div class="progress progress-striped active">
+		<div class="progress-bar" style="width: 100%;">
+			<span class="sr-only">100% Complete</span>
+		</div>
+	</div>
 				<div class="row">
 					<div class="col-md-2">
 						<img alt="Bootstrap Image Preview"

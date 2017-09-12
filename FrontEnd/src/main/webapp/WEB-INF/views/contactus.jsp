@@ -116,7 +116,6 @@
 
 							</div>
 
-							<div class="form-group"></div>
 						</form>
 					</div>
 				</div>
@@ -124,22 +123,6 @@
 		</div>
 	</div>
 	
-	<!-- <h1 id="aboutushead">Contact Us</h1>
-
-	<form class="cf">
-		<div class="half left cf">
-			<input type="text" id="input-name" placeholder="Name" name="name">
-			<br> <input type="email" id="input-email"
-				placeholder="Email address" name="email"> <br> <input
-				type="text" id="input-subject" placeholder="Subject" name="subject">
-			<br>
-		</div>
-		<div class="half right cf">
-			<textarea name="message" type="text" id="input-message"
-				placeholder="Message" rows="4" cols="40"></textarea>
-		</div>
-		<input type="submit" value="Submit" id="input-submit">
-	</form> -->
 
 	<jsp:include page="/WEB-INF/views/includes/footer.jsp"></jsp:include>
 
