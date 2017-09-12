@@ -28,10 +28,7 @@ public class ApplicationContextConfig {
 	@Bean(name = "dataSource")
 	public DataSource getDataSource() {
 	   DriverManagerDataSource dataSource=new DriverManagerDataSource();
-	    /*dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-	    dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:orcl");
-	    dataSource.setUsername("hr"); 
-	    dataSource.setPassword("hr");*/
+	   
 	   dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 	    dataSource.setUrl("jdbc:mysql://localhost:3306/project");
 	    dataSource.setUsername("root"); 
