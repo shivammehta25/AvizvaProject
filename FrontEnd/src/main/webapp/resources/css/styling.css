@@ -43,7 +43,7 @@ h2 {
 	font-weight: bold;
 }
 
-p {
+p,label {
 	font-size: 16px;
 	color: #cdcdcd;
 }
@@ -107,5 +107,9 @@ p {
 .navbar .navbar-nav > li.open > a:focus {
   background-color: teal;
   color: #fff;
+}
+
+.label-register{
+	color: "black";	
 }
 

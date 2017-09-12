@@ -1,125 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isELIgnored="false"%>
+    
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-
+	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link rel="stylesheet" href="css/navbar-fixed-top.css">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-	<link href="css/styling.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/footerstyle.css">
 	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<c:url var="rcss" value="resources/css"></c:url>
+	<c:url var="rimages" value="resources/images"></c:url>
 
+	<link rel="stylesheet" href="${rcss}/navbar-fixed-top.css">
+	<link rel="stylesheet" href="${rcss}/styling.css" >
+	<link rel="stylesheet" href="${rcss}/footerstyle.css">
 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>GAMAZON | Home</title>
 </head>
-
 <body>
-
-	<div class="container-fluid ">
-		<div class="row">
-			<div class="col-md-12">
-
-				<!-- Begin NavBar -->
-
-				<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-					<div class="navbar-header">
-
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-							<span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-						</button> 
-						
-					</div>
-
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav navbar-left">
-							<li><a href="#"><img src="logo.png" height="80"></a></li>
-							<li><h1><a class="navbar-brand" href="#">GAMAZON</a></h1></li>
-							
-							
-						</ul>
-
-						<ul class="nav navbar-nav navbar-right">
-							<form class="navbar-form navbar-left" role="search">
-								<div class="form-group">
-									<input type="text" class="form-control">
-									<button class="btn btn-primary btn-lg" type="button">
-										<i class="fa fa-search"></i>
-									</button>
-								</div>
-							</form>
-							<li class="active">
-								<a href="#"> <i class="fa fa-lg fa-2x fa-home" aria-hidden="true"></i> Home</a>
-							</li>
-							<li>
-								<a href="#"><i class="fa fa-lg fa-2x fa-info-circle"></i> About Us</a>
-							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-lg fa-2x fa-shopping-basket"></i> Products<strong class="caret"></strong></a>
-								<ul class="dropdown-menu">
-									<li>
-										<a href="#">Action</a>
-									</li>
-									<li>
-										<a href="#">Another action</a>
-									</li>
-									<li>
-										<a href="#">Something else here</a>
-									</li>
-									<li class="divider">
-									</li>
-									<li>
-										<a href="#">Separated link</a>
-									</li>
-									<li class="divider">
-									</li>
-									<li>
-										<a href="#">One more separated link</a>
-									</li>
-								</ul>
-							</li>
-							
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-lg fa-2x fa-cart-plus" aria-hidden="true"></i><strong class="caret"></strong></a>
-								<ul class="dropdown-menu">
-									<li>
-										<a href="#"> Item 1</a>
-									</li>
-									<li>
-										<a href="#"> Item 2</a>
-									</li>
-								</ul>
-							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-lg fa-2x fa-user-circle" aria-hidden="true"></i><strong class="caret"></strong></a>
-								<ul class="dropdown-menu">
-									<li>
-										<a href="#"><i class="fa fa-2x fa-lg fa-address-book "></i> Log In</a>
-									</li>
-									<li class="divider"></li>
-									<li>
-										<a href="#"><i class="fa fa-2x fa-lg fa-user-plus"></i> Register</a>
-									</li>
+<jsp:include page="/WEB-INF/views/includes/header.jsp"></jsp:include>
 
 
-								</ul>
-
-							</li>
-						</ul>
-					</div>
-
-				</nav>
-				<!-- navbar End -->
-			</div>
-		</div>
-	</div>
-
-	<div class="container-fluid ">
-		<!-- Begin JQuery Carousel -->
-
+<div class="container-fluid ">
 		<div id="carousel1" class="carousel slide" data-ride="carousel" data-interval="3000">
 			<ol class="carousel-indicators">
 				<li data-target="#carousel1" data-slide-to="0" class="active"> </li>
@@ -127,9 +34,8 @@
 				<li data-target="#carousel1" data-slide-to="2"> </li>
 			</ol>
 			<div class="carousel-inner">
-
 				<div class="item active">
-					<img alt="Gaming Collection" src="images/slider1.jpg" style="width: 100%">
+					<img alt="Gaming Collection" src="${rimages}/slider1.jpg" style="width: 100%">
 					<div class="carousel-caption">
 						<h3> GAMING COLLECTION</h3>
 						<p>A Large variety of games available here!!!</p>
@@ -137,14 +43,14 @@
 
 				</div>
 				<div class="item">
-					<img src="images/slider2.jpg" alt="Gaming Hardwares" style="width: 100%">
+					<img src="${rimages}/slider2.jpg" alt="Gaming Hardwares" style="width: 100%">
 					<div class="carousel-caption">
 						<h3>GAMING HARDWARES</h3>
 						<p>A large variety of Gaming Hardwares!!!!</p>
 					</div>
 				</div>
 				<div class="item">
-					<img src="images/slider3.jpg" alt="Gaming Peripherals" style="width: 100%">
+					<img src="${rimages}/slider3.jpg" alt="Gaming Peripherals" style="width: 100%">
 					<div class="carousel-caption">
 						<h3>COMPUTER PERIPHERALS </h3>
 						<p> A large variety of Computer Accessories</p>
@@ -252,100 +158,12 @@
 	</div>
 
 
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-4">
-					<div>
-						
-							<label><h2><p>GAMAZON</p></h2></label>
-						
-						<div>
-							<a href="#" class="footer-text"> About Us</A>
-							</div>
-							<div >
-								<a href="#" class="footer-text"> Products</A>
+	
+<jsp:include page="/WEB-INF/views/includes/footer.jsp"></jsp:include>
 
-								</div>
-								<div>
-									<a href="#" class="footer-text" > Contact Us</A>
-									</div>		 
-								</div>
-							</div>
-							<!-- <div class="col-md-3 "></div> -->
-							<div class="col-md-4 ">
-								<div style="text-align: center;"><p><br>Connect With Us</p> </div>
-								<div style="text-align: center;" class="container-fluid ">
-								<div class="row ">
+<!-- Loading Scripts in the End to Reduce Loadtime -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js "></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
 
-									<div class="col-md-2  ">
-										<a href="# "> <span class=" fa fa-facebook fa-large">   </i> </a>
-									</div>
-									<div class="col-md-2  ">
-										<a href="# "> <i class=" fa fa-twitter fa-large">   </i> </a>
-									</div>
-									<div class="col-md-2  ">
-										<a href="# "> <i class=" fa fa-instagram fa-large">   </i> </a>
-									</div>
-									<div class="col-md-2  ">
-										<a href="# "> <i class=" fa fa-google-plus fa-large">   </i> </a>
-									</div>
-									<div class="col-md-2  ">
-										<a href="# "> <i class=" fa fa-linkedin fa-large">   </i> </a>
-
-									</div>
-								</div>
-							</div>
-							</div>
-
-							<div class="col-md-4 ">
-
-								<form role="form " >
-									<div class="form-group pull-right ">
-
-										<p for="exampleInputEmail1 ">
-											Enter your email address to stay updated on all our exciting offers!
-										</p>
-										<input type="email " class="form-control " id="exampleInputEmail1 " placeholder="Enter Email Here" />
-
-									</div>
-
-
-									<button type="submit " class="btn btn-default btn-primary pull-right ">
-										Subscribe to Updates
-									</button>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</nav>
-
-			<nav class="navbar navbar-inverse ">
-				<div class="container-fluid ">
-					<div class="row ">
-						<div class="col-md-3 ">
-
-
-							<div class="pull-left copytext "> Copyright © Gamezon 2017. </div>
-
-						</div>
-						<div class="col-md-3 ">
-						</div>
-						<div class="col-md-3 ">
-						</div>
-						<div class="col-md-3 ">
-							
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</nav>
-
-		<!-- Loading Scripts in the End to Reduce Loadtime -->
-		<script src="https://code.jquery.com/jquery-3.2.1.min.js "></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
-
-	</body>
-	</html>
+</body>
+</html>
