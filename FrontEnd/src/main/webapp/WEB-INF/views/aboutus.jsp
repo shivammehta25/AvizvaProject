@@ -52,7 +52,7 @@
 					<div class="col-md-10">
 						<blockquote class="pull-right">
 							<p>Web Application Developer and A Gamer.</p>
-							<small>SHIVAM MEHTA <cite>Source Title</cite></small>
+							<small> <cite>SHIVAM MEHTA</cite></small>
 						</blockquote>
 					</div>
 				</div>
@@ -64,8 +64,8 @@
 				<div class="row">
 					<div class="col-md-10">
 						<blockquote>
-							<p>PRADHAN MANTRI</p>
-							<small>SAURABH MIGHLANI <cite></cite></small>
+							<p>Football Lover and an Application Developer</p>
+							<small> <cite>SAURABH MIGHLANI</cite></small>
 						</blockquote>
 					</div>
 					<div class="col-md-2">
@@ -84,9 +84,9 @@
 							src="http://lorempixel.com/140/140/" class="img-circle" />
 					</div>
 					<div class="col-md-10">
-						<blockquote>
-							<p>Web Application Developer .</p>
-							<small>AKSHAY CHOURASIA<cite></cite></small>
+						<blockquote  class="pull-right">
+							<p>Web Application Developer </p>
+							<small><cite>AKSHAY CHOURASIA</cite></small>
 						</blockquote>
 					</div>
 				</div>
