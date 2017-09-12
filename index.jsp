@@ -32,12 +32,14 @@
 							<span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
 						</button> 
 						
-						<h1><a class="navbar-brand" href="#"><img src="logo.png" class="img-rounded" style="height:50px;width: 50px"></a></h1>
 					</div>
 
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-left">
-
+							<li><a href="#"><img src="logo.png" height="80"></a></li>
+							<li><h1><a class="navbar-brand" href="#">GAMAZON</a></h1></li>
+							
+							
 						</ul>
 
 						<ul class="nav navbar-nav navbar-right">
@@ -259,14 +261,14 @@
 							<label><h2>GAMEZON</h2></label>
 						
 						<div>
-							<a href="#"> About Us</A>
+							<a href="#" class="footer-text"> About Us</A>
 							</div>
 							<div >
-								<a href="#"> Products</A>
+								<a href="#" class="footer-text"> Products</A>
 
 								</div>
 								<div>
-									<a href="#" > Contact Us</A>
+									<a href="#" class="footer-text" > Contact Us</A>
 									</div>		 
 								</div>
 							</div>
@@ -341,7 +343,6 @@
 		<!-- Loading Scripts in the End to Reduce Loadtime -->
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js "></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
-
 
 	</body>
 	</html>
