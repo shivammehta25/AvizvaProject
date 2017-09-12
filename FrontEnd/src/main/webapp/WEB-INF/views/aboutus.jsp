@@ -51,9 +51,8 @@
 					</div>
 					<div class="col-md-10">
 						<blockquote class="pull-right">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-								Integer posuere erat a ante.</p>
-							<small>Someone famous <cite>Source Title</cite></small>
+							<p>Web Application Developer and A Gamer.</p>
+							<small>SHIVAM MEHTA <cite>Source Title</cite></small>
 						</blockquote>
 					</div>
 				</div>
@@ -65,9 +64,8 @@
 				<div class="row">
 					<div class="col-md-10">
 						<blockquote>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-								Integer posuere erat a ante.</p>
-							<small>Someone famous <cite>Source Title</cite></small>
+							<p>PRADHAN MANTRI</p>
+							<small>SAURABH MIGHLANI <cite></cite></small>
 						</blockquote>
 					</div>
 					<div class="col-md-2">
@@ -87,9 +85,8 @@
 					</div>
 					<div class="col-md-10">
 						<blockquote>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-								Integer posuere erat a ante.</p>
-							<small>Someone famous <cite>Source Title</cite></small>
+							<p>Web Application Developer .</p>
+							<small>AKSHAY CHOURASIA<cite></cite></small>
 						</blockquote>
 					</div>
 				</div>
