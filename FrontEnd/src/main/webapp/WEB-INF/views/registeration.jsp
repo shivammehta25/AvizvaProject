@@ -2,6 +2,7 @@
     pageEncoding="UTF-8" isELIgnored="false"%>
     
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -25,6 +26,15 @@
 <body>
 <jsp:include page="/WEB-INF/views/includes/header.jsp"></jsp:include>
 
+<form:errors path ="User.*"></form:errors>
+
+
+<c:if test="${msg != null}">
+	<div class="alert col-md-offset-3 col-md-6 alert-info text-center">
+  		 <c:out value="${msg }"></c:out>
+	</div>
+	
+</c:if>
 
 
 	<div class="container">
@@ -35,7 +45,7 @@
 						<h2 class="panel-title" style="text-align: center">REGISTER</h2>
 					</div>
 					<div class="panel-body">
-						<form class="form-horizontal" role="form">
+						<form class="form-horizontal" role="form" method="post" action="registerationform">
 							<div class="form-group">
 
 								<label for="inputEmail3"
@@ -63,7 +73,7 @@
 									class="col-sm-2 label-register control-label"> Username
 								</label>
 								<div class="col-sm-10">
-									<input type="password" class="form-control"
+									<input type="text" class="form-control"
 										placeholder="Enter Your Username" required="true"
 										name="username" id="inputPassword3" />
 								</div>
@@ -121,6 +131,34 @@
 										name="dob" id="inputPassword3" />
 								</div>
 							</div>
+							
+							<div class="form-group">
+								<label for="inputEmail3"
+									class="col-sm-2 label-register control-label">  Address </label>
+								<div class="col-sm-10">
+									<input type="text" placeholder="Enter Your House Number" name="address.address"
+										required="true" class="form-control" id="inputEmail3" />
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="inputEmail3"
+									class="col-sm-2 label-register control-label">  City </label>
+								<div class="col-sm-10">
+									<input type="text" placeholder="Enter Your City" name="address.city"
+										required="true" class="form-control" id="inputEmail3" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputEmail3"
+									class="col-sm-2 label-register control-label">  Country </label>
+								<div class="col-sm-10">
+									<input type="text" placeholder="Enter Your Country" name="address.country"
+										required="true" class="form-control" id="inputEmail3" />
+								</div>
+							</div>
+							
+							
 
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-2">

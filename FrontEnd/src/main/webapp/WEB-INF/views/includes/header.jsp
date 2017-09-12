@@ -17,9 +17,7 @@
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-left">
 							<li><a href="#"><img src="resources/images/logo.png" height="80"></a></li>
-							<li><h1><a class="navbar-brand" href="#">GAMAZON</a></h1></li>
-							
-							
+							<li><h1><a class="navbar-brand" href="#">GAMAZON</a></h1></li>							
 						</ul>
 
 						<ul class="nav navbar-nav navbar-right">

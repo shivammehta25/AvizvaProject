@@ -84,7 +84,7 @@
 			<div class="col-md-3 ">
 
 
-				<div class="pull-left copytext ">Copyright Â© Gamezon 2017.</div>
+				<div class="pull-left copytext ">Copyright&nbsp; © Gamezon 2017.</div>
 
 				<div class="col-md-3 "></div>
 				<div class="col-md-3 "></div>

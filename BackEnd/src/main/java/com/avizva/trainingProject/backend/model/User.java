@@ -9,7 +9,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.Cascade;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
 @Entity
@@ -19,22 +29,31 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
+	@NotEmpty
+	@Pattern(regexp = "[^0-9]*")
 	private String name;
-	
+	@NotEmpty
+	@Size(min=3, max = 15)
 	private String username;
-	
+	@NotEmpty
 	private String password;
 	
+	@Email
 	private String email;
-	
-	@OneToMany(cascade=CascadeType.PERSIST)
-	private List<Address> address;
-	
 
+	@NotNull
+	@OneToOne(cascade=CascadeType.PERSIST)
+	private Address address;
+	
+	
+	@NotNull
 	private Long contact;
-
+	
+	@Past
+	@DateTimeFormat(pattern="dd/MM/yyyy")
 	private Date dob;
 
+	
 	private String role;
 
 	private boolean enable;
@@ -114,13 +133,15 @@ public class User {
 		this.enable = enable;
 	}
 
-	public List<Address> getAddress() {
+	public Address getAddress() {
 		return address;
 	}
 
-	public void setAddress(List<Address> address) {
+	public void setAddress(Address address) {
 		this.address = address;
 	}
+
+	
 	
 	
 
