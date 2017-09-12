@@ -83,6 +83,8 @@ p {
 .dropdown-menu li a {
 	padding: 10px;
 }
+
+
 .navbar-inverse .navbar-nav .dropdown-menu li a:hover {
 	background: #2C463C;
 }
