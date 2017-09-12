@@ -44,8 +44,8 @@
 						<a class="btn btn-primary btn-large" href="#">Learn more</a>
 					</p>
 				</div>
-				<div class="progress progress-striped active">
-					<div class="progress-bar progress-success"></div>
+				<div class="progress progress-striped active" >
+					<div class="progress-bar progress-success" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
 				</div>
 				<div class="row">
 					<div class="col-md-2">
