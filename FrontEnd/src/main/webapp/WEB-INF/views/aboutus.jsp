@@ -40,7 +40,7 @@
 					
 				</div>
 						<div class="progress progress-striped active">
-		<div class="progress-bar" style="width: 100%;">
+		<div class="progress-bar" style="width: 0%;">
 			<span class="sr-only">100% Complete</span>
 		</div>
 	</div>
@@ -57,7 +57,7 @@
 					</div>
 				</div>
 				<div class="progress progress-striped active">
-		<div class="progress-bar" style="width: 100%;">
+		<div class="progress-bar" style="width: 0%;">
 			<span class="sr-only">100% Complete</span>
 		</div>
 	</div>
@@ -74,7 +74,7 @@
 					</div>
 				</div>
 					<div class="progress progress-striped active">
-		<div class="progress-bar" style="width: 100%;">
+		<div class="progress-bar" style="width: 0%;">
 			<span class="sr-only">100% Complete</span>
 		</div>
 	</div>
