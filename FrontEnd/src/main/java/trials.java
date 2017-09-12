@@ -15,7 +15,8 @@ public class trials {
 		
 		
 		AnnotationConfigApplicationContext ctx=new AnnotationConfigApplicationContext(ApplicationContextConfig.class);
-		 UserDAOImpl m=(UserDAOImpl)ctx.getBean("userDAOImpl");
+		 
+		UserDAOImpl m=(UserDAOImpl)ctx.getBean("userDAOImpl");
 		//UserDAO userDao  = new UserDAOImpl();
 		 Address a = new Address();
 		 a.setAddress("Ghar");
