@@ -9,14 +9,14 @@
 					</h2>
 
 					<div>
-						<a href="#" class="footer-text"> About Us</A>
+						<a href="aboutus" class="footer-text"> About Us</A>
 					</div>
 					<div>
 						<a href="#" class="footer-text"> Products</A>
 
 					</div>
 					<div>
-						<a href="#" class="footer-text"> Contact Us</A>
+						<a href="contact" class="footer-text"> Contact Us</A>
 					</div>
 				</div>
 			</div>

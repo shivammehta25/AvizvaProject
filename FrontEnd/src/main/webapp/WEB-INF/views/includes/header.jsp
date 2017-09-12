@@ -4,34 +4,24 @@
 	<div class="row">
 		<div class="col-md-12">
 
-
-
-
 			<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-				<div class="navbar-header">
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav navbar-left">
-							<li><a href="#"><img src="resources/images/logo.png" height="80"></a></li>
-							<li><h1><a class="navbar-brand" href="#">GAMAZON</a></h1></li>							
-						</ul>
-
-
+			 	
+			 	<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse"
 						data-target="#bs-example-navbar-collapse-1">
 						<span class="sr-only">Toggle navigation</span><span
 							class="icon-bar"></span><span class="icon-bar"></span><span
 							class="icon-bar"></span>
 					</button>
-
 				</div>
 
 				<div class="collapse navbar-collapse"
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-left">
-						<li><a href="#"><img src="resources/images/logo.png"
+						<li><a href="./"><img src="resources/images/logo.png"
 								height="80"></a></li>
 						<li><h1>
-								<a class="navbar-brand" href="#">GAMAZON</a>
+								<a class="navbar-brand" href="./">GAMAZON</a>
 							</h1></li>
 
 
@@ -46,10 +36,10 @@
 								</button>
 							</div>
 						</form>
-						<li class="active"><a href="#"> <i class="fa fa-lg fa-2x fa-home" 
+						<li class="active"><a href="./"> <i class="fa fa-lg fa-2x fa-home" 
 						aria-hidden="true"></i> Home
 						</a></li>
-						<li><a href="#"><i class="fa fa-lg fa-2x fa-info-circle" aria-hidden="true"></i>
+						<li><a href="aboutus"><i class="fa fa-lg fa-2x fa-info-circle" aria-hidden="true"></i>
 								About Us</a></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown"><i
@@ -78,7 +68,7 @@
 							<ul class="dropdown-menu">
 								<li><a href="#"><i class="fa fa-2x fa-lg fa-address-book"></i> Log In</a></li>
 								<li class="divider"></li>
-								<li><a href="#"><i class="fa fa-2x fa-lg fa-user-plus"></i>
+								<li><a href="registeration"><i class="fa fa-2x fa-lg fa-user-plus"></i>
 										Register</a></li>
 							</ul>
 						</li>
