@@ -11,5 +11,17 @@ public class ControllerMain {
 	public ModelAndView viewIndex(){
 		return new ModelAndView("index");
 	}
+	@RequestMapping("registration")
+	public ModelAndView registerit(){
+		return new ModelAndView("registration");
+	}
+	@RequestMapping("contact")
+	public ModelAndView contactcall(){
+		return new ModelAndView("contactus");
+	}
+	@RequestMapping("aboutus")
+	public ModelAndView aboutuscall(){
+		return new ModelAndView("aboutus");
+	}
 	
 }
