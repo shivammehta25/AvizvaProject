@@ -14,19 +14,21 @@ public class UserDAOImpl implements UserDAO {
 	private SessionFactory sessionFactory;
 
 	public Session getSession() {
-		return sessionFactory.getCurrentSession();
+		return sessionFactory.openSession();
 	}
 
 	public boolean registerUser(User user) {
 		boolean flag = false;
 		Session session = getSession();
+		
+		System.out.println("Session created");
 
 		Transaction tx = null;
 		flag = true;
 		try {
 			tx = session.beginTransaction();
 
-			session.save(user);
+			session.persist(user);
 			tx.commit();
 
 			flag = true;

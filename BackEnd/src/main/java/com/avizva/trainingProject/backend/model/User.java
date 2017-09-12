@@ -1,11 +1,14 @@
 package com.avizva.trainingProject.backend.model;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import org.springframework.stereotype.Component;
 
@@ -19,6 +22,10 @@ public class User {
 	private String name;
 
 	private String email;
+	
+	@OneToMany(cascade=CascadeType.PERSIST)
+	private List<Address> address;
+	
 
 	private Long contact;
 
@@ -83,5 +90,15 @@ public class User {
 	public void setEnable(boolean enable) {
 		this.enable = enable;
 	}
+
+	public List<Address> getAddress() {
+		return address;
+	}
+
+	public void setAddress(List<Address> address) {
+		this.address = address;
+	}
+	
+	
 
 }

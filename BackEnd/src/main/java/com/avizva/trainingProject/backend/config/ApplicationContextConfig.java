@@ -53,7 +53,6 @@ public class ApplicationContextConfig {
 
 	    LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
 	    sessionBuilder.addProperties(getHibernateProperties());
-	    sessionBuilder.addAnnotatedClasses(User.class);
 	    sessionBuilder.scanPackages("com");
 	    
 	    return sessionBuilder.buildSessionFactory();
