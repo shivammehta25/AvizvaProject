@@ -3,7 +3,7 @@
 
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form"  prefix="form" %>
-
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -46,14 +46,14 @@
 			<div class="col-md-8 col-md-offset-2">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h2 class="panel-title" style="text-align: center">CONTACT US</h2>
+						<h2 class="panel-title" style="text-align: center"><<%-- spring:message code='contact.header'></spring:message> --%>Contact Us</h2>
 					</div>
 					<div class="panel-body">
 						<form class="form-horizontal" method=post" action="contactusmail" role="form">
 							<div class="form-group">
 
 								<label for="inputEmail3"
-									class="col-sm-2 label-register control-label"> Name </label>
+									class="col-sm-2 label-register control-label"><%--  <spring:message code='contact.name'></spring:message> --%> Name </label>
 								<div class="col-sm-10">
 									<input type="text" placeholder="Enter Your Name" name="name"
 										required="true" class="form-control" id="inputEmail3" />
@@ -62,7 +62,7 @@
 							<div class="form-group">
 
 								<label for="inputPassword3"
-									class="col-sm-2 label-register control-label"> Email </label>
+									class="col-sm-2 label-register control-label"><%--  <spring:message code='label.email'></spring:message> --%>Email </label>
 								<div class="col-sm-10">
 									<input type="email" class="form-control"
 										placeholder="Enter Your Email" required="true" name="email"
@@ -74,7 +74,7 @@
 							<div class="form-group">
 
 								<label for="inputPassword3"
-									class="col-sm-2 label-register control-label"> Contact
+									class="col-sm-2 label-register control-label"> <%-- <spring:message code='label.contact'></spring:message> --%> Contact
 								</label>
 								<div class="col-sm-10">
 									<input type="number" pattern="[7-9]{1}[0-9]{9}"
@@ -85,7 +85,7 @@
 							<div class="form-group">
 
 								<label for="inputEmail3"
-									class="col-sm-2 label-register control-label"> Description </label>
+									class="col-sm-2 label-register control-label"> <%-- <spring:message code='label.description'></spring:message> --%> Description </label>
 								<div class="col-sm-10">
 									<input type="text" placeholder="Short Description of Your Query" name="description"
 										required="true" class="form-control" id="inputEmail3" />
@@ -94,7 +94,7 @@
 							<div class="form-group">
 
 								<label for="inputEmail3"
-									class="col-sm-2 label-register control-label"> Message </label>
+									class="col-sm-2 label-register control-label"><%-- <spring:message code='label.message'></spring:message>  --%> Message</label>
 								<div class="col-sm-10">
 									
 									<textarea placeholder="Your Query" required="true" class="form-control" name="message"></textarea>
@@ -109,7 +109,7 @@
 
 									<button type="submit" class="btn btn-success">
 										<i class="fa fa-address-book fa-lg fa-2x"></i> &nbsp;
-										Submit
+										Submit 
 									</button>
 								</div>
 

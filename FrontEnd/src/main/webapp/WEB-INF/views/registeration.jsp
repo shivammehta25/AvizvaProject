@@ -32,6 +32,7 @@
 <div class="alert col-md-offset-3 col-md-6 alert-danger text-center">
 	<form:errors path ="user.*"></form:errors>  		 
 	</div>
+	
 
 
 
@@ -49,7 +50,7 @@
 			<div class="col-md-8 col-md-offset-2">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h2 class="panel-title" style="text-align: center">REGISTER</h2>
+						<h2 class="panel-title" style="text-align: center"><spring:message code='label.header'></spring:message></h2>
 					</div>
 					<div class="panel-body">
 						<form class="form-horizontal" role="form" method="post" action="registerationform" onsubmit="return(check())">
