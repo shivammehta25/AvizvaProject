@@ -78,16 +78,34 @@
 								<li><a href="#"> Item 1</a></li>
 								<li><a href="#"> Item 2</a></li>
 							</ul></li>
+				<c:if test="${username == null }" >
 						<li class="dropdown ${myaccountactive}"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown"><i class="fa fa-lg fa-2x fa-user-circle" 
 								aria-hidden="true"></i> My Account<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
-								<li><a href="#"><i class="fa fa-2x fa-lg fa-address-book"></i> Log In</a></li>
+								<li><a href="login"><i class="fa fa-2x fa-lg fa-address-book"></i> Log In</a></li>
 								<li class="divider"></li>
 								<li><a href="registeration"><i class="fa fa-2x fa-lg fa-user-plus"></i>
 										Register</a></li>
 							</ul>
 						</li>
+				</c:if>
+				<c:if test="${username != null }">
+						
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown"><i
+								class="fa fa-lg fa-2x fa-user-circle" aria-hidden="true"></i> ${user.name}<strong
+								class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">My Orders</a></li>
+								<li class="divider"></li>
+								<li><a href="#">My Profile</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Logout</a></li>
+							</ul>
+						</li>
+							
+				</c:if>
 					</ul>
 				</div>
 
