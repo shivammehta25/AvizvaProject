@@ -15,16 +15,13 @@
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/includes/header.jsp"></jsp:include>
+	<div class="col-sm-12 text-center" >
+	<span id="message"></span>
+</div>
 	<c:url var="rcss" value="resources/css"></c:url>
 	<c:url var="rimages" value="resources/images"></c:url>
 
 
-	<c:if test="${msg != null}">
-		<div class="alert col-md-offset-3 col-md-6 alert-info text-center">
-			<c:out value="${msg }"></c:out>
-		</div>
-
-	</c:if>
 
 	<div class="container">
 		<div class="row">
@@ -36,7 +33,7 @@
 						</h2>
 					</div>
 					<div class="panel-body">
-						<form class="form-horizontal" method="post" action="resetpassform" role="form">
+						<form class="form-horizontal" method="post" action="resetpassform" role="form" onsubmit="return(check())">
 							
 							<div class="form-group">
 
@@ -107,7 +104,19 @@
 
 	<jsp:include page="/WEB-INF/views/includes/footer.jsp"></jsp:include>
 
-
+<script>
+	var check = function() {
+  if (document.getElementById('password').value == document.getElementById('confirmpassword').value) {
+  document.getElementById('message').style.color = 'green';
+  document.getElementById('message').innerHTML = 'Passwords Matched';
+    return true;
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'Password Not matching';
+    return false;
+  }
+}
+	</script>
 
 </body>
 </html>

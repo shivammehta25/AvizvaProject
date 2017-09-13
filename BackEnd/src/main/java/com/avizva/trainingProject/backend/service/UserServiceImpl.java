@@ -28,6 +28,8 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private ForgotPass forgotPass;
+	
+	
 
 	public boolean registerUser(User user) {
 		boolean flag = false;
@@ -59,7 +61,11 @@ public class UserServiceImpl implements UserService {
 	public boolean forgotPass(String email) {
 		boolean flag = false;
 		User user = forgotPassDAO.findEmail(email);
-		if (!user.getUsername().isEmpty()) { // Generate OTP
+		if(user == null){
+			return flag;
+		}
+		else
+		 {
 			Random random = new Random();
 
 			StringBuilder builder = new StringBuilder();
@@ -67,8 +73,10 @@ public class UserServiceImpl implements UserService {
 				builder.append(random.nextInt(10));
 			}
 
+			
 			forgotPass.setEmail(user.getEmail());
 			forgotPass.setOtp(builder.toString());
+			
 			if (forgotPassDAO.saveOtp(forgotPass)) {
 				SimpleMailMessage message = new SimpleMailMessage();
 				message.setFrom("Admin@GAMAZON");

@@ -28,7 +28,10 @@ public class ForgotPassDAOImpl implements ForgotPassDAO {
 		Query<User> q = (Query<User>) session.createQuery("from User where email =:email");
 		q.setParameter("email", email);
 		List<User> userList = q.list();
+		if(!userList.isEmpty()){
 		return userList.get(0);
+		}
+		return null;
 		
 	}
 	public boolean saveOtp(ForgotPass forgotPass){
@@ -37,11 +40,12 @@ public class ForgotPassDAOImpl implements ForgotPassDAO {
 		System.out.println(forgotPass  + " " + session);
 		Query q = session.createQuery("from ForgotPass where email=:email");
 		q.setParameter("email", forgotPass.getEmail());
-		List<ForgotPass> queryList = q.list();
-		if(queryList.isEmpty()){
+		System.out.println(forgotPass);
+		if(q.list().isEmpty()){
 			session.save(forgotPass);
 		}
 		else {
+			System.out.println(forgotPass);
 			session.update(forgotPass);
 		}
 		

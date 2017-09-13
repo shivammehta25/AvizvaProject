@@ -12,8 +12,6 @@ import org.springframework.stereotype.Component;
 public class ForgotPass {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
 	private String email;
 	
 	private String otp;
