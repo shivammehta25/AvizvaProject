@@ -49,12 +49,33 @@
 						<input type="checkbox" /> Remember Me
 					</label>
 				</div> 
+				
 				<button type="submit" class="btn btn-success">
 					Submit
-				</button>
+				</button> 
+				<div class="pull-right">  <a href="forgotpass" style="text-decoration: none;">Forgot Password ?</a></div>
 			</form>
+			
+			
 		</div>
 		<div class="col-md-4">
+		</div>
+	
+	</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4">
+			<h3 class="text-center text-info">
+				<a href="registeration">Dont have an Account? Register </a>
+			</h3>
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
 		</div>
 	</div>
 </div>

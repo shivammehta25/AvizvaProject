@@ -5,7 +5,7 @@ import com.avizva.trainingProject.backend.model.User;
 
 public interface ForgotPassDAO {
 	public User findEmail(String email);
-	public void saveOtp(ForgotPass forgotPass);
+	public boolean saveOtp(ForgotPass forgotPass);
 	public String getOtp(ForgotPass forgotPass);
 	public void changePassword(User user);
 }

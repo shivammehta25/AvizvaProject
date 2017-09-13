@@ -11,7 +11,7 @@
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GAMAZON | Contact Us</title>
+<title>GAMAZON | Forgot Password</title>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/includes/header.jsp"></jsp:include>
@@ -19,7 +19,6 @@
 	<c:url var="rimages" value="resources/images"></c:url>
 
 
-	<%-- <form:errors path="ContactUs.*"></form:errors> --%>
 
 
 	<c:if test="${msg != null}">

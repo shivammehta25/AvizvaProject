@@ -17,10 +17,12 @@ import com.avizva.trainingProject.backend.model.User;
 public class ForgotPassDAOImpl implements ForgotPassDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
+	
 
 	public Session getSession() {
 		return sessionFactory.getCurrentSession();
 	}
+	
 	public User findEmail(String email){
 		Session session = getSession();
 		Query<User> q = (Query<User>) session.createQuery("from User where email =:email");
@@ -29,20 +31,32 @@ public class ForgotPassDAOImpl implements ForgotPassDAO {
 		return userList.get(0);
 		
 	}
-	public void saveOtp(ForgotPass forgotPass){
-		//Save onetimepass in forgotpass table
+	public boolean saveOtp(ForgotPass forgotPass){
+		boolean flag = false;
 		Session session = getSession();
-		session.update(forgotPass);
+		System.out.println(forgotPass  + " " + session);
+		Query q = session.createQuery("from ForgotPass where email=:email");
+		q.setParameter("email", forgotPass.getEmail());
+		List<ForgotPass> queryList = q.list();
+		if(queryList.isEmpty()){
+			session.save(forgotPass);
+		}
+		else {
+			session.update(forgotPass);
+		}
+		
+		flag = true;
 
+		return flag;
 
 	}
 	
 	public String getOtp(ForgotPass forgotPass){
-		//Get onetimepass from forgotpass table
 		Session session=getSession();
-		Query<ForgotPass> q = (Query<ForgotPass>) session.createQuery("from ForgotPass where username =:username");
-		q.setParameter("username", forgotPass.getUsername());
+		Query<ForgotPass> q = (Query<ForgotPass>) session.createQuery("from ForgotPass where email =:email");
+		q.setParameter("email", forgotPass.getEmail());
 		List<ForgotPass> forgotPassList = q.list();
+		System.out.println(forgotPassList.get(0));
 		return forgotPassList.get(0).getOtp();
 	}
 	

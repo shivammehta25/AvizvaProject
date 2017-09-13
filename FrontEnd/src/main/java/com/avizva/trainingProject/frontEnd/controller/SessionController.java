@@ -32,7 +32,7 @@ public class SessionController {
 			
 		}
 			
-		return new ModelAndView("index").addObject("msg" , "Invalid Username and Password");
+		return new ModelAndView("login").addObject("msg" , "Invalid Username and Password");
 		
 	}
 }

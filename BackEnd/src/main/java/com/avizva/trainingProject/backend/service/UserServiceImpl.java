@@ -25,8 +25,10 @@ public class UserServiceImpl implements UserService {
 	ForgotPassDAO forgotPassDAO;
 	@Autowired
 	private MailSender mailSender;
-	
+
+	@Autowired
 	private ForgotPass forgotPass;
+
 	public boolean registerUser(User user) {
 		boolean flag = false;
 		if (userDAO.registerUser(user)) {
@@ -42,68 +44,63 @@ public class UserServiceImpl implements UserService {
 		return flag;
 	}
 
-	public boolean authLogin(String username, String password , HttpServletRequest request) {
+	public boolean authLogin(String username, String password, HttpServletRequest request) {
 		boolean flag = false;
-		
+
 		HttpSession session = request.getSession();
-		if(userDAO.authLogin(username, password)){
+		if (userDAO.authLogin(username, password)) {
 			session.setAttribute("username", username);
 			session.setAttribute("user", userDAO.getUserByUsername(username));
-			flag= true;
-		}
-		return flag;
-	}
-	
-	public boolean forgotPass(String email){
-		boolean flag=false;
-		//Call findEmail from dao
-		User user=forgotPassDAO.findEmail(email);
-		if(!user.getUsername().isEmpty())
-		{	//Generate OTP
-			Random random  =new Random();
-
-	        StringBuilder builder=new StringBuilder();
-	        for(int count=0; count<=4;count++) {
-	            builder.append(random.nextInt(10));
-	        }
-	        System.out.println(builder.toString());
-			//Call saveOTP from dao
-	        
-	        forgotPass.setUsername(user.getUsername());
-	        forgotPass.setOtp(builder.toString());
-	        forgotPassDAO.saveOtp(forgotPass);
-			//Send OTP mail
-	        SimpleMailMessage message = new SimpleMailMessage();
-			message.setFrom("Admin@GAMAZON");
-			message.setTo(user.getEmail());
-			message.setSubject("OTP for Password Reset");
-			message.setText("Dear " + user.getName() + ", Your OTP is "+forgotPass.getOtp());
-			mailSender.send(message);
-			//Set flag
 			flag = true;
 		}
-		
 		return flag;
-		
 	}
-	
-	public boolean resetPass(String email, String onetimepass, String password){
-		boolean flag=false;
-		//Call dao.findEmail
-		User user=forgotPassDAO.findEmail(email);
-		//Call dao.getOtp
-		forgotPass.setUsername(user.getUsername());
-		String dbOtp=forgotPassDAO.getOtp(forgotPass);
-		//Check otp's
-		if(dbOtp.equalsIgnoreCase(onetimepass)){
-			//Call dao.changePassword
+
+	public boolean forgotPass(String email) {
+		boolean flag = false;
+		User user = forgotPassDAO.findEmail(email);
+		if (!user.getUsername().isEmpty()) { // Generate OTP
+			Random random = new Random();
+
+			StringBuilder builder = new StringBuilder();
+			for (int count = 0; count <= 4; count++) {
+				builder.append(random.nextInt(10));
+			}
+
+			forgotPass.setEmail(user.getEmail());
+			forgotPass.setOtp(builder.toString());
+			if (forgotPassDAO.saveOtp(forgotPass)) {
+				SimpleMailMessage message = new SimpleMailMessage();
+				message.setFrom("Admin@GAMAZON");
+				message.setTo(user.getEmail());
+				message.setSubject("OTP for Password Reset");
+				message.setText("Dear " + user.getName() + ", Your OTP is " + forgotPass.getOtp());
+				mailSender.send(message);
+				// Set flag
+				flag = true;
+			}
+		}
+
+		return flag;
+
+	}
+
+	public boolean resetPass(String email, String otp, String password) {
+		boolean flag = false;
+		// Call dao.findEmail
+		User user = forgotPassDAO.findEmail(email);
+		System.out.println("Reset pass me user ka object" + user.getEmail());
+		// Call dao.getOtp
+		forgotPass.setEmail(user.getEmail());
+		String dbOtp = forgotPassDAO.getOtp(forgotPass);
+		// Check otp's
+		if (dbOtp.equalsIgnoreCase(otp)) {
+			// Call dao.changePassword
 			user.setPassword(password);
 			forgotPassDAO.changePassword(user);
-			flag=true;
+			flag = true;
 		}
 		return flag;
 	}
-	
-	
 
 }

@@ -1,6 +1,8 @@
 package com.avizva.trainingProject.backend.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.springframework.stereotype.Component;
@@ -10,16 +12,19 @@ import org.springframework.stereotype.Component;
 public class ForgotPass {
 	
 	@Id
-	private String username;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
+	private String email;
 	
 	private String otp;
 
-	public String getUsername() {
-		return username;
+
+	public String getEmail() {
+		return email;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getOtp() {
@@ -29,6 +34,12 @@ public class ForgotPass {
 	public void setOtp(String otp) {
 		this.otp = otp;
 	}
+
+	@Override
+	public String toString() {
+		return "ForgotPass [email=" + email + ", otp=" + otp + "]";
+	}
+	
 	
 	
 }

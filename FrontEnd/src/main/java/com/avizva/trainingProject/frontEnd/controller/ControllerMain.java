@@ -52,21 +52,27 @@ public class ControllerMain {
 	public ModelAndView viewIndex(){
 		return new ModelAndView("index").addObject("homeactive" , "active");
 	}
-	@RequestMapping("registeration")
+	@RequestMapping("/registeration")
 	public ModelAndView registerit(){
 		return new ModelAndView("registeration").addObject("myaccountactive" , "active");
 	}
-	@RequestMapping("contact")
+	@RequestMapping("/contact")
 	public ModelAndView contactcall(){
 		return new ModelAndView("contactus");
 	}
-	@RequestMapping("aboutus")
+	@RequestMapping("/aboutus")
 	public ModelAndView aboutuscall(){
 		return new ModelAndView("aboutus").addObject("aboutusactive" , "active");
 	}
-	@RequestMapping("forgotpass")
+	
+	
+	@RequestMapping("/forgotpass")
 	public ModelAndView forgotpasscall(){
 		return new ModelAndView("forgotpass");
+	}
+	@RequestMapping("/resetpass")
+	public ModelAndView resetPassCall(){
+		return new ModelAndView("resetpass");
 	}
 	
 	@RequestMapping("/registerationform")
@@ -107,8 +113,8 @@ public class ControllerMain {
 	
 
 	@RequestMapping("/resetpassform")
-	public ModelAndView resetPassForm(@RequestParam("email") String email,@RequestParam("onetimepass") String onetimepass, @RequestParam("password") String password){
-		if(userService.resetPass(email, onetimepass, password)){
+	public ModelAndView resetPassForm(@RequestParam("email") String email,@RequestParam("otp") String otp, @RequestParam("password") String password){
+		if(userService.resetPass(email, otp, password)){
 			return new ModelAndView("login").addObject("msg", "Your password has been successfully reset" );
 		}
 		else{

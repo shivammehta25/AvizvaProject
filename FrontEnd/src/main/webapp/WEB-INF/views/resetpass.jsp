@@ -11,7 +11,7 @@
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GAMAZON | Contact Us</title>
+<title>GAMAZON | Reset Password </title>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/includes/header.jsp"></jsp:include>
@@ -56,7 +56,7 @@
 								<label for="inputEmail3"
 									class="col-sm-2 label-register control-label">  <spring:message code='resetpass.onetimepass'></spring:message> </label>
 								<div class="col-sm-10">
-									<input type="text" placeholder="Enter Your OTP" name="onetimepass"
+									<input type="text" placeholder="Enter Your OTP" name="otp"
 										required="true" class="form-control"  />
 								</div>
 							</div>

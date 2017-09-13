@@ -120,3 +120,16 @@
 	</div>
 </div>
 <!-- Navbar End -->
+<c:if test="${msg !=null }">
+		<div class="col-md-12">
+			<div class="alert alert-dismissable alert-info">
+				 
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+					×
+				</button>
+				<h4 class="text-center">
+					<strong>Alert!</strong>
+				</h4> <h5 class="text-center"> <strong>${msg }</strong></h5> 
+			</div>
+		</div>
+</c:if>		
