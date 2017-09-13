@@ -19,12 +19,6 @@
 <c:url var="rcss" value="resources/css"></c:url>
 <c:url var="rimages" value="resources/images"></c:url>
 
-
-
-	
-
-
-
 <c:if test="${msg != null}">
 	<div class="alert col-md-offset-3 col-md-6 alert-info text-center">
   		 <c:out value="${msg }"></c:out>
@@ -32,8 +26,9 @@
 	<div class="alert col-md-offset-3 col-md-6 alert-danger text-center">
 	<form:errors path ="user.*"></form:errors>  		 
 	</div>
-	
+
 </c:if>
+
 <div class="col-sm-12 text-center" >
 	<span id="message"></span>
 </div>

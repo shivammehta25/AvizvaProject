@@ -33,7 +33,7 @@
 	<bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 
-	   <property name="basenames" value="/resources/properties/user,/resources/properties/contactus"/>
+	   <property name="basenames" value="/resources/properties/user,/resources/properties/contactus,/resources/properties/forgotpass,/resources/properties/resetpass"/>
 			
 		
 	</bean>

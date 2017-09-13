@@ -60,6 +60,10 @@ public class ControllerMain {
 	public ModelAndView aboutuscall(){
 		return new ModelAndView("aboutus").addObject("aboutusactive" , "active");
 	}
+	@RequestMapping("forgotpass")
+	public ModelAndView forgotpasscall(){
+		return new ModelAndView("forgotpass");
+	}
 	
 	@RequestMapping("/registerationform")
 	public ModelAndView registrationForm(@Valid @ModelAttribute User user  , BindingResult result){
@@ -85,6 +89,15 @@ public class ControllerMain {
 			return new ModelAndView("contactus" , "msg" , "Sorry , There was some technical error , Try Again Later ");
 		}
 	}
+
+	@RequestMapping("/forgotpassform")
+	public ModelAndView forgotPassForm(@ModelAttribute User user){
+		return new ModelAndView("resetpass").addObject("msg", "Enter the OTP sent on your mail" );
+	}
 	
-	
+	@RequestMapping("/resetpassform")
+	public ModelAndView resetPassForm(@ModelAttribute User user){
+		return new ModelAndView("login").addObject("msg", "Your password has been successfully reset" );
+	}
+
 }
