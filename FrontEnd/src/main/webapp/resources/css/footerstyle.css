@@ -15,3 +15,7 @@
 .footer-text:hover {
     text-decoration: none;
 }
+
+footer {
+	padding: 10px;
+}

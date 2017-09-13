@@ -46,8 +46,9 @@ public class UserServiceImpl implements UserService {
 		boolean flag = false;
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("username", username);
 		if(userDAO.authLogin(username, password)){
+			session.setAttribute("username", username);
+			session.setAttribute("user", userDAO.getUserByUsername(username));
 			flag= true;
 		}
 		return flag;

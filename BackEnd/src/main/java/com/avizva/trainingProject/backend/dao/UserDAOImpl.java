@@ -50,4 +50,13 @@ public class UserDAOImpl implements UserDAO {
 	
 	
 
+	public User getUserByUsername(String username) {
+		Session session = getSession();
+		User user = session.get(User.class, username);
+		return user;
+		
+	}
+	
+	
+
 }

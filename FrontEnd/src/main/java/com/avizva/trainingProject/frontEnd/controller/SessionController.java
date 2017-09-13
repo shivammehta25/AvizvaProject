@@ -16,6 +16,14 @@ public class SessionController {
 	@Autowired
 	private UserService userService;
 	
+	
+	@RequestMapping("/login")
+	public ModelAndView loginView(){
+		return new ModelAndView("login");
+	}
+	
+	
+	
 	@RequestMapping("/loginform")
 	public ModelAndView loginAction(@RequestParam("username") String username , @RequestParam("password") String password , HttpServletRequest request){
 		
