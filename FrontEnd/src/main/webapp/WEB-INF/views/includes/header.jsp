@@ -1,12 +1,13 @@
-<%@ page isELIgnored="false" %>
+<%@ page isELIgnored="false"%>
 <!-- Begin NavBar -->
 <div class="container-fluid ">
 	<div class="row">
 		<div class="col-md-12">
 
 			<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-			 	
-			 	<div class="navbar-header">
+
+				
+				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse"
 						data-target="#bs-example-navbar-collapse-1">
 						<span class="sr-only">Toggle navigation</span><span
@@ -36,15 +37,16 @@
 								</button>
 							</div>
 						</form>
-						<li class="${homeactive } "><a href="./"> <i class="fa fa-lg fa-2x fa-home" 
-						aria-hidden="true"></i> Home
+						<li class="${homeactive } "><a href="./"> <i
+								class="fa fa-lg fa-2x fa-home" aria-hidden="true"></i> Home
 						</a></li>
-						<li class="${aboutusactive } "><a href="aboutus"><i class="fa fa-lg fa-2x fa-info-circle" aria-hidden="true"></i>
+						<li class="${aboutusactive } "><a href="aboutus"><i
+								class="fa fa-lg fa-2x fa-info-circle" aria-hidden="true"></i>
 								About Us</a></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown"><i
-								class="fa fa-lg fa-2x fa-shopping-basket" aria-hidden="true"></i> Products<strong
-								class="caret"></strong></a>
+								class="fa fa-lg fa-2x fa-shopping-basket" aria-hidden="true"></i>
+								Products<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
 								<li><a href="#">Action</a></li>
 								<li><a href="#">Another action</a></li>
@@ -63,15 +65,59 @@
 								<li><a href="#"> Item 2</a></li>
 							</ul></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown"><i class="fa fa-lg fa-2x fa-user-circle" 
-								aria-hidden="true"></i> My Account<strong class="caret"></strong></a>
+							data-toggle="dropdown"><i
+								class="fa fa-lg fa-2x fa-user-circle" aria-hidden="true"></i> My
+								Account<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
-								<li><a href="#"><i class="fa fa-2x fa-lg fa-address-book"></i> Log In</a></li>
+								<li><a href="#"
+									onclick="document.getElementById('id01').style.display='block'"
+									style="width: auto;"><i
+										class="fa fa-2x fa-lg fa-address-book"></i> Log In</a>
+									<div id="id01" class="modal">
+
+										<form class="modal-content animate" action="/action_page.php">
+											<div class="imgcontainer">
+												<span
+													onclick="document.getElementById('id01').style.display='none'"
+													class="close" title="Close Modal">&times;</span> <img
+													src="img_avatar2.png" alt="Avatar" class="avatar">
+											</div>
+
+											<div class="container">
+												<label><b>Username</b></label> <input type="text"
+													placeholder="Enter Username" name="uname" required>
+
+												<label><b>Password</b></label> <input type="password"
+													placeholder="Enter Password" name="psw" required>
+
+												<button type="submit">Login</button>
+												<input type="checkbox" checked="checked"> Remember
+												me
+											</div>
+
+											<div class="container" style="background-color: #f1f1f1">
+												<button type="button"
+													onclick="document.getElementById('id01').style.display='none'"
+													class="cancelbtn">Cancel</button>
+												<span class="psw">Forgot <a href="#">password?</a></span>
+											</div>
+										</form>
+									</div> <script>
+										// Get the modal
+										var modal = document
+												.getElementById('id01');
+
+										// When the user clicks anywhere outside of the modal, close it
+										window.onclick = function(event) {
+											if (event.target == modal) {
+												modal.style.display = "none";
+											}
+										}
+									</script></li>
 								<li class="divider"></li>
-								<li><a href="registeration"><i class="fa fa-2x fa-lg fa-user-plus"></i>
-										Register</a></li>
-							</ul>
-						</li>
+								<li><a href="registeration"><i
+										class="fa fa-2x fa-lg fa-user-plus"></i> Register</a></li>
+							</ul></li>
 					</ul>
 				</div>
 
