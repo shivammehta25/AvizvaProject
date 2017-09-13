@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
 import org.springframework.stereotype.Component;
@@ -19,6 +20,7 @@ public class ContactUs {
 	@NotEmpty
 	private String name;
 	@NotEmpty
+	@Email
 	private String email;
 	@NotNull
 	private Long contact;

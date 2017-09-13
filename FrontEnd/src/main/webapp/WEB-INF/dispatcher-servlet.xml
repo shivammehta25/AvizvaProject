@@ -33,11 +33,9 @@
 	<bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 
-		<property name="basename">
-
-			<value>/resources/properties/user</value>
-
-		</property>
+	   <property name="basenames" value="/resources/properties/user,/resources/properties/contactus"/>
+			
+		
 	</bean>
 	<bean id="localeResolver"
 		class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
