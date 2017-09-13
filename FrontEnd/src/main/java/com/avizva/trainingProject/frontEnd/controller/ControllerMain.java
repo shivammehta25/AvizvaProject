@@ -15,6 +15,7 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.avizva.trainingProject.backend.dao.ContactUsDAO;
@@ -91,12 +92,14 @@ public class ControllerMain {
 	}
 
 	@RequestMapping("/forgotpassform")
-	public ModelAndView forgotPassForm(@ModelAttribute User user){
+	public ModelAndView forgotPassForm(@RequestParam("email") String email){
+		//Call forgotPass func from UserService
 		return new ModelAndView("resetpass").addObject("msg", "Enter the OTP sent on your mail" );
 	}
 	
 	@RequestMapping("/resetpassform")
-	public ModelAndView resetPassForm(@ModelAttribute User user){
+	public ModelAndView resetPassForm(@RequestParam("email") String email,@RequestParam("onetimepass") String onetimepass, @RequestParam("password") String password){
+		//Call resetPass from UserService
 		return new ModelAndView("login").addObject("msg", "Your password has been successfully reset" );
 	}
 

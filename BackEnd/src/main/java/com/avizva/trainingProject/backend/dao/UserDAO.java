@@ -6,4 +6,5 @@ public interface UserDAO {
 	public boolean registerUser(User user);
 	public boolean authLogin(String username , String password);
 	
+	
 }
