@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,13 +26,14 @@ import org.springframework.stereotype.Component;
 @Entity
 @Component
 public class User {
-	@Id
+
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	@NotEmpty
 	@Pattern(regexp = "[^0-9]*")
 	private String name;
+	@Id
 	@NotEmpty
 	@Size(min=3, max = 15)
 	private String username;
@@ -56,8 +58,8 @@ public class User {
 	
 	private String role;
 
+	@Column(columnDefinition = "BOOLEAN DEFAULT false")
 	private boolean enable;
-	
 	
 	
 	public String getUsername() {
