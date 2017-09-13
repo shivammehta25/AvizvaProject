@@ -80,48 +80,52 @@
 								<li><a href="#"> Item 1</a></li>
 								<li><a href="#"> Item 2</a></li>
 							</ul></li>
-<<<<<<< HEAD
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown"><i
-								class="fa fa-lg fa-2x fa-user-circle" aria-hidden="true"></i> My
-								Account<strong class="caret"></strong></a>
-=======
+
 						<li class="dropdown ${myaccountactive}"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown"><i class="fa fa-lg fa-2x fa-user-circle" 
 								aria-hidden="true"></i> My Account<strong class="caret"></strong></a>
->>>>>>> df9e73fbb71f463c51a1fb7f773a0cec08df22dd
+
 							<ul class="dropdown-menu">
 								<li><a href="#"
 									onclick="document.getElementById('id01').style.display='block'"
 									style="width: auto;"><i
 										class="fa fa-2x fa-lg fa-address-book"></i> Log In</a>
+									
+									
+									
 									<div id="id01" class="modal">
+										
 
-										<form class="modal-content animate" action="/action_page.php">
+										<form class="modal-content animate" action="loginform">
+										<h2 align="center">GAMAZON LOGIN PAGE</h2>
 											<div class="imgcontainer">
 												<span
 													onclick="document.getElementById('id01').style.display='none'"
 													class="close" title="Close Modal">&times;</span> <img
-													src="img_avatar2.png" alt="Avatar" class="avatar">
+													src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-group-512.png" alt="Avatar" class="avatar" height="200px" width="200px">
 											</div>
 
 											<div class="container">
 												<label><b>Username</b></label> <input type="text"
 													placeholder="Enter Username" name="uname" required>
+													<br>
 
 												<label><b>Password</b></label> <input type="password"
 													placeholder="Enter Password" name="psw" required>
+													<br>
 
 												<button type="submit">Login</button>
+												<button type="button"
+													onclick="document.getElementById('id01').style.display='none'"
+													class="cancelbtn">Cancel</button>
+												<br>
 												<input type="checkbox" checked="checked"> Remember
 												me
 											</div>
 
-											<div class="container" style="background-color: #f1f1f1">
-												<button type="button"
-													onclick="document.getElementById('id01').style.display='none'"
-													class="cancelbtn">Cancel</button>
-												<span class="psw">Forgot <a href="#">password?</a></span>
+											<div class="container">
+												
+												<span class="psw"><a href="/forgotpass">Forgot password?</a></span>
 											</div>
 										</form>
 									</div> <script>
