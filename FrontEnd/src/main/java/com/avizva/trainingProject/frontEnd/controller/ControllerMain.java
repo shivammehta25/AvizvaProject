@@ -80,7 +80,7 @@ public class ControllerMain {
 		if(  userService.registerUser(user)  && (!(result.hasErrors()))){
 			
 			
-			return new ModelAndView("registeration").addObject("msg", "User Registered Successfully" );
+			return new ModelAndView("login").addObject("msg", "User Registered Successfully" );
 		}else {
 			return new ModelAndView("registeration").addObject("msg" , "Error While Registering Please Fix error and Continue");
 		}

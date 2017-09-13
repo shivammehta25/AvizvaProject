@@ -45,7 +45,8 @@ public class ForgotPassDAOImpl implements ForgotPassDAO {
 			session.save(forgotPass);
 		}
 		else {
-			System.out.println(forgotPass);
+			session.flush();
+			session.clear();
 			session.update(forgotPass);
 		}
 		

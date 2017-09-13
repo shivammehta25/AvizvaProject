@@ -1,19 +1,24 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page isELIgnored="false" %>
+<%@ page isELIgnored="false"%>
 
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<c:url var="rcss" value="resources/css"></c:url>
-	<c:url var="rimages" value="resources/images"></c:url>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700'
+	rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="${rcss}/navbar-fixed-top.css">
-	<link rel="stylesheet" href="${rcss}/styling.css" >
-	<link rel="stylesheet" href="${rcss}/footerstyle.css">
-	
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<c:url var="rcss" value="resources/css"></c:url>
+<c:url var="rimages" value="resources/images"></c:url>
+
+<link rel="stylesheet" href="${rcss}/navbar-fixed-top.css">
+<link rel="stylesheet" href="${rcss}/styling.css">
+<link rel="stylesheet" href="${rcss}/footerstyle.css">
+
 
 <!-- Begin NavBar -->
 <div class="container-fluid ">
@@ -22,7 +27,7 @@
 
 			<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
-				
+
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse"
 						data-target="#bs-example-navbar-collapse-1">
@@ -35,8 +40,8 @@
 				<div class="collapse navbar-collapse"
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-left">
-						<li><a href="./">
-							<img src="resources/images/logo.png" height="75">
+						<li><a href="./"> <img src="resources/images/logo.png"
+								height="75">
 						</a></li>
 						<li><h1>
 								<a class="navbar-brand" href="./">GAMAZON</a>
@@ -81,35 +86,35 @@
 								<li><a href="#"> Item 1</a></li>
 								<li><a href="#"> Item 2</a></li>
 							</ul></li>
-				<c:if test="${username == null }" >
+						<c:if test="${username == null }">
 
-						<li class="dropdown ${myaccountactive}"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown"><i class="fa fa-lg fa-2x fa-user-circle" 
-								aria-hidden="true"></i> My Account<strong class="caret"></strong></a>
+							<li class="dropdown ${myaccountactive}"><a href="#"
+								class="dropdown-toggle" data-toggle="dropdown"><i
+									class="fa fa-lg fa-2x fa-user-circle" aria-hidden="true"></i>
+									My Account<strong class="caret"></strong></a>
 
-							<ul class="dropdown-menu">
-								<li><a href="login"><i class="fa fa-2x fa-lg fa-address-book"></i> Log In</a></li>
-								<li class="divider"></li>
-								<li><a href="registeration"><i class="fa fa-2x fa-lg fa-user-plus"></i>
-										Register</a></li>
-							</ul>
-						</li>
-				</c:if>
-				<c:if test="${username != null }">
-						
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown"><i
-								class="fa fa-lg fa-2x fa-user-circle" aria-hidden="true"></i> ${user.name}<strong
-								class="caret"></strong></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">My Orders</a></li>
-								<li class="divider"></li>
-								<li><a href="#">Profile</a></li>
-								<li><a href="logout">Logout</a></li>
-							</ul>
-						</li>
-							
-				</c:if>
+								<ul class="dropdown-menu">
+									<li><a href="login"><i
+											class="fa fa-2x fa-lg fa-address-book"></i> Log In</a></li>
+									<li class="divider"></li>
+									<li><a href="registeration"><i
+											class="fa fa-2x fa-lg fa-user-plus"></i> Register</a></li>
+								</ul></li>
+						</c:if>
+						<c:if test="${username != null }">
+
+							<li class="dropdown"><a href="#" class="dropdown-toggle"
+								data-toggle="dropdown"><i
+									class="fa fa-lg fa-2x fa-user-circle" aria-hidden="true"></i>
+									${user.name}<strong class="caret"></strong></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">My Orders</a></li>
+									<li class="divider"></li>
+									<li><a href="#">Profile</a></li>
+									<li><a href="logout">Logout</a></li>
+								</ul></li>
+
+						</c:if>
 
 					</ul>
 				</div>
@@ -121,15 +126,12 @@
 </div>
 <!-- Navbar End -->
 <c:if test="${msg !=null }">
-		<div class="col-md-12">
-			<div class="alert alert-dismissable alert-info">
-				 
-				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
-					×
-				</button>
-				<h4 class="text-center">
-					<strong>Alert!</strong>
-				</h4> <h5 class="text-center"> <strong>${msg }</strong></h5> 
-			</div>
+	<div class="col-md-12r">
+
+		<div class="alert alert-info alert-dismissable">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<div class="text-center"><strong > ${msg }</strong></div>
 		</div>
-</c:if>		
+
+	</div>
+</c:if>

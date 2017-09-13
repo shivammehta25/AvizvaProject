@@ -15,7 +15,7 @@ import com.sun.istack.internal.NotNull;
 @Component
 public class ContactUs {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	@NotEmpty
 	private String name;
