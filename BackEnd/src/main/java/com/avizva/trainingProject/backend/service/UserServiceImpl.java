@@ -1,5 +1,9 @@
 package com.avizva.trainingProject.backend.service;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
@@ -28,6 +32,18 @@ public class UserServiceImpl implements UserService {
 			flag = true;
 		}
 
+		return flag;
+	}
+
+	public boolean authLogin(String username, String password , HttpServletRequest request) {
+		System.out.println("Inside Auth Login");
+		boolean flag = false;
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("username", username);
+		if(userDAO.authLogin(username, password)){
+			flag= true;
+		}
 		return flag;
 	}
 

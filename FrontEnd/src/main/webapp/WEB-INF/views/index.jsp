@@ -14,7 +14,7 @@
 <body>
 <jsp:include page="/WEB-INF/views/includes/header.jsp"></jsp:include>
 <c:url var="rcss" value="resources/css"></c:url>
-	<c:url var="rimages" value="resources/images"></c:url>
+<c:url var="rimages" value="resources/images"></c:url>
 
 <div class="container-fluid ">
 		<div id="carousel1" class="carousel slide" data-ride="carousel" data-interval="3000">
