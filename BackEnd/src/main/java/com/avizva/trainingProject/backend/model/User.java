@@ -61,6 +61,9 @@ public class User {
 	@Column(columnDefinition = "BOOLEAN DEFAULT false")
 	private boolean enable;
 	
+
+	private String onetimepass;
+
 	
 	public String getUsername() {
 		return username;
@@ -141,6 +144,14 @@ public class User {
 
 	public void setAddress(Address address) {
 		this.address = address;
+	}
+
+	public String getOnetimepass() {
+		return onetimepass;
+	}
+
+	public void setOnetimepass(String onetimepass) {
+		this.onetimepass = onetimepass;
 	}
 
 	
