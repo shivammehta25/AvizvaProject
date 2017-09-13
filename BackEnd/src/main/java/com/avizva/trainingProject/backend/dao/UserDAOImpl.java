@@ -46,4 +46,13 @@ public class UserDAOImpl implements UserDAO {
 		return flag;
 	}
 
+	public User getUserByUsername(String username) {
+		Session session = getSession();
+		User user = session.get(User.class, username);
+		return user;
+		
+	}
+	
+	
+
 }
