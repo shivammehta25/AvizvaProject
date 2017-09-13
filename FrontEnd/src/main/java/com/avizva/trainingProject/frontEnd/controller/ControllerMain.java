@@ -3,6 +3,8 @@ package com.avizva.trainingProject.frontEnd.controller;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.HttpMediaTypeNotSupportedException;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -86,5 +89,12 @@ public class ControllerMain {
 		}
 	}
 	
+	@RequestMapping("/logout")
+	public ModelAndView logoutUser(HttpServletRequest request){
+	 HttpSession session=request.getSession(false);
+	 session.invalidate();
+	 return new ModelAndView("index" , "msg" , "Logged out Successfully");	
 	
+	
+	}
 }
