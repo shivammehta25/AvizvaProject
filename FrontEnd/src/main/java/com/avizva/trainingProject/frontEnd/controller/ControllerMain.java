@@ -117,7 +117,6 @@ public class ControllerMain {
 	}
 
 
-
 	@RequestMapping("/logout")
 	public ModelAndView logoutUser(HttpServletRequest request){
 	 HttpSession session=request.getSession(false);
