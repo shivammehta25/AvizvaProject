@@ -68,7 +68,7 @@
 		</div>
 		<div class="col-md-4">
 			<h3 class="text-center text-info">
-				<a href="registeration">Dont have an Account? Register </a>
+				<a href="registeration" style="text-decoration: none">Dont have an Account? Register </a>
 			</h3>
 		</div>
 		<div class="col-md-4">
