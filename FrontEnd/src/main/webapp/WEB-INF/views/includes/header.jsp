@@ -1,4 +1,4 @@
-
+<%@ page isELIgnored="false" %>
 <!-- Begin NavBar -->
 <div class="container-fluid ">
 	<div class="row">
@@ -37,10 +37,10 @@
 								</button>
 							</div>
 						</form>
-						<li class="active"><a href="./"> <i class="fa fa-lg fa-2x fa-home" 
+						<li class="${homeactive } "><a href="./"> <i class="fa fa-lg fa-2x fa-home" 
 						aria-hidden="true"></i> Home
 						</a></li>
-						<li><a href="aboutus"><i class="fa fa-lg fa-2x fa-info-circle" aria-hidden="true"></i>
+						<li class="${aboutusactive } "><a href="aboutus"><i class="fa fa-lg fa-2x fa-info-circle" aria-hidden="true"></i>
 								About Us</a></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown"><i

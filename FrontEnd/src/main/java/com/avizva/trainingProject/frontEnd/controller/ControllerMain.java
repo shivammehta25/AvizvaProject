@@ -44,7 +44,7 @@ public class ControllerMain {
 
 	@RequestMapping("/")
 	public ModelAndView viewIndex(){
-		return new ModelAndView("index");
+		return new ModelAndView("index").addObject("homeactive" , "active");
 	}
 	@RequestMapping("registeration")
 	public ModelAndView registerit(){
@@ -56,7 +56,7 @@ public class ControllerMain {
 	}
 	@RequestMapping("aboutus")
 	public ModelAndView aboutuscall(){
-		return new ModelAndView("aboutus");
+		return new ModelAndView("aboutus").addObject("aboutusactive" , "active");
 	}
 	
 	@RequestMapping("/registerationform")
