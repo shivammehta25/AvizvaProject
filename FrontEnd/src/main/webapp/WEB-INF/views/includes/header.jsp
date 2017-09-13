@@ -1,4 +1,20 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page isELIgnored="false" %>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<c:url var="rcss" value="resources/css"></c:url>
+	<c:url var="rimages" value="resources/images"></c:url>
+
+	<link rel="stylesheet" href="${rcss}/navbar-fixed-top.css">
+	<link rel="stylesheet" href="${rcss}/styling.css" >
+	<link rel="stylesheet" href="${rcss}/footerstyle.css">
+	
+
 <!-- Begin NavBar -->
 <div class="container-fluid ">
 	<div class="row">
@@ -63,7 +79,7 @@
 								<li><a href="#"> Item 1</a></li>
 								<li><a href="#"> Item 2</a></li>
 							</ul></li>
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
+						<li class="dropdown ${myaccountactive}"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown"><i class="fa fa-lg fa-2x fa-user-circle" 
 								aria-hidden="true"></i> My Account<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
