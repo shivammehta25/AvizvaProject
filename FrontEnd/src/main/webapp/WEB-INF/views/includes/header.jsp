@@ -21,8 +21,9 @@
 		<div class="col-md-12">
 
 			<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-			 	
-			 	<div class="navbar-header">
+
+				
+				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse"
 						data-target="#bs-example-navbar-collapse-1">
 						<span class="sr-only">Toggle navigation</span><span
@@ -52,15 +53,16 @@
 								</button>
 							</div>
 						</form>
-						<li class="${homeactive } "><a href="./"> <i class="fa fa-lg fa-2x fa-home" 
-						aria-hidden="true"></i> Home
+						<li class="${homeactive } "><a href="./"> <i
+								class="fa fa-lg fa-2x fa-home" aria-hidden="true"></i> Home
 						</a></li>
-						<li class="${aboutusactive } "><a href="aboutus"><i class="fa fa-lg fa-2x fa-info-circle" aria-hidden="true"></i>
+						<li class="${aboutusactive } "><a href="aboutus"><i
+								class="fa fa-lg fa-2x fa-info-circle" aria-hidden="true"></i>
 								About Us</a></li>
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown"><i
-								class="fa fa-lg fa-2x fa-shopping-basket" aria-hidden="true"></i> Products<strong
-								class="caret"></strong></a>
+								class="fa fa-lg fa-2x fa-shopping-basket" aria-hidden="true"></i>
+								Products<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
 								<li><a href="#">Action</a></li>
 								<li><a href="#">Another action</a></li>
@@ -79,9 +81,11 @@
 								<li><a href="#"> Item 2</a></li>
 							</ul></li>
 				<c:if test="${username == null }" >
+
 						<li class="dropdown ${myaccountactive}"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown"><i class="fa fa-lg fa-2x fa-user-circle" 
 								aria-hidden="true"></i> My Account<strong class="caret"></strong></a>
+
 							<ul class="dropdown-menu">
 								<li><a href="login"><i class="fa fa-2x fa-lg fa-address-book"></i> Log In</a></li>
 								<li class="divider"></li>
@@ -101,11 +105,12 @@
 								<li class="divider"></li>
 								<li><a href="#">My Profile</a></li>
 								<li class="divider"></li>
-								<li><a href="#">Logout</a></li>
+								<li><a href="logout">Logout</a></li>
 							</ul>
 						</li>
 							
 				</c:if>
+
 					</ul>
 				</div>
 
