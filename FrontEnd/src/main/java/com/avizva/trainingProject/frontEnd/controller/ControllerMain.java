@@ -18,6 +18,7 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.avizva.trainingProject.backend.dao.ContactUsDAO;
@@ -94,15 +95,27 @@ public class ControllerMain {
 	}
 
 	@RequestMapping("/forgotpassform")
-	public ModelAndView forgotPassForm(@ModelAttribute User user){
-		return new ModelAndView("resetpass").addObject("msg", "Enter the OTP sent on your mail" );
+	public ModelAndView forgotPassForm(@RequestParam("email") String email){
+		if(userService.forgotPass(email)){
+			return new ModelAndView("resetpass").addObject("msg", "Enter the OTP sent on your mail" );
+		}
+		else{
+			return new ModelAndView("forgotpass").addObject("msg", "Error Occured. Email not found" );
+		}
+		
 	}
 	
 
 	@RequestMapping("/resetpassform")
-	public ModelAndView resetPassForm(@ModelAttribute User user){
-		return new ModelAndView("login").addObject("msg", "Your password has been successfully reset" );
+	public ModelAndView resetPassForm(@RequestParam("email") String email,@RequestParam("onetimepass") String onetimepass, @RequestParam("password") String password){
+		if(userService.resetPass(email, onetimepass, password)){
+			return new ModelAndView("login").addObject("msg", "Your password has been successfully reset" );
+		}
+		else{
+			return new ModelAndView("resetpass").addObject("msg", "Error Occured. Please enter correct OTP" );
+		}
 	}
+
 
 	@RequestMapping("/logout")
 	public ModelAndView logoutUser(HttpServletRequest request){

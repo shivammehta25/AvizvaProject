@@ -6,6 +6,10 @@ import com.avizva.trainingProject.backend.model.User;
 
 public interface UserService {
 	public boolean registerUser(User user);
-	public boolean authLogin(String email , String password , HttpServletRequest request);
+
+	public boolean authLogin(String username , String password , HttpServletRequest request);
+	public boolean forgotPass(String email);
+	public boolean resetPass(String email, String onetimepass, String password);
+
 
 }
