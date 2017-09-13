@@ -9,29 +9,18 @@
 <html>
 <head>
 	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<c:url var="rcss" value="resources/css"></c:url>
-	<c:url var="rimages" value="resources/images"></c:url>
 
-	<link rel="stylesheet" href="${rcss}/navbar-fixed-top.css">
-	<link rel="stylesheet" href="${rcss}/styling.css" >
-	<link rel="stylesheet" href="${rcss}/footerstyle.css">
-	
-	
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GAMAZON | Registration</title>
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/includes/header.jsp"></jsp:include>
+<c:url var="rcss" value="resources/css"></c:url>
+<c:url var="rimages" value="resources/images"></c:url>
 
-<div class="alert col-md-offset-3 col-md-6 alert-danger text-center">
-	<form:errors path ="user.*"></form:errors>  		 
-	</div>
+
+
 	
 
 
@@ -39,6 +28,9 @@
 <c:if test="${msg != null}">
 	<div class="alert col-md-offset-3 col-md-6 alert-info text-center">
   		 <c:out value="${msg }"></c:out>
+	</div>
+	<div class="alert col-md-offset-3 col-md-6 alert-danger text-center">
+	<form:errors path ="user.*"></form:errors>  		 
 	</div>
 	
 </c:if>
@@ -193,9 +185,7 @@
 	
 <jsp:include page="/WEB-INF/views/includes/footer.jsp"></jsp:include>
 
-<!-- Loading Scripts in the End to Reduce Loadtime -->
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js "></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+
 	<script>
 	var check = function() {
   if (document.getElementById('password').value == document.getElementById('confirmpassword').value) {

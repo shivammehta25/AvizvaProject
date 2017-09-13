@@ -21,17 +21,19 @@ import com.avizva.trainingProject.backend.dao.ContactUsDAO;
 import com.avizva.trainingProject.backend.dao.UserDAO;
 import com.avizva.trainingProject.backend.model.ContactUs;
 import com.avizva.trainingProject.backend.model.User;
+import com.avizva.trainingProject.backend.service.ContactUsService;
+import com.avizva.trainingProject.backend.service.UserService;
 
 @Controller
 public class ControllerMain {
 	
 	@Autowired
-	UserDAO userDAO;
+	private UserService userService;
+	
 	@Autowired
-	private MailSender mailSender;
-
-	@Autowired
-	private ContactUsDAO contactUsDAO;
+	private ContactUsService contactUsService;
+	
+	
 	
 	
 	@InitBinder
@@ -48,7 +50,7 @@ public class ControllerMain {
 	}
 	@RequestMapping("registeration")
 	public ModelAndView registerit(){
-		return new ModelAndView("registeration");
+		return new ModelAndView("registeration").addObject("myaccountactive" , "active");
 	}
 	@RequestMapping("contact")
 	public ModelAndView contactcall(){
@@ -61,14 +63,9 @@ public class ControllerMain {
 	
 	@RequestMapping("/registerationform")
 	public ModelAndView registrationForm(@Valid @ModelAttribute User user  , BindingResult result){
-		if(userDAO.registerUser(user) && (!(result.hasErrors()))){
+		if(  userService.registerUser(user)  && (!(result.hasErrors()))){
 			
-			SimpleMailMessage message = new SimpleMailMessage();
-			message.setFrom("Admin@GAMAZON");
-			message.setTo(user.getEmail());
-			message.setSubject("Congratulations on Success");
-			message.setText("Congratulations " + user.getName() + " on Your Successful Registration. ");
-			mailSender.send(message);
+			
 			return new ModelAndView("registeration").addObject("msg", "User Registered Successfully" );
 		}else {
 			return new ModelAndView("registeration").addObject("msg" , "Error While Registering Please Fix error and Continue");
@@ -80,13 +77,8 @@ public class ControllerMain {
 	
 	@RequestMapping("/contactusmail")
 	public ModelAndView contactUsForm(@Valid @ModelAttribute ContactUs contactUs){
-		if(contactUsDAO.contactus(contactUs)){
-			SimpleMailMessage message = new SimpleMailMessage();
-			message.setFrom("Admin@GAMAZON");
-			message.setTo(contactUs.getEmail());
-			message.setSubject("Thank You for Contacting Us");
-			message.setText("Hii " + contactUs.getName() + " thank you for your time we will get back to you as soon as possible. ");
-			mailSender.send(message);
+		if(contactUsService.contactUs(contactUs)){
+			
 			return new ModelAndView("contactus" , "msg" , "Thank You for Contacting Us We will get back to you shortly.");
 		}
 		else{
