@@ -46,14 +46,14 @@
 			<div class="col-md-8 col-md-offset-2">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h2 class="panel-title" style="text-align: center"><<%-- spring:message code='contact.header'></spring:message> --%>Contact Us</h2>
+						<h2 class="panel-title" style="text-align: center"> <spring:message code='contact.header'></spring:message></h2>
 					</div>
 					<div class="panel-body">
 						<form class="form-horizontal" method=post" action="contactusmail" role="form">
 							<div class="form-group">
 
 								<label for="inputEmail3"
-									class="col-sm-2 label-register control-label"><%--  <spring:message code='contact.name'></spring:message> --%> Name </label>
+									class="col-sm-2 label-register control-label">  <spring:message code='contact.name'></spring:message> </label>
 								<div class="col-sm-10">
 									<input type="text" placeholder="Enter Your Name" name="name"
 										required="true" class="form-control" id="inputEmail3" />
@@ -62,7 +62,7 @@
 							<div class="form-group">
 
 								<label for="inputPassword3"
-									class="col-sm-2 label-register control-label"><%--  <spring:message code='label.email'></spring:message> --%>Email </label>
+									class="col-sm-2 label-register control-label">  <spring:message code='contact.email'></spring:message>Email </label>
 								<div class="col-sm-10">
 									<input type="email" class="form-control"
 										placeholder="Enter Your Email" required="true" name="email"
@@ -74,7 +74,7 @@
 							<div class="form-group">
 
 								<label for="inputPassword3"
-									class="col-sm-2 label-register control-label"> <%-- <spring:message code='label.contact'></spring:message> --%> Contact
+									class="col-sm-2 label-register control-label">  <spring:message code='contact.contact'></spring:message> Contact
 								</label>
 								<div class="col-sm-10">
 									<input type="number" pattern="[7-9]{1}[0-9]{9}"
@@ -85,7 +85,7 @@
 							<div class="form-group">
 
 								<label for="inputEmail3"
-									class="col-sm-2 label-register control-label"> <%-- <spring:message code='label.description'></spring:message> --%> Description </label>
+									class="col-sm-2 label-register control-label">  <spring:message code='contact.description'></spring:message> Description </label>
 								<div class="col-sm-10">
 									<input type="text" placeholder="Short Description of Your Query" name="description"
 										required="true" class="form-control" id="inputEmail3" />
@@ -94,7 +94,7 @@
 							<div class="form-group">
 
 								<label for="inputEmail3"
-									class="col-sm-2 label-register control-label"><%-- <spring:message code='label.message'></spring:message>  --%> Message</label>
+									class="col-sm-2 label-register control-label"> <spring:message code='contact.message'></spring:message>  Message</label>
 								<div class="col-sm-10">
 									
 									<textarea placeholder="Your Query" required="true" class="form-control" name="message"></textarea>
