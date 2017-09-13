@@ -33,7 +33,7 @@
 							<div class="form-group">
 								<input type="text" class="form-control">
 								<button class="btn btn-primary btn-lg" type="button">
-									<i class="fa fa-search"></i>
+									<i class="fa fa-search "></i>
 								</button>
 							</div>
 						</form>

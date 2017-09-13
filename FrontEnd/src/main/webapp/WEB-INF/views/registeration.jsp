@@ -29,9 +29,9 @@
 <body>
 <jsp:include page="/WEB-INF/views/includes/header.jsp"></jsp:include>
 
-<div class="alert col-md-offset-3 col-md-6 alert-danger text-center">
+<%-- <div class="alert col-md-offset-3 col-md-6 alert-danger text-center">
 	<form:errors path ="user.*"></form:errors>  		 
-	</div>
+	</div> --%>
 	
 
 
@@ -40,7 +40,9 @@
 	<div class="alert col-md-offset-3 col-md-6 alert-info text-center">
   		 <c:out value="${msg }"></c:out>
 	</div>
-	
+	<div class="alert col-md-offset-3 col-md-6 alert-danger text-center">
+	<form:errors path ="user.*"></form:errors>  		 
+	</div>
 </c:if>
 <div class="col-sm-12 text-center" >
 	<span id="message"></span>
