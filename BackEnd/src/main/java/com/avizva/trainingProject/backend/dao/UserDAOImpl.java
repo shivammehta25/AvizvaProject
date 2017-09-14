@@ -48,9 +48,9 @@ public class UserDAOImpl implements UserDAO {
 		Session session = getSession();
 		user.setEnable(true);
 		session.persist(user);
-
 		flag = true;
 		return flag;
+		
 	}
 	
 	
