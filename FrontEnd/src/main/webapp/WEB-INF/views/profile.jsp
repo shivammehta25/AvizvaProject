@@ -37,7 +37,7 @@
 									<!-- Insert UpdateProfile Form Here -->
 						
 						<form class="form-horizontal" method="post" action="deactivate"
-							role="form">
+							role="form" onsubmit="return(window.confirm('Are you sure you want to deactive you account ?'))">
 							<div class="form-group">
 
 								<label for="inputEmail3"
