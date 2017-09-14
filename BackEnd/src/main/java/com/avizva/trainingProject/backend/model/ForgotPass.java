@@ -7,6 +7,11 @@ import javax.persistence.Id;
 
 import org.springframework.stereotype.Component;
 
+/**
+ * @author Akshay.Chourasia
+ * This module is helpful in resetting user password.
+ */
+
 @Entity
 @Component
 public class ForgotPass {

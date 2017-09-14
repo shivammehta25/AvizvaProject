@@ -10,7 +10,12 @@ import javax.validation.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 
 import com.sun.istack.internal.NotNull;
-
+/**
+ * 
+ * @author Akshay.Chourasia
+ * This is used to generate contactus requests.
+ *
+ */
 @Entity
 @Component
 public class ContactUs {

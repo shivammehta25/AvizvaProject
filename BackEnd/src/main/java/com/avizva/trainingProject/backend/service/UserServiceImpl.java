@@ -17,6 +17,12 @@ import com.avizva.trainingProject.backend.dao.UserDAO;
 import com.avizva.trainingProject.backend.model.ForgotPass;
 import com.avizva.trainingProject.backend.model.User;
 
+/**
+ * 
+ * @author Akshay.Chourasia
+ * @service It makes an automatic bean userServiceImpl acts similar to the repository annotation but is used for service layer  
+ */
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -30,6 +36,18 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private ForgotPass forgotPass;
 	
+	
+	/**
+	 * @param user
+	 * <p>
+	 * In the below method we have created the 
+	 * object of SimpleMailMessage class.
+	 * The user is getting registration conformation by email
+	 * We are fetching the email address using getmethod
+	 * from user object.
+	 * 
+	 *  @return Its return type is boolean.
+	 */
 	private static final Logger LOGGER = Logger.getLogger(UserServiceImpl.class);
 
 
@@ -50,7 +68,17 @@ public class UserServiceImpl implements UserService {
 
 		return flag;
 	}
-
+	
+	/**
+	 * @param username
+	 * @param password
+	 * @param request
+	 * <p>
+	 * The userDAO object is used to
+	 * get the username. The operation of authentication
+	 * of user is applied by calling the method named authLogin
+	 * using userDAO.
+	 */
 	public boolean authLogin(String username, String password, HttpServletRequest request) {
 		boolean flag = false;
 
@@ -65,7 +93,20 @@ public class UserServiceImpl implements UserService {
 		LOGGER.error("<-- User Didnot Authenticated -->");
 		return flag;
 	}
-
+	
+	/**
+	 * @param email
+	 * <p>
+	 * In this method we are applying the logic of 
+	 * forgot password we get the email 
+	 * of user by calling the method findMail
+	 * in forgotPassDAO stored in user object
+	 * after that we have created a 10 digit random number
+	 * as an OTP and sends it to the email address written in the 
+	 * textfield.
+	 * 
+	 * @return Its return type is boolean.
+	 */
 	public boolean forgotPass(String email) {
 		boolean flag = false;
 		User user = forgotPassDAO.findEmail(email);
@@ -103,7 +144,15 @@ public class UserServiceImpl implements UserService {
 		return flag;
 
 	}
-
+	
+	/**
+	 * @param email
+	 * @param otp
+	 * @param password
+	 * 
+	 * <p>
+	 * The resetPass field checks weather the user has entered the correct OTP or not is yea it will change its password
+	 */
 	public boolean resetPass(String email, String otp, String password) {
 		boolean flag = false;
 		User user = forgotPassDAO.findEmail(email);
@@ -119,7 +168,12 @@ public class UserServiceImpl implements UserService {
 		LOGGER.error("<-- Password Cannot be Changed for " + user.getEmail()+ " -->");
 		return flag;
 	}
-	
+	/**
+	 * @param request
+	 * 
+	 * <p> 
+	 * Takes HttpServlet Request and get its session, deactivates the enable field of User model
+	 */
 	public boolean deactivate(HttpServletRequest request)
 	{	
 		boolean flag=false;
@@ -143,6 +197,15 @@ public class UserServiceImpl implements UserService {
 		
 	}
 
+	/**
+	 * @param user
+	 * <p>
+	 * Updates the user by calling its DAO
+	 * if the update is successfull it returns true
+	 * else it returns false
+	 * 
+	 * @return Its return type is boolean.
+	 */
 	public boolean updateUser(User user) {
 		boolean flag = false;
 		if (userDAO.updateUser(user)) {
@@ -154,7 +217,11 @@ public class UserServiceImpl implements UserService {
 		}
 		return flag;
 	}
-	
+	/**
+	 * @param username
+	 * <p>
+	 * It is used to return the User object by its username
+	 */
 	public User getUserByUsername(String username){
 		User user=userDAO.getUserByUsername(username);
 		LOGGER.info("<-- Got Username from the Database -->" + user.getEmail());
