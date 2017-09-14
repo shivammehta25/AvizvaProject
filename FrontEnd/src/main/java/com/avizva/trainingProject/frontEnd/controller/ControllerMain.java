@@ -105,7 +105,7 @@ public class ControllerMain {
 	@RequestMapping("/contactusmail")
 	public ModelAndView contactUsForm(@Valid @ModelAttribute ContactUs contactUs){
 		if(contactUsService.contactUs(contactUs)){
-			
+			LOGGER.info("<--- Post Email Contacting you --->");
 			return new ModelAndView("contactus" , "msg" , "Thank You for Contacting Us We will get back to you shortly.");
 		}
 		else{
