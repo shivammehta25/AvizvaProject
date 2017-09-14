@@ -7,13 +7,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
-import org.springframework.mail.MailSender;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.HttpMediaTypeNotSupportedException;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -21,8 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.avizva.trainingProject.backend.dao.ContactUsDAO;
-import com.avizva.trainingProject.backend.dao.UserDAO;
 import com.avizva.trainingProject.backend.model.ContactUs;
 import com.avizva.trainingProject.backend.model.User;
 import com.avizva.trainingProject.backend.service.ContactUsService;
@@ -37,6 +33,9 @@ public class ControllerMain {
 	@Autowired
 	private ContactUsService contactUsService;
 	
+	private static final Logger LOGGER = Logger.getLogger(ExceptionController.class);
+
+	
 	
 	
 	
@@ -50,32 +49,39 @@ public class ControllerMain {
 
 	@RequestMapping("/")
 	public ModelAndView viewIndex(){
+		LOGGER.info("<--- Reached Index Page --->");
 		return new ModelAndView("index").addObject("homeactive" , "active");
 	}
 	@RequestMapping("/registeration")
 	public ModelAndView registerit(){
+		LOGGER.info("<--- Reached Registration Page --->");
 		return new ModelAndView("registeration").addObject("myaccountactive" , "active");
 	}
 	@RequestMapping("/contact")
 	public ModelAndView contactcall(){
+		LOGGER.info("<--- Reached Contact Page --->");
 		return new ModelAndView("contactus");
 	}
 	@RequestMapping("/aboutus")
 	public ModelAndView aboutuscall(){
+		LOGGER.info("<--- Reached About Us Page --->");
 		return new ModelAndView("aboutus").addObject("aboutusactive" , "active");
 	}
 	
 	
 	@RequestMapping("/forgotpass")
 	public ModelAndView forgotpasscall(){
+		LOGGER.info("<--- Reached ForgotPass Page --->");
 		return new ModelAndView("forgotpass");
 	}
 	@RequestMapping("/resetpass")
 	public ModelAndView resetPassCall(){
+		LOGGER.info("<--- Reached Resetpass Page --->");
 		return new ModelAndView("resetpass");
 	}
 	@RequestMapping("/profile")
 	public ModelAndView profileCall(){
+		LOGGER.info("<--- Reached Profile Page --->");
 		return new ModelAndView("profile");
 	}
 	
@@ -83,7 +89,7 @@ public class ControllerMain {
 	public ModelAndView registrationForm(@Valid @ModelAttribute User user  , BindingResult result){
 		if(  userService.registerUser(user)  && (!(result.hasErrors()))){
 			
-			
+			LOGGER.warn("<--- User " + user.getEmail() +  " Registering  --->");
 			return new ModelAndView("login").addObject("msg", "User Registered Successfully" );
 		}else {
 			return new ModelAndView("registeration").addObject("msg" , "Error While Registering Please Fix error and Continue");

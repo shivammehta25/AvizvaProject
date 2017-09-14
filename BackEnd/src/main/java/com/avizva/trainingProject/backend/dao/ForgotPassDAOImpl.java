@@ -25,11 +25,17 @@ public class ForgotPassDAOImpl implements ForgotPassDAO {
 	
 	public User findEmail(String email){
 		Session session = getSession();
+		try{
 		Query<User> q = (Query<User>) session.createQuery("from User where email =:email");
 		q.setParameter("email", email);
 		List<User> userList = q.list();
 		if(!userList.isEmpty()){
 		return userList.get(0);
+		}}
+		catch(Exception e){
+			
+			return null;
+
 		}
 		return null;
 		
