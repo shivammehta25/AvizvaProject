@@ -75,8 +75,11 @@ public class ControllerMain {
 		return new ModelAndView("resetpass");
 	}
 	@RequestMapping("/profile")
-	public ModelAndView profileCall(){
-		return new ModelAndView("profile");
+	public ModelAndView profileCall(HttpServletRequest request){
+		HttpSession session=request.getSession(false);
+		String username=(String)session.getAttribute("username");
+		User user=userService.getUserByUsername(username);
+		return new ModelAndView("profile","command", user);
 	}
 	
 	@RequestMapping("/registerationform")
@@ -134,6 +137,14 @@ public class ControllerMain {
 	 return new ModelAndView("index" , "msg" , "Logged out Successfully");	
 	}
 	
-	
+	@RequestMapping("/profileupdateform")
+	public ModelAndView profileUpdateForm(@Valid @ModelAttribute User user  , BindingResult result){
+		if(userService.updateUser(user)  && (!(result.hasErrors()))){
+			return new ModelAndView("profile" , "command" , user).addObject("msg", "Your details were successfully updated" );
+		}
+		else{
+			return new ModelAndView("profile" , "command" , user).addObject("msg", "Error Occured. Could not update details." );
+		}
+	}
 }
 
