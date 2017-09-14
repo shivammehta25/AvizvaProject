@@ -74,6 +74,10 @@ public class ControllerMain {
 	public ModelAndView resetPassCall(){
 		return new ModelAndView("resetpass");
 	}
+	@RequestMapping("/profile")
+	public ModelAndView profileCall(){
+		return new ModelAndView("profile");
+	}
 	
 	@RequestMapping("/registerationform")
 	public ModelAndView registrationForm(@Valid @ModelAttribute User user  , BindingResult result){
@@ -128,8 +132,8 @@ public class ControllerMain {
 	 HttpSession session=request.getSession(false);
 	 session.invalidate();
 	 return new ModelAndView("index" , "msg" , "Logged out Successfully");	
-	
-	
 	}
+	
+	
 }
 

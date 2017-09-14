@@ -110,7 +110,7 @@
 								<ul class="dropdown-menu">
 									<li><a href="#">My Orders</a></li>
 									<li class="divider"></li>
-									<li><a href="#">Profile</a></li>
+									<li><a href="profile">Profile</a></li>
 									<li><a href="logout">Logout</a></li>
 								</ul></li>
 

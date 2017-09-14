@@ -57,6 +57,15 @@ public class UserDAOImpl implements UserDAO {
 		
 	}
 	
+	public boolean deactivate(User user){
+		boolean flag=false;
+		Session session=getSession();
+		user.setEnable(false);
+		session.update(user);
+		flag = true;
+		return flag;
+	}
+	
 	
 
 }

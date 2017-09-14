@@ -10,6 +10,8 @@ public interface UserService {
 	public boolean authLogin(String username , String password , HttpServletRequest request);
 	public boolean forgotPass(String email);
 	public boolean resetPass(String email, String onetimepass, String password);
+	
+	public boolean deactivate(HttpServletRequest request);
 
 
 }
