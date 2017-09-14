@@ -126,12 +126,23 @@
 </div>
 <!-- Navbar End -->
 <c:if test="${msg !=null }">
-	<div class="col-md-12r">
+	<div class="col-md-12" id="notificationClose">
 
-		<div class="alert alert-info alert-dismissable">
+		<div class="alert alert-info alert-dismissable" id="notificationClose">
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			<div class="text-center"><strong > ${msg }</strong></div>
 		</div>
 
 	</div>
+	
+	<script>
+	$(document).ready(function () {
+		
+		$("#notificationClose").hide('slow', function(){ $("#notificationClose").remove(); });
+
+		
+		
+	});
+
+	</script>
 </c:if>

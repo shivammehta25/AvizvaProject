@@ -95,6 +95,7 @@ public class ControllerMain {
 			LOGGER.warn("<--- User " + user.getEmail() +  " Registering  --->");
 			return new ModelAndView("login").addObject("msg", "User Registered Successfully" );
 		}else {
+			LOGGER.error("<--- Post Registration Error Occured --->");
 			return new ModelAndView("registeration").addObject("msg" , "Error While Registering Please Fix error and Continue");
 		}
 		
@@ -105,10 +106,11 @@ public class ControllerMain {
 	@RequestMapping("/contactusmail")
 	public ModelAndView contactUsForm(@Valid @ModelAttribute ContactUs contactUs){
 		if(contactUsService.contactUs(contactUs)){
-			
+			LOGGER.info("<--- Post Email Contacting you --->");
 			return new ModelAndView("contactus" , "msg" , "Thank You for Contacting Us We will get back to you shortly.");
 		}
 		else{
+			LOGGER.error("<--- Post Contacting you Error --->");
 			return new ModelAndView("contactus" , "msg" , "Sorry , There was some technical error , Try Again Later ");
 		}
 	}
@@ -116,9 +118,11 @@ public class ControllerMain {
 	@RequestMapping("/forgotpassform")
 	public ModelAndView forgotPassForm(@RequestParam("email") String email){
 		if(userService.forgotPass(email)){
+			LOGGER.info("<--- Inside Forgot Password Controller --->");
 			return new ModelAndView("resetpass").addObject("msg", "Enter the OTP sent on your mail" );
 		}
 		else{
+			LOGGER.error("<--- Post Email Contact , Error Not Found --->");
 			return new ModelAndView("forgotpass").addObject("msg", "Error Occured. Email not found" );
 		}
 		

@@ -31,17 +31,22 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
-			<div class="jumbotron well">
+			<div class="jumbotron well text-center">
 				<h2>
-					Hello, world!
-				</h2>
+					Error
+					</h2>
+					
 				<p>
-					This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+					There is Something Wrong, this is not supposed to happen , We will try our best to solve this issue for furthur . 
 				</p>
-				<p>
-					<a class="btn btn-primary btn-large" href="#">Learn more</a>
-				</p>
-			</div><img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" class="img-rounded" />
+						 <h3 class="text-center">Meanwhile Our Developer Team
+			<p></p>
+				<img alt="Error Gif" src="${rimages }/error.gif" class="center" width=500 />
+			</h3>
+									<p>	 <a href="contactus" class="btn btn-primary btn-large " >Contact Us</a>				</p>
+										 
+						 
+			</div>
 		</div>
 	</div>
 </div>

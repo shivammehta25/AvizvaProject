@@ -5,6 +5,7 @@ import java.util.Random;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailSender;
@@ -29,7 +30,8 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private ForgotPass forgotPass;
 	
-	
+	private static final Logger LOGGER = Logger.getLogger(UserServiceImpl.class);
+
 
 	public boolean registerUser(User user) {
 		boolean flag = false;
@@ -40,8 +42,11 @@ public class UserServiceImpl implements UserService {
 			message.setSubject("Congratulations on Success");
 			message.setText("Congratulations " + user.getName() + " on Your Successful Registration. ");
 			mailSender.send(message);
+			LOGGER.info("<-- Mail Sent and User " + user.getName()+ " --->");
 			flag = true;
+			
 		}
+		LOGGER.error("<-- Registration Failed -->");
 
 		return flag;
 	}
@@ -53,8 +58,11 @@ public class UserServiceImpl implements UserService {
 		if (userDAO.authLogin(username, password)) {
 			session.setAttribute("username", username);
 			session.setAttribute("user", userDAO.getUserByUsername(username));
+			LOGGER.info("<--- User Authenticated "+ username +" --->");
+
 			flag = true;
 		}
+		LOGGER.error("<-- User Didnot Authenticated -->");
 		return flag;
 	}
 
@@ -62,6 +70,7 @@ public class UserServiceImpl implements UserService {
 		boolean flag = false;
 		User user = forgotPassDAO.findEmail(email);
 		if(user == null){
+			LOGGER.error("Cannot Find Mailling Id for forgot pass " + email);
 			return flag;
 		}
 		else
@@ -84,9 +93,11 @@ public class UserServiceImpl implements UserService {
 				message.setSubject("OTP for Password Reset");
 				message.setText("Dear " + user.getName() + ", Your OTP is " + forgotPass.getOtp());
 				mailSender.send(message);
-				// Set flag
+				LOGGER.info("<-- Mailed The OTP to " + user.getEmail() + "-->");
+
 				flag = true;
 			}
+			LOGGER.error("Mail Cannot be sent to " + user.getEmail()+ "-->");
 		}
 
 		return flag;
@@ -95,19 +106,17 @@ public class UserServiceImpl implements UserService {
 
 	public boolean resetPass(String email, String otp, String password) {
 		boolean flag = false;
-		// Call dao.findEmail
 		User user = forgotPassDAO.findEmail(email);
-		System.out.println("Reset pass me user ka object" + user.getEmail());
-		// Call dao.getOtp
 		forgotPass.setEmail(user.getEmail());
 		String dbOtp = forgotPassDAO.getOtp(forgotPass);
-		// Check otp's
 		if (dbOtp.equalsIgnoreCase(otp)) {
-			// Call dao.changePassword
 			user.setPassword(password);
 			forgotPassDAO.changePassword(user);
+			LOGGER.info("<-- Password Changed for "+ user.getEmail() +" --> ");
+
 			flag = true;
 		}
+		LOGGER.error("<-- Password Cannot be Changed for " + user.getEmail()+ " -->");
 		return flag;
 	}
 	
@@ -118,11 +127,18 @@ public class UserServiceImpl implements UserService {
 		HttpSession session=request.getSession();
 		user=(User)session.getAttribute("user");
 		if(user == null){
+			LOGGER.error("<-- Cannot Fetch User from Database for Deactivation -->");
 			return flag;
 		}
+		if(userDAO.deactivate(user)){
+			LOGGER.info("<-- User Deactivated "  + user.getEmail()+ "  -->");
+			flag = true;
+		}else{
+			LOGGER.error("<-- User Couldnt Not be Deactivated " + user.getEmail() + "  -->");
+			
+		}
 		
-		userDAO.deactivate(user);
-		flag=true;
+		
 		return flag;
 		
 	}
@@ -130,13 +146,18 @@ public class UserServiceImpl implements UserService {
 	public boolean updateUser(User user) {
 		boolean flag = false;
 		if (userDAO.updateUser(user)) {
+			LOGGER.info("<-- User Updated " + user.getEmail() + "  -->");
+
 			flag = true;
+		}else {
+			LOGGER.error("<-- Error Updating User  --> " + user.getEmail());
 		}
 		return flag;
 	}
 	
 	public User getUserByUsername(String username){
 		User user=userDAO.getUserByUsername(username);
+		LOGGER.info("<-- Got Username from the Database -->" + user.getEmail());
 		return user;
 	}
 

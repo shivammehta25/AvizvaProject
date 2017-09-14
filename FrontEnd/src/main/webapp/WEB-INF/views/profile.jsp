@@ -104,7 +104,7 @@
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-2">
 
-									<input type="button" class="btn btn-success" onclick="toggle()" value="Edit">
+									<input type="button" class="btn btn-success" onclick="toggle()" id="editbutton" value="Edit">
 									<span id="submitbutton"></span>
 								</div>
 							</div>
@@ -168,7 +168,9 @@
 		var togg = document.getElementById('fieldset');
 		fieldset.removeAttribute("disabled");
 		var submit=document.getElementById("submitbutton");
-		submit.innerHTML="<input type='submit' class='btn btn-success' value='Update'>"
+		submit.innerHTML="<input type='submit' class='btn btn-success' value='Update'>";
+		$("#editbutton").remove();
+
 	}
 	</script>
 </body>
