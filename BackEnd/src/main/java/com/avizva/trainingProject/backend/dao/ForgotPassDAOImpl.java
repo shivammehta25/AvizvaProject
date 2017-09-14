@@ -2,9 +2,9 @@ package com.avizva.trainingProject.backend.dao;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -43,12 +43,19 @@ public class ForgotPassDAOImpl implements ForgotPassDAO {
 	 */
 	public User findEmail(String email){
 		Session session = getSession();
-		@SuppressWarnings("unchecked")
-		Query<User> q = (Query<User>) session.createQuery("from User where email =:email");
+
+		try{
+		Query q =  session.createQuery("from User where email =:email");
+
 		q.setParameter("email", email);
 		List<User> userList = q.list();
 		if(!userList.isEmpty()){
 		return userList.get(0);
+		}}
+		catch(Exception e){
+			
+			return null;
+
 		}
 		return null;
 		
@@ -96,8 +103,9 @@ public class ForgotPassDAOImpl implements ForgotPassDAO {
 	 */
 	public String getOtp(ForgotPass forgotPass){
 		Session session=getSession();
-		@SuppressWarnings("unchecked")
-		Query<ForgotPass> q = (Query<ForgotPass>) session.createQuery("from ForgotPass where email =:email");
+
+		Query q =  session.createQuery("from ForgotPass where email =:email");
+
 		q.setParameter("email", forgotPass.getEmail());
 		List<ForgotPass> forgotPassList = q.list();
 		System.out.println(forgotPassList.get(0));

@@ -12,5 +12,9 @@ public interface UserService {
 	public boolean resetPass(String email, String onetimepass, String password);
 	public boolean deactivate(HttpServletRequest request);
 
+	public boolean updateUser(User user);
+	
+	public User getUserByUsername(String username);
+
 
 }

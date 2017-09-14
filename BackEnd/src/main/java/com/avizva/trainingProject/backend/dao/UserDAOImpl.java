@@ -5,7 +5,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
+import org.hibernate.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -35,7 +35,7 @@ public class UserDAOImpl implements UserDAO {
 	public boolean authLogin(String username, String password) {
 		boolean flag = false;
 		Session session = getSession();
-			Query<User> q = (Query<User>) session.createQuery("from User where username =:username and password =:password");
+			Query q =  session.createQuery("from User where username =:username and password =:password");
 			q.setParameter("username", username);
 			q.setParameter("password", password);
 			List<User> userList = q.list();
@@ -46,10 +46,6 @@ public class UserDAOImpl implements UserDAO {
 		return flag;
 	}
 	
-	
-	
-	
-
 	public User getUserByUsername(String username) {
 		Session session = getSession();
 		User user = session.get(User.class, username);
@@ -61,6 +57,14 @@ public class UserDAOImpl implements UserDAO {
 		boolean flag=false;
 		Session session=getSession();
 		user.setEnable(false);
+		session.update(user);
+		flag = true;
+		return flag;
+	}
+
+	public boolean updateUser(User user) {
+		boolean flag = false;
+		Session session = getSession();
 		session.update(user);
 		flag = true;
 		return flag;

@@ -44,7 +44,6 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>4.3.10.RELEASE</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/javax.mail/javax.mail-api -->
 		<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
 		<dependency>
 			<groupId>javax.mail</groupId>
@@ -57,7 +56,8 @@
 			<artifactId>spring-context-support</artifactId>
 			<version>4.3.10.RELEASE</version>
 		</dependency>
-
+		
+		
 
 
 		<dependency>
