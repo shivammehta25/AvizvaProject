@@ -35,7 +35,10 @@
 						</h2>
 					</div>
 					<div class="panel-body">
+					
 						<form:form class="form-horizontal" role="form" method="post" action="profileupdateform" onsubmit="return(check())">
+						<fieldset id="fieldset" disabled > 
+						
 							<form:hidden path="username" />
 							<form:hidden path="password" />
 							<div class="form-group">
@@ -97,12 +100,16 @@
 									<form:input placeholder="Enter New Country" path="address.country" required="true" class="form-control" id="newCountry" />									
 								</div>
 							</div>
+							</fieldset>
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-2">
-									<input type="submit" class="btn btn-success" value="Update">
-										
+									<input type="button" class="btn btn-success" onclick="toggle()" value="Edit">
+									<span id="submitbutton"></span>
 								</div>
 							</div>
+						
+							
+							
 						</form:form>
 					</div>
 				</div>
@@ -156,6 +163,13 @@
     return false;
   }
 }
+	
+	var toggle = function(){
+		var togg = document.getElementById('fieldset');
+		fieldset.removeAttribute("disabled");
+		var submit=document.getElementById("submitbutton");
+		submit.innerHTML="<input type='submit' class='btn btn-success' value='Update'>"
+	}
 	</script>
 </body>
 </html>

@@ -85,7 +85,7 @@ public class ControllerMain {
 		String username=(String)session.getAttribute("username");
 		User user=userService.getUserByUsername(username);
 		LOGGER.info("<--- Reached Profile Page of " + user.getEmail() + " --->");
-		return new ModelAndView("profile","command", user);
+		return new ModelAndView("profile","command", user).addObject("disabled" , "yes");
 	}
 	
 	@RequestMapping("/registerationform")
@@ -142,6 +142,7 @@ public class ControllerMain {
 	 session.invalidate();
 	 return new ModelAndView("index" , "msg" , "Logged out Successfully");	
 	}
+	
 	
 	@RequestMapping("/profileupdateform")
 	public ModelAndView profileUpdateForm(@Valid @ModelAttribute User user  , BindingResult result){
