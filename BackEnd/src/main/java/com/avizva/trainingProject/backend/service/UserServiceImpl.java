@@ -110,5 +110,21 @@ public class UserServiceImpl implements UserService {
 		}
 		return flag;
 	}
+	
+	public boolean deactivate(HttpServletRequest request)
+	{	
+		boolean flag=false;
+		User user = null;
+		HttpSession session=request.getSession();
+		user=(User)session.getAttribute("user");
+		if(user == null){
+			return flag;
+		}
+		
+		userDAO.deactivate(user);
+		flag=true;
+		return flag;
+		
+	}
 
 }

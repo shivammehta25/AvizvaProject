@@ -39,7 +39,7 @@
 						</h2>
 					</div>
 					<div class="panel-body">
-						<form class="form-horizontal" method=post " action="contactusmail"
+						<form class="form-horizontal" method="post " action="contactusmail"
 							role="form">
 							<div class="form-group">
 

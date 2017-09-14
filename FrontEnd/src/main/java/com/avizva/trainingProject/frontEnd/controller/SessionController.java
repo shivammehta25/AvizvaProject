@@ -2,6 +2,7 @@ package com.avizva.trainingProject.frontEnd.controller;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,5 +35,16 @@ public class SessionController {
 			
 		return new ModelAndView("login").addObject("msg" , "Invalid Username and Password");
 		
+	}
+	@RequestMapping("/deactivate")
+	public ModelAndView deactivateUser(HttpServletRequest request){
+	 HttpSession session=request.getSession(false);
+	 if(userService.deactivate(request)){
+	 session.invalidate();
+	 return new ModelAndView("index" , "msg" , "Deactivated Successfully");
+	 }
+	 else {
+		 return new ModelAndView("index" , "msg" ,"User Already Deactivated");
+	 }
 	}
 }
