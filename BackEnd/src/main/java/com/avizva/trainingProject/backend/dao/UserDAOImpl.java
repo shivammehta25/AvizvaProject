@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.avizva.trainingProject.backend.model.User;
 
-@Repository
+@Repository("userDAOImpl")
 @Transactional
 public class UserDAOImpl implements UserDAO {
 	@Autowired
@@ -27,9 +27,9 @@ public class UserDAOImpl implements UserDAO {
 		Session session = getSession();
 		user.setEnable(true);
 		session.persist(user);
-
 		flag = true;
 		return flag;
+		
 	}
 
 	public boolean authLogin(String username, String password) {
