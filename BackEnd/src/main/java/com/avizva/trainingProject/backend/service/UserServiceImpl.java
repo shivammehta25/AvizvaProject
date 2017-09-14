@@ -127,4 +127,17 @@ public class UserServiceImpl implements UserService {
 		
 	}
 
+	public boolean updateUser(User user) {
+		boolean flag = false;
+		if (userDAO.updateUser(user)) {
+			flag = true;
+		}
+		return flag;
+	}
+	
+	public User getUserByUsername(String username){
+		User user=userDAO.getUserByUsername(username);
+		return user;
+	}
+
 }
