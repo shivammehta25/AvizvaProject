@@ -10,13 +10,24 @@ import com.avizva.trainingProject.backend.model.ContactUs;
 
 @Service
 public class ContactUsServiceImpl implements ContactUsService {
-	
+	/**
+	 * @autowired The ContactUSDAO's object is created by the annotation 
+	 *
+	 */
 	@Autowired
 	private ContactUsDAO contactUsDAO;
 	
+	/**
+	 * @autowired The mail sender bean from the application's configuration file 
+	 * is autowired
+	 */
 	@Autowired
 	private MailSender mailSender;
 	
+	/**
+	 * The contact
+	 * 
+	 */
 	public boolean contactUs(ContactUs contactUs){
 		boolean flag=false;
 		if(contactUsDAO.contactus(contactUs)){

@@ -99,6 +99,10 @@ public class ForgotPassDAOImpl implements ForgotPassDAO {
 		
 		
 	/**
+	 * In this method we are fetching the one time password
+	 * present in database by firing the query which
+	 * returns the list so we store it in a list
+	 * and returns the one time password. 
 	 *  
 	 */
 	public String getOtp(ForgotPass forgotPass){
@@ -107,6 +111,7 @@ public class ForgotPassDAOImpl implements ForgotPassDAO {
 		Query q =  session.createQuery("from ForgotPass where email =:email");
 
 		q.setParameter("email", forgotPass.getEmail());
+		@SuppressWarnings("unchecked")
 		List<ForgotPass> forgotPassList = q.list();
 		System.out.println(forgotPassList.get(0));
 		return forgotPassList.get(0).getOtp();
