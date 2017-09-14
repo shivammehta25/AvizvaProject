@@ -31,7 +31,7 @@
 			<div class="col-md-8 col-md-offset-2">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h2 class="panel-title" style="text-align: center">My Profile
+						<h2 class="panel-title" style="text-align: center">MY PROFILE
 						</h2>
 					</div>
 					<div class="panel-body">
@@ -90,8 +90,8 @@
 									<form:input placeholder="Enter New City" path="address.city" required="true" class="form-control" id="newCity" />									
 								</div>
 							</div>
-							<div class="newCountry">
-								<label for="inputEmail3"
+							<div class="form-group">
+								<label for="newCountry"
 									class="col-sm-2 label-register control-label">   <spring:message code='label.address.country'></spring:message>  </label>
 								<div class="col-sm-10">
 									<form:input placeholder="Enter New Country" path="address.country" required="true" class="form-control" id="newCountry" />									
@@ -99,7 +99,7 @@
 							</div>
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-2">
-									<input type="submit" class="btn btn-success" value="Update">
+									<input type="submit" class="btn btn-success" value="Update Profile">
 										
 								</div>
 							</div>
@@ -121,8 +121,7 @@
 							onsubmit="return(window.confirm('Are you sure you want to deactive you account ?'))">
 							<div class="form-group">
 
-								<label for="inputEmail3"
-									class="col-sm-8 label-register control-label"> Click
+								<label class="col-sm-8 label-register control-label"> Click
 									Deactivate to Temporarily Deactivate Your Account </label>
 							</div>
 							<div class="form-group">
@@ -130,7 +129,7 @@
 
 									<button type="submit" class="btn btn-danger">
 										<i class="fa fa-address-book fa-lg fa-2x"></i> &nbsp;
-										Deactivate
+										Deactivate Profile
 									</button>
 								</div>
 							</div>
