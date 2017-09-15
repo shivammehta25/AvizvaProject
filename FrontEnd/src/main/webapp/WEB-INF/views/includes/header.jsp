@@ -126,23 +126,25 @@
 </div>
 <!-- Navbar End -->
 <c:if test="${msg !=null }">
-	<div class="col-md-12" id="notificationClose">
 
-		<div class="alert alert-info alert-dismissable" id="notificationClose">
+		<div class="alert alert-info alert-dismissable" id="success-alert">
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			<div class="text-center"><strong > ${msg }</strong></div>
 		</div>
 
-	</div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
 	
 	<script>
-	$(document).ready(function () {
-		
-		$("#notificationClose").hide('slow', function(){ $("#notificationClose").remove(); });
+	$(document).ready (function(){
+        
+        setTimeout(function showAlert() {
+            $("#success-alert").slideUp(500, function(){
+           $("#success-alert").slideUp(500);
+           $("#success-alert").remove();
+            });   
+        }, 2000);
+});
 
-		
-		
-	});
 
 	</script>
 </c:if>

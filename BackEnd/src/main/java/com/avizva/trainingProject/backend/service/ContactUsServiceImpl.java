@@ -18,15 +18,13 @@ public class ContactUsServiceImpl implements ContactUsService {
 	@Autowired
 	private ContactUsDAO contactUsDAO;
 	
-<<<<<<< HEAD
 	/**
 	 * @autowired The mail sender bean from the application's configuration file 
 	 * is autowired
 	 */
-=======
+
 	private static final Logger LOGGER = Logger.getLogger(ContactUsServiceImpl.class);
 
->>>>>>> 327eec8ae716d0d86853c8f0998ee03daf64797f
 	@Autowired
 	private MailSender mailSender;
 	
