@@ -23,6 +23,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
+
+
+
+
 @Entity
 @Component
 public class User {
@@ -40,6 +44,7 @@ public class User {
 	@NotEmpty
 	private String password;
 	
+	@NotEmpty
 	@Email
 	private String email;
 
@@ -55,9 +60,15 @@ public class User {
 	@DateTimeFormat(pattern="dd/MM/yyyy")
 	private Date dob;
 
-	
+	/**
+	 * This variable is for determining whether the user is admistrator or not.
+	 */
 	private String role;
-
+	
+	/**
+	 * This is used to activate and deactivate user's account
+	 */
+	
 	@Column(columnDefinition = "BOOLEAN DEFAULT false")
 	private boolean enable;
 	

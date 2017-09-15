@@ -5,6 +5,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
+
+/**
+ * 
+ * @author Akshay.Chourasia
+ * @entity annotation used to map the class instances with the entities of Database.  
+ *
+ */
 @Entity
 public class Address {
 
