@@ -90,7 +90,7 @@ public class UserServiceImpl implements UserService {
 
 			flag = true;
 		}
-		LOGGER.error("<-- User Didnot Authenticated -->");
+		LOGGER.error("<-- User Not Authenticated -->");
 		return flag;
 	}
 	

@@ -27,9 +27,8 @@ public class UserDAOTest {
 //		address.setCity("Test");
 //		address.setCountry("Test");
 //		User user=new User();
-//		user.setUsername("Test3");
+//		user.setUsername("Test");
 //		user.setName("Test");
-//		user.setEmail("Test@Test.Test");
 //		user.setPassword("Test");
 //		user.setAddress(address);
 //		user.setContact(0L);
@@ -88,3 +87,4 @@ public class UserDAOTest {
 	}
 }
 */
+
