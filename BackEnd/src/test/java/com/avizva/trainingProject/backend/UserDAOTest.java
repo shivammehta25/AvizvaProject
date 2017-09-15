@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.avizva.trainingProject.backend.config.ApplicationContextConfig;
+import com.avizva.trainingProject.backend.config.TestApplicationContextConfig;
 import com.avizva.trainingProject.backend.dao.UserDAO;
 import com.avizva.trainingProject.backend.dao.UserDAOImpl;
 import com.avizva.trainingProject.backend.model.Address;
@@ -13,7 +14,7 @@ import com.avizva.trainingProject.backend.model.User;
 
 public class UserDAOTest {
 	
-	private AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext(ApplicationContextConfig.class);
+	private AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext(TestApplicationContextConfig.class);
 	private UserDAO userDAOImpl=(UserDAO)context.getBean("userDAOImpl");
 	
 	@Test

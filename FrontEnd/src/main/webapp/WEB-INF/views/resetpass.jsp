@@ -37,7 +37,7 @@
 							
 							<div class="form-group">
 
-								<label for="inputPassword3"
+								<label for="email"
 									class="col-sm-2 label-register control-label"> <spring:message
 										code='resetpass.email'></spring:message>
 								</label>
@@ -50,7 +50,7 @@
 							
 							<div class="form-group">
 
-								<label for="inputEmail3"
+								<label for="otp"
 									class="col-sm-2 label-register control-label">  <spring:message code='resetpass.onetimepass'></spring:message> </label>
 								<div class="col-sm-10">
 									<input type="text" placeholder="Enter Your OTP" name="otp"
@@ -60,7 +60,7 @@
 							
 							<div class="form-group">
 
-								<label for="inputPassword3"
+								<label for="password"
 									class="col-sm-2 label-register control-label"> <spring:message code='resetpass.password'></spring:message></label>
 								<div class="col-sm-10">
 									<input type="password" class="form-control"
@@ -71,7 +71,7 @@
 
 							<div class="form-group">
 
-								<label for="inputPassword3"
+								<label for="confirmpassword"
 									class="col-sm-2 label-register control-label"> <spring:message code='resetpass.cpassword'></spring:message>
 								</label>
 								<div class="col-sm-10">

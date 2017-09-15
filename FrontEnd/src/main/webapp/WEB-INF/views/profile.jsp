@@ -18,12 +18,12 @@
 	<c:url var="rcss" value="resources/css"></c:url>
 	<c:url var="rimages" value="resources/images"></c:url>
 
-	<c:if test="${msg != null}">
+	<%-- <c:if test="${msg != null}">
 		<div class="alert col-md-offset-3 col-md-6 alert-danger text-center">
 			<form:errors path="user.*"></form:errors>
 		</div>
 	</c:if>
-
+ --%>
 	
 	<div class="container-fluid">
 		<div class="row">
@@ -120,7 +120,7 @@
 			<div class="col-md-8 col-md-offset-2">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h2 class="panel-title" style="text-align: center">Deactivate Account
+						<h2 class="panel-title" style="text-align: center">DEACTIVATE ACCOUNT
 						</h2>
 					</div>
 					<div class="panel-body">
@@ -137,7 +137,7 @@
 
 									<button type="submit" class="btn btn-danger">
 										<i class="fa fa-address-book fa-lg fa-2x"></i> &nbsp;
-										Deactivate Profile
+										Deactivate
 									</button>
 								</div>
 							</div>
