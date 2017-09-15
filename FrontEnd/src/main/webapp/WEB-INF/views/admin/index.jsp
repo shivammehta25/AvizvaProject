@@ -9,22 +9,34 @@
 <jsp:include page="/WEB-INF/views/includes/header.jsp"></jsp:include>
 <body>
 
+	<!--  Started Sidebar -->
+	
+
+	<!--  Ended Sidebar -->
+
+
 	<div class="panel panel-default">
 		<div class="panel-heading1">
-			<h2 class="panel-title" style="text-align: center"><a href="managecat">Manage Categories</a></h2>
+			<h2 class="panel-title" style="text-align: center">
+				<a href="managecat">Manage Categories</a>
+			</h2>
 		</div>
-		
+
 		<div class="panel-heading2">
-			<h2 class="panel-title" style="text-align: center"><a href="manageprod">Manage Products</a></h2>
+			<h2 class="panel-title" style="text-align: center">
+				<a href="manageprod">Manage Products</a>
+			</h2>
 		</div>
-		
-		
+
+
 		<div class="panel-heading3">
-			<h2 class="panel-title" style="text-align: center"><a href="managesup">Manage Suppliers</a></h2>
+			<h2 class="panel-title" style="text-align: center">
+				<a href="managesup">Manage Suppliers</a>
+			</h2>
 		</div>
-		
+
 
 	</div>
- </body>
+</body>
 <jsp:include page="/WEB-INF/views/includes/footer.jsp"></jsp:include>
 </html>
