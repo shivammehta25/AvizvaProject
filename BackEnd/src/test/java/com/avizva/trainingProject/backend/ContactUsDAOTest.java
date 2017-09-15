@@ -6,13 +6,14 @@ import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.avizva.trainingProject.backend.config.ApplicationContextConfig;
+import com.avizva.trainingProject.backend.config.TestApplicationContextConfig;
 import com.avizva.trainingProject.backend.dao.ContactUsDAO;
 import com.avizva.trainingProject.backend.dao.ForgotPassDAO;
 import com.avizva.trainingProject.backend.model.ContactUs;
 
 public class ContactUsDAOTest {
 	
-	private AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext(ApplicationContextConfig.class);
+	private AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext(TestApplicationContextConfig.class);
 	private ContactUsDAO contactUsDAOImpl=(ContactUsDAO)context.getBean("contactUsDAOImpl");
 	
 	@Test

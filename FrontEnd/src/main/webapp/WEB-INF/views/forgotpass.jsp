@@ -21,12 +21,12 @@
 
 
 
-	<c:if test="${msg != null}">
+	<%-- <c:if test="${msg != null}">
 		<div class="alert col-md-offset-3 col-md-6 alert-info text-center">
 			<c:out value="${msg }"></c:out>
 		</div>
 
-	</c:if>
+	</c:if> --%>
 
 	<div class="container">
 		<div class="row">
