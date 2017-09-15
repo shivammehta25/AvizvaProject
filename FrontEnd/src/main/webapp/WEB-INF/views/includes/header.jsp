@@ -142,7 +142,7 @@
            $("#success-alert").slideUp(500);
            $("#success-alert").remove();
             });   
-        }, 3000);
+        }, 2000);
 });
 
 
