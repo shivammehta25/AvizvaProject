@@ -22,6 +22,7 @@ public class ContactUsServiceImpl implements ContactUsService {
 	 * @autowired The mail sender bean from the application's configuration file 
 	 * is autowired
 	 */
+
 	private static final Logger LOGGER = Logger.getLogger(ContactUsServiceImpl.class);
 
 	@Autowired

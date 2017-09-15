@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
-import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
@@ -36,6 +35,7 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private ForgotPass forgotPass;
 	
+
 	
 	/**
 	 * @param user
@@ -48,8 +48,8 @@ public class UserServiceImpl implements UserService {
 	 * 
 	 *  @return Its return type is boolean.
 	 */
-	private static final Logger LOGGER = Logger.getLogger(UserServiceImpl.class);
 
+	private static final Logger LOGGER = Logger.getLogger(UserServiceImpl.class);
 
 	public boolean registerUser(User user) {
 		boolean flag = false;
