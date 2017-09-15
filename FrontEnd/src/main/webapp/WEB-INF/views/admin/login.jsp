@@ -33,10 +33,10 @@
 				<div class="col-md-8 col-md-offset-2">
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h2 class="panel-title" style="text-align: center">LOG IN</h2>
+							<h2 class="panel-title" style="text-align: center">ADMIN LOG IN</h2>
 						</div>
 						<div class="panel-body">
-							<form role="form" method="post" action="loginform">
+							<form role="form" method="post" action="perform_login">
 								<div class="form-group">
 
 									<label for="exampleInputEmail1"> Username </label> <input

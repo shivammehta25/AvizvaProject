@@ -1,4 +1,4 @@
-package com.avizva.trainingProject.backend;
+/*package com.avizva.trainingProject.backend;
 
 import static org.junit.Assert.*;
 
@@ -28,3 +28,4 @@ public class ContactUsDAOTest {
 	}
 
 }
+*/

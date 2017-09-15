@@ -71,7 +71,7 @@ public class User {
 	 */
 	
 	@Column(columnDefinition = "BOOLEAN DEFAULT false")
-	private boolean enable;
+	private boolean enabled;
 	
 
 	
@@ -140,12 +140,12 @@ public class User {
 		this.role = role;
 	}
 
-	public boolean isEnable() {
-		return enable;
+	public boolean isEnabled() {
+		return enabled;
 	}
 
-	public void setEnable(boolean enable) {
-		this.enable = enable;
+	public void setEnabled(boolean enable) {
+		this.enabled = enable;
 	}
 
 	public Address getAddress() {
