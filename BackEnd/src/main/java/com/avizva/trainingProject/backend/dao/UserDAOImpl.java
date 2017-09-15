@@ -46,7 +46,7 @@ public class UserDAOImpl implements UserDAO {
 	public boolean registerUser(User user) {
 		boolean flag = false;
 		Session session = getSession();
-		user.setEnable(true);
+		user.setEnabled(true);
 		session.persist(user);
 		flag = true;
 		return flag;
@@ -92,7 +92,7 @@ public class UserDAOImpl implements UserDAO {
 	public boolean deactivate(User user){
 		boolean flag=false;
 		Session session=getSession();
-		user.setEnable(false);
+		user.setEnabled(false);
 		session.update(user);
 		flag = true;
 		return flag;
