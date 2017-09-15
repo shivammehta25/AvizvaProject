@@ -21,4 +21,26 @@ public class AdminController {
 		return new ModelAndView("admin/x");
 	}
 	
+	@RequestMapping("/managecat")
+	public ModelAndView manageCategories(){
+		
+		
+		return new ModelAndView("admin/categories");
+		
+	}
+	
+	@RequestMapping("/manageprod")
+	public ModelAndView manageProducts(){
+		
+		
+		return new ModelAndView("admin/products");
+		
+	}
+	
+	@RequestMapping("/managesup")
+	public ModelAndView manageSuppliers(){
+		return new ModelAndView("admin/suppliers");
+		
+	}
+	
 }
