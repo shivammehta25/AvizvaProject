@@ -26,7 +26,12 @@ public class Supplier {
 	private String supplieraddress;
 	
 	@NotNull
+	private String supplierName;
+	
+	@NotNull
 	private Long suppliercontact;
+	
+	private boolean enabled;
 
 	public int getSupplierid() {
 		return supplierid;
@@ -51,6 +56,23 @@ public class Supplier {
 	public void setSuppliercontact(Long suppliercontact) {
 		this.suppliercontact = suppliercontact;
 	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public String getSupplierName() {
+		return supplierName;
+	}
+
+	public void setSupplierName(String supplierName) {
+		this.supplierName = supplierName;
+	}
+	
 	
 	
 	
