@@ -20,8 +20,16 @@
 
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-12">
-				<h2 class="text-center" style="color: black;">About Us</h2>
+			<div class="col-md-8 col-md-offset-2">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h2 class="panel-title" style="text-align: center">ABOUT US
+						</h2>
+					</div>
+					<div class="panel-body">
+					
+					
+					<div class="col-md-12">
 				<div class="jumbotron">
 					<h2>GAMAZON!</h2>
 					<p>We are a company filled with IT Geeks for IT Geeks</p>
@@ -78,7 +86,14 @@
 						</blockquote>
 					</div>
 				</div>
+			</div>	
+							
+								
+					</div>
+				</div>
 			</div>
+			
+			
 		</div>
 	</div>
 
