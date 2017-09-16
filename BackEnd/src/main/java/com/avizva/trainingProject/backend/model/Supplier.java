@@ -8,7 +8,6 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.stereotype.Component;
 
-
 /**
  * 
  * @author Akshay Chourasia
@@ -17,19 +16,24 @@ import org.springframework.stereotype.Component;
 @Entity
 @Component
 public class Supplier {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int supplierId;
-	
+
 	@NotNull
 	private String supplierName;
-	
+
 	@NotNull
 	private String supplierAddress;
-	
+
 	@NotNull
 	private Long supplierContact;
+
+	@NotNull
+	private Long suppliercontact;
+
+	private boolean enabled;
 
 	public int getSupplierId() {
 		return supplierId;
@@ -55,6 +59,14 @@ public class Supplier {
 		this.supplierContact = supplierContact;
 	}
 
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
 	public String getSupplierName() {
 		return supplierName;
 	}
@@ -62,10 +74,5 @@ public class Supplier {
 	public void setSupplierName(String supplierName) {
 		this.supplierName = supplierName;
 	}
-
-	
-	
-	
-	
 
 }
