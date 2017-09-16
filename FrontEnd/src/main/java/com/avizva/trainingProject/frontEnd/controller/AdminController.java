@@ -17,19 +17,20 @@ public class AdminController {
 		return new ModelAndView("admin/login");
 	}
 
+	@RequestMapping("/adminx")
+	public ModelAndView callX(){
+		return new ModelAndView("admin/x");
+	}
 
 	@RequestMapping("/adminmanagecat")
 	public ModelAndView manageCategories() {
-
 		return new ModelAndView("admin/categories");
 
 	}
 
 	@RequestMapping("/adminmanageprod")
-	public ModelAndView manageProducts() {
-
+	public ModelAndView manageProducts(){
 		return new ModelAndView("admin/products");
-
 	}
 
 	@RequestMapping("/adminmanagesupp")
