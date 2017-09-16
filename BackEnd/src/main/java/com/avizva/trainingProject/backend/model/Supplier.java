@@ -1,5 +1,6 @@
 package com.avizva.trainingProject.backend.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,7 +31,7 @@ public class Supplier {
 	@NotNull
 	private Long supplierContact;
 
-
+	@Column(columnDefinition = "BOOLEAN DEFAULT false")
 	private boolean enabled;
 
 	public int getSupplierId() {

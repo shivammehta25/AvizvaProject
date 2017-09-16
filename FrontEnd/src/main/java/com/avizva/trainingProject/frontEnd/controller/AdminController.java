@@ -33,10 +33,6 @@ public class AdminController {
 		return new ModelAndView("admin/products");
 	}
 
-	@RequestMapping("/adminmanagesupp")
-	public ModelAndView manageSuppliers() {
-		return new ModelAndView("admin/suppliers");
-
-	}
+	//AdminManageCat in Supplier Controller
 
 }

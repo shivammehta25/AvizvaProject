@@ -30,6 +30,7 @@ public class SupplierDAOImpl implements SupplierDAO {
 		boolean flag=false;
 		try{
 		Session session=getSession();
+		supplier.setEnabled(true);
 		session.save(supplier);
 		flag=true;
 		LOGGER.info("<-- Supplier added " + supplier.getSupplierName() + "--> ");
@@ -48,9 +49,10 @@ public class SupplierDAOImpl implements SupplierDAO {
 		boolean flag=false;
 		Session session=getSession();
 		try{
+			supplier.setEnabled(true);
 		session.update(supplier);
 		flag=true;
-			LOGGER.info("<-- Supplier Updated " + supplier.getSupplierName() + " -->");
+		LOGGER.info("<-- Supplier Updated " + supplier.getSupplierName() + " -->");
 		}catch(Exception e){
 			LOGGER.error("<-- Error Updating Supplier ");
 		}
@@ -62,7 +64,7 @@ public class SupplierDAOImpl implements SupplierDAO {
 		try{
 			Session session=getSession();
 			supplier.setEnabled(false);
-			session.delete(supplier);
+			session.update(supplier);
 			flag=true;
 			LOGGER.info("<-- Supplier Deactivated " + supplier.getSupplierName()  +"  -->");
 		}catch (Exception e) {
@@ -72,11 +74,11 @@ public class SupplierDAOImpl implements SupplierDAO {
 	}
 
 	
-	public List<Supplier> getallSupplier() {
+	public List<Supplier> getAllSupplier() {
 		List<Supplier> listSupplier = null;
 		try{
 		Session session = getSession();
-		Query q = session.createQuery("from Supplier");
+		Query q = session.createQuery("from Supplier where enabled = 1");
 		listSupplier = q.list();
 		LOGGER.info("<-- Fetched all the Queries -->");
 		}catch(Exception e){
@@ -95,6 +97,22 @@ public class SupplierDAOImpl implements SupplierDAO {
 		}catch(Exception e){
 			LOGGER.error("<-- Couldnt not fetch Supplier's Object from ID");
 		}
+		return null;
+	}
+
+	public List<Supplier> searchSupplier(String name) {
+		
+		Session session  = getSession();
+		try {
+			Query q = session.createQuery("from Supplier where supplierName like :supplierName");
+			q.setParameter("supplierName", name+"%");
+			List<Supplier> listSupplier = q.list();
+			LOGGER.info(listSupplier + "!!!!!!!List here");
+			return listSupplier;
+		}catch(Exception e){
+			LOGGER.error("<-- Could Not Search Anything -->");
+		}
+		
 		return null;
 	}
 	

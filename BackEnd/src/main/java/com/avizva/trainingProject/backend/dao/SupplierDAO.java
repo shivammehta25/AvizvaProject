@@ -10,5 +10,6 @@ public interface SupplierDAO {
 	public Supplier getSupplierById(int id);
 	public boolean updateSupplier(Supplier supplier);
 	public boolean deactivateSupplier(Supplier supplier);
-	public List<Supplier> getallSupplier();
+	public List<Supplier> getAllSupplier();
+	public List<Supplier> searchSupplier(String name);
  }

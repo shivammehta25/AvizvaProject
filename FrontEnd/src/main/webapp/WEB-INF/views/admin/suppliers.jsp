@@ -24,7 +24,7 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h2 class="panel-title" style="text-align: center">
-							SUPPLIER PANEL</h2>
+							<spring:message code='supplier.headingcaps'></spring:message> PANEL</h2>
 					</div>
 					<div class="panel-heading">
 						<table class="  table table-bordered table-hover table-condensed">
@@ -32,15 +32,21 @@
 								<tr>
 									<th>ID</th>
 									<th>Name</th>
-									<th>Description</th>
+									<th>Address</th>
+									<th>Contact</th>
+									<th>Edit</th>
+									<th>Delete</th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach var="category" items="${listSuppliers}">
+								<c:forEach var="supplier" items="${listSupplier}">
 									<tr>
 										<td><c:out value="${supplier.supplierId}"></c:out></td>
+										<td><c:out value="${supplier.supplierName}"></c:out></td>
 										<td><c:out value="${supplier.supplierAddress}"></c:out></td>
-										<td><c:out value="${supplier.supplierDescription}"></c:out></td>
+										<td><c:out value="${supplier.supplierContact}"></c:out></td>
+										<td> <a style="cursor: pointer" onclick="populate(${supplier.supplierId} ,'${supplier.supplierName}' , '${supplier.supplierAddress }' , '${supplier.supplierContact}' )" >Edit</a></td>
+										<td><a style="cursor: pointer" onclick = "deleteit(${supplier.supplierId})"> Delete</a>
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -51,15 +57,15 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h4 class="panel-title" style="text-align: left">Search for
-							Suppliers</h4>
+							<spring:message code='supplier.heading'></spring:message></h4>
 					</div>
 					<div class="panel-body">
 						<form class="form-horizontal" method="post "
-							action="searchCategoryForm" role="form">
+							action="searchSupplierForm" role="form">
 							<div class="form-group">
 
 								<label for="name" class="col-md-2 label-register control-label">
-									Supplier Name </label>
+									<spring:message code="supplier.namesearch"></spring:message> </label>
 								<div class="col-md-8">
 									<input type="text" placeholder="Enter Supplier Name"
 										name="name" required="true" class="form-control" id="name" />
@@ -75,37 +81,35 @@
 
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h4 class="panel-title" style="text-align: left">Add Supplier</h4>
+						<h4 class="panel-title" style="text-align: left">Add <spring:message code='supplier.heading'></spring:message> </h4>
 					</div>
 					<div class="panel-body">
 						<form class="form-horizontal" method="post "
 							action="addSupplierForm" role="form">
 							<div class="form-group">
-								<label for="supplierId"
-									class="col-md-2 label-register control-label"> Supplier
-									Id </label>
-								<div class="col-md-8">
-									<input type="text" placeholder="Enter Supplier Id"
-										name="supplierId" required="true" class="form-control"
-										id="supplierId" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="name" class="col-md-2 label-register control-label">
-									Supplier Name </label>
+								<label for="supplierName"
+									class="col-md-2 label-register control-label"> <spring:message code='supplier.name.input'></spring:message>  </label>
 								<div class="col-md-8">
 									<input type="text" placeholder="Enter Supplier Name"
-										name="supplierName" required="true" class="form-control" id="name" />
+										name="supplierName" required="true" class="form-control"
+										id="supplierName" />
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="description"
-									class="col-md-2 label-register control-label"> Category
-									Description </label>
+								<label for="address" class="col-md-2 label-register control-label">
+									<spring:message code='supplier.address.input'></spring:message>  </label>
 								<div class="col-md-8">
-									<textarea placeholder="Enter Category Description"
-										name="description" required="true" class="form-control"
-										id="description" ></textarea>
+									<input type="text" placeholder="Enter Supplier Address"
+										name="supplierAddress" required="true" class="form-control" id="address" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="supplierContact"
+									class="col-md-2 label-register control-label"> <spring:message code='supplier.contact.input'></spring:message>  </label>
+								<div class="col-md-8">
+									<input type="text" placeholder="Enter Supplier Description"
+										name="supplierContact" required="true" class="form-control"
+										id="supplierContact" ></textarea>
 								</div>
 							</div>
 
@@ -122,38 +126,47 @@
 
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h4 class="panel-title" style="text-align: left">Update
-							Category</h4>
+						<h4 class="panel-title" style="text-align: left"><spring:message code='supplier.update'></spring:message> </h4>
 					</div>
 					<div class="panel-body">
 						<form class="form-horizontal" method="post "
-							action="updateCategoryForm" role="form">
+							action="updateSupplierForm" role="form">
 							<div class="form-group">
-								<label for="categoryId"
-									class="col-md-2 label-register control-label"> Category
+								<label for="supplierIdUpdate"
+									class="col-md-2 label-register control-label"> <spring:message code='supplier.heading'></spring:message> 
 									Id </label>
 								<div class="col-md-8">
-									<input type="text" placeholder="Enter Category Id"
-										name="categoryId" required="true" class="form-control"
-										id="categoryId" />
+									<input type="text" placeholder="Enter supplier Id"
+										name="supplierId" required="true" class="form-control"
+										id="supplierIdUpdate" readonly="readonly" />
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="name" class="col-md-2 label-register control-label">
-									Category Name </label>
+								<label for="supplierNameUpdate" class="col-md-2 label-register control-label">
+									<spring:message code='supplier.heading'></spring:message>  Name </label>
 								<div class="col-md-8">
-									<input type="text" placeholder="Enter Category Name"
-										name="name" required="true" class="form-control" id="name" />
+									<input type="text" placeholder="Enter Supplier Name"
+										name="supplierName" required="true" class="form-control" id="supplierNameUpdate" />
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="description"
-									class="col-md-2 label-register control-label"> Category
-									Description </label>
+								<label for="supplierAddressUpdate"
+									class="col-md-2 label-register control-label"> <spring:message code='supplier.heading'></spring:message> 
+									Address </label>
 								<div class="col-md-8">
-									<textarea placeholder="Enter Category Description"
-										name="description" required="true" class="form-control"
-										id="description" ></textarea>
+									<textarea placeholder="Enter Supplier Address"
+										name="supplierAddress" required="true" class="form-control"
+										id="supplierAddressUpdate" ></textarea>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="supplierContactUpdate"
+									class="col-md-2 label-register control-label"> <spring:message code='supplier.heading'></spring:message> 
+									Contact </label>
+								<div class="col-md-8">
+									<input type="text" placeholder="Enter Supplier Contact Number"
+										name="supplierContact" required="true" class="form-control"
+										id="supplierContactUpdate">
 								</div>
 							</div>
 
@@ -171,17 +184,17 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h4 class="panel-title" style="text-align: left">Delete
-							Category</h4>
+							<spring:message code='supplier.heading'></spring:message> </h4>
 					</div>
 					<div class="panel-body">
 						<form class="form-horizontal" method="post "
-							action="deleteCategoryForm" role="form">
+							action="deleteSupplierForm" role="form">
 							<div class="form-group">
-								<label for="name" class="col-md-2 label-register control-label">
-									Category Name </label>
+								<label for="supplierIdDel" class="col-md-2 label-register control-label">
+									<spring:message code='supplier.heading'></spring:message>  Id </label>
 								<div class="col-md-8">
-									<input type="text" placeholder="Enter Category Name"
-										name="name" required="true" class="form-control" id="name" />
+									<input type="text" placeholder="Enter Supplier Id"
+										name="supplierId" required="true" class="form-control" id="supplierIdDel" />
 								</div>
 							</div>
 							<div class="form-group">
@@ -198,6 +211,21 @@
 			</div>
 		</div>
 	</div>
+	<script>
+	var populate = function(id , name , address , contact){
+		document.getElementById("supplierIdUpdate").setAttribute("value" , id);
+		document.getElementById("supplierNameUpdate").setAttribute("value" , name);
+		document.getElementById("supplierAddressUpdate").value = address ;
+//		window.scrollTo(0, $("#supplierAddressUpdate").offset().top);
+		$("html, body").animate({ scrollTop: $("#supplierAddressUpdate").offset().top }, 1500);
+		document.getElementById("supplierContactUpdate").setAttribute("value" , contact);
+	}	
+	var deleteit = function(id){
+		document.getElementById("supplierIdDel").setAttribute("value" , id);
+		$("html, body").animate({ scrollTop: $("#supplierIdDel").offset().top }, 1500);
+
+	}
+	</script>
 
 	<!-- Insert Footer After Here -->
 	<jsp:include page="/WEB-INF/views/includes/footer.jsp"></jsp:include>
