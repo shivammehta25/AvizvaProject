@@ -48,6 +48,7 @@ public class ForgotPassDAOImpl implements ForgotPassDAO {
 		Query q =  session.createQuery("from User where email =:email");
 
 		q.setParameter("email", email);
+		@SuppressWarnings("unchecked")
 		List<User> userList = q.list();
 		if(!userList.isEmpty()){
 		return userList.get(0);
