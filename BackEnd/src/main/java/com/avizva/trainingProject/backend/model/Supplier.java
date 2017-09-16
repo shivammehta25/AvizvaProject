@@ -30,8 +30,6 @@ public class Supplier {
 	@NotNull
 	private Long supplierContact;
 
-	@NotNull
-	private Long suppliercontact;
 
 	private boolean enabled;
 

@@ -170,12 +170,12 @@
 				
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h4 class="panel-title" style="text-align: left">Delete
+						<h4 class="panel-title" style="text-align: left">Deactivate
 							Category</h4>
 					</div>
 					<div class="panel-body">
 						<form class="form-horizontal" method="post "
-							action="deleteCategoryForm" role="form">
+							action="deactivateCategoryForm" role="form">
 							<div class="form-group">
 								<label for="name" class="col-md-2 label-register control-label">
 									Category Name </label>
@@ -187,7 +187,7 @@
 							<div class="form-group">
 								<div class=" col-md-2 col-md-offset-2">
 
-									<button type="submit" class="btn btn-success">Delete</button>
+									<button type="submit" class="btn btn-success">Deactivate</button>
 								</div>
 							</div>
 
