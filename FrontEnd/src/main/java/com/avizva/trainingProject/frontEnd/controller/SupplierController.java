@@ -31,13 +31,15 @@ public class SupplierController {
 	public ModelAndView manageSuppliers(@ModelAttribute("msg") String msg) {
 		List<Supplier> listSupplier = supplierService.getAllSupplier();
 		LOGGER.info("<-- Inisde Supplier Manger Controller -->" + listSupplier + "Message" + msg.length() + "abc");
-
-		if (msg.length() != 0) {
-			LOGGER.info("Came inside");
-			return new ModelAndView("admin/suppliers").addObject("listSupplier", listSupplier);
-		}
 		LOGGER.info("didnt came here");
-		return new ModelAndView("admin/suppliers").addObject("listSupplier", listSupplier);
+		ModelAndView suppHome = new ModelAndView();
+		suppHome.setViewName("admin/suppliers");
+		suppHome.addObject("listSupplier",listSupplier); 
+		if(msg.length() == 0 ){
+			LOGGER.info("It is empty");
+			suppHome.addObject("msg" , "Supplier Management System");
+		}
+		return suppHome;
 
 	}
 	

@@ -26,7 +26,6 @@ public class ApplicationContext {
 	 */
 	@Bean
 	public JavaMailSender getJavaMailSender() {
-		System.out.println("creating java bean of mailer");
 		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 		mailSender.setHost("smtp.gmail.com");
 		mailSender.setPort(587);
