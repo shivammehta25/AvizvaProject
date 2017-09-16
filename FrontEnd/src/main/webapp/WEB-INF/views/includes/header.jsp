@@ -111,7 +111,7 @@
 								<ul class="dropdown-menu">
 									<li><a href="#">My Orders</a></li>
 									<li class="divider"></li>
-									<c:if test="${user.role=='ROLE_ADMIN' }"><li><a href="admin/">Admin Panel</a></li> </c:if>
+									<c:if test="${user.role=='ROLE_ADMIN' }"><li><a href="admin">Admin Panel</a></li> </c:if>
 									<li><a href="profile">Profile</a></li>
 									<li><a href="logout">Logout</a></li>
 								</ul></li>

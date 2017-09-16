@@ -11,4 +11,5 @@ public interface SupplierDAO {
 	public boolean updateSupplier(Supplier supplier);
 	public boolean deleteSupplier(Supplier supplier);
 	public List<Supplier> getallSupplier(Supplier supplier);
+	
  }

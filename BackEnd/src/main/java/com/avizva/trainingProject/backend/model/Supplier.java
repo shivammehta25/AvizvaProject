@@ -20,40 +20,49 @@ public class Supplier {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int supplierid;
+	private int supplierId;
 	
 	@NotNull
-	private String supplieraddress;
+	private String supplierName;
 	
 	@NotNull
-	private Long suppliercontact;
-
-	public int getSupplierid() {
-		return supplierid;
-	}
-
-	public void setSupplierid(int supplierid) {
-		this.supplierid = supplierid;
-	}
-
-	public String getSupplieraddress() {
-		return supplieraddress;
-	}
-
-	public void setSupplieraddress(String supplieraddress) {
-		this.supplieraddress = supplieraddress;
-	}
-
-	public Long getSuppliercontact() {
-		return suppliercontact;
-	}
-
-	public void setSuppliercontact(Long suppliercontact) {
-		this.suppliercontact = suppliercontact;
-	}
+	private String supplierAddress;
 	
-	
-	
+	@NotNull
+	private Long supplierContact;
+
+	public int getSupplierId() {
+		return supplierId;
+	}
+
+	public void setSupplierId(int supplierId) {
+		this.supplierId = supplierId;
+	}
+
+	public String getSupplierAddress() {
+		return supplierAddress;
+	}
+
+	public void setSupplierAddress(String supplierAddress) {
+		this.supplierAddress = supplierAddress;
+	}
+
+	public Long getSupplierContact() {
+		return supplierContact;
+	}
+
+	public void setSupplierContact(Long supplierContact) {
+		this.supplierContact = supplierContact;
+	}
+
+	public String getSupplierName() {
+		return supplierName;
+	}
+
+	public void setSupplierName(String supplierName) {
+		this.supplierName = supplierName;
+	}
+
 	
 	
 	
