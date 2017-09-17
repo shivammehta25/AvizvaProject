@@ -31,3 +31,7 @@ h2 {
 	-moz-box-shadow: 4px 7px 38px -2px rgba(0, 0, 0, 1);
 	box-shadow: 4px 7px 38px -2px rgba(0, 0,0 0, 1);
 }
+
+.nav-pills>li>a {
+    background-color: #2e2f31;
+}

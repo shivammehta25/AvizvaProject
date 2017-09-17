@@ -24,25 +24,26 @@
 				<jsp:include page="/WEB-INF/views/admin/admininc/adminnav.jsp"></jsp:include>
 			</div>
 			<div class="col-md-10 ">
-				<h2 class="text-center adminpanelhead" >Admin Panel Home</h2>
-				
+				<h2 class="text-center adminpanelhead">Admin Panel Home</h2>
+
 				<div class="row">
 					<div class="col-md-4">
 						<div class="jumbotron well">
 							<h2>Products</h2>
-							<p>Total Number of Products : 
+							<p>Total Number of Products :
 							<p>
-								<a class="btn btn-primary btn-large" href="adminproduct">Manage Products</a>
+								<a class="btn btn-primary btn-large" href="adminproduct">Manage
+									Products</a>
 							</p>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="jumbotron well">
 							<h2>Suppliers</h2>
-							<p>Total Number of Suppliers : ${totalsupp } 
-							</p>
+							<p>Total Number of Suppliers : ${totalsupp }</p>
 							<p>
-								<a class="btn btn-primary btn-large" href="adminmanagesupp">Manage Suppliers</a>
+								<a class="btn btn-primary btn-large" href="adminmanagesupp">Manage
+									Suppliers</a>
 							</p>
 						</div>
 					</div>
@@ -51,7 +52,8 @@
 							<h2>Categories</h2>
 							<p>Total Categories : ${totalcat }</p>
 							<p>
-								<a class="btn btn-primary btn-large" href="adminmanagecat">Manage Categories</a>
+								<a class="btn btn-primary btn-large" href="adminmanagecat">Manage
+									Categories</a>
 							</p>
 						</div>
 					</div>

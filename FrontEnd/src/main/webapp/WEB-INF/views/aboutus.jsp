@@ -10,6 +10,22 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GAMAZON | About Us</title>
+
+<style type="text/css">
+	.row{
+	margin-bottom : 20px;
+	}
+	.progress-bar {
+	    background-color: #2e2f31 !important;
+	}
+	.jumbotron {
+	background-color : #3e4649 !important;
+	}
+	p, label {
+	    color: #55b7a2 !important;
+	
+	}
+</style>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/includes/header.jsp"></jsp:include>
@@ -43,12 +59,12 @@
 				<div class="row">
 					<div class="col-md-2">
 						<img alt="Bootstrap Image Preview"
-							src="http://lorempixel.com/140/140/" class="img-circle" />
+							src="${rimages }/Shivam.jpg" width="150px"  class="img-circle" />
 					</div>
 					<div class="col-md-10">
 						<blockquote class="pull-right">
-							<p>Web Application Developer and A Gamer.</p>
-							<small> <cite>SHIVAM MEHTA</cite></small>
+							<p>If Something is worth doing , Its worth doing <b>RIGHT!! </b></p>
+							<small> A coder , a gamer , an entertainer <cite>SHIVAM MEHTA</cite></small>
 						</blockquote>
 					</div>
 				</div>
