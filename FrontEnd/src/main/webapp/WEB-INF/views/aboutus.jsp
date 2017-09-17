@@ -21,8 +21,8 @@
 	.jumbotron {
 	background-color : #3e4649 !important;
 	}
-	p, label {
-	    color: #55b7a2 !important;
+	.linesaid {
+	    color: #55b7a2 ;
 	
 	}
 </style>
@@ -48,7 +48,7 @@
 					<div class="col-md-12">
 				<div class="jumbotron">
 					<h2>GAMAZON!</h2>
-					<p>We are a company filled with IT Geeks for IT Geeks</p>
+					<p class="linesaid">We are a company filled with IT Geeks for IT Geeks</p>
 
 				</div>
 				<div class="progress progress-striped active">
@@ -63,7 +63,7 @@
 					</div>
 					<div class="col-md-10">
 						<blockquote class="pull-right">
-							<p>If Something is worth doing , Its worth doing <b>RIGHT!! </b></p>
+							<p class="linesaid">If Something is worth doing , Its worth doing <b>RIGHT!! </b></p>
 							<small> A coder , a gamer , an entertainer <cite>SHIVAM MEHTA</cite></small>
 						</blockquote>
 					</div>
@@ -76,7 +76,7 @@
 				<div class="row">
 					<div class="col-md-10">
 						<blockquote>
-							<p>Football Lover and an Application Developer</p>
+							<p class="linesaid">Football Lover and an Application Developer</p>
 							<small> <cite>SAURABH MIGHLANI</cite></small>
 						</blockquote>
 					</div>
@@ -97,7 +97,7 @@
 					</div>
 					<div class="col-md-10">
 						<blockquote class="pull-right">
-							<p>Web Application Developer</p>
+							<p class="linesaid">Web Application Developer</p>
 							<small><cite>AKSHAY CHOURASIA</cite></small>
 						</blockquote>
 					</div>
