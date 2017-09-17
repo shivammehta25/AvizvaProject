@@ -25,10 +25,11 @@
 		<form-login 
 		    login-page="/loginadmin"
 		    default-target-url="/adminindex"
-			authentication-failure-url="/loginError"    
+			authentication-failure-url="/error"    
 			login-processing-url="/perform_login"
 			username-parameter="username"
 			password-parameter="password" />
+			<!-- authentication-failure-url="/loginError" -->
 		<!--  Default error Page by Spring /loginError  and default /perform_login -->
 		<logout logout-url="/logout" logout-success-url="/"  /> <!--  AUtologout with /logout RequestMapping implicit session invalidate -->
 		

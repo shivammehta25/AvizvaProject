@@ -22,17 +22,13 @@ public class AdminController {
 		return new ModelAndView("admin/x");
 	}
 
-	@RequestMapping("/adminmanagecat")
-	public ModelAndView manageCategories() {
-		return new ModelAndView("admin/categories");
-
-	}
-
 	@RequestMapping("/adminmanageprod")
 	public ModelAndView manageProducts(){
 		return new ModelAndView("admin/products");
 	}
 
-	//AdminManageCat in Supplier Controller
+	//AdminManageSupplier in Supplier Controller
+	
+	//AdminManageCategory in Category Controller
 
 }
