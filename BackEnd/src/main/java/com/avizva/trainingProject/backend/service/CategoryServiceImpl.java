@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.avizva.trainingProject.backend.dao.CategoryDAO;
 import com.avizva.trainingProject.backend.dao.SupplierDAO;
 import com.avizva.trainingProject.backend.model.Category;
 import com.avizva.trainingProject.backend.model.Supplier;
 
+@Service
 public class CategoryServiceImpl implements CategoryService{
 	private static final Logger LOGGER = Logger.getLogger(SupplierServiceImpl.class);
 
