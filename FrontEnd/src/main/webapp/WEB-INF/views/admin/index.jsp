@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -32,26 +32,26 @@
 							<h2>Products</h2>
 							<p>Total Number of Products : 
 							<p>
-								<a class="btn btn-primary btn-large" href="adminproduct">Learn more</a>
+								<a class="btn btn-primary btn-large" href="adminproduct">Manage Products</a>
 							</p>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="jumbotron well">
 							<h2>Suppliers</h2>
-							<p>Total Number of Suppliers : 
+							<p>Total Number of Suppliers : ${totalsupp } 
 							</p>
 							<p>
-								<a class="btn btn-primary btn-large" href="#">Manage Suppleirse</a>
+								<a class="btn btn-primary btn-large" href="adminmanagesupp">Manage Suppliers</a>
 							</p>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="jumbotron well">
 							<h2>Categories</h2>
-							<p>Total Categories</p>
+							<p>Total Categories : ${totalcat }</p>
 							<p>
-								<a class="btn btn-primary btn-large" href="#">Manage Categories</a>
+								<a class="btn btn-primary btn-large" href="adminmanagecat">Manage Categories</a>
 							</p>
 						</div>
 					</div>
