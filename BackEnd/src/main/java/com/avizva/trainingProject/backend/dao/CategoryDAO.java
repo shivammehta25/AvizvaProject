@@ -1,5 +1,9 @@
 package com.avizva.trainingProject.backend.dao;
 
+import java.util.List;
+
+import org.hibernate.Session;
+
 import com.avizva.trainingProject.backend.model.Category;
 
 /**
@@ -12,5 +16,16 @@ import com.avizva.trainingProject.backend.model.Category;
  */
 public interface CategoryDAO {
 	
-	public Category getCategory();
+	public Session getSession();
+	
+	public Category getCategoryById(int id);
+	
+	public List<Category> getAllCategory();
+	
+	public boolean createCategory(Category category);
+	
+	public boolean updateCategory(Category category);
+	
+	public boolean deactivateCategory(Category category);
+	
 }

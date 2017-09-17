@@ -30,6 +30,9 @@ public class Category {
 	
 	@NotEmpty
 	private String description;
+	
+	private boolean enabled;
+	
 
 	public String getCategoryId() {
 		return categoryId;
@@ -57,6 +60,14 @@ public class Category {
 
 	public int getId() {
 		return id;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 	
 	
