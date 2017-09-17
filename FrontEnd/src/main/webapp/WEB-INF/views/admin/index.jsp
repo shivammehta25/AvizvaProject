@@ -7,36 +7,34 @@
 <title>Insert title here</title>
 </head>
 <jsp:include page="/WEB-INF/views/includes/header.jsp"></jsp:include>
+<link rel="stylesheet" href="resources/css/admin.css" >
 <body>
 
 	<!--  Started Sidebar -->
-	
+
 
 	<!--  Ended Sidebar -->
 
 
-	<div class="panel panel-default">
-		<div class="panel-heading1">
-			<h2 class="panel-title" style="text-align: center">
-				<a href="managecat">Manage Categories</a>
-			</h2>
+
+
+	<div class="container-fluid">
+		<div class="row" >
+			<div class="col-md-2">
+				<jsp:include page="/WEB-INF/views/admin/admininc/adminnav.jsp"></jsp:include>
+			</div>
+			<div class="col-md-10 " style="background-color: white">
+				<h2 class="text-center">Admin Panel Home </h2>
+			</div>
 		</div>
-
-		<div class="panel-heading2">
-			<h2 class="panel-title" style="text-align: center">
-				<a href="manageprod">Manage Products</a>
-			</h2>
-		</div>
-
-
-		<div class="panel-heading3">
-			<h2 class="panel-title" style="text-align: center">
-				<a href="managesup">Manage Suppliers</a>
-			</h2>
-		</div>
-
-
 	</div>
+
+
+
+
+
+
+
 </body>
 <jsp:include page="/WEB-INF/views/includes/footer.jsp"></jsp:include>
 </html>

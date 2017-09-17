@@ -1,14 +1,24 @@
 package com.avizva.trainingProject.frontEnd.controller;
 
+import java.util.Map;
+
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class AdminController {
+	
+	
+
 
 	@RequestMapping("/admin")
-	public ModelAndView adminPanel() {
+	public ModelAndView adminPanel( ) {
+		
 		return new ModelAndView("admin/index");
 	}
 
@@ -17,10 +27,7 @@ public class AdminController {
 		return new ModelAndView("admin/login");
 	}
 
-	@RequestMapping("/adminx")
-	public ModelAndView callX(){
-		return new ModelAndView("admin/x");
-	}
+	
 
 	@RequestMapping("/adminmanagecat")
 	public ModelAndView manageCategories() {
@@ -34,5 +41,11 @@ public class AdminController {
 	}
 
 	//AdminManageCat in Supplier Controller
+	
+	
+	@RequestMapping("/loginError")
+	public ModelAndView loginError(){
+		return new ModelAndView("redirect:/admin","msg" , "Invalid User Credentials");
+	}
 
 }

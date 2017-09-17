@@ -26,7 +26,7 @@
     </appender>
  
     <root>
-        <priority value="INFO"/>
+        <priority value="DEBUG"/>
         <appender-ref ref="Appender1" />
         <appender-ref ref="Appender2" />
     </root>

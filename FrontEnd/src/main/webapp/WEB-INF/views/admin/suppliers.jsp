@@ -9,17 +9,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GAMAZON | Suppliers</title>
+
+<link rel="stylesheet" href="resources/css/admin.css" >
+
 </head>
 <body>
 	
 	<jsp:include page="/WEB-INF/views/includes/header.jsp"></jsp:include>
 	<c:url var="rcss" value="resources/css"></c:url>
 	<c:url var="rimages" value="resources/images"></c:url>
-	<!-- Insert Header Before Here -->
 	
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
+	<!-- Insert Header Before Here -->
+		<div class="container-fluid">
+		<div class="row" >
+			<div class="col-md-2">
+				<jsp:include page="/WEB-INF/views/admin/admininc/adminnav.jsp"></jsp:include>
+			</div>
+			<div class="col-md-10 text-center ">
+				
 
 				<div class="panel panel-default">
 					<div class="panel-heading">
@@ -209,8 +216,13 @@
 				</div>
 
 			</div>
+			</div>
 		</div>
-	</div>
+
+
+		
+			
+	
 	<script>
 	var populate = function(id , name , address , contact){
 		document.getElementById("supplierIdUpdate").setAttribute("value" , id);

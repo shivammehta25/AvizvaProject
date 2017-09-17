@@ -33,7 +33,7 @@ public class ControllerMain {
 	@Autowired
 	private ContactUsService contactUsService;
 	
-	private static final Logger LOGGER = Logger.getLogger(ExceptionController.class);
+	private static final Logger LOGGER = Logger.getLogger(ControllerMain.class);
 
 	
 	
