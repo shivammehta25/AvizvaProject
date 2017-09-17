@@ -12,12 +12,18 @@ import com.avizva.trainingProject.backend.model.Category;
 @Controller
 public class CategoryContoller {
 	
-	@RequestMapping("/managecat")
-	public ModelAndView manageCategories(){
+	@RequestMapping("/testmanagecat")
+	public ModelAndView testManageCategories(){
 		
 		
 		return new ModelAndView("admin/categories");
 		
+	}
+	
+	@RequestMapping("/adminmanagecat")
+	public ModelAndView manageCategories() {
+		return new ModelAndView("admin/categories");
+
 	}
 
 	@RequestMapping("/searchCategoryForm")

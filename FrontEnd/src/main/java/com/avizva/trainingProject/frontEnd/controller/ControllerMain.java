@@ -157,4 +157,10 @@ public class ControllerMain {
 			return new ModelAndView("profile" , "command" , user).addObject("msg", "Error Occured. Could not update details." );
 		}
 	}
+	
+	@RequestMapping("/error")
+	public ModelAndView callerrorpage(){
+		LOGGER.error("Loading Error Page");
+		return new ModelAndView("error");
+	}
 }

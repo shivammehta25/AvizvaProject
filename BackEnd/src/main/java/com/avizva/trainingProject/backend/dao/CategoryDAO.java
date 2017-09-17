@@ -28,4 +28,6 @@ public interface CategoryDAO {
 	
 	public boolean deactivateCategory(Category category);
 	
+	public List<Category> searchCategory(String name);
+	
 }

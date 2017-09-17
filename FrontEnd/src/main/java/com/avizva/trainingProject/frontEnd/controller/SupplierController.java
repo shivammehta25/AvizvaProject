@@ -27,6 +27,22 @@ public class SupplierController {
 	@Autowired
 	SupplierService supplierService;
 
+	@RequestMapping("/testmanagesupp")
+	public ModelAndView testManageSuppliers(@ModelAttribute("msg") String msg) {
+		List<Supplier> listSupplier = supplierService.getAllSupplier();
+		LOGGER.info("<-- Inisde Supplier Manger Controller -->" + listSupplier + "Message" + msg.length() + "abc");
+		LOGGER.info("didnt came here");
+		ModelAndView suppHome = new ModelAndView();
+		suppHome.setViewName("admin/suppliers");
+		suppHome.addObject("listSupplier",listSupplier); 
+		if(msg.length() == 0 ){
+			LOGGER.info("It is empty");
+			suppHome.addObject("msg" , "Supplier Management System");
+		}
+		return suppHome;
+
+	}
+	
 	@RequestMapping("/adminmanagesupp")
 	public ModelAndView manageSuppliers(@ModelAttribute("msg") String msg) {
 		List<Supplier> listSupplier = supplierService.getAllSupplier();
@@ -43,13 +59,6 @@ public class SupplierController {
 
 	}
 	
-	
-	
-	
-	
-	
-	
-
 	@RequestMapping("searchSupplierForm")
 	public ModelAndView searchSupplier(@RequestParam("name") String name) {
 		List<Supplier> listSupplier = supplierService.searchSupplier(name);
