@@ -29,12 +29,6 @@ public class AdminController {
 
 	
 
-	@RequestMapping("/adminmanagecat")
-	public ModelAndView manageCategories() {
-		return new ModelAndView("admin/categories");
-
-	}
-
 	@RequestMapping("/adminmanageprod")
 	public ModelAndView manageProducts(){
 		return new ModelAndView("admin/products");
@@ -47,5 +41,8 @@ public class AdminController {
 	public ModelAndView loginError(){
 		return new ModelAndView("redirect:/admin","msg" , "Invalid User Credentials");
 	}
+	//AdminManageSupplier in Supplier Controller
+	
+	//AdminManageCategory in Category Controller
 
 }

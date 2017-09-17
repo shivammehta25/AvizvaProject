@@ -9,6 +9,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Categories</title>
+<link rel="stylesheet" href="resources/css/admin.css" >
+
 </head>
 <body>
 	
@@ -17,9 +19,12 @@
 	<c:url var="rimages" value="resources/images"></c:url>
 	<!-- Insert Header Before Here -->
 	
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
+	<div class="container-fluid">
+		<div class="row" >
+			<div class="col-md-2">
+				<jsp:include page="/WEB-INF/views/admin/admininc/adminnav.jsp"></jsp:include>
+			</div>
+			<div class="col-md-10 text-center ">
 
 				<div class="panel panel-default">
 					<div class="panel-heading">
@@ -33,14 +38,18 @@
 									<th>ID</th>
 									<th>Name</th>
 									<th>Description</th>
+									<th>Edit</th>
+									<th>Delete</th>
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach var="category" items="${listCategory}">
 									<tr>
 										<td><c:out value="${category.categoryId}"></c:out></td>
-										<td><c:out value="${category.name}"></c:out></td>
-										<td><c:out value="${category.description}"></c:out></td>
+										<td><c:out value="${category.categoryName}"></c:out></td>
+										<td><c:out value="${category.categoryDescription}"></c:out></td>
+										<td><a style="cursor: pointer" onclick="populate(${category.categoryId} ,'${category.categoryName}' , '${category.categoryDescription }')" >Edit </a></td>
+										<td><a style="cursor: pointer" onclick="deleteit(${category.categoryId})" >Delete</a></td>
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -78,24 +87,15 @@
 						<h4 class="panel-title" style="text-align: left">Add Category</h4>
 					</div>
 					<div class="panel-body">
-						<form class="form-horizontal" method="post "
+						<form class="form-horizontal" method="post"
 							action="addCategoryForm" role="form">
-							<div class="form-group">
-								<label for="categoryId"
-									class="col-md-2 label-register control-label"> Category
-									Id </label>
-								<div class="col-md-8">
-									<input type="text" placeholder="Enter Category Id"
-										name="categoryId" required="true" class="form-control"
-										id="categoryId" />
-								</div>
-							</div>
+							
 							<div class="form-group">
 								<label for="name" class="col-md-2 label-register control-label">
 									Category Name </label>
 								<div class="col-md-8">
 									<input type="text" placeholder="Enter Category Name"
-										name="name" required="true" class="form-control" id="name" />
+										name="categoryName" required="true" class="form-control" id="name" />
 								</div>
 							</div>
 							<div class="form-group">
@@ -104,7 +104,7 @@
 									Description </label>
 								<div class="col-md-8">
 									<textarea placeholder="Enter Category Description"
-										name="description" required="true" class="form-control"
+										name="categoryDescription" required="true" class="form-control"
 										id="description" ></textarea>
 								</div>
 							</div>
@@ -129,31 +129,31 @@
 						<form class="form-horizontal" method="post "
 							action="updateCategoryForm" role="form">
 							<div class="form-group">
-								<label for="categoryId"
+								<label for="categoryIdUpdate"
 									class="col-md-2 label-register control-label"> Category
 									Id </label>
 								<div class="col-md-8">
 									<input type="text" placeholder="Enter Category Id"
 										name="categoryId" required="true" class="form-control"
-										id="categoryId" />
+										id="categoryIdUpdate" readonly="readonly" />
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="name" class="col-md-2 label-register control-label">
+								<label for="categoryNameUpdate" class="col-md-2 label-register control-label">
 									Category Name </label>
 								<div class="col-md-8">
 									<input type="text" placeholder="Enter Category Name"
-										name="name" required="true" class="form-control" id="name" />
+										name="categoryName" required="true" class="form-control" id="categoryNameUpdate" />
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="description"
+								<label for="categoryDescriptionUpdate"
 									class="col-md-2 label-register control-label"> Category
 									Description </label>
 								<div class="col-md-8">
 									<textarea placeholder="Enter Category Description"
-										name="description" required="true" class="form-control"
-										id="description" ></textarea>
+										name="categoryDescription" required="true" class="form-control"
+										id="categoryDescriptionUpdate" ></textarea>
 								</div>
 							</div>
 
@@ -178,10 +178,10 @@
 							action="deactivateCategoryForm" role="form">
 							<div class="form-group">
 								<label for="name" class="col-md-2 label-register control-label">
-									Category Name </label>
+									Category Id </label>
 								<div class="col-md-8">
 									<input type="text" placeholder="Enter Category Name"
-										name="name" required="true" class="form-control" id="name" />
+										name="categoryId" required="true" class="form-control" id="categoryIdDel" />
 								</div>
 							</div>
 							<div class="form-group">
@@ -199,6 +199,20 @@
 		</div>
 	</div>
 
+
+<script>
+var populate = function(id , name , description){
+	document.getElementById("categoryIdUpdate").setAttribute("value" , id);
+	document.getElementById("categoryNameUpdate").setAttribute("value" , name);
+	document.getElementById("categoryDescriptionUpdate").value = description ;
+	$("html, body").animate({ scrollTop: $("#categoryNameUpdate").offset().top }, 1500);
+}	
+var deleteit = function(id){
+	document.getElementById("categoryIdDel").setAttribute("value" , id);
+	$("html, body").animate({ scrollTop: $("#categoryIdDel").offset().top }, 1500);
+
+}
+</script>
 	<!-- Insert Footer After Here -->
 	<jsp:include page="/WEB-INF/views/includes/footer.jsp"></jsp:include>
 

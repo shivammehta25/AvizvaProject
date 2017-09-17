@@ -30,6 +30,7 @@
 %>
 
 <ul class="nav nav-pills nav-stacked">
+					<h5 class="text-center"><i class="fa fa-bars fa-2x fa-lg" aria-hidden="true"></i >&nbsp;  Admin Navigation</h5>
 					<li class="${homeactive }"><a href="admin">Home</a></li>
 					<li class="${suppactive}"><a href="adminmanagesupp">Manage Suppliers</a></li>
 					<li class=${catactive }><a href="adminmanagecat">Manage Categories</a></li>

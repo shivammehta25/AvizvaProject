@@ -1,7 +1,29 @@
 h2 {
-	color :#27A967;
+	color: #27A967;
 }
 
-.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
-	background-color :#27A967 !important;
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover
+	{
+	background-color: #27A967 !important;
+}
+
+.adminpanelhead {
+	background-color: white;
+	border-radius: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px
+}
+
+.adminpanelhead:HOVER {
+	background-color: rgba(65, 47, 121, 0.55);
+}
+
+.jumbotron:HOVER {
+	background-color: #5351c2;
+}
+
+.jumbotron {
+	-webkit-box-shadow: 4px 7px 38px -2px rgba(0, 0, 0, 1);
+	-moz-box-shadow: 4px 7px 38px -2px rgba(0, 0, 0, 1);
+	box-shadow: 4px 7px 38px -2px rgba(0, 0,0 0, 1);
 }

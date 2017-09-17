@@ -1,5 +1,6 @@
 package com.avizva.trainingProject.backend.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,44 +20,49 @@ import org.springframework.stereotype.Component;
 public class Category {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int categoryId;
+	
 	
 	@NotEmpty
-	private String categoryId;
+	private String categoryName;
 	
 	@NotEmpty
-	private String name;
+	private String categoryDescription;
 	
-	@NotEmpty
-	private String description;
+	@Column(columnDefinition = "BOOLEAN DEFAULT false")
+	private boolean enabled;
 
-	public String getCategoryId() {
+	public int getCategoryId() {
 		return categoryId;
 	}
 
-	public void setCategoryId(String categoryId) {
+	public void setCategoryId(int categoryId) {
 		this.categoryId = categoryId;
 	}
 
-	public String getName() {
-		return name;
+	public String getCategoryName() {
+		return categoryName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getCategoryDescription() {
+		return categoryDescription;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setCategoryDescription(String categoryDescription) {
+		this.categoryDescription = categoryDescription;
 	}
 
-	public int getId() {
-		return id;
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 	
 	

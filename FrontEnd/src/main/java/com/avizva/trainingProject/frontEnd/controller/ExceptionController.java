@@ -44,9 +44,6 @@ public class ExceptionController {
 		return new ModelAndView("error");
 	}
 	
-	@RequestMapping("/error")
-	public ModelAndView callerrorpage(){
-		return new ModelAndView("error");
-	}
+	
 
 }
