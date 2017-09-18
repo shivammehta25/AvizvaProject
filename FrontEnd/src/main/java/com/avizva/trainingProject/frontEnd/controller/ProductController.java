@@ -16,7 +16,6 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.avizva.trainingProject.backend.model.Product;
-import com.avizva.trainingProject.backend.model.Supplier;
 import com.avizva.trainingProject.backend.service.ProductService;
 
 @Controller

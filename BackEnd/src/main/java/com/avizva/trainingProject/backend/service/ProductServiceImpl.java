@@ -78,6 +78,15 @@ public class ProductServiceImpl implements ProductService {
 		return null;
 	}
 
+	public List<Product> getProductByCategory(String productCatName) {
+		List<Product> listProduct = productDAO.getProductByCategory(productCatName);
+		LOGGER.info("<-- Product Fetched by category"  + productCatName);
+		if(listProduct !=null){
+			return listProduct;
+		}
+		return null;
+	}
+
 	
 	
 

@@ -9,6 +9,8 @@
 	rel="stylesheet">
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700'
 	rel='stylesheet' type='text/css'>
+	<script src="resources/js/jquery.popmenu.min.js">	</script>
+	
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,6 +21,23 @@
 <link rel="stylesheet" href="${rcss}/styling.css">
 <link rel="stylesheet" href="${rcss}/footerstyle.css">
 
+<style>
+#demo_box{
+    width: 480px;
+}
+.fa-bars{
+            color: #3498db;
+        }
+ pre{
+            font-family: Consolas,Liberation Mono,Courier,monospace;
+            font-size: 13px;
+        }
+        @media screen and (orientation: portrait){
+            pre{
+                overflow-x: scroll;
+            }
+        }       
+</style>
 
 <!-- Begin NavBar -->
 <div class="container-fluid ">
@@ -68,10 +87,11 @@
 						<li class="dropdown" id="drop1"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown"><i
 								class="fa fa-lg fa-2x fa-shopping-basket" aria-hidden="true"></i>
-								Categories<strong class="caret"></strong></a>
+								Products<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
+								<li><a href="products" > All Products </a></li>
 							 <c:forEach var="category" items="${applicationScope['listCategory']}">
-								<li><a href="products?categoryName?=${category.categoryName }">${category.categoryName }</a></li>
+								<li><a href="products?categoryName=${category.categoryName }">${category.categoryName }</a></li>
 							</c:forEach>	
 							</ul></li>
 
@@ -82,6 +102,7 @@
 								<li><a href="#"> Item 1</a></li>
 								<li><a href="#"> Item 2</a></li>
 							</ul></li>
+						
 						<c:if test="${username == null }">
 
 							<li class="dropdown ${myaccountactive}"><a href="#"
@@ -104,12 +125,15 @@
 								data-toggle="dropdown"><i
 									class="fa fa-lg fa-2x fa-user-circle" aria-hidden="true"></i>
 									${user.name}<strong class="caret"></strong></a>
+							
 								<ul class="dropdown-menu">
 									<li><a href="#">My Orders</a></li>
 									<li class="divider"></li>
 									<c:if test="${user.role=='ROLE_ADMIN' }"><li><a href="admin">Admin Panel</a></li> </c:if>
 									<li><a href="profile">Profile</a></li>
 									<li><a href="logout">Logout</a></li>
+									
+									
 								</ul></li>
 
 						</c:if>
@@ -131,13 +155,13 @@
 		</div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
-	
-	<script>
-	
+<script>	
+
+
 	
 $(document).ready (function(){
 
-        
+        $
         setTimeout(function showAlert() {
             $("#success-alert").slideUp(500, function(){
            $("#success-alert").slideUp(500);

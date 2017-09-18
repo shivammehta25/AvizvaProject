@@ -127,4 +127,19 @@ public class ProductDAOImpl implements ProductDAO {
 		
 	}
 
+
+	public List<Product> getProductByCategory(String productCatName) {
+		Session session = getSession();
+		try {
+			Query q = session.createQuery("from Product where productCatName =:productCatName");
+			q.setParameter("productCatName", productCatName);
+			List<Product> listProduct = q.list();
+			LOGGER.info("Listed Product " +  listProduct);
+			return listProduct;
+		}catch(Exception e){
+			LOGGER.error("<-- Could Not Fetch the Category-->");
+		}
+		return null;
+	}
+
 }

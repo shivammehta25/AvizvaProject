@@ -117,41 +117,86 @@ p,label {
 	background-color: #518ec2;
 }
 
-body {
+/* body {
 	 background-image: url('..//images/background.jpg');
 
-    /* Full height */
+    Full height
     height: 100%; 
 
-    /* Create the parallax scrolling effect */
+    Create the parallax scrolling effect
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
+ */
+ 
+ /* Gradient Background Start */
+body {
+background: linear-gradient(341deg, #8c8c8c, #5fe381, #96ccea, #d8c4f9, #cc9ca2, #f9f6c4, #f9f6c4);
+background-size: 1400% 1400%;
+background-attachment: fixed;
+background-position: center; 
 
+-webkit-animation: ANIMATION 15s ease infinite;
+-moz-animation: ANIMATION 15s ease infinite;
+animation: ANIMATION 15s ease infinite;
 
-.img-hover img {
--webkit-transition: all .3s ease; /* Safari and Chrome */
--moz-transition: all .3s ease; /* Firefox */
--o-transition: all .3s ease; /* IE 9 */
--ms-transition: all .3s ease; /* Opera */
-transition: all .3s ease;
-position: relative;
-opacity: 1;
-backface-visibility: hidden;
-margin-bottom: 30px;
-margin-top: 10px;
 }
 
-.img-hover img:hover {
--webkit-backface-visibility: hidden;
-backface-visibility: hidden;
--webkit-transform: translateZ(0) scale(1.50); /* Safari and Chrome */
--moz-transform: scale(1.50); /* Firefox */
--ms-transform: scale(1.50); /* IE 9 */
--o-transform: translatZ(0) scale(1.50); /* Opera */
-transform: translatZ(0) scale(1.50);
-opacity: 0.9;
+
+@-webkit-keyframes ANIMATION {
+    0%{background-position:55% 0%}
+    50%{background-position:46% 100%}
+    100%{background-position:55% 0%}
+}
+@-moz-keyframes ANIMATION {
+    0%{background-position:55% 0%}
+    50%{background-position:46% 100%}
+    100%{background-position:55% 0%}
+}
+@keyframes ANIMATION { 
+    0%{background-position:55% 0%}
+    50%{background-position:46% 100%}
+    100%{background-position:55% 0%}
 }
 
+/*Gradient Background End */
+
+/* body{
+    background: #2980b9 url('https://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png') repeat 0 0;
+	-webkit-animation: 10s linear 0s normal none infinite animate;
+	-moz-animation: 10s linear 0s normal none infinite animate;
+	-ms-animation: 10s linear 0s normal none infinite animate;
+	-o-animation: 10s linear 0s normal none infinite animate;
+	animation: 10s linear 0s normal none infinite animate;
+	background-attachment: fixed;
+    background-position: center; 
+ 
+}
+  */
+/* @-webkit-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+ 
+@-moz-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+ 
+@-ms-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+ 
+@-o-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+ 
+@keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+ */

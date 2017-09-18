@@ -8,6 +8,8 @@
 <head>
 
 <link rel="stylesheet" href="resources/css/admin.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GAMAZON | Products</title>
 <style type="text/css">
@@ -30,8 +32,6 @@
 	color: black;
 }
 
-
-
 .input-group-addon {
 	border: 10px;
 }
@@ -48,9 +48,6 @@ div#searchbutton:hover {
 .img-thumbnail {
 	width: 300px;
 }
-
-
-
 
 .block { //
 	display: block; //
@@ -187,7 +184,7 @@ a.preview {
 	text-align: center;
 	text-decoration: none;
 	padding: 5px !important;
-    font-size: 27px !important;
+	font-size: 27px !important;
 }
 
 .block {
@@ -196,20 +193,36 @@ a.preview {
 	-moz-box-shadow: 4px 7px 38px -2px rgba(0, 0, 0, 1);
 	box-shadow: 4px 7px 38px -2px rgba(0, 0, 0 0, 1);
 	border-radius: 20px !important;
-	background-color:#dceff5;
+	background-color: #dceff5;
+	margin-bottom: 20px;
 }
-a.buy.btn.btn-large.btn-info{
-	left : 25%;
+
+a.buy.btn.btn-large.btn-info {
+	left: 25%;
 }
+
 a.preview {
-    bottom: 20%;
-    left: 25%;
+	bottom: 20%;
+	left: 25%;
 }
+p.category.ng-binding {
+	font-size: 13px;
+    color: rgba(52, 123, 183, 0.58);
+    text-decoration: none;
+}
+select.ng-valid.ng-not-empty.ng-dirty.ng-valid-parse.ng-touched {
+    color: black;
+}
+
+option {
+	color: black;
+}
+
 </style>
 
 
 </head>
-<body>
+<body ng-app="myApp" ng-controller="prodController">
 	<jsp:include page="/WEB-INF/views/includes/header.jsp"></jsp:include>
 	<c:url var="rcss" value="resources/css"></c:url>
 	<c:url var="rimages" value="resources/images"></c:url>
@@ -233,12 +246,56 @@ a.preview {
 					<div class="col-md-12" id="searchbutton">
 						<div class="input-group">
 							<span class="input-group-addon"> <i
-								class="fa fa-search fa-lg" aria-hidden="true"></i></span> <input
-								type="text" class="form-control input" name="searchit"
-								placeholder="Search ...">
+								class="fa fa-search fa-lg" aria-hidden="true"></i></span>
+								<input type="text" class="form-control input" name="searchit"
+								placeholder="Search ..." ng-model="query[queryBy]">
 						</div>
-
 					</div>
+					<hr style="visibility: hidden;">
+						<div class="col-md-6">
+						<p>Search By</p>
+						<div class="btn-group">
+								<button type="button" class="btn btn-warning">
+										<label class="radio-inline" style="color: black">
+										      <input type="radio" name="optradio" value="productName" ng-model="queryBy">Name
+										    </label>
+										 </button>
+										<button type="button" class="btn btn-warning">
+										    <label class="radio-inline" style="color: black">
+										      <input type="radio" name="optradio" ng-model="queryBy" value="productCatName">Category
+										    </label>
+										  </button>
+										  <button type="button" class="btn btn-warning" >
+										    <label class="radio-inline" style="color: black">
+										      <input type="radio" name="optradio" ng-model="queryBy" value="productPrice">Price
+										    </label>
+										    </button>
+						 </div>  
+						</div>
+						
+						<div class="col-md-6">
+						<p>Sort By</p>
+					<button type="button" class="btn btn-warning">
+						
+						<label class="radio-inline" style="color: black">
+										      <input type="radio" checked="checked" name="optradio1" value="productName" ng-model="sortBy">Name
+										    </label>
+						</button>
+						<button type="button" class="btn btn-warning">
+										    <label class="radio-inline" style="color: black">
+										      <input type="radio" name="optradio1" ng-model="sortBy" value="productCatName">Category
+										    </label>
+						</button>
+						<button type="button" class="btn btn-warning">
+										    <label class="radio-inline" style="color: black">
+										      <input type="radio" name="optradio1" ng-model="sortBy" value="productPrice" >Price
+										    </label>
+						</button> 
+										    <!-- <label class="radio-inline">
+										      <input type="radio" name="optradio1" ng-model="sortBy" ng-value="false">Price Descending
+										    </label> --> 
+                </div>
+					
 				</div>
 				<div class="row">
 					<div class="col-md-12 text-center">
@@ -253,83 +310,49 @@ a.preview {
 						</ul>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-md-3">
+				<div class="row" >
+					<div class="col-md-3" ng-repeat="product in list | filter:query | orderBy:sortBy">
 						<div class="block span3">
 							<div class="product">
-								<img src="http://placehold.it/295x190/333333/FFFFFF" class="img-hover">
+								<img src="http://placehold.it/295x190/333333/FFFFFF"
+									class="img-hover">
 								<div class="buttons">
 									<a class="buy btn btn-large btn-info" href="#"><i
 										class="fa fa-2x fa-lg fa-shopping-cart"></i> Add to Cart</a> <a
-										class="preview btn btn-large btn-info" href="#"><i
-										class="icon-eye-open"></i> View item</a>
+										class="preview btn btn-large btn-info" href="product?id={{product.productId}}"><i
+										class="fa fa-eye fa-2x fa-lg"></i> View item</a>
 								</div>
 							</div>
 
 							<div class="info">
-								<h4>Armillaria luteobubalina is a species of mushroom</h4>
-								<span class="description"> Rwanda is a country in central
-									and eastern Africa located a few degrees south of the Ecuator.
-								</span> <span class="price">$62.97</span> <a
+								<h4>{{product.productName}}</h4>
+								<span class="description"> {{product.productDesc}}
+								<a href="products?categoryName={{product.productCatName}}"><p class="category">Category : {{product.productCatName}}</p></a>
+								</span>  
+								<span class="price"><i class="fa fa-inr" aria-hidden="true"></i> {{product.productPrice}}</span> <a
 									class="btn btn-info pull-right" href="#"><i
-									class="fa fa-lg fa-shopping-cart" style="size: 8px;"></i> Buy Now</a>
+									class="fa fa-lg fa-shopping-cart" style="size: 8px;"></i> Buy
+									Now</a>
 							</div>
 
 						</div>
 					</div>
-					<div class="col-md-3">
-
-						<div class="block span3">
-							<div class="product">
-								<img src="http://placehold.it/295x190/333333/FFFFFF">
-								<div class="buttons">
-									<a class="buy btn btn-large btn-info" href="#"><i
-										class="fa fa-2x fa-lg fa-shopping-cart"></i> Add to Cart</a> <a
-										class="preview btn btn-large btn-info" href="#"><i
-										class="icon-eye-open"></i> View item</a>
-								</div>
-							</div>
-
-							<div class="info">
-								<h4>Armillaria luteobubalina is a species of mushroom</h4>
-								<span class="description"> Rwanda is a country in central
-									and eastern Africa located a few degrees south of the Ecuator.
-								</span> <span class="price">$62.97</span> <a
-									class="btn btn-info pull-right" href="#"><i
-									class="fa fa-lg fa-shopping-cart" style="size: 8px;"></i> Buy Now</a>
-							</div>
-
-						</div>
-
-					</div>
-					<div class="col-md-3">
-												<div class="block span3">
-							<div class="product">
-								<img src="http://placehold.it/295x190/333333/FFFFFF" class="img-hover">
-								<div class="buttons">
-									<a class="buy btn btn-large btn-info" href="#"><i
-										class="fa fa-2x fa-lg fa-shopping-cart"></i> Add to Cart</a> <a
-										class="preview btn btn-large btn-info" href="#"><i
-										class="icon-eye-open"></i> View item</a>
-								</div>
-							</div>
-
-							<div class="info">
-								<h4>Armillaria luteobubalina is a species of mushroom</h4>
-								<span class="description"> Rwanda is a country in central
-									and eastern Africa located a few degrees south of the Ecuator.
-								</span> <span class="price">$62.97</span> <a
-									class="btn btn-info pull-right" href="#"><i
-									class="fa fa-lg fa-shopping-cart" style="size: 8px;"></i> Buy Now</a>
-							</div>
-
-						</div>
-					</div>
-
 				</div>
+					
 			</div>
 		</div>
 	</div>
+	
+	<script>
+		var app = angular.module('myApp', []);
+		
+		 app.controller('prodController',function($scope){
+		 
+		 $scope.list = ${listProduct};
+		 
+		 });
+	</script>
+
 
 	<jsp:include page="/WEB-INF/views/includes/footer.jsp"></jsp:include>
 </body>
