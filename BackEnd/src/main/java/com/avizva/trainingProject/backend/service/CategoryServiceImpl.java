@@ -13,7 +13,7 @@ import com.avizva.trainingProject.backend.model.Supplier;
 
 @Service
 public class CategoryServiceImpl implements CategoryService{
-	private static final Logger LOGGER = Logger.getLogger(SupplierServiceImpl.class);
+	private static final Logger LOGGER = Logger.getLogger(CategoryServiceImpl.class);
 
 	@Autowired
 	CategoryDAO categoryDAO;

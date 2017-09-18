@@ -33,6 +33,7 @@ public class Category {
 	@Column(columnDefinition = "BOOLEAN DEFAULT false")
 	private boolean enabled;
 
+	
 	public int getCategoryId() {
 		return categoryId;
 	}
