@@ -31,7 +31,6 @@ public class SupplierController {
 	public ModelAndView testManageSuppliers(@ModelAttribute("msg") String msg) {
 		List<Supplier> listSupplier = supplierService.getAllSupplier();
 		LOGGER.info("<-- Inisde Supplier Manger Controller -->" + listSupplier + "Message" + msg.length() + "abc");
-		LOGGER.info("didnt came here");
 		ModelAndView suppHome = new ModelAndView();
 		suppHome.setViewName("admin/suppliers");
 		suppHome.addObject("listSupplier",listSupplier); 
@@ -87,7 +86,7 @@ public class SupplierController {
 			return new ModelAndView("redirect:/adminmanagesupp");
 		} else {
 			LOGGER.error("<-- Coulnt Not Add Supplier Inside error of controller -->");
-			return new ModelAndView("redirect:/adminmangesupp").addObject("msg", "Supplier Could Not Be Added");
+			return new ModelAndView("redirect:/adminmanagesupp").addObject("msg", "Supplier Could Not Be Added");
 		}
 	}
 

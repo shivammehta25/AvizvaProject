@@ -91,21 +91,21 @@
 							action="addCategoryForm" role="form">
 							
 							<div class="form-group">
-								<label for="name" class="col-md-2 label-register control-label">
+								<label for="categoryName" class="col-md-2 label-register control-label">
 									Category Name </label>
 								<div class="col-md-8">
 									<input type="text" placeholder="Enter Category Name"
-										name="categoryName" required="true" class="form-control" id="name" />
+										name="categoryName" required="true" class="form-control" id="categoryName" />
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="description"
+								<label for="categoryDescription"
 									class="col-md-2 label-register control-label"> Category
 									Description </label>
 								<div class="col-md-8">
 									<textarea placeholder="Enter Category Description"
 										name="categoryDescription" required="true" class="form-control"
-										id="description" ></textarea>
+										id="categoryDescription" ></textarea>
 								</div>
 							</div>
 
@@ -177,7 +177,7 @@
 						<form class="form-horizontal" method="post "
 							action="deactivateCategoryForm" role="form">
 							<div class="form-group">
-								<label for="name" class="col-md-2 label-register control-label">
+								<label for="categoryIdDel" class="col-md-2 label-register control-label">
 									Category Id </label>
 								<div class="col-md-8">
 									<input type="text" placeholder="Enter Category Name"

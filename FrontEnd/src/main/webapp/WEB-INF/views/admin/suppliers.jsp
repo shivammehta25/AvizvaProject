@@ -114,9 +114,9 @@
 								<label for="supplierContact"
 									class="col-md-2 label-register control-label"> <spring:message code='supplier.contact.input'></spring:message>  </label>
 								<div class="col-md-8">
-									<input type="text" placeholder="Enter Supplier Description"
+									<input type="text" placeholder="Enter Supplier Contact"
 										name="supplierContact" required="true" class="form-control"
-										id="supplierContact" ></textarea>
+										id="supplierContact" />
 								</div>
 							</div>
 
