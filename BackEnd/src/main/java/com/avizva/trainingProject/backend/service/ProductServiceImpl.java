@@ -18,6 +18,8 @@ public class ProductServiceImpl implements ProductService {
 	ProductDAO productDAO;
 
 	public boolean addProductService(Product product) {
+		System.out.println("Service"+product);
+
 		boolean flag=false;
 		if(productDAO.addProduct(product)){
 			LOGGER.info("<-- Product Added Successfully-->");

@@ -64,7 +64,7 @@ public class ProductController {
 	@RequestMapping("/addProductForm")
 	public ModelAndView addProducts(@Valid @ModelAttribute Product product, BindingResult result,
 			RedirectAttributes redir, HttpServletRequest request) {
-
+		System.out.println("Controller"+product);
 		if (productService.addProductService(product) && !(result.hasErrors())) {
 			LOGGER.info("<-- Inside Add Product Success Controller -->");
 			return new ModelAndView("redirect:/adminmanageprod");
