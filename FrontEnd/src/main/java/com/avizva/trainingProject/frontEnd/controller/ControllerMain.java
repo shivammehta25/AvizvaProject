@@ -2,7 +2,9 @@ package com.avizva.trainingProject.frontEnd.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -19,6 +21,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.avizva.trainingProject.backend.dao.CategoryDAO;
+import com.avizva.trainingProject.backend.model.Category;
 import com.avizva.trainingProject.backend.model.ContactUs;
 import com.avizva.trainingProject.backend.model.User;
 import com.avizva.trainingProject.backend.service.ContactUsService;
@@ -35,21 +39,26 @@ public class ControllerMain {
 	
 	private static final Logger LOGGER = Logger.getLogger(ControllerMain.class);
 
+	@Autowired
+	private CategoryDAO categoryDAO;
 	
-	
+	@Autowired
+	ServletContext context;
 	
 	
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		binder.registerCustomEditor(Date.class, "dob", new CustomDateEditor(format, false));
-
+		
 	}
 	
 
 	@RequestMapping("/")
 	public ModelAndView viewIndex(){
 		LOGGER.info("<--- Reached Index Page --->");
+		List<Category> listCategory = categoryDAO.getAllCategory();
+		context.setAttribute("listCategory", listCategory);
 		return new ModelAndView("index").addObject("homeactive" , "active");
 	}
 	@RequestMapping("/registeration")

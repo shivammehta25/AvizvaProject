@@ -22,6 +22,7 @@ public class Supplier {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int supplierId;
 
+	@Column(unique=true)
 	@NotNull
 	private String supplierName;
 

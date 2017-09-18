@@ -23,7 +23,7 @@ public class Category {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int categoryId;
 	
-	
+	@Column(unique=true)
 	@NotEmpty
 	private String categoryName;
 	

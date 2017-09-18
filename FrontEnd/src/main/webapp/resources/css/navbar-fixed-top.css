@@ -3,13 +3,17 @@ body {
   padding-top: 100px;
 }
 
-.dropdown-menu li:hover .sub-menu {
+ .dropdown-menu li:hover .sub-menu {
   visibility: visible;
 }
 
-.dropdown:hover .dropdown-menu {
+
+.dropdown:HOVER .dropdown-menu  {
   display: block;
 }
+
+
+
 
 .navbar-fixed-top {
   min-height: 80px;

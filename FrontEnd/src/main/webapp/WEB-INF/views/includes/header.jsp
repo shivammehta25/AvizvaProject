@@ -65,18 +65,14 @@
 						<li class="${aboutusactive } "><a href="aboutus"><i
 								class="fa fa-lg fa-2x fa-info-circle" aria-hidden="true"></i>
 								About Us</a></li>
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
+						<li class="dropdown" id="drop1"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown"><i
 								class="fa fa-lg fa-2x fa-shopping-basket" aria-hidden="true"></i>
-								Products<strong class="caret"></strong></a>
+								Categories<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Action</a></li>
-								<li><a href="#">Another action</a></li>
-								<li><a href="#">Something else here</a></li>
-								<li class="divider"></li>
-								<li><a href="#">Separated link</a></li>
-								<li class="divider"></li>
-								<li><a href="#">One more separated link</a></li>
+							 <c:forEach var="category" items="${applicationScope['listCategory']}">
+								<li><a href="#">${category.categoryName }</a></li>
+							</c:forEach>	
 							</ul></li>
 
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -136,17 +132,5 @@
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
 	
-	<script>
-	$(document).ready (function(){
-        
-        setTimeout(function showAlert() {
-            $("#success-alert").slideUp(500, function(){
-           $("#success-alert").slideUp(500);
-           $("#success-alert").remove();
-            });   
-        }, 2000);
-});
 
-
-	</script>
 </c:if>

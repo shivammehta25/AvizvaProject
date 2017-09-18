@@ -147,6 +147,7 @@
 		</div>
 	</div>
 
+<%= application.getAttribute("Hello") %>
 
 	
 <jsp:include page="/WEB-INF/views/includes/footer.jsp"></jsp:include>
