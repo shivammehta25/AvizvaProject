@@ -27,13 +27,17 @@
 	if(filename.equals("categories")){
 		%> <c:set var="catactive" value="active" ></c:set> <%
 	}
+	if(filename.equals("products")){
+		%><c:set var="prodactive" value="active"></c:set> <%
+	}
 %>
 
 <ul class="nav nav-pills nav-stacked">
-					<h5 class="text-center"><i class="fa fa-bars fa-2x fa-lg" aria-hidden="true"></i >&nbsp;  Admin Navigation</h5>
+					<h5 class="text-center"><i class="fa fa-bars fa-2x fa-lg"></i >&nbsp;  Admin Navigation</h5>
 					<li class="${homeactive }"><a href="admin">Home</a></li>
 					<li class="${suppactive}"><a href="adminmanagesupp">Manage Suppliers</a></li>
-					<li class=${catactive }><a href="adminmanagecat">Manage Categories</a></li>
+					<li class="${catactive }"><a href="adminmanagecat">Manage Categories</a></li>
+					<li class="${prodactive }"><a href="adminmanageprod">Manage Products</a></li>
 					<!-- <li class="dropdown pull-right"><a href="#"
 						data-toggle="dropdown" class="dropdown-toggle">Dropdown<strong
 							class="caret"></strong></a>

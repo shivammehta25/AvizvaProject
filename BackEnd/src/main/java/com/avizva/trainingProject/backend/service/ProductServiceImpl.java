@@ -42,7 +42,7 @@ public class ProductServiceImpl implements ProductService {
 		
 	}
 
-	public boolean updatePrdouct(Product product) {
+	public boolean updateProduct(Product product) {
 		boolean flag=false;
 		if(productDAO.updateProduct(product)){
 			flag = true;
@@ -75,6 +75,7 @@ public class ProductServiceImpl implements ProductService {
 		}
 		return null;
 	}
+
 	
 	
 
