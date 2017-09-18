@@ -49,8 +49,8 @@ public class Product {
 	@Column(columnDefinition="BOOLEAN Default false")
 	private boolean enabled;
 	
-	@Transient
-	private Multipart productImage;
+//	@Transient
+//	private Multipart productImage;
 
 
 	public int getProductId() {
@@ -143,14 +143,24 @@ public class Product {
 	}
 
 
-	public Multipart getProductImage() {
-		return productImage;
-	}
+//	public Multipart getProductImage() {
+//		return productImage;
+//	}
+//
+//
+//	public void setProductImage(Multipart productImage) {
+//		this.productImage = productImage;
+//	}
 
 
-	public void setProductImage(Multipart productImage) {
-		this.productImage = productImage;
+	@Override
+	public String toString() {
+		return "Product [productId=" + productId + ", productName=" + productName + ", productBrand=" + productBrand
+				+ ", productPrice=" + productPrice + ", productDesc=" + productDesc + ", productQuantity="
+				+ productQuantity + ", productCatName=" + productCatName + ", productSuppName=" + productSuppName
+				+ ", enabled=" + enabled + "]";
 	}
+	
 	
 	
 

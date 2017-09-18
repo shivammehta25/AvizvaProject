@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,7 +18,9 @@ import com.avizva.trainingProject.backend.model.Product;
 @Transactional
 public class ProductDAOImpl implements ProductDAO {
 	
+	@Autowired
 	private SessionFactory sessionFactory;
+	
 	private static final Logger LOGGER = Logger.getLogger(ProductDAOImpl.class);
 	
 	
@@ -28,6 +31,8 @@ public class ProductDAOImpl implements ProductDAO {
 	
 
 	public boolean addProduct(Product product) {
+		System.out.println("DAO"+product);
+
 		boolean flag=false;
 		try{
 		Session session=getSession();
@@ -96,9 +101,9 @@ public class ProductDAOImpl implements ProductDAO {
 			Session session=getSession();
 			Query q=session.createQuery("from Product where enabled=1");
 			listProduct=q.list();
-			LOGGER.info("<-- Fetched all the Categories -->");
+			LOGGER.info("<-- Fetched all the Products -->");
 		}catch(Exception e){
-			LOGGER.error("<-- Couldn't Not Fetch All Categories");
+			LOGGER.error("<-- Couldn't Not Fetch All Products");
 		}
 		
 		return listProduct;
