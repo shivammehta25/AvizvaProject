@@ -71,7 +71,7 @@
 								Categories<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
 							 <c:forEach var="category" items="${applicationScope['listCategory']}">
-								<li><a href="#">${category.categoryName }</a></li>
+								<li><a href="products?categoryName?=${category.categoryName }">${category.categoryName }</a></li>
 							</c:forEach>	
 							</ul></li>
 
@@ -132,5 +132,22 @@
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
 	
+	<script>
+	
+	
+$(document).ready (function(){
 
+        
+        setTimeout(function showAlert() {
+            $("#success-alert").slideUp(500, function(){
+           $("#success-alert").slideUp(500);
+           $("#success-alert").remove();
+            });   
+        }, 2000);
+        
+        	
+});
+
+
+	</script>
 </c:if>

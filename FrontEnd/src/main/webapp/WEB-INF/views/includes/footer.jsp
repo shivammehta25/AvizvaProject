@@ -81,15 +81,12 @@
 <nav class="navbar navbar-inverse ">
 	<div class="container-fluid ">
 		<div class="row ">
-			<div class="col-md-3 ">
+			<div class="col-md-4 ">
 
 
 				<div class="pull-left copytext ">Copyright&nbsp; © Gamezon 2017.</div>
 
-				<div class="col-md-3 "></div>
-				<div class="col-md-3 "></div>
-				<div class="col-md-3 "></div>
-
+				
 			</div>
 		</div>
 	</div>
