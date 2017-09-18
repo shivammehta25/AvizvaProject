@@ -33,23 +33,16 @@ public class AdminController {
 	public ModelAndView callAdminLogin() {
 		return new ModelAndView("admin/login");
 	}
-
-	
-
-	@RequestMapping("/adminmanageprod")
-	public ModelAndView manageProducts(){
-		return new ModelAndView("admin/products");
-	}
-
-	//AdminManageCat in Supplier Controller
-	
 	
 	@RequestMapping("/loginError")
 	public ModelAndView loginError(){
 		return new ModelAndView("redirect:/admin","msg" , "Invalid User Credentials");
 	}
+	
 	//AdminManageSupplier in Supplier Controller
 	
 	//AdminManageCategory in Category Controller
+	
+	//AdminManageProduct in Product Controller
 
 }

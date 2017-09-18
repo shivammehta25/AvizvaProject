@@ -19,9 +19,9 @@ import com.avizva.trainingProject.backend.model.Category;
 import com.avizva.trainingProject.backend.service.CategoryService;
 
 @Controller
-public class CategoryContoller {
+public class CategoryController {
 	
-	private static final Logger LOGGER = Logger.getLogger(SupplierController.class);
+	private static final Logger LOGGER = Logger.getLogger(CategoryController.class);
 	
 	@Autowired
 	CategoryService categoryService;
@@ -56,7 +56,8 @@ public class CategoryContoller {
 	}
 	
 	@RequestMapping("/addCategoryForm")
-	public ModelAndView addCategoryForm(@Valid @ModelAttribute Category category, BindingResult result, RedirectAttributes redir){
+	public ModelAndView addCategoryForm(@Valid @ModelAttribute Category category, BindingResult result, 
+			RedirectAttributes redir, HttpServletRequest request){
 		if(categoryService.addCategoryService(category) && !(result.hasErrors()))
 		{
 			LOGGER.info("<-- Inside AddCategory Success Controller -->");
@@ -65,7 +66,7 @@ public class CategoryContoller {
 		else
 		{
 			LOGGER.error("<-- Coulnt Not Add Category Inside error of controller -->");
-			return new ModelAndView("redirect:/adminmangecat").addObject("msg", "Category Could Not Be Added");		}
+			return new ModelAndView("redirect:/adminmanagecat").addObject("msg", "Category Could Not Be Added");		}
 	}
 	
 	@RequestMapping("/updateCategoryForm")
