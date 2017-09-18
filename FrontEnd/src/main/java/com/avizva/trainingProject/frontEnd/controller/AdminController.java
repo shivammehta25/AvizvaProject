@@ -9,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.avizva.trainingProject.backend.model.Supplier;
 import com.avizva.trainingProject.backend.service.CategoryService;
+import com.avizva.trainingProject.backend.service.ProductService;
 import com.avizva.trainingProject.backend.service.SupplierService;
 
 @Controller
@@ -18,13 +19,17 @@ public class AdminController {
 		
 	@Autowired
 	CategoryService categoryService;
+	
+	@Autowired
+	ProductService productService;
 
 	@RequestMapping("/admin")
 	public ModelAndView adminPanel( ) {
 		int totalsupp  = supplierService.getAllSupplier().size();
 		int totalcat = categoryService.getAllCategory().size();
+		int totalprod = productService.getAllProduct().size();
 		List<Supplier> allSupp = supplierService.getAllSupplier();
-		return new ModelAndView("admin/index").addObject("totalsupp" , totalsupp).addObject("totalcat" , totalcat).addObject("allSupp" , allSupp);
+		return new ModelAndView("admin/index").addObject("totalsupp" , totalsupp).addObject("totalcat" , totalcat).addObject("allSupp" , allSupp).addObject("totalprod" , totalprod);
 	}
 
 	@RequestMapping("/loginadmin")

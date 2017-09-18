@@ -130,3 +130,28 @@ body {
     background-size: cover;
 }
 
+
+.img-hover img {
+-webkit-transition: all .3s ease; /* Safari and Chrome */
+-moz-transition: all .3s ease; /* Firefox */
+-o-transition: all .3s ease; /* IE 9 */
+-ms-transition: all .3s ease; /* Opera */
+transition: all .3s ease;
+position: relative;
+opacity: 1;
+backface-visibility: hidden;
+margin-bottom: 30px;
+margin-top: 10px;
+}
+
+.img-hover img:hover {
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
+-webkit-transform: translateZ(0) scale(1.50); /* Safari and Chrome */
+-moz-transform: scale(1.50); /* Firefox */
+-ms-transform: scale(1.50); /* IE 9 */
+-o-transform: translatZ(0) scale(1.50); /* Opera */
+transform: translatZ(0) scale(1.50);
+opacity: 0.9;
+}
+

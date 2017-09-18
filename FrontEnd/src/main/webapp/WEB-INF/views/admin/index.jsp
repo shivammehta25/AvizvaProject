@@ -47,7 +47,7 @@
 					<div class="col-md-4">
 						<div class="jumbotron well">
 							<h2>Products</h2>
-							<p>Total Number of Products :
+							<p>Total Number of Products : ${totalprod }
 							<p>
 								<a class="btn btn-primary btn-large" href="adminmanageprod">Manage
 									Products</a>

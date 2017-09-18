@@ -28,21 +28,9 @@
  */
 .col-md-4:HOVER {
 	color: black;
-	
 }
 
-.jumbotron {
-	-webkit-box-shadow: 4px 7px 38px -2px rgba(0, 0, 0, 1);
-	-moz-box-shadow: 4px 7px 38px -2px rgba(0, 0, 0, 1);
-	box-shadow: 4px 7px 38px -2px rgba(0, 0, 0 0, 1);
-	border-radius: 20px !important; 
-	text-align: center;
-	
-}
 
-.jumbotron:Hover {
-	background-color: rgba(83, 81, 194, 0.78);
-}
 
 .input-group-addon {
 	border: 10px;
@@ -59,6 +47,163 @@ div#searchbutton:hover {
 
 .img-thumbnail {
 	width: 300px;
+}
+
+
+
+
+.block { //
+	display: block; //
+	position: relative; //
+	width: 295px; //
+	border-radius: 5px;
+	background: #fff;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+}
+
+.product {
+	display: block;
+	position: relative;
+}
+
+.product img {
+	width: 100%;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.info {
+	display: block;
+	position: relative;
+	padding: 20px;
+}
+
+.details {
+	border-top: 1px solid #e5e5e5;
+	padding: 18px 20px;
+}
+
+.buttons {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background: rgba(255, 255, 255, .5);
+	opacity: 0;
+	-webkit-transition: opacity .25s ease-in;
+	-ms-transition: opacity .25s ease-in;
+	-moz-transition: opacity .25s ease-in;
+	-o-transition: opacity .25s ease-in;
+	transition: opacity .25s ease-in;
+}
+
+.product:hover .buttons, .product:hover a {
+	opacity: 1;
+}
+
+.buttons a {
+	display: block;
+	position: absolute;
+	left: 50px;
+	width: 155px;
+	border-radius: 2px; //
+	padding: 15px 10px 15px 65px; //
+	font-family: Helvetica, sans-serif;
+	text-transform: uppercase;
+	color: #fff;
+	text-decoration: none;
+	opacity: 0;
+}
+
+a.buy {
+	top: 20%;
+}
+
+a.preview {
+	bottom: 20%;
+}
+
+.info::after {
+	display: block;
+	position: absolute;
+	top: -8px;
+	left: 23px;
+	content: "";
+	width: 15px;
+	height: 15px;
+	background: #fff;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.info h4 {
+	position: relative;
+	padding: 0 0 20px 0;
+	margin: 0 0 20px 0;
+	font-family: "Open Sans", sans-serif;
+	font-weight: 700;
+	font-size: 19px;
+	line-height: 25px;
+	color: #372f2b;
+	letter-spacing: -1px;
+}
+
+.info h4::after {
+	display: block;
+	position: absolute;
+	bottom: 0px;
+	content: "";
+	width: 40px;
+	height: 2px;
+	background: #3b86c4;
+}
+
+.info .description {
+	display: block;
+	padding-bottom: 20px;
+	font-family: "Open Sans", sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	color: #5f5f5f;
+}
+
+.info .price {
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-size: 24px;
+	font-weight: 700;
+	color: #372f2b;
+	line-height: 26px;
+}
+
+.pull-right .fa {
+	width: 30px;
+	text-align: center;
+	text-decoration: none;
+	padding: 5px !important;
+    font-size: 27px !important;
+}
+
+.block {
+	padding-bottom: 20px;
+	-webkit-box-shadow: 4px 7px 38px -2px rgba(0, 0, 0, 1);
+	-moz-box-shadow: 4px 7px 38px -2px rgba(0, 0, 0, 1);
+	box-shadow: 4px 7px 38px -2px rgba(0, 0, 0 0, 1);
+	border-radius: 20px !important;
+	background-color:#dceff5;
+}
+a.buy.btn.btn-large.btn-info{
+	left : 25%;
+}
+a.preview {
+    bottom: 20%;
+    left: 25%;
 }
 </style>
 
@@ -109,64 +254,78 @@ div#searchbutton:hover {
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-4">
-						<div class="jumbotron">
-							<img alt="Product Image Preview"
-								src="http://lorempixel.com/140/140/" class="img-thumbnail" />
-							<h3>Product Name</h3>
-							<h4>Category</h4>
-							<h5>$Price</h5>
-
-							<div class="btn-group">
-								<button type="button" class="btn btn-warning">
-									<i class="fa fa-check fa-2x fa-lg" aria-hidden="true"></i> View
-									Product
-								</button>
-								<button type="button" class="btn btn-warning">
-									<i class="fa fa-2x fa-lg fa-shopping-cart"></i>Add to Cart
-								</button>
+					<div class="col-md-3">
+						<div class="block span3">
+							<div class="product">
+								<img src="http://placehold.it/295x190/333333/FFFFFF" class="img-hover">
+								<div class="buttons">
+									<a class="buy btn btn-large btn-info" href="#"><i
+										class="fa fa-2x fa-lg fa-shopping-cart"></i> Add to Cart</a> <a
+										class="preview btn btn-large btn-info" href="#"><i
+										class="icon-eye-open"></i> View item</a>
+								</div>
 							</div>
+
+							<div class="info">
+								<h4>Armillaria luteobubalina is a species of mushroom</h4>
+								<span class="description"> Rwanda is a country in central
+									and eastern Africa located a few degrees south of the Ecuator.
+								</span> <span class="price">$62.97</span> <a
+									class="btn btn-info pull-right" href="#"><i
+									class="fa fa-lg fa-shopping-cart" style="size: 8px;"></i> Buy Now</a>
+							</div>
+
 						</div>
 					</div>
-					<div class="col-md-4">
-						<div class="jumbotron">
-							<img alt="Product Image Preview"
-								src="http://lorempixel.com/140/140/" class="img-thumbnail" />
-							<h3>Product Name</h3>
-							<h4>Category</h4>
-							<h5>$Price</h5>
+					<div class="col-md-3">
 
-							<div class="btn-group">
-								<button type="button" class="btn btn-warning">
-									<i class="fa fa-check fa-2x fa-lg" aria-hidden="true"></i> View
-									Product
-								</button>
-								<button type="button" class="btn btn-warning">
-									<i class="fa fa-2x fa-lg fa-shopping-cart"></i>Add to Cart
-								</button>
+						<div class="block span3">
+							<div class="product">
+								<img src="http://placehold.it/295x190/333333/FFFFFF">
+								<div class="buttons">
+									<a class="buy btn btn-large btn-info" href="#"><i
+										class="fa fa-2x fa-lg fa-shopping-cart"></i> Add to Cart</a> <a
+										class="preview btn btn-large btn-info" href="#"><i
+										class="icon-eye-open"></i> View item</a>
+								</div>
 							</div>
+
+							<div class="info">
+								<h4>Armillaria luteobubalina is a species of mushroom</h4>
+								<span class="description"> Rwanda is a country in central
+									and eastern Africa located a few degrees south of the Ecuator.
+								</span> <span class="price">$62.97</span> <a
+									class="btn btn-info pull-right" href="#"><i
+									class="fa fa-lg fa-shopping-cart" style="size: 8px;"></i> Buy Now</a>
+							</div>
+
+						</div>
+
+					</div>
+					<div class="col-md-3">
+												<div class="block span3">
+							<div class="product">
+								<img src="http://placehold.it/295x190/333333/FFFFFF" class="img-hover">
+								<div class="buttons">
+									<a class="buy btn btn-large btn-info" href="#"><i
+										class="fa fa-2x fa-lg fa-shopping-cart"></i> Add to Cart</a> <a
+										class="preview btn btn-large btn-info" href="#"><i
+										class="icon-eye-open"></i> View item</a>
+								</div>
+							</div>
+
+							<div class="info">
+								<h4>Armillaria luteobubalina is a species of mushroom</h4>
+								<span class="description"> Rwanda is a country in central
+									and eastern Africa located a few degrees south of the Ecuator.
+								</span> <span class="price">$62.97</span> <a
+									class="btn btn-info pull-right" href="#"><i
+									class="fa fa-lg fa-shopping-cart" style="size: 8px;"></i> Buy Now</a>
+							</div>
+
 						</div>
 					</div>
-					<div class="col-md-4">
-						<div class="jumbotron">
-							<img alt="Product Image Preview"
-								src="http://lorempixel.com/140/140/" class="img-thumbnail" />
-							<h3>Product Name</h3>
-							<h4>Category</h4>
-							<h5>$Price</h5>
 
-							<div class="btn-group">
-								<button type="button" class="btn btn-warning">
-									<i class="fa fa-check fa-2x fa-lg" aria-hidden="true"></i> View
-									Product
-								</button>
-								<button type="button" class="btn btn-warning">
-									<i class="fa fa-2x fa-lg fa-shopping-cart"></i>Add to Cart
-								</button>
-							</div>
-						</div>
-					</div>
-					
 				</div>
 			</div>
 		</div>
