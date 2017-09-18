@@ -33,6 +33,22 @@ public class CategoryDAOImpl implements CategoryDAO {
 		return sessionFactory.getCurrentSession();
 	}
 
+	public boolean createCategory(Category category) {
+		
+		boolean flag=false;
+		try{
+		Session session=getSession();
+		category.setEnabled(true);
+		session.save(category);
+		flag=true;
+		LOGGER.info("<-- Category added " + category.getCategoryName() + "--> ");
+		}
+		catch(Exception e){
+			LOGGER.error("<-- Error Adding Category -->");
+		}
+		return flag;
+		
+	}
 	
 	public Category getCategoryById(int categoryId) {
 		Session session = getSession();
@@ -60,22 +76,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		
 		return listCatgeory;
 	}
-	public boolean createCategory(Category category) {
-		
-		boolean flag=false;
-		try{
-		Session session=getSession();
-		category.setEnabled(true);
-		session.save(category);
-		flag=true;
-		LOGGER.info("<-- Category added " + category.getCategoryName() + "--> ");
-		}
-		catch(Exception e){
-			LOGGER.error("<-- Error Adding Category -->");
-		}
-		return flag;
-		
-	}
+	
 
 	
 

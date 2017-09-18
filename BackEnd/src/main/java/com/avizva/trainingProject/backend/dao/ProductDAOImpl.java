@@ -18,7 +18,7 @@ import com.avizva.trainingProject.backend.model.Product;
 public class ProductDAOImpl implements ProductDAO {
 	
 	private SessionFactory sessionFactory;
-	private static final Logger LOGGER = Logger.getLogger(SupplierDAOImpl.class);
+	private static final Logger LOGGER = Logger.getLogger(ProductDAOImpl.class);
 	
 	
 	
