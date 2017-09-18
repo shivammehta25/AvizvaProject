@@ -32,7 +32,7 @@
 							<h2>Products</h2>
 							<p>Total Number of Products :
 							<p>
-								<a class="btn btn-primary btn-large" href="adminproduct">Manage
+								<a class="btn btn-primary btn-large" href="adminmanageprod">Manage
 									Products</a>
 							</p>
 						</div>

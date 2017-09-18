@@ -59,13 +59,13 @@
 										<td><c:out value="${product.productPrice}"></c:out></td>
 										<td><c:out value="${product.productDesc}"></c:out></td>
 										<td><c:out value="${product.productQuantity}"></c:out></td>
-										<td><c:out value="${product.productCategory}"></c:out></td>
-										<td><c:out value="${product.productSupplier}"></c:out></td>
+										<td><c:out value="${product.productCatName}"></c:out></td>
+										<td><c:out value="${product.productSuppName}"></c:out></td>
 										
 										<td><a style="cursor: pointer"
 											onclick="populate(${product.productId} ,'${product.productName}' , '${product.productBrand}' ,
 											 '${product.productPrice}', '${product.productDesc}', '${product.productQuantity}',
-											 '${product.productCategory}', '${product.productSupplier}' )">Edit</a></td>
+											 '${product.productCatName}', '${product.productSuppName}' )">Edit</a></td>
 										<td><a style="cursor: pointer"
 											onclick="deleteit(${product.productId})"> Delete</a>
 									</tr>
