@@ -235,7 +235,7 @@ option {
 		<div class="row">
 			<div class="navcontainer">
 				<div class="col-md-2">
-					<h3 class="radhead">Search By Categories</h3>
+					<h3 class="radhead">Filter By Categories</h3>
 					<ul class="nav nav-pills nav-stacked">
 					<li><a href="products?categoryName=all">All Products</a>
 						<c:forEach var="category"
@@ -324,8 +324,9 @@ option {
 					<div class="col-md-3" ng-repeat="product in list | filter:query | orderBy:sortBy">
 						<div class="block span3">
 							<div class="product">
-								<img src="http://placehold.it/295x190/333333/FFFFFF"
-									class="img-hover">
+								<img			height="190px" width="295px"
+												src="download?productName={{product.productName}}"
+												 alt="Thumbnail Not Available">
 								<div class="buttons">
 									<a class="buy btn btn-large btn-info" href="#"><i
 										class="fa fa-2x fa-lg fa-shopping-cart"></i> Add to Cart</a> <a

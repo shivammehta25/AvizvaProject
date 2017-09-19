@@ -66,13 +66,14 @@
 										<td><a style="cursor: pointer"
 											onclick="populate(${product.productId} ,'${product.productName}' , '${product.productBrand}' ,
 											 '${product.productPrice}', '${product.productDesc}', '${product.productQuantity}',
-											 '${product.productCatName}', '${product.productSuppName}' )">Edit</a></td>
-										<td><a style="cursor: pointer"
+											 '${product.productCatName}', '${product.productSuppName}')"
+											 data-toggle="collapse" href="#updatePanel">Edit</a></td>
+										<td><a style="cursor: pointer" data-toggle="collapse" href="#deletePanel"
 											onclick="deleteit(${product.productId})"> Delete</a></td>
 										<td>
 											<img
 												src="<c:url value="download?productName=${product.productName}"/>"
-												class=" thumbnailIconStyling"></td>
+												class="thumbnailIconStyling" alt="Error Loading Thumbnail"></td>
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -82,151 +83,164 @@
 
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h4 class="panel-title" style="text-align: left">
-							Search for Product
-						</h4>
+						<a data-toggle="collapse" href="#searchPanel" style="text-decoration: none;"
+						class="collapsed" aria-expanded="false">
+							<h4 class="panel-title" style="text-align: left">
+								Search for Product
+							</h4>
+						</a>
 					</div>
-					<div class="panel-body">
-						<form class="form-horizontal" method="post "
-							action="searchProductForm" role="form">
-							<div class="form-group">
-
-								<label for="name" class="col-md-2 label-register control-label">
-									Enter Product Name
-								</label>
-								<div class="col-md-8">
-									<input type="text" placeholder="Enter Product Name"
-										name="name" required="true" class="form-control" id="name" />
+					<div class="panel-collapse collapse" id="searchPanel" aria-expanded="false" style="height: 0px;">
+						<div class="panel-body">
+							<form class="form-horizontal" method="post "
+								action="searchProductForm" role="form">
+								<div class="form-group">
+	
+									<label for="name" class="col-md-2 label-register control-label">
+										Enter Product Name
+									</label>
+									<div class="col-md-8">
+										<input type="text" placeholder="Enter Product Name"
+											name="name" required="true" class="form-control" id="name" />
+									</div>
+									<div class="col-md-2">
+	
+										<button type="submit" class="btn btn-success">Search</button>
+									</div>
 								</div>
-								<div class="col-md-2">
-
-									<button type="submit" class="btn btn-success">Search</button>
-								</div>
-							</div>
-						</form>
+							</form>
+						</div>
 					</div>
 				</div>
 
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h4 class="panel-title" style="text-align: left">
-							Add Product
-						</h4>
+						<a data-toggle="collapse" href="#addPanel" style="text-decoration: none;"
+						class="collapsed" aria-expanded="false">
+							<h4 class="panel-title" style="text-align: left">
+								Add Product
+							</h4>
+						</a>	
 					</div>
-					<div class="panel-body">
-						<form class="form-horizontal" method="post"
-							action="addProductForm" role="form" enctype="multipart/form-data">
-							
-							<div class="form-group">
-								<label for="productName"
-									class="col-md-2 label-register control-label">
-									Enter Product's Name
-								</label>
-								<div class="col-md-8">
-									<input type="text" placeholder="Enter Product's Name"
-										name="productName" required="true" class="form-control"
-										id="productName" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="productBrand"
-									class="col-md-2 label-register control-label">
-									Enter Product's Brand 
-								</label>
-								<div class="col-md-8">
-									<input type="text" placeholder="Enter Product's Brand"
-										name="productBrand" required="true" class="form-control"
-										id="productBrand" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="productPrice"
-									class="col-md-2 label-register control-label">
-									Enter Product's Price
-								</label>
-								<div class="col-md-8">
-									<input type="number" placeholder="Enter Product's Price"
-										name="productPrice" required="true" class="form-control"
-										id="productPrice" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="productDesc"
-									class="col-md-2 label-register control-label"> 
-									Enter a Short Description </label>
-								<div class="col-md-8">
-									<textarea placeholder="Enter Product's Description"
-										name="productDesc" required="true" class="form-control"
-										id="productDesc" ></textarea>
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="productQuantity"
-									class="col-md-2 label-register control-label">
-									Enter Product's Quantity
-								</label>
-								<div class="col-md-8">
-									<input type="number" placeholder="Enter Product's Quantity"
-										name="productQuantity" required="true" class="form-control"
-										id="productQuantity" />
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="productCatName"
-									class="col-md-2 label-register control-label">
-									Choose Product's Category
-								</label>
-								<div class="col-md-8">
-									<select id="productCatName" name="productCatName">
-										<option value="" disabled selected>Select Categories</option>
-										<c:forEach var="category" items="${listCategory}">
-											<option value="${category.categoryName}">${category.categoryName}</option>
-										</c:forEach>
-									</select>
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="productSuppName"
-									class="col-md-2 label-register control-label">
-									Choose Product's Supplier
-								</label>
-								<div class="col-md-8">
-									<select id="productSuppName" name="productSuppName" >
-										<option value="" disabled selected>Select Categories</option>
-										<c:forEach var="supplier" items="${listSupplier}">
-											<option value="${supplier.supplierName}">${supplier.supplierName}</option>
-										</c:forEach>
-									</select>
-								</div>
-							</div>
+					<div class="panel-collapse collapse" id="addPanel" aria-expanded="false" style="height: 0px;">	
+						<div class="panel-body">
+							<form class="form-horizontal" method="post"
+								action="addProductForm" role="form" enctype="multipart/form-data">
 								
-								<!-- Prodcut Image Upload -->
-							<div class="form-group">
-								<label for="file" class="col-md-2 label-register control-label">Upload Product Image</label> 
-								<input type="file" class="form-control-file" id="file" aria-describedby="fileHelp" name="file"> 
-								<p id="fileHelp" class="form-text "></p>
-							</div>	
-								
-							<div class="form-group">
-								<div class=" col-md-2 col-md-offset-2">
-
-									<button type="submit" class="btn btn-success">Add</button>
+								<div class="form-group">
+									<label for="productName"
+										class="col-md-2 label-register control-label">
+										Enter Product's Name
+									</label>
+									<div class="col-md-8">
+										<input type="text" placeholder="Enter Product's Name"
+											name="productName" required="true" class="form-control"
+											id="productName" />
+									</div>
 								</div>
-							</div>
-
-						</form>
-					</div>
+								<div class="form-group">
+									<label for="productBrand"
+										class="col-md-2 label-register control-label">
+										Enter Product's Brand 
+									</label>
+									<div class="col-md-8">
+										<input type="text" placeholder="Enter Product's Brand"
+											name="productBrand" required="true" class="form-control"
+											id="productBrand" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="productPrice"
+										class="col-md-2 label-register control-label">
+										Enter Product's Price
+									</label>
+									<div class="col-md-8">
+										<input type="number" placeholder="Enter Product's Price"
+											name="productPrice" required="true" class="form-control"
+											id="productPrice" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="productDesc"
+										class="col-md-2 label-register control-label"> 
+										Enter a Short Description </label>
+									<div class="col-md-8">
+										<textarea placeholder="Enter Product's Description"
+											name="productDesc" required="true" class="form-control"
+											id="productDesc" ></textarea>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="productQuantity"
+										class="col-md-2 label-register control-label">
+										Enter Product's Quantity
+									</label>
+									<div class="col-md-8">
+										<input type="number" placeholder="Enter Product's Quantity"
+											name="productQuantity" required="true" class="form-control"
+											id="productQuantity" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="productCatName"
+										class="col-md-2 label-register control-label">
+										Choose Product's Category
+									</label>
+									<div class="col-md-8">
+										<select id="productCatName" name="productCatName">
+											<option value="" disabled selected>Select Categories</option>
+											<c:forEach var="category" items="${listCategory}">
+												<option value="${category.categoryName}">${category.categoryName}</option>
+											</c:forEach>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="productSuppName"
+										class="col-md-2 label-register control-label">
+										Choose Product's Supplier
+									</label>
+									<div class="col-md-8">
+										<select id="productSuppName" name="productSuppName" >
+											<option value="" disabled selected>Select Categories</option>
+											<c:forEach var="supplier" items="${listSupplier}">
+												<option value="${supplier.supplierName}">${supplier.supplierName}</option>
+											</c:forEach>
+										</select>
+									</div>
+								</div>
+									
+									<!-- Prodcut Image Upload -->
+								<div class="form-group">
+									<label for="file" class="col-md-2 label-register control-label">Upload Product Image</label> 
+									<input type="file" class="form-control-file" id="file" aria-describedby="fileHelp" name="file"> 
+									<p id="fileHelp" class="form-text "></p>
+								</div>	
+									
+								<div class="form-group">
+									<div class=" col-md-2 col-md-offset-2">
+	
+										<button type="submit" class="btn btn-success">Add</button>
+									</div>
+								</div>
+	
+							</form>
+						</div>
+					</div>	
 				</div>
 				
 
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h4 class="panel-title" style="text-align: left">
-							Update Product
-						</h4>
+						<a data-toggle="collapse" href="#updatePanel" style="text-decoration: none;"
+						class="collapsed" aria-expanded="false">	
+							<h4 class="panel-title" style="text-align: left">
+								Update Product
+							</h4>
+						</a>	
 					</div>
+					<div class="panel-collapse collapse" id="updatePanel" aria-expanded="false" style="height: 0px;">
 					<div class="panel-body">
-						
 						<form class="form-horizontal" method="post"
 							action="updateProductForm" role="form" enctype="multipart/form-data">
 							<div class="form-group">
@@ -334,14 +348,19 @@
 							</div>
 						</form>
 					</div>
+					</div>
 				</div>
 
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h4 class="panel-title" style="text-align: left">
-							Delete Product
-						</h4>
+						<a data-toggle="collapse" href="#deletePanel" style="text-decoration: none;"
+						class="collapsed" aria-expanded="false">
+							<h4 class="panel-title" style="text-align: left">
+								Delete Product
+							</h4>
+						</a>	
 					</div>
+					<div class="panel-collapse collapse " id="deletePanel" aria-expanded="false" style="height: 0px;">
 					<div class="panel-body">
 						<form class="form-horizontal" method="post "
 							action="deleteProductForm" role="form">
@@ -365,6 +384,7 @@
 
 						</form>
 					</div>
+					</div>
 				</div>
 
 			</div>
@@ -386,6 +406,7 @@
 		document.getElementById("productCatNameUpdate").setAttribute("value" , catName);
 		$("html, body").animate({ scrollTop: $("#productCatNameUpdate").offset().top }, 0);
 		document.getElementById("productSuppNameUpdate").setAttribute("value" , suppName);
+		
 	}	
 	var deleteit = function(id){
 		document.getElementById("productIdDel").setAttribute("value" , id);

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class DownloadController {
-	private final String fileDir = "/tmp/Gamazon/productImages/";
+	private final String fileDir = "/Users/Shared/";
 
 	private final static Logger LOGGER = LogManager.getLogger(DownloadController.class);
 

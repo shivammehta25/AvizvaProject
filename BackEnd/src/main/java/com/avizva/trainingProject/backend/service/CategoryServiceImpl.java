@@ -19,6 +19,7 @@ public class CategoryServiceImpl implements CategoryService{
 	CategoryDAO categoryDAO;
 	
 	public boolean addCategoryService(Category category){
+		LOGGER.info("<-- CategoryService.addCategoryService Called--->");
 		boolean flag = false;
 		if(categoryDAO.createCategory(category)){
 			LOGGER.info("<-- Category Added Successfully-->");
@@ -30,11 +31,10 @@ public class CategoryServiceImpl implements CategoryService{
 		return flag;
 	}
 	
-	
-	
 	public List<Category> searchCategory(String name){
+		LOGGER.info("<-- CategoryService.searchCategory Called--->");
 		List<Category> listCategory= categoryDAO.searchCategory(name);
-		LOGGER.debug("Category Search yielded" + listCategory.size());
+		LOGGER.info("searchCategory yielded" + listCategory.size());
 		if(listCategory != null){
 			return listCategory;
 		}
@@ -42,27 +42,33 @@ public class CategoryServiceImpl implements CategoryService{
 	}
 	
 	public boolean updateCategory(Category category){
+		LOGGER.info("<-- CategoryService.updateCategory Called--->");
 		boolean flag = false;
 		if(categoryDAO.updateCategory(category)){
+			LOGGER.info("<-- Category Updated Successfully-->");
 			flag = true;
 			return flag;
 		}
 		else{
+			LOGGER.error("<-- Could Not Update the Category -->");
 			return flag;
 		}
 	}
 	
 	public boolean deleteCategory(int id){
+		LOGGER.info("<-- CategoryService.deleteCategory Called--->");
 		boolean flag = false;
 		Category category = categoryDAO.getCategoryById(id);
 		LOGGER.info("<-- Category id to be delteted "  + category.getCategoryId());
 		if(category != null){
+			LOGGER.info("<-- Category Deleted Successfully-->");
 			flag = true;
 			categoryDAO.deactivateCategory(category);
 			return flag;
 			
 		}
-			return flag;
+		LOGGER.error("<-- Could Not Delete the Category -->");
+		return flag;
 
 		
 	}
@@ -70,8 +76,9 @@ public class CategoryServiceImpl implements CategoryService{
 
 
 	public List<Category> getAllCategory() {
+		LOGGER.info("<-- CategoryService.getAllCategory Called--->");
 		List<Category> listCategory = categoryDAO.getAllCategory();
-		LOGGER.info("Inside Service of Category" + listCategory );
+		LOGGER.info("getAllCategory yielded" + listCategory.size());
 		if(listCategory != null){
 			return listCategory;
 		}

@@ -27,7 +27,7 @@ body {
 
 @media (max-width: 767px) {
   .navbar-nav>li>a {
-    line-height: 20px;
+    line-height: 25px;
     padding-top: 10px;
     padding-bottom: 10px;
   }
@@ -35,13 +35,225 @@ body {
 
 
 .navbar-form {
-  margin: 25px 25px 0px 0px;
+  margin-top:25px;
 }
 
 
 .navbar-form .form-control{
-  width: 350px;
+  width: 200px;
 }
+
+
+
+.thumbnailStyling {
+	position: relative;
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+
+}
+.thumbnailIconStyling {
+	position: relative;
+	width: 40px;
+	height: 40px;
+	overflow: hidden;
+
+}
+
+.item active {
+	height: 500px;
+	width: 100%;
+}
+
+.item {
+	height: 500px;
+	width: 100%;
+}
+
+.carousel {
+	margin-bottom: 50px;
+}
+
+.item h3 {
+	color: black;
+}
+
+.item p {
+	color: black;
+}
+
+.navbar {
+	margin-bottom: 0;
+}
+
+body {
+	background: #3E4649;
+	color: #f7f7f7;
+	font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2 {
+	font-weight: bold;
+}
+
+p,label {
+	font-size: 16px;
+	color: #cdcdcd;
+}
+
+.btn-primary {
+	color: #fff;
+	background-color: transparent;
+	border-color: white;
+	margin-bottom: 0px;
+}
+
+.btn-primary:hover {
+	color: #27A967;
+	background-color: white;
+	border-color: white;
+}
+
+.navbar-inverse {
+	background: #2E2F31;
+	border: 0;
+	padding-top: 2px;
+}
+
+.navbar-inverse .navbar-nav li a {
+	color: #f7f7f7;
+	
+}
+
+.navbar-inverse .navbar-nav li a:hover {
+	background: #27A967;
+}
+.dropdown-menu {
+	background: #2E2F31;
+	border-radius: 0;
+	border: 0;
+}
+.dropdown-menu li a {
+	padding: 10px;
+}
+
+
+.navbar-inverse .navbar-nav .dropdown-menu li a:hover {
+	background: #2C463C;
+}
+.glyphicon-large {
+	font-size: 100px;
+}
+.fa-large {
+	font-size: 20px;
+}
+
+.call-to-action {
+	text-align: center;
+}
+.call-to-action p {
+	margin-bottom: 30px;
+	font-family: sans-serif;
+}
+
+
+.navbar .navbar-nav > li.open > a:focus {
+  background-color: teal;
+  color: #fff;
+}
+
+.label-register{
+	color: "black";	
+}
+
+.jumbotron{
+	background-color: #518ec2;
+}
+
+/* body {
+	 background-image: url('..//images/background.jpg');
+
+    Full height
+    height: 100%; 
+
+    Create the parallax scrolling effect
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ */
+ 
+ /* Gradient Background Start */
+body {
+background: linear-gradient(341deg, #8c8c8c, #5fe381, #96ccea, #d8c4f9, #cc9ca2, #f9f6c4, #f9f6c4);
+background-size: 1400% 1400%;
+background-attachment: fixed;
+background-position: center; 
+
+-webkit-animation: ANIMATION 15s ease infinite;
+-moz-animation: ANIMATION 15s ease infinite;
+animation: ANIMATION 15s ease infinite;
+
+}
+
+
+@-webkit-keyframes ANIMATION {
+    0%{background-position:55% 0%}
+    50%{background-position:46% 100%}
+    100%{background-position:55% 0%}
+}
+@-moz-keyframes ANIMATION {
+    0%{background-position:55% 0%}
+    50%{background-position:46% 100%}
+    100%{background-position:55% 0%}
+}
+@keyframes ANIMATION { 
+    0%{background-position:55% 0%}
+    50%{background-position:46% 100%}
+    100%{background-position:55% 0%}
+}
+
+/*Gradient Background End */
+
+/* body{
+    background: #2980b9 url('https://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png') repeat 0 0;
+	-webkit-animation: 10s linear 0s normal none infinite animate;
+	-moz-animation: 10s linear 0s normal none infinite animate;
+	-ms-animation: 10s linear 0s normal none infinite animate;
+	-o-animation: 10s linear 0s normal none infinite animate;
+	animation: 10s linear 0s normal none infinite animate;
+	background-attachment: fixed;
+    background-position: center; 
+ 
+}
+  */
+/* @-webkit-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+ 
+@-moz-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+ 
+@-ms-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+ 
+@-o-keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+ 
+@keyframes animate {
+	from {background-position:0 0;}
+	to {background-position: 500px 0;}
+}
+ */
 
 
 

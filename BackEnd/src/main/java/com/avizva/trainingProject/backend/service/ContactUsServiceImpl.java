@@ -22,17 +22,18 @@ public class ContactUsServiceImpl implements ContactUsService {
 	 * @autowired The mail sender bean from the application's configuration file 
 	 * is autowired
 	 */
-
-	private static final Logger LOGGER = Logger.getLogger(ContactUsServiceImpl.class);
-
 	@Autowired
 	private MailSender mailSender;
+	
+	private static final Logger LOGGER = Logger.getLogger(ContactUsServiceImpl.class);
+
 	
 	/**
 	 * The contact
 	 * 
 	 */
 	public boolean contactUs(ContactUs contactUs){
+		LOGGER.info("<--- ContactUsService.contactUs called --->");
 		boolean flag=false;
 		if(contactUsDAO.contactus(contactUs)){
 			SimpleMailMessage message = new SimpleMailMessage();
@@ -45,7 +46,7 @@ public class ContactUsServiceImpl implements ContactUsService {
 			LOGGER.info("<--- Mail Send for Contacting --->");
 			flag=true;
 		}
-		LOGGER.error("<-- Mail Connot be sent Error --> ");
+		LOGGER.error("<-- Error, Mail Connot be sent --> ");
 		return flag;
 	}
 	

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.mail.Session;
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +22,11 @@ public class CartServiceImpl implements CartService {
 	@Autowired
 	CartDAO cartDAO;
 	
+	private static final Logger LOGGER = Logger.getLogger(CartServiceImpl.class);
+
+	
 	public boolean addProductToCart(int productId , int productQuantity , HttpSession session) {
+		LOGGER.info("<-- CartService.addProductToCart Called--->");
 		boolean flag = false; 
 		Product product = productDAO.getProductById(productId);
 		Cart cart = new Cart();
@@ -32,8 +37,7 @@ public class CartServiceImpl implements CartService {
 			}
 			cart.setCartQuantity(productQuantity);
 			cart.setUsername((String)session.getAttribute("username"));
-			cartDAO.addProductToCart(cart);
-			
+			cartDAO.addProductToCart(cart);	
 		}
 		
 		return false;
@@ -42,6 +46,7 @@ public class CartServiceImpl implements CartService {
 	
 	
 	public boolean removeProductFromCart(int cartId) {
+		LOGGER.info("<-- CartService.removeProductfromCart Called--->");
 		boolean flag = false;
 		Cart cart = cartDAO.getCartById(cartId);
 		if(cart != null){
@@ -54,6 +59,7 @@ public class CartServiceImpl implements CartService {
 	
 	
 	public boolean updateCartQuantity(int productId, int cartQuantity , String username) {
+		LOGGER.info("<-- CartService.updateCartQuantity Called--->");
 		Cart cart = cartDAO.getCartByProductId(productId ,username);		
 		if( cart != null)
 		{
@@ -74,6 +80,7 @@ public class CartServiceImpl implements CartService {
 	
 	
 	public Long priceCalculator(String username, Long... discount) {
+		LOGGER.info("<-- CartService.priceCalculator Called--->");
 		List<Cart> listCart = cartDAO.getAllCartByUser(username);
 		Long price = 0L;
 		for(Cart c : listCart){
@@ -89,6 +96,7 @@ public class CartServiceImpl implements CartService {
 
 
 	public int hasProduct(int productId) {
+		LOGGER.info("<-- CartService.hasProduct Called--->");
 		Product product = productDAO.getProductById(productId);
 		return product.getProductId();
 	}
