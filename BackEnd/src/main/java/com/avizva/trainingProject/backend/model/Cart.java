@@ -1,12 +1,24 @@
 package com.avizva.trainingProject.backend.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+
+import com.sun.istack.internal.NotNull;
+
+@Entity
 public class Cart {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int cardId;
 	
+	@NotEmpty
 	private String username;
-	
+	@NotNull
 	private int productId;
-	
+	@NotNull
 	private int cartQuantity;
 	
 	

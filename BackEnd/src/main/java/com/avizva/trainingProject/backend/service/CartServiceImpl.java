@@ -1,10 +1,12 @@
 package com.avizva.trainingProject.backend.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.mail.Session;
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +15,12 @@ import com.avizva.trainingProject.backend.dao.ProductDAO;
 import com.avizva.trainingProject.backend.model.Cart;
 import com.avizva.trainingProject.backend.model.Product;
 
+
 @Service
 public class CartServiceImpl implements CartService {
+	
+	private static final Logger LOGGER = Logger.getLogger(CartServiceImpl.class);
+
 
 	@Autowired
 	ProductDAO productDAO;
@@ -33,10 +39,10 @@ public class CartServiceImpl implements CartService {
 			cart.setCartQuantity(productQuantity);
 			cart.setUsername((String)session.getAttribute("username"));
 			cartDAO.addProductToCart(cart);
-			
+			flag = true;
 		}
 		
-		return false;
+		return flag;
 	}
 
 	
@@ -88,21 +94,52 @@ public class CartServiceImpl implements CartService {
 
 
 
-	public int hasProduct(int productId) {
-		Product product = productDAO.getProductById(productId);
-		return product.getProductId();
+	public boolean hasCartProduct(int productId) {
+		Cart cart = cartDAO.getCartById(productId);
+		LOGGER.info("<-------------------------------------------- Product feetched " + cart);
+		if(cart != null)
+			return true;
+		else
+			return false;
 	}
 
 
 
 	public List<Product> allProductInCart() {
 		List<Cart> listCart = cartDAO.getAllCart();
-		List<Product> listProduct = null;
-		for(Cart c : listCart){
-			listProduct.add(productDAO.getProductById(c.getProductId()));
+		LOGGER.info(listCart + "product");
+		List<Product> listProduct = new ArrayList<Product>();
+		try {
+			LOGGER.info("fetced all roducts from List Product");
+			for(Cart c : listCart){
+				listProduct.add(productDAO.getProductById(c.getProductId()));
+			}
+		} catch (Exception e) {
+			LOGGER.error("Error Retreiving Object from Cart Quantity!");
 		}
 		return listProduct;
 	}
+
+
+
+	public List<Integer> getQuantityOfProductInCart(List<Product> listCart , String username) {
+		List<Integer> quantityList = new ArrayList<Integer>();
+		LOGGER.info("INside get quantity of product in cart " + listCart);
+		for(Product p : listCart){
+		quantityList.add(cartDAO.getCartByProductId(p.getProductId(), username).getCartQuantity());
+		}
+		return quantityList;
+	}
+
+
+
+	public int getQuantity(int productId) {
+		Cart c = cartDAO.getCartById(productId);
+		
+		return c.getCartQuantity();
+	}
+
+
 
 
 }

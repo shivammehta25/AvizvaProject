@@ -229,6 +229,20 @@ option {
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/includes/header.jsp"></jsp:include>
+	<div class="navcontainer">
+				<div class="col-md-2">
+					<h3 class="radhead">Search By Categories</h3>
+					<ul class="nav nav-pills nav-stacked">
+					<li><a href="products?categoryName=all">All Products</a>
+						<c:forEach var="category"
+							items="${applicationScope['listCategory']}">
+							<li><a
+								href="products?categoryName=${category.categoryName }">${category.categoryName }</a></li>
+						</c:forEach>
+
+					</ul>
+				</div>
+			</div>
 	<div class="container-fluid col-md-offset-2">
 		<div class="row">
 			<div class="col-md-12">
@@ -258,7 +272,7 @@ option {
 						<h4 style="color: black">Rs. ${product.productPrice}</h4>
 					</div>
 					<div class="list-group-item active product ">
-						<form class="form-horizontal" method="post" action="addtocart" role="form">
+						<form class="form-horizontal" method="get" action="addtocart" role="form">
 							<input type="hidden" value="${product.productId}" name="productId">
 							<div class="form-group">
 								<div class="col-md-3">
