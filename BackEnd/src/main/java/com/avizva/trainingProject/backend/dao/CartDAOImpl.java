@@ -101,4 +101,20 @@ public class CartDAOImpl implements CartDAO {
 		return cartList;
 	}
 
+	public Cart getCartByProductId(int productId , String username) {
+		Session session = getSession();
+		Cart cart = null;
+		try {
+			Query q = session.createQuery("from Cart where productId =:productId and username =:username");
+			q.setParameter("productId", productId);
+			q.setParameter("username", username);
+			cart =(Cart) q.list().get(0);
+			LOGGER.info("<-- Fetched Cart from Product Id -->" );
+			
+		}catch(Exception e){
+			LOGGER.error("<-- Error fetching element from product iD -->");
+		}
+		return cart;
+	}
+
 }

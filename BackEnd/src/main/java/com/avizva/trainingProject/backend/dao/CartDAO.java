@@ -11,4 +11,5 @@ public interface CartDAO {
 	public Long priceCalculator(Long ...discount);
 	public Cart getCartById(int cartId);
 	public List<Cart> getAllCartByUser(String username);
+	public Cart getCartByProductId(int productId , String username);
 }

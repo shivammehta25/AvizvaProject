@@ -28,9 +28,9 @@ public class CartController {
 	//Have to add the the current request url for calling this thing xP
 	
 	@RequestMapping("/addtocart")
-	public ModelAndView addToCart(@RequestParam("productId") int productId , @RequestParam(value="productQuantity",defaultValue="1") int productQuantity , HttpSession session){
+	public ModelAndView addToCart(@RequestParam("productId") int productId , @RequestParam(value="productQuantity",defaultValue="1") int productQuantity, @RequestParam("forwardUrl") String forwardUrl , HttpSession session){
 		if(session.getAttribute("username") == null){
-			return new ModelAndView("login").addObject("msg", "You Must be Logged in to Shop");
+			return new ModelAndView("login?forwardUrl?="+ forwardUrl).addObject("msg", "You Must be Logged in to Shop");
 		}
 		int cartId  = cartService.hasProduct(productId);
 		if(cartId != 0){
@@ -58,11 +58,11 @@ public class CartController {
 	}
 	
 	@RequestMapping("/updateCart")
-	public ModelAndView updateCart(@RequestParam("cartId") int cartId , @RequestParam("cartQuantity") int cartQuantity , HttpSession session ){
+	public ModelAndView updateCart(@RequestParam("productId") int productId , @RequestParam("cartQuantity") int cartQuantity , HttpSession session ){
 		if(session.getAttribute("username") == null){
 			return new ModelAndView("login").addObject("msg", "You Must be Logged in to Shop");
 		}
-		if(cartService.updateCartQuantity(cartId, cartQuantity)){
+		if(cartService.updateCartQuantity(productId, cartQuantity , (String)session.getAttribute("username"))){
 			return new ModelAndView("cart").addObject("msg" , "Cart Updated Successfully");
 		}
 		return new ModelAndView("cart").addObject("msg" , "Error While Updating Cart");

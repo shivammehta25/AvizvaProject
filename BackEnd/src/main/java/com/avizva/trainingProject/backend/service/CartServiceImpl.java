@@ -53,8 +53,8 @@ public class CartServiceImpl implements CartService {
 
 	
 	
-	public boolean updateCartQuantity(int cartId, int cartQuantity) {
-		Cart cart = cartDAO.getCartById(cartId);
+	public boolean updateCartQuantity(int productId, int cartQuantity , String username) {
+		Cart cart = cartDAO.getCartByProductId(productId ,username);		
 		if( cart != null)
 		{
 			Product product  = productDAO.getProductById(cart.getProductId());
@@ -92,5 +92,6 @@ public class CartServiceImpl implements CartService {
 		Product product = productDAO.getProductById(productId);
 		return product.getProductId();
 	}
+
 
 }
