@@ -102,16 +102,16 @@ public class ProductServiceImpl implements ProductService {
 	}
 	
 	public Product getProductById(int productId) {
+
 		LOGGER.info("<-- ProductService.getProductById Called--->");
 		Product product = productDAO.getProductById(productId);
 		LOGGER.info("<-- Product Fetched by Id"  + productId);
+
 		if(product !=null){
 			return product;
 		}
 		return null;
 	}
-
-	
 
 	
 	
