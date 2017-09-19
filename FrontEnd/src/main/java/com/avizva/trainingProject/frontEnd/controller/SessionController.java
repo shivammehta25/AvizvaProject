@@ -20,8 +20,12 @@ public class SessionController {
 	private static final Logger LOGGER = Logger.getLogger(ExceptionController.class);
 
 	@RequestMapping("/login")
-	public ModelAndView loginView() {
+	public ModelAndView loginView(@RequestParam(value="forwardUrl",defaultValue="home") String forwardUrl) {
+		if(forwardUrl.equals("home")){
 		return new ModelAndView("login");
+		}else{
+			return new ModelAndView("redirect:forwardUrl");
+		}
 	}
 
 	@RequestMapping("/loginform")

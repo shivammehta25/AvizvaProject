@@ -87,6 +87,12 @@ public class ProductServiceImpl implements ProductService {
 		return null;
 	}
 
+	public Product getProductById(int productId) {
+		Product product = productDAO.getProductById(productId);
+		
+		return product;
+	}
+
 	
 	
 
