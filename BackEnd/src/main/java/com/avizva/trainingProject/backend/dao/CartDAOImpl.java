@@ -17,7 +17,7 @@ import com.avizva.trainingProject.backend.model.Product;
 @Transactional
 public class CartDAOImpl implements CartDAO {
 
-	private static final Logger LOGGER = Logger.getLogger(SupplierDAOImpl.class);
+	private static final Logger LOGGER = Logger.getLogger(CartDAOImpl.class);
 
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -104,6 +104,7 @@ public class CartDAOImpl implements CartDAO {
 
 	public Cart getCartByProductId(int productId , String username) {
 		Session session = getSession();
+		LOGGER.info("<-- Getting Cart By Product -->" + productId + username);
 		Cart cart = null;
 		try {
 			Query q = session.createQuery("from Cart where productId =:productId and username =:username");

@@ -328,7 +328,7 @@ option {
 												src="download?productName={{product.productName}}"
 												 alt="Thumbnail Not Available">
 								<div class="buttons">
-									<a class="buy btn btn-large btn-info" href="#"><i
+									<a class="buy btn btn-large btn-info" href="addtocart?productId={{product.productId}}"><i
 										class="fa fa-2x fa-lg fa-shopping-cart"></i> Add to Cart</a> <a
 										class="preview btn btn-large btn-info" href="product?id={{product.productId}}"><i
 										class="fa fa-eye fa-2x fa-lg"></i> View item</a>
@@ -341,9 +341,8 @@ option {
 								<a href="products?categoryName={{product.productCatName}}"><p class="category">Category : {{product.productCatName}}</p></a>
 								</span>  
 								<span class="price"><i class="fa fa-inr" aria-hidden="true"></i> {{product.productPrice}}</span> <a
-									class="btn btn-info pull-right" href="#"><i
-									class="fa fa-lg fa-shopping-cart" style="size: 8px;"></i> Buy
-									Now</a>
+									class="btn btn-info pull-right" href="addtocart?productId={{product.productId}}"><i
+									class="fa fa-lg fa-shopping-cart" style="size: 8px;"></i> To Cart</a>
 							</div>
 
 						</div>
