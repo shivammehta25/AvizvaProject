@@ -48,6 +48,7 @@
 									<th>Supplier</th>
 									<th>Edit</th>
 									<th>Delete</th>
+									<th>Image</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -67,7 +68,11 @@
 											 '${product.productPrice}', '${product.productDesc}', '${product.productQuantity}',
 											 '${product.productCatName}', '${product.productSuppName}' )">Edit</a></td>
 										<td><a style="cursor: pointer"
-											onclick="deleteit(${product.productId})"> Delete</a>
+											onclick="deleteit(${product.productId})"> Delete</a></td>
+										<td>
+											<img
+												src="<c:url value="download?productName=${product.productName}"/>"
+												class=" thumbnailIconStyling"></td>
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -109,8 +114,9 @@
 						</h4>
 					</div>
 					<div class="panel-body">
-						<form class="form-horizontal" method="post "
-							action="addProductForm" role="form">
+						<form class="form-horizontal" method="post"
+							action="addProductForm" role="form" enctype="multipart/form-data">
+							
 							<div class="form-group">
 								<label for="productName"
 									class="col-md-2 label-register control-label">
@@ -172,6 +178,7 @@
 								</label>
 								<div class="col-md-8">
 									<select id="productCatName" name="productCatName">
+										<option value="" disabled selected>Select Categories</option>
 										<c:forEach var="category" items="${listCategory}">
 											<option value="${category.categoryName}">${category.categoryName}</option>
 										</c:forEach>
@@ -185,15 +192,21 @@
 								</label>
 								<div class="col-md-8">
 									<select id="productSuppName" name="productSuppName" >
-										<option value="Select" ></option>
+										<option value="" disabled selected>Select Categories</option>
 										<c:forEach var="supplier" items="${listSupplier}">
 											<option value="${supplier.supplierName}">${supplier.supplierName}</option>
 										</c:forEach>
 									</select>
 								</div>
 							</div>
+								
 								<!-- Prodcut Image Upload -->
-
+							<div class="form-group">
+								<label for="file" class="col-md-2 label-register control-label">Upload Product Image</label> 
+								<input type="file" class="form-control-file" id="file" aria-describedby="fileHelp" name="file"> 
+								<p id="fileHelp" class="form-text "></p>
+							</div>	
+								
 							<div class="form-group">
 								<div class=" col-md-2 col-md-offset-2">
 
@@ -213,8 +226,9 @@
 						</h4>
 					</div>
 					<div class="panel-body">
-						<form class="form-horizontal" method="post "
-							action="updateProductForm" role="form">
+						
+						<form class="form-horizontal" method="post"
+							action="updateProductForm" role="form" enctype="multipart/form-data">
 							<div class="form-group">
 								<label for="productIdUpdate"
 									class="col-md-2 label-register control-label"> Product
@@ -305,7 +319,14 @@
 									</select>
 								</div>
 							</div>
-
+							
+								<!-- Prodcut Image Upload -->
+							<div class="form-group">
+								<label for="fileUpdate" class="col-md-2 label-register control-label">Upload Product Image</label> 
+								<input type="file" class="form-control-file" id="fileUpdate" aria-describedby="fileHelp" name="file" required> 
+								<p id="fileHelp" class="form-text "></p>
+							</div>	
+							
 							<div class="form-group">
 								<div class=" col-md-2 col-md-offset-2">
 									<button type="submit" class="btn btn-success">Update</button>

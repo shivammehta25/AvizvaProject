@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.avizva.trainingProject.backend.dao.ProductDAO;
 import com.avizva.trainingProject.backend.model.Product;
@@ -16,11 +17,14 @@ public class ProductServiceImpl implements ProductService {
 	
 	@Autowired
 	ProductDAO productDAO;
+	
+	@Autowired
+	private FileUploadService fileUploadService;
 
-	public boolean addProductService(Product product) {
-		System.out.println("Service"+product);
-
+	public boolean addProductService(Product product, MultipartFile file) {
 		boolean flag=false;
+		System.out.println("Calling: uploadProductImage");
+		fileUploadService.uploadProductImage(product,file);
 		if(productDAO.addProduct(product)){
 			LOGGER.info("<-- Product Added Successfully-->");
 			flag = true;
@@ -44,8 +48,9 @@ public class ProductServiceImpl implements ProductService {
 		
 	}
 
-	public boolean updateProduct(Product product) {
+	public boolean updateProduct(Product product, MultipartFile file) {
 		boolean flag=false;
+		fileUploadService.uploadProductImage(product,file);
 		if(productDAO.updateProduct(product)){
 			flag = true;
 			return flag;

@@ -55,7 +55,6 @@ public class ProductController {
 		prodHome.addObject("listCategory",listCategory);
 		prodHome.addObject("listSupplier",listSupplier);
 		if(msg.length() == 0 ){
-			LOGGER.info("It is empty");
 			prodHome.addObject("msg" , "Product Management System");
 		}
 		return prodHome;
@@ -77,11 +76,10 @@ public class ProductController {
 	}
 
 	
-	@RequestMapping("/addProductForm")
+	@RequestMapping(value="/addProductForm")
 	public ModelAndView addProducts(@Valid @ModelAttribute Product product, BindingResult result,
-			RedirectAttributes redir, HttpServletRequest request) {
-		System.out.println("Controller"+product);
-		if (productService.addProductService(product) && !(result.hasErrors())) {
+			RedirectAttributes redir, HttpServletRequest request, @RequestParam("file") MultipartFile file) {
+		if (productService.addProductService(product, file) && !(result.hasErrors())) {
 			LOGGER.info("<-- Inside Add Product Success Controller -->");
 			return new ModelAndView("redirect:/adminmanageprod");
 		} else {
@@ -92,8 +90,8 @@ public class ProductController {
 
 	
 	@RequestMapping("/updateProductForm")
-	public ModelAndView updateProduct(@ModelAttribute Product product) {
-		if (productService.updateProduct(product)) {
+	public ModelAndView updateProduct(@ModelAttribute Product product, @RequestParam("file") MultipartFile file) {
+		if (productService.updateProduct(product, file)) {
 			LOGGER.info("<-- Update Product Controller -->");
 			return new ModelAndView("redirect:/adminmanageprod").addObject("msg", "Product Updated Successfully");
 		} else {
