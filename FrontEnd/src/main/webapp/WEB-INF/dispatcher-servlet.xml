@@ -21,26 +21,28 @@
 	</bean>
 
 	<mvc:interceptors>
-
-
-		<bean id="localeChangeInterceptor"
-			class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+		<bean 
+			id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
 			<property name="paramName" value="siteLanguage" />
 		</bean>
-
 	</mvc:interceptors>
 
-	<bean id="messageSource"
-		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-
-	   <property name="basenames" value="/resources/properties/user,/resources/properties/contactus,/resources/properties/forgotpass,/resources/properties/resetpass,/resources/properties/supplier"/>
-			
-		
+	<bean 
+		id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+	   <property name="basenames" value="/resources/properties/user,/resources/properties/contactus,/resources/properties/forgotpass,/resources/properties/resetpass,/resources/properties/supplier"/>	
 	</bean>
-	<bean id="localeResolver"
-		class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+	
+	<bean 
+		id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
 		<property name="defaultLocale" value="en" />
 	</bean>
+	
+	 <bean 
+	 	id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"> 
+		<property name="maxUploadSize" value="307200" />
+	</bean>
+	
+
 
 
 </beans>

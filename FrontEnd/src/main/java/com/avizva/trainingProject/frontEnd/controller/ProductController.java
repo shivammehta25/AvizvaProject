@@ -2,6 +2,7 @@ package com.avizva.trainingProject.frontEnd.controller;
 
 import java.util.List;
 
+import javax.mail.Multipart;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
@@ -12,11 +13,18 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.avizva.trainingProject.backend.model.Category;
 import com.avizva.trainingProject.backend.model.Product;
+
+import com.avizva.trainingProject.backend.model.Supplier;
+import com.avizva.trainingProject.backend.service.CategoryService;
+
 import com.avizva.trainingProject.backend.service.ProductService;
+import com.avizva.trainingProject.backend.service.SupplierService;
 
 @Controller
 public class ProductController {
@@ -26,13 +34,26 @@ public class ProductController {
 	@Autowired
 	ProductService productService;
 	
+	@Autowired
+	CategoryService categoryService;
+	
+	@Autowired
+	SupplierService supplierService;
+	
+	
 	@RequestMapping("/adminmanageprod")
 	public ModelAndView manageProducts(@ModelAttribute("msg") String msg) {
 		List<Product> listProduct = productService.getAllProduct();
+		List<Category> listCategory = categoryService.getAllCategory();
+		List<Supplier> listSupplier = supplierService.getAllSupplier();
+
+
 		LOGGER.info("<-- Inside Product Manager Controller -->" + listProduct + "Message" + msg.length());
 		ModelAndView prodHome = new ModelAndView();
 		prodHome.setViewName("admin/products");
 		prodHome.addObject("listProduct",listProduct); 
+		prodHome.addObject("listCategory",listCategory);
+		prodHome.addObject("listSupplier",listSupplier);
 		if(msg.length() == 0 ){
 			LOGGER.info("It is empty");
 			prodHome.addObject("msg" , "Product Management System");
@@ -41,7 +62,7 @@ public class ProductController {
 	}
 	
 
-	@RequestMapping("searchProductForm")
+	@RequestMapping("/searchProductForm")
 	public ModelAndView searchProduct(@RequestParam("name") String name) {
 		List<Product> listProduct = productService.searchProduct(name);
 		if (listProduct != null) {
@@ -55,10 +76,6 @@ public class ProductController {
 		}
 	}
 
-	
-	
-	
-	
 	
 	@RequestMapping("/addProductForm")
 	public ModelAndView addProducts(@Valid @ModelAttribute Product product, BindingResult result,
@@ -74,12 +91,7 @@ public class ProductController {
 	}
 
 	
-	
-	
-	
-	
-	
-	@RequestMapping("updateProductForm")
+	@RequestMapping("/updateProductForm")
 	public ModelAndView updateProduct(@ModelAttribute Product product) {
 		if (productService.updateProduct(product)) {
 			LOGGER.info("<-- Update Product Controller -->");
@@ -90,12 +102,8 @@ public class ProductController {
 		}
 	}
 	
-	
-	
-	
-	
 
-	@RequestMapping("deleteProductForm")
+	@RequestMapping("/deleteProductForm")
 	public ModelAndView deleteProduct(@RequestParam("productId") int productId) {
 		
 		if (productService.deleteProduct(productId)) {
