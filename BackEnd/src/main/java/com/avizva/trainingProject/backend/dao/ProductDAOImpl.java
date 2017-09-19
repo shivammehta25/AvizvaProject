@@ -49,10 +49,10 @@ public class ProductDAOImpl implements ProductDAO {
 	}
 
 
-	public Product getProductById(int productid) {
+	public Product getProductById(int productId) {
 		try{
 		Session session=getSession();
-		Product product=session.get(Product.class,productid);
+		Product product=session.get(Product.class,productId);
 		LOGGER.info("<-- Fetched Product Object");
 		
 		return product;
