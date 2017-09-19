@@ -85,7 +85,7 @@ public class CartController {
 	}
 	
 	@RequestMapping("/cart")
-	public ModelAndView viewCart(HttpSession session){
+	public ModelAndView viewCart(HttpSession session , @RequestParam(value="discount",defaultValue="0")Long discount){
 		if(session.getAttribute("username") == null){
 			return new ModelAndView("login").addObject("msg", "You Must be Logged in to Shop");
 		}
@@ -98,8 +98,9 @@ public class CartController {
 		Gson g = new Gson();
 		String cartList = g.toJson(listCart);
 		String quantity = g.toJson(quantityList);
-		
-		return new ModelAndView("cart").addObject("msg" , "Shopping Cart").addObject("cartList" , cartList).addObject("quantity" , quantity);
+		Long totalPrice = cartService.priceCalculator((String)session.getAttribute("username"),discount);
+		String totalPriceJ = g.toJson(totalPrice);
+		return new ModelAndView("cart").addObject("msg" , "Shopping Cart").addObject("cartList" , cartList).addObject("quantity" , quantity).addObject("totalPrice" , totalPriceJ).addObject("cartactive" , "active");
 		
 	}
 	
