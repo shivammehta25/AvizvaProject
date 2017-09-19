@@ -21,6 +21,7 @@ public class CartDAOImpl implements CartDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
+	
 
 	public Session getSession() {
 		return sessionFactory.getCurrentSession();
@@ -115,6 +116,20 @@ public class CartDAOImpl implements CartDAO {
 			LOGGER.error("<-- Error fetching element from product iD -->");
 		}
 		return cart;
+	}
+
+	public List<Cart> getAllCart() {
+		Session session = getSession();
+		try{
+			Query q = session.createQuery("from Cart");
+			List<Cart> listCart =  q.list();
+			LOGGER.info("<-- Fetched all cart -->");
+			return listCart;
+		}catch (Exception e) {
+			LOGGER.error("<-- Cannot fetch cart-->");
+		}
+		
+		return null;
 	}
 
 }

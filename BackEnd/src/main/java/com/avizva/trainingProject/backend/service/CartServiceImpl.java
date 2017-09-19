@@ -94,4 +94,15 @@ public class CartServiceImpl implements CartService {
 	}
 
 
+
+	public List<Product> allProductInCart() {
+		List<Cart> listCart = cartDAO.getAllCart();
+		List<Product> listProduct = null;
+		for(Cart c : listCart){
+			listProduct.add(productDAO.getProductById(c.getProductId()));
+		}
+		return listProduct;
+	}
+
+
 }

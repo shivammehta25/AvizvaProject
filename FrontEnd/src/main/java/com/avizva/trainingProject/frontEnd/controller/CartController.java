@@ -1,5 +1,7 @@
 package com.avizva.trainingProject.frontEnd.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
@@ -11,6 +13,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.avizva.trainingProject.backend.dao.CartDAO;
 import com.avizva.trainingProject.backend.dao.ProductDAO;
+import com.avizva.trainingProject.backend.model.Cart;
+import com.avizva.trainingProject.backend.model.Product;
 import com.avizva.trainingProject.backend.service.CartService;
 
 /**
@@ -28,7 +32,7 @@ public class CartController {
 	//Have to add the the current request url for calling this thing xP
 	
 	@RequestMapping("/addtocart")
-	public ModelAndView addToCart(@RequestParam("productId") int productId , @RequestParam(value="productQuantity",defaultValue="1") int productQuantity, @RequestParam("forwardUrl") String forwardUrl , HttpSession session){
+	public ModelAndView addToCart(@RequestParam("productId") int productId , @RequestParam(value="productQuantity",defaultValue="1") int productQuantity, @RequestParam(value="forwardUrl" ,required=false) String forwardUrl , HttpSession session){
 		if(session.getAttribute("username") == null){
 			return new ModelAndView("login?forwardUrl?="+ forwardUrl).addObject("msg", "You Must be Logged in to Shop");
 		}
@@ -75,7 +79,9 @@ public class CartController {
 		if(session.getAttribute("username") == null){
 			return new ModelAndView("login").addObject("msg", "You Must be Logged in to Shop");
 		}
-		return new ModelAndView("cart").addObject("msg" , "Shopping Cart");
+		
+		List<Product> listCart = cartService.allProductInCart();
+		return new ModelAndView("cart").addObject("msg" , "Shopping Cart").addObject("listCart" , listCart);
 		
 	}
 	

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse">
+<footer><nav class="navbar navbar-inverse">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-4">
@@ -9,14 +9,14 @@
 					</h2>
 
 					<div>
-						<a href="#" class="footer-text"> About Us</A>
+						<a href="aboutus" class="footer-text"> About Us</A>
 					</div>
 					<div>
 						<a href="#" class="footer-text"> Products</A>
 
 					</div>
 					<div>
-						<a href="#" class="footer-text"> Contact Us</A>
+						<a href="contact" class="footer-text"> Contact Us</A>
 					</div>
 				</div>
 			</div>
@@ -81,16 +81,19 @@
 <nav class="navbar navbar-inverse ">
 	<div class="container-fluid ">
 		<div class="row ">
-			<div class="col-md-3 ">
+			<div class="col-md-4 ">
 
 
-				<div class="pull-left copytext ">Copyright Â© Gamezon 2017.</div>
+				<div class="pull-left copytext ">Copyright&nbsp; © Gamezon 2017.</div>
 
-				<div class="col-md-3 "></div>
-				<div class="col-md-3 "></div>
-				<div class="col-md-3 "></div>
-
+				
 			</div>
 		</div>
 	</div>
 </nav>
+
+<!-- Loading Scripts in the End to Reduce Loadtime -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js "></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+</footer>

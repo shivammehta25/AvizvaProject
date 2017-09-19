@@ -3,6 +3,7 @@ package com.avizva.trainingProject.backend.dao;
 import java.util.List;
 
 import com.avizva.trainingProject.backend.model.Cart;
+import com.avizva.trainingProject.backend.model.Product;
 
 public interface CartDAO {
 	public boolean addProductToCart(Cart cart);
@@ -12,4 +13,5 @@ public interface CartDAO {
 	public Cart getCartById(int cartId);
 	public List<Cart> getAllCartByUser(String username);
 	public Cart getCartByProductId(int productId , String username);
+	public List<Cart> getAllCart();
 }

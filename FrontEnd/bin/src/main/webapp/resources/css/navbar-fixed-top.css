@@ -1,14 +1,19 @@
+
 body {
   padding-top: 100px;
 }
 
-.dropdown-menu li:hover .sub-menu {
+ .dropdown-menu li:hover .sub-menu {
   visibility: visible;
 }
 
-.dropdown:hover .dropdown-menu {
+
+.dropdown:HOVER .dropdown-menu  {
   display: block;
 }
+
+
+
 
 .navbar-fixed-top {
   min-height: 80px;
@@ -26,7 +31,8 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
   }
-}
+} 
+
 
 .navbar-form {
   margin: 25px 25px 0px 0px;
@@ -36,3 +42,6 @@ body {
 .navbar-form .form-control{
   width: 350px;
 }
+
+
+
