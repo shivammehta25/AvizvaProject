@@ -9,14 +9,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Categories</title>
-<link rel="stylesheet" href="resources/css/admin.css" >
+<c:url var="rcssA" value="resources/css"></c:url>
+<c:url var="rimagesA" value="resources/images"></c:url>
+<link rel="stylesheet" href="${rcssA }/css/admin.css" >
 
 </head>
 <body>
 	
 	<jsp:include page="/WEB-INF/views/includes/header.jsp"></jsp:include>
-	<c:url var="rcss" value="resources/css"></c:url>
-	<c:url var="rimages" value="resources/images"></c:url>
 	<!-- Insert Header Before Here -->
 	
 	<div class="container-fluid">
