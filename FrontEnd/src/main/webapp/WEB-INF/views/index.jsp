@@ -73,11 +73,11 @@
 					<h3>
 						Best Selling Items
 					</h3>
-
 				</div>
-
 			</div>
+			
 			<div class="col-md-2">
+				<a href="products?categoryName=Games" style="text-decoration: none">
 				<div class="thumbnail">
 					<div class="thumbnailStyling">
 						<img alt="Bootstrap Thumbnail First" class="img-rounded thumbnailStyling" src="http://images.performgroup.com/di/library/GOAL/79/c3/fifa-18-pack-shot_1wwbvp22h4qvb1qi01oijh784g.png?t=152792078">
@@ -88,10 +88,11 @@
 						Games
 					</h3>
 				</div>
-				
-
+				</a>
 			</div>
+			
 			<div class="col-md-2">
+				<a href="products?categoryName=Consoles" style="text-decoration: none">
 				<div class="thumbnail">
 					<div class="thumbnailStyling">
 						<img alt="Bootstrap Thumbnail First" class="img-rounded thumbnailStyling" src="https://asia.playstation.com/content/dam/pscom/japan-asia/playstation4/top/ps4-top-navigation02-20161104.png">
@@ -101,10 +102,11 @@
 					<h3>
 						Consoles
 					</h3>
-
 				</div>
+				</a>
 			</div>
 			<div class="col-md-2">
+				<a href="products?categoryName=Headsets" style="text-decoration: none">
 				<div class="thumbnail">
 					<div class="thumbnailStyling">
 						<img alt="Bootstrap Thumbnail First" class="img-rounded thumbnailStyling" src="https://images-na.ssl-images-amazon.com/images/I/71oEkQkjutL._SX425_.jpg">
@@ -115,9 +117,10 @@
 						Headsets
 					</h3>
 				</div>
-
+				</a>
 			</div>
 			<div class="col-md-2">
+				<a href="products?categoryName=Console Accesories" style="text-decoration: none">
 				<div class="thumbnail">
 					<div class="thumbnailStyling">
 						<img alt="Bootstrap Thumbnail First" class="img-rounded thumbnailStyling" src="http://media.4rgos.it/i/Argos/6017808_R_Z002A?$Web$&w=570&h=513">
@@ -129,9 +132,10 @@
 						Console Accesories
 					</h3>
 				</div>
-
+				</a>
 			</div>
 			<div class="col-md-2">
+				<a href="products?categoryName=Accesories" style="text-decoration: none">
 				<div class="thumbnail">
 					<div class="thumbnailStyling">
 						<img alt="Bootstrap Thumbnail First" class="img-rounded thumbnailStyling" src="https://ae01.alicdn.com/kf/HTB14cecPFXXXXcMXXXXq6xXFXXXQ/Newest-USB-Wired-LED-Backlit-Laptop-Computer-Gamer-Keyboard-Mouse-Combo-Optical-Professional-7-Buttons-5500.jpg">
@@ -142,7 +146,7 @@
 						Accessories
 					</h3>
 				</div>
-
+				</a>
 			</div>
 		</div>
 	</div>
