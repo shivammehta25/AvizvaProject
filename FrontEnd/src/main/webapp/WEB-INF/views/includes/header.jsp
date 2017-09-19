@@ -9,7 +9,6 @@
 	rel="stylesheet">
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700'
 	rel='stylesheet' type='text/css'>
-	<script src="resources/js/jquery.popmenu.min.js">	</script>
 	
 
 
@@ -59,7 +58,7 @@
 				<div class="collapse navbar-collapse"
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-left">
-						<li><a href="./"> <img src="resources/images/logo.png"
+						<li><a href="./"> <img src="${rimages }/logo.png"
 								height="75">
 						</a></li>
 						<li><h1>

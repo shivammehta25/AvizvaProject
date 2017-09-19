@@ -218,6 +218,11 @@ option {
 	color: black;
 }
 
+.radhead{
+	color:black;
+
+}
+
 </style>
 
 
@@ -230,8 +235,9 @@ option {
 		<div class="row">
 			<div class="navcontainer">
 				<div class="col-md-2">
-					<h3>Search By Categories</h3>
+					<h3 class="radhead">Search By Categories</h3>
 					<ul class="nav nav-pills nav-stacked">
+					<li><a href="products?categoryName=all">All Products</a>
 						<c:forEach var="category"
 							items="${applicationScope['listCategory']}">
 							<li><a
@@ -253,11 +259,12 @@ option {
 					</div>
 					<hr style="visibility: hidden;">
 						<div class="col-md-6">
-						<p>Search By</p>
+						<p class="radhead">Search By</p>
+						<form>
 						<div class="btn-group">
 								<button type="button" class="btn btn-warning">
 										<label class="radio-inline" style="color: black">
-										      <input type="radio" name="optradio" value="productName" ng-model="queryBy">Name
+										      <input type="radio" checked="checked" name="optradio" value="productName" ng-model="queryBy">Name
 										    </label>
 										 </button>
 										<button type="button" class="btn btn-warning">
@@ -270,11 +277,12 @@ option {
 										      <input type="radio" name="optradio" ng-model="queryBy" value="productPrice">Price
 										    </label>
 										    </button>
-						 </div>  
+						 </div> 
+						 </form> 
 						</div>
 						
 						<div class="col-md-6">
-						<p>Sort By</p>
+						<p class="radhead">Sort By</p>
 					<button type="button" class="btn btn-warning">
 						
 						<label class="radio-inline" style="color: black">
