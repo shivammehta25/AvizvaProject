@@ -230,11 +230,11 @@ option {
 <body>
 	<jsp:include page="/WEB-INF/views/includes/header.jsp"></jsp:include>
 	<div class="container-fluid col-md-offset-2">
-		<div class="row jumbotron">
-			<div class="col-md-12">
-				<div class=" ">
-					<h2>${product.productName}</h2>
 
+		<div class="row">
+			<div class="col-md-12">
+				<div class="jumbotron well">
+					<h2>PRODUCT NAME</h2>
 				</div>
 			</div>
 		</div>
