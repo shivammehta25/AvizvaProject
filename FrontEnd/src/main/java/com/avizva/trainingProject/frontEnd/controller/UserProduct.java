@@ -35,8 +35,11 @@ public class UserProduct {
 		return new ModelAndView("products").addObject("listProduct" , listProduct);
 	}
 	
-//	@RequestMapping("/product")
-//	public ModelAndView callProductById(@RequestParam(value="id") int productId){
-//		
-//	}
+	@RequestMapping("/product")
+	public ModelAndView callIndividualProduct(@RequestParam("id") int productId){
+		Product product=productService.getProductById(productId);
+		return new ModelAndView("product").addObject("product", product);
+	}
+	
+
 }

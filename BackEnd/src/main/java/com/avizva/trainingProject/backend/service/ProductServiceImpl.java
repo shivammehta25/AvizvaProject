@@ -23,7 +23,6 @@ public class ProductServiceImpl implements ProductService {
 
 	public boolean addProductService(Product product, MultipartFile file) {
 		boolean flag=false;
-		System.out.println("Calling: uploadProductImage");
 		fileUploadService.uploadProductImage(product,file);
 		if(productDAO.addProduct(product)){
 			LOGGER.info("<-- Product Added Successfully-->");
@@ -91,12 +90,17 @@ public class ProductServiceImpl implements ProductService {
 		}
 		return null;
 	}
-
+	
 	public Product getProductById(int productId) {
 		Product product = productDAO.getProductById(productId);
-		
-		return product;
+		LOGGER.info("<-- Product Fetched by category"  + productId);
+		if(product !=null){
+			return product;
+		}
+		return null;
 	}
+
+	
 
 	
 	
