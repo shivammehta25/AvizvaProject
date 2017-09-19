@@ -22,7 +22,7 @@ public class UserProduct {
 	ProductService productService;
 	
 	@RequestMapping("/products")
-	public ModelAndView callProduct(@RequestParam(value="categoryName",defaultValue="all") String productCatName){
+	public ModelAndView callProducts(@RequestParam(value="categoryName",defaultValue="all") String productCatName){
 		List<Product> list = null;
 		if(productCatName.equals("all")){
 		list = productService.getAllProduct();
@@ -34,4 +34,12 @@ public class UserProduct {
 		String listProduct = gson.toJson(list);
 		return new ModelAndView("products").addObject("listProduct" , listProduct);
 	}
+	
+	@RequestMapping("/product")
+	public ModelAndView callIndividualProduct(@RequestParam("id") int productId){
+		Product product=productService.getProductById(productId);
+		return new ModelAndView("product").addObject("product", product);
+	}
+	
+
 }

@@ -48,6 +48,7 @@
 									<th>Supplier</th>
 									<th>Edit</th>
 									<th>Delete</th>
+									<th>Image</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -67,7 +68,11 @@
 											 '${product.productPrice}', '${product.productDesc}', '${product.productQuantity}',
 											 '${product.productCatName}', '${product.productSuppName}' )">Edit</a></td>
 										<td><a style="cursor: pointer"
-											onclick="deleteit(${product.productId})"> Delete</a>
+											onclick="deleteit(${product.productId})"> Delete</a></td>
+										<td>
+											<img
+												src="<c:url value="download?productName=${product.productName}"/>"
+												class=" thumbnailIconStyling"></td>
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -109,8 +114,9 @@
 						</h4>
 					</div>
 					<div class="panel-body">
-						<form class="form-horizontal" method="post "
-							action="addProductForm" role="form">
+						<form class="form-horizontal" method="post"
+							action="addProductForm" role="form" enctype="multipart/form-data">
+							
 							<div class="form-group">
 								<label for="productName"
 									class="col-md-2 label-register control-label">
@@ -168,27 +174,39 @@
 							<div class="form-group">
 								<label for="productCatName"
 									class="col-md-2 label-register control-label">
-									Enter Product's Category
+									Choose Product's Category
 								</label>
 								<div class="col-md-8">
-									<input type="text" placeholder="Enter Product's Category"
-										name="productCatName" required="true" class="form-control"
-										id="productCatName" />
+									<select id="productCatName" name="productCatName">
+										<option value="" disabled selected>Select Categories</option>
+										<c:forEach var="category" items="${listCategory}">
+											<option value="${category.categoryName}">${category.categoryName}</option>
+										</c:forEach>
+									</select>
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="productSuppName"
 									class="col-md-2 label-register control-label">
-									Enter Product's Brand 
+									Choose Product's Supplier
 								</label>
 								<div class="col-md-8">
-									<input type="text" placeholder="Enter Product's Supplier"
-										name="productSuppName" required="true" class="form-control"
-										id="productSuppName"/>
+									<select id="productSuppName" name="productSuppName" >
+										<option value="" disabled selected>Select Categories</option>
+										<c:forEach var="supplier" items="${listSupplier}">
+											<option value="${supplier.supplierName}">${supplier.supplierName}</option>
+										</c:forEach>
+									</select>
 								</div>
 							</div>
+								
 								<!-- Prodcut Image Upload -->
-
+							<div class="form-group">
+								<label for="file" class="col-md-2 label-register control-label">Upload Product Image</label> 
+								<input type="file" class="form-control-file" id="file" aria-describedby="fileHelp" name="file"> 
+								<p id="fileHelp" class="form-text "></p>
+							</div>	
+								
 							<div class="form-group">
 								<div class=" col-md-2 col-md-offset-2">
 
@@ -199,6 +217,7 @@
 						</form>
 					</div>
 				</div>
+				
 
 				<div class="panel panel-default">
 					<div class="panel-heading">
@@ -207,8 +226,9 @@
 						</h4>
 					</div>
 					<div class="panel-body">
-						<form class="form-horizontal" method="post "
-							action="updateProductForm" role="form">
+						
+						<form class="form-horizontal" method="post"
+							action="updateProductForm" role="form" enctype="multipart/form-data">
 							<div class="form-group">
 								<label for="productIdUpdate"
 									class="col-md-2 label-register control-label"> Product
@@ -220,85 +240,95 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="productName"
+								<label for="productNameUpdate"
 									class="col-md-2 label-register control-label">
 									Enter Product's Name
 								</label>
 								<div class="col-md-8">
 									<input type="text" placeholder="Enter Product's Name"
 										name="productName" required="true" class="form-control"
-										id="productName" />
+										id="productNameUpdate" />
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="productBrand"
+								<label for="productBrandUpdate"
 									class="col-md-2 label-register control-label">
 									Enter Product's Brand 
 								</label>
 								<div class="col-md-8">
 									<input type="text" placeholder="Enter Product's Brand"
 										name="productBrand" required="true" class="form-control"
-										id="productBrand" />
+										id="productBrandUpdate" />
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="productPrice"
+								<label for="productPriceUpdate"
 									class="col-md-2 label-register control-label">
 									Enter Product's Price
 								</label>
 								<div class="col-md-8">
 									<input type="number" placeholder="Enter Product's Price"
 										name="productPrice" required="true" class="form-control"
-										id="productPrice" />
+										id="productPriceUpdate" />
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="productDesc"
+								<label for="productDescUpdate"
 									class="col-md-2 label-register control-label"> 
 									Enter a Short Description </label>
 								<div class="col-md-8">
 									<textarea placeholder="Enter Product's Description"
 										name="productDesc" required="true" class="form-control"
-										id="productDesc" ></textarea>
+										id="productDescUpdate" ></textarea>
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="productQuantity"
+								<label for="productQuantityUpdate"
 									class="col-md-2 label-register control-label">
 									Enter Product's Quantity
 								</label>
 								<div class="col-md-8">
 									<input type="number" placeholder="Enter Product's Quantity"
 										name="productQuantity" required="true" class="form-control"
-										id="productQuantity" />
+										id="productQuantityUpdate" />
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="productCatName"
+								<label for="productCatNameUpdate"
 									class="col-md-2 label-register control-label">
-									Enter Product's Category
+									Choose Product's Category
 								</label>
 								<div class="col-md-8">
-									<input type="text" placeholder="Enter Product's Category"
-										name="productCatName" required="true" class="form-control"
-										id="productCatName" />
+									<select id="productCatNameUpdate" name="productCatName">
+										<c:forEach var="category" items="${listCategory}">
+											<option value="${category.categoryName}">${category.categoryName}</option>
+										</c:forEach>
+									</select>
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="productSuppName"
+								<label for="productSuppNameUpdate"
 									class="col-md-2 label-register control-label">
-									Enter Product's Brand 
+									Choose Product's Supplier
 								</label>
 								<div class="col-md-8">
-									<input type="text" placeholder="Enter Product's Supplier"
-										name="productSuppName" required="true" class="form-control"
-										id="productSuppName"/>
+									<select id="productSuppNameUpdate" name="productSuppName" >
+										<c:forEach var="supplier" items="${listSupplier}">
+											<option value="${supplier.supplierName}">${supplier.supplierName}</option>
+										</c:forEach>
+									</select>
 								</div>
 							</div>
-
+							
+								<!-- Prodcut Image Upload -->
+							<div class="form-group">
+								<label for="fileUpdate" class="col-md-2 label-register control-label">Upload Product Image</label> 
+								<input type="file" class="form-control-file" id="fileUpdate" aria-describedby="fileHelp" name="file" required> 
+								<p id="fileHelp" class="form-text "></p>
+							</div>	
+							
 							<div class="form-group">
 								<div class=" col-md-2 col-md-offset-2">
-
 									<button type="submit" class="btn btn-success">Update</button>
 								</div>
 							</div>
@@ -346,17 +376,20 @@
 
 
 	<script>
-	var populate = function(id , name , address , contact){
-		document.getElementById("supplierIdUpdate").setAttribute("value" , id);
-		document.getElementById("supplierNameUpdate").setAttribute("value" , name);
-		document.getElementById("supplierAddressUpdate").value = address ;
-//		window.scrollTo(0, $("#supplierAddressUpdate").offset().top);
-		$("html, body").animate({ scrollTop: $("#supplierAddressUpdate").offset().top }, 1500);
-		document.getElementById("supplierContactUpdate").setAttribute("value" , contact);
+	var populate = function(id , name , brand , price, desc, quantity, catName, suppName){
+		document.getElementById("productIdUpdate").setAttribute("value" , id);
+		document.getElementById("productNameUpdate").setAttribute("value" , name);
+		document.getElementById("productBrandUpdate").value = brand ;
+		document.getElementById("productPriceUpdate").setAttribute("value" , price);
+		document.getElementById("productDescUpdate").value=desc;
+		document.getElementById("productQuantityUpdate").setAttribute("value" , quantity);
+		document.getElementById("productCatNameUpdate").setAttribute("value" , catName);
+		$("html, body").animate({ scrollTop: $("#productCatNameUpdate").offset().top }, 0);
+		document.getElementById("productSuppNameUpdate").setAttribute("value" , suppName);
 	}	
 	var deleteit = function(id){
-		document.getElementById("supplierIdDel").setAttribute("value" , id);
-		$("html, body").animate({ scrollTop: $("#supplierIdDel").offset().top }, 1500);
+		document.getElementById("productIdDel").setAttribute("value" , id);
+		$("html, body").animate({ scrollTop: $("#productIdDel").offset().top }, 1500);
 
 	}
 	</script>

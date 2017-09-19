@@ -58,7 +58,7 @@ public class SupplierController {
 
 	}
 	
-	@RequestMapping("searchSupplierForm")
+	@RequestMapping("/searchSupplierForm")
 	public ModelAndView searchSupplier(@RequestParam("name") String name) {
 		List<Supplier> listSupplier = supplierService.searchSupplier(name);
 		if (listSupplier != null) {
@@ -96,7 +96,7 @@ public class SupplierController {
 	
 	
 	
-	@RequestMapping("updateSupplierForm")
+	@RequestMapping("/updateSupplierForm")
 	public ModelAndView updateSupplier(@ModelAttribute Supplier supplier) {
 		if (supplierService.updateSupplier(supplier)) {
 			LOGGER.info("<-- Update Supplier Controller -->");
@@ -112,7 +112,7 @@ public class SupplierController {
 	
 	
 
-	@RequestMapping("deleteSupplierForm")
+	@RequestMapping("/deleteSupplierForm")
 	public ModelAndView deleteSupplier(@RequestParam("supplierId") int supplierId) {
 		
 		if (supplierService.deleteSupplier(supplierId)) {

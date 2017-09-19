@@ -49,8 +49,7 @@ public class Product {
 	@Column(columnDefinition="BOOLEAN Default false")
 	private boolean enabled;
 	
-//	@Transient
-//	private Multipart productImage;
+
 
 
 	public int getProductId() {
