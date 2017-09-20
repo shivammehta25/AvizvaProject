@@ -64,10 +64,10 @@ public class CategoryServiceImpl implements CategoryService{
 			LOGGER.info("<-- Category Deleted Successfully-->");
 			flag = true;
 			categoryDAO.deactivateCategory(category);
-			return flag;
-			
 		}
-		LOGGER.error("<-- Could Not Delete the Category -->");
+		else{
+			LOGGER.error("<-- Could Not Delete the Category -->");
+		}
 		return flag;
 
 		
@@ -81,8 +81,9 @@ public class CategoryServiceImpl implements CategoryService{
 		LOGGER.info("getAllCategory yielded" + listCategory.size());
 		if(listCategory != null){
 			return listCategory;
+		}else{
+			return null;
 		}
-		return null;
 	}
 	
 	

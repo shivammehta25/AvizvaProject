@@ -165,9 +165,8 @@ h1:hover {
 </div>
 ${prevUrl }
 
-{{cartList}}
-{{quantity}}
-{{totalPrice}}
+
+
 <script>
 var app = angular.module('myApp', []);
 
