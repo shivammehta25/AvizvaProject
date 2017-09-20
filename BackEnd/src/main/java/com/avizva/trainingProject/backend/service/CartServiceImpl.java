@@ -3,7 +3,6 @@ package com.avizva.trainingProject.backend.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.mail.Session;
 import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
@@ -90,7 +89,7 @@ public class CartServiceImpl implements CartService {
 		Long price = 0L;
 		for(Cart c : listCart){
 			Product p = productDAO.getProductById(c.getProductId());
-			price += p.getProductPrice();
+			price += p.getProductPrice()* c.getCartQuantity();
 		}
 		if(discount[0] != null){
 			price -= discount[0];
@@ -100,8 +99,8 @@ public class CartServiceImpl implements CartService {
 
 
 
-	public boolean hasCartProduct(int productId) {
-		Cart cart = cartDAO.getCartById(productId);
+	public boolean hasCartProduct(int productId,String username) {
+		Cart cart = cartDAO.getCartByProductId(productId, username);
 		LOGGER.info("<-------------------------------------------- Product feetched " + cart);
 		if(cart != null)
 			return true;
@@ -139,8 +138,8 @@ public class CartServiceImpl implements CartService {
 
 
 
-	public int getQuantity(int productId) {
-		Cart c = cartDAO.getCartById(productId);
+	public int getQuantity(int productId , String username) {
+		Cart c = cartDAO.getCartByProductId(productId, username);
 		
 		return c.getCartQuantity();
 	}

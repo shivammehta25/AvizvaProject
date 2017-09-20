@@ -42,11 +42,12 @@ public class CartController {
 			return new ModelAndView("redirect:/login?forwardUrl?="+request.getHeader("Referer")).addObject("msg", "You Must be Logged in to Shop");
 		}
 		LOGGER.info("<-- Inside add to Cart Controller -->" + productId + productQuantity);
-		boolean cartQuantity  = cartService.hasCartProduct(productId);
+		boolean cartQuantity  = cartService.hasCartProduct(productId , (String)session.getAttribute("username"));
 		
 		LOGGER.info("Cart ID that came " + cartQuantity);
 		if(cartQuantity){
-			int quantity = cartService.getQuantity(productId);
+			int quantity = cartService.getQuantity(productId , (String)session.getAttribute("username") );
+			LOGGER.info("Cart Quantity fetched" + quantity);
 			productQuantity += quantity;
 			LOGGER.info(productId + " ALready Present Rather Updating with quantity" + productQuantity);
 			return new ModelAndView("redirect:/updateCart?productId=" +productId + "&cartQuantity=" + productQuantity );

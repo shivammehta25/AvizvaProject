@@ -153,7 +153,7 @@ h1:hover {
 		</div>
 		<div class="totalBar">
 			<div class="row">
-				<div class="col-md-3 col-md-offset-9">
+				<div class="col-md-3 col-md-offset-9">Total Price:
 				<span class="totprice">{{totalPrice}} </span> <span class="pull-right"><button class="btn btn-success">Checkout</button></span> 
 				</div>
 				
