@@ -51,7 +51,7 @@ public class CheckoutController {
 		LOGGER.info("Checking Out Order Number" + orderNumber);
 		
 		
-		return new ModelAndView("checkout").addObject("user" , user).addObject("quantity", quantity).addObject("totalPrice" , totalPrice).addObject("prodList", prodList);
+		return new ModelAndView("checkout").addObject("user" , user).addObject("quantity", quantity).addObject("totalPrice" , totalPrice).addObject("prodList", prodList).addObject("orderNumber",orderNumber);
 		
 	}
 	
