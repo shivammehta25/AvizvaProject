@@ -28,7 +28,7 @@ public class Order {
 	@NotNull
 	private String orderNumber;
 	
-	@Column(columnDefinition="VARCHAR DEFAULT 'Placed'")
+//	@Column(columnDefinition="VARCHAR DEFAULT 'Placed'")
 	private String orderStatus;
 	
 	@CreationTimestamp
@@ -50,8 +50,6 @@ public class Order {
 	private String shippingAddress;
 	
 	private String shippingCity;
-	
-	private String shippingState;
 	
 	private String shippingCountry;
 	
@@ -135,14 +133,6 @@ public class Order {
 
 	public void setShippingCity(String shippingCity) {
 		this.shippingCity = shippingCity;
-	}
-
-	public String getShippingState() {
-		return shippingState;
-	}
-
-	public void setShippingState(String shippingState) {
-		this.shippingState = shippingState;
 	}
 
 	public String getShippingCountry() {

@@ -1,5 +1,15 @@
 package com.avizva.trainingProject.backend.service;
 
-public interface OrderService {
+import java.util.List;
 
+import com.avizva.trainingProject.backend.model.Order;
+
+public interface OrderService {
+	public boolean addOrder(Order order);
+	
+	public boolean updateOrder(Order order);
+	
+	public boolean deleteOrder(int orderId);
+	
+	public List<Order> getAllOrder();
 }

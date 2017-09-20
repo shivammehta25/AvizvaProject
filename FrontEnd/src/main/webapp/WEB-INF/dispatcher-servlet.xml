@@ -29,7 +29,7 @@
 
 	<bean 
 		id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-	   <property name="basenames" value="/resources/properties/user,/resources/properties/contactus,/resources/properties/forgotpass,/resources/properties/resetpass,/resources/properties/supplier"/>	
+	   <property name="basenames" value="/resources/properties/user,/resources/properties/contactus,/resources/properties/forgotpass,/resources/properties/resetpass,/resources/properties/supplier,/resources/properties/order"/>	
 	</bean>
 	
 	<bean 
