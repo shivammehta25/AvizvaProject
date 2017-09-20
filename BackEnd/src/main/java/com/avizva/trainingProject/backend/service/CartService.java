@@ -12,10 +12,10 @@ public interface CartService {
 	public boolean removeProductFromCart(int cartId);
 	public boolean updateCartQuantity(int productId,int CartQuantity,String username);
 	public Long priceCalculator(String username,Long ...discount);
-	public boolean hasCartProduct(int productId);
+	public boolean hasCartProduct(int productId,String username);
 	public List<Product> allProductInCart();
 	public List<Integer> getQuantityOfProductInCart(List<Product> listCart,String username);
-	public int getQuantity(int productId);
+	public int getQuantity(int productId , String username);
 	public Cart getCartFromProductId(int productId , String username);
 	
 }
