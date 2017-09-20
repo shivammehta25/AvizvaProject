@@ -112,7 +112,7 @@ h1:hover {
 			</div>
 		
 		
-		<div ng-repeat="product in cartList">
+		<div ng-repeat="(i,product) in cartList">
 					
 		
 					<div class="panel panel-info">
@@ -132,10 +132,10 @@ h1:hover {
 									<small>Category: <a style="text-decoration: none !important" href="products?categoryName={{product.productCatName}}">{{product.productCatName}} </a></small>
 								</div>
 								<div class="col-md-3">
-									Quantity
+									<input type="number" ng-value="{{product.quantity}}" ng-model="quant[i]" >
 								</div>
 								<div class="col-md-3">
-									<i class="fa fa-inr" ></i> {{product.productPrice}}
+									<i class="fa fa-inr" ></i> {{product.productPrice * quant[i]}}
 								</div>
 							
 							</div>
@@ -145,8 +145,8 @@ h1:hover {
 						</div>
 						<div class="panel-footer">
 							<div class="col-md-3 col-md-offset-9">
-								<button class="btn btn-success">Update</button>
-								<button class="btn btn-danger">Remove</button>
+								<a href="updateCart?productId={{product.productId}}&cartQuantity={{quant[i]}}" ><button class="btn btn-success">Update</button> </a>
+								<a href="removefromcart?productId={{product.productId}}"><button class="btn btn-danger">Remove</button></a>
 							</div>
 						</div>
 					</div>
@@ -175,8 +175,13 @@ app.controller('cartController',function($scope){
 
 $scope.cartList = ${cartList};
 $scope.quantity = ${quantity};
+$scope.quant = $scope.quantity;
+for(i=0;i<$scope.cartList.length;i++){
+	$scope.cartList[i].quantity=$scope.quantity[i];
+}
 $scope.totalPrice = ${totalPrice};
-	
+
+
 
 });
 

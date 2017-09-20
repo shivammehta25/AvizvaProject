@@ -141,5 +141,15 @@ public class CartServiceImpl implements CartService {
 
 
 
+	public Cart getCartFromProductId(int productId, String username) {
+		Cart c = cartDAO.getCartByProductId(productId, username);
+		if(c != null){
+			return c;
+		}
+		return null;
+	}
+
+
+
 
 }
