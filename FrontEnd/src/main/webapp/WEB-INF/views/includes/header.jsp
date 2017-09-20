@@ -17,8 +17,7 @@
 <c:url var="rimages" value="resources/images"></c:url>
 
 <link rel="stylesheet" href="${rcss}/navbar-fixed-top.css">
-<link rel="stylesheet" href="${rcss}/styling.css">
-<link rel="stylesheet" href="${rcss}/footerstyle.css">
+
 
 <style>
 #demo_box{
@@ -71,12 +70,13 @@
 					<ul class="nav navbar-nav navbar-right">
 						<form class="navbar-form navbar-left" role="search">
 							<div class="form-group">
-								<input type="text" class="form-control">
-								<button class="btn btn-primary btn-lg" type="button">
-									<i class="fa fa-search "></i>
+								<input type="text" class="form-control" placeholder="Search" name="search">
+								<button class="btn btn-primary " type="button">
+									<i class="fa fa-search fa-large"></i>
 								</button>
 							</div>
 						</form>
+						
 						<li class="${homeactive } "><a href="./"> <i
 								class="fa fa-lg fa-2x fa-home" aria-hidden="true"></i> Home
 						</a></li>

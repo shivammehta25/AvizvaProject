@@ -9,16 +9,15 @@ import org.springframework.stereotype.Service;
 import com.avizva.trainingProject.backend.dao.SupplierDAO;
 import com.avizva.trainingProject.backend.model.Supplier;
 
-
 @Service
 public class SupplierServiceImpl implements SupplierService {
-	
 	private static final Logger LOGGER = Logger.getLogger(SupplierServiceImpl.class);
 
 	@Autowired
 	SupplierDAO supplierDAO;
 	
 	public boolean addSupplierService(Supplier supplier){
+		LOGGER.info("<-- SupplierService.addSupplierService Called--->");
 		boolean flag = false;
 		if(supplierDAO.createSupplier(supplier)){
 			LOGGER.info("<-- Supplier Added Successfully-->");
@@ -30,11 +29,10 @@ public class SupplierServiceImpl implements SupplierService {
 		return flag;
 	}
 	
-	
-	
 	public List<Supplier> searchSupplier(String name){
+		LOGGER.info("<-- SupplierService.searchSupplier Called--->");
 		List<Supplier> listSupplier = supplierDAO.searchSupplier(name);
-		LOGGER.debug("Supplier Search yielded" + listSupplier.size());
+		LOGGER.info("searchSupplier yielded" + listSupplier.size());
 		if(listSupplier != null){
 			return listSupplier;
 		}
@@ -44,36 +42,41 @@ public class SupplierServiceImpl implements SupplierService {
 	}
 	
 	public boolean updateSupplier(Supplier supplier){
+		LOGGER.info("<-- SupplierService.updateSupplier Called--->");
 		boolean flag = false;
 		if(supplierDAO.updateSupplier(supplier)){
+			LOGGER.info("<-- Supplier Updated Successfully-->");
 			flag = true;
 			return flag;
 		}
 		else{
+			LOGGER.error("<-- Could Not Updated the Supplier -->");
 			return flag;
 		}
 	}
 	
 	public boolean deleteSupplier(int id){
+		LOGGER.info("<-- SupplierService.deleteSupplier Called--->");
 		boolean flag = false;
 		Supplier supplier = supplierDAO.getSupplierById(id);
-		LOGGER.info("<-- Supplied id to be delteted "  + supplier.getSupplierId());
+		LOGGER.info("<-- Supplied Id to be deleted "  + supplier.getSupplierId());
 		if(supplier != null){
+			LOGGER.info("<-- Supplier Deleted Successfully-->");
 			flag = true;
 			supplierDAO.deactivateSupplier(supplier);
 			return flag;
 			
 		}
-			return flag;
+		LOGGER.error("<-- Could Not Delete the Supplier -->");
+		return flag;
 
 		
 	}
 
-
-
 	public List<Supplier> getAllSupplier() {
+		LOGGER.info("<-- SupplierService.getAllSupplier Called--->");
 		List<Supplier> listSupplier = supplierDAO.getAllSupplier();
-		LOGGER.info("INside Service of supplier" + listSupplier );
+		LOGGER.info("getAllSupplier yielded" + listSupplier.size() );
 		if(listSupplier != null){
 			return listSupplier;
 		}

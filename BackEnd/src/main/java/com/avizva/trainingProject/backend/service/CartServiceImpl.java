@@ -27,7 +27,10 @@ public class CartServiceImpl implements CartService {
 	@Autowired
 	CartDAO cartDAO;
 	
+
+	
 	public boolean addProductToCart(int productId , int productQuantity , HttpSession session) {
+		LOGGER.info("<-- CartService.addProductToCart Called--->");
 		boolean flag = false; 
 		Product product = productDAO.getProductById(productId);
 		Cart cart = new Cart();
@@ -48,6 +51,7 @@ public class CartServiceImpl implements CartService {
 	
 	
 	public boolean removeProductFromCart(int cartId) {
+		LOGGER.info("<-- CartService.removeProductfromCart Called--->");
 		boolean flag = false;
 		Cart cart = cartDAO.getCartById(cartId);
 		if(cart != null){
@@ -60,6 +64,7 @@ public class CartServiceImpl implements CartService {
 	
 	
 	public boolean updateCartQuantity(int productId, int cartQuantity , String username) {
+		LOGGER.info("<-- CartService.updateCartQuantity Called--->");
 		Cart cart = cartDAO.getCartByProductId(productId ,username);		
 		if( cart != null)
 		{
@@ -80,6 +85,7 @@ public class CartServiceImpl implements CartService {
 	
 	
 	public Long priceCalculator(String username, Long... discount) {
+		LOGGER.info("<-- CartService.priceCalculator Called--->");
 		List<Cart> listCart = cartDAO.getAllCartByUser(username);
 		Long price = 0L;
 		for(Cart c : listCart){

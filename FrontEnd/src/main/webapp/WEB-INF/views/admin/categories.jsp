@@ -9,9 +9,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Categories</title>
-<c:url var="rcssA" value="resources/css"></c:url>
-<c:url var="rimagesA" value="resources/images"></c:url>
-<link rel="stylesheet" href="${rcssA }/css/admin.css" >
+<c:url var="rcss" value="resources/css"></c:url>
+<c:url var="rimages" value="resources/images"></c:url>
+<link rel="stylesheet" href="${rcss }/admin.css" >
 
 </head>
 <body>
@@ -48,8 +48,10 @@
 										<td><c:out value="${category.categoryId}"></c:out></td>
 										<td><c:out value="${category.categoryName}"></c:out></td>
 										<td><c:out value="${category.categoryDescription}"></c:out></td>
-										<td><a style="cursor: pointer" onclick="populate(${category.categoryId} ,'${category.categoryName}' , '${category.categoryDescription }')" >Edit </a></td>
-										<td><a style="cursor: pointer" onclick="deleteit(${category.categoryId})" >Delete</a></td>
+										<td><a style="cursor: pointer" onclick="populate(${category.categoryId} ,'${category.categoryName}' ,
+										 '${category.categoryDescription }')" data-toggle="collapse" href="#updatePanel">Edit </a></td>
+										<td><a style="cursor: pointer" onclick="deleteit(${category.categoryId})" 
+										data-toggle="collapse" href="#deletePanel">Delete</a></td>
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -58,10 +60,14 @@
 				</div>
 
 				<div class="panel panel-default">
+					<a data-toggle="collapse" href="#searchPanel" style="text-decoration: none;"
+						class="collapsed" aria-expanded="false">
 					<div class="panel-heading">
 						<h4 class="panel-title" style="text-align: left">Search for
 							Category</h4>
 					</div>
+					</a>
+					<div class="panel-collapse collapse" id="searchPanel" aria-expanded="false" style="height: 0px;">
 					<div class="panel-body">
 						<form class="form-horizontal" method="post "
 							action="searchCategoryForm" role="form">
@@ -80,12 +86,17 @@
 							</div>
 						</form>
 					</div>
+					</div>
 				</div>
 
 				<div class="panel panel-default">
+					<a data-toggle="collapse" href="#addPanel" style="text-decoration: none;"
+						class="collapsed" aria-expanded="false">
 					<div class="panel-heading">
 						<h4 class="panel-title" style="text-align: left">Add Category</h4>
 					</div>
+					</a>
+					<div class="panel-collapse collapse" id="addPanel" aria-expanded="false" style="height: 0px;">
 					<div class="panel-body">
 						<form class="form-horizontal" method="post"
 							action="addCategoryForm" role="form">
@@ -118,13 +129,18 @@
 
 						</form>
 					</div>
+					</div>
 				</div>
 
 				<div class="panel panel-default">
+					<a data-toggle="collapse" href="#updatePanel" style="text-decoration: none;"
+						class="collapsed" aria-expanded="false">
 					<div class="panel-heading">
 						<h4 class="panel-title" style="text-align: left">Update
 							Category</h4>
 					</div>
+					</a>
+					<div class="panel-collapse collapse" id="updatePanel" aria-expanded="false" style="height: 0px;">
 					<div class="panel-body">
 						<form class="form-horizontal" method="post "
 							action="updateCategoryForm" role="form">
@@ -166,13 +182,18 @@
 
 						</form>
 					</div>
+					</div>
 				</div>
 				
 				<div class="panel panel-default">
+					<a data-toggle="collapse" href="#deletePanel" style="text-decoration: none;"
+						class="collapsed" aria-expanded="false">
 					<div class="panel-heading">
 						<h4 class="panel-title" style="text-align: left">Deactivate
 							Category</h4>
 					</div>
+					</a>
+					<div class="panel-collapse collapse" id="deletePanel" aria-expanded="false" style="height: 0px;">
 					<div class="panel-body">
 						<form class="form-horizontal" method="post "
 							action="deactivateCategoryForm" role="form">
@@ -192,6 +213,7 @@
 							</div>
 
 						</form>
+					</div>
 					</div>
 				</div>
 

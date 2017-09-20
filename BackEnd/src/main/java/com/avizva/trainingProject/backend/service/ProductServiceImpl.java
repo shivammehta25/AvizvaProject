@@ -22,6 +22,7 @@ public class ProductServiceImpl implements ProductService {
 	private FileUploadService fileUploadService;
 
 	public boolean addProductService(Product product, MultipartFile file) {
+		LOGGER.info("<-- ProductService.addProductService Called--->");
 		boolean flag=false;
 		fileUploadService.uploadProductImage(product,file);
 		if(productDAO.addProduct(product)){
@@ -35,8 +36,9 @@ public class ProductServiceImpl implements ProductService {
 
 	@SuppressWarnings("unused")
 	public List<Product> searchProduct(String name) {
+		LOGGER.info("<-- ProductService.searchProduct Called--->");
 		List<Product> listProduct = productDAO.searchProduct(name);
-		LOGGER.debug("Product Search yielded" + listProduct.size());
+		LOGGER.debug("searchProduct yielded" + listProduct.size());
 		if(listProduct!=null)
 		{
 			return listProduct;
@@ -48,12 +50,15 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	public boolean updateProduct(Product product, MultipartFile file) {
+		LOGGER.info("<-- ProductService.updateProduct Called--->");
 		boolean flag=false;
 		fileUploadService.uploadProductImage(product,file);
 		if(productDAO.updateProduct(product)){
+			LOGGER.info("<-- Product Updated Successfully-->");
 			flag = true;
 			return flag;
 		}else{
+			LOGGER.error("<-- Could Not Update the Product -->");
 			return flag;
 		}
 		
@@ -62,20 +67,24 @@ public class ProductServiceImpl implements ProductService {
 
 	@SuppressWarnings("unused")
 	public boolean deleteProduct(int id) {
+		LOGGER.info("<-- ProductService.deleteProduct Called--->");
 		boolean flag=false;
 		Product product=productDAO.getProductById(id);
 		LOGGER.info("<-- Product id to be delteted "  + product.getProductId());
 		if(product != null){
+			LOGGER.info("<-- Product Deleted Successfully-->");
 			flag = true;
 			productDAO.removeProduct(product);
 			return flag;
-	}
+		}
+		LOGGER.error("<-- Could Not Delete the Product -->");
 		return flag;
 	}
 
 	public List<Product> getAllProduct() {
+		LOGGER.info("<-- ProductService.getAllProduct Called--->");
 		List<Product> listProduct=productDAO.getAllProduct();
-		LOGGER.info("INside Service of product" + listProduct );
+		LOGGER.info("getAllProduct yielded" + listProduct.size() );
 		if(listProduct != null){
 			return listProduct;
 		}
@@ -83,8 +92,9 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	public List<Product> getProductByCategory(String productCatName) {
+		LOGGER.info("<-- ProductService.getProductByCategory Called--->");
 		List<Product> listProduct = productDAO.getProductByCategory(productCatName);
-		LOGGER.info("<-- Product Fetched by category"  + productCatName);
+		LOGGER.info("<-- Products Fetched by Category"  + productCatName);
 		if(listProduct !=null){
 			return listProduct;
 		}
@@ -92,15 +102,16 @@ public class ProductServiceImpl implements ProductService {
 	}
 	
 	public Product getProductById(int productId) {
+
+		LOGGER.info("<-- ProductService.getProductById Called--->");
 		Product product = productDAO.getProductById(productId);
-		LOGGER.info("<-- Product Fetched by category"  + productId);
+		LOGGER.info("<-- Product Fetched by Id"  + productId);
+
 		if(product !=null){
 			return product;
 		}
 		return null;
 	}
-
-	
 
 	
 	
