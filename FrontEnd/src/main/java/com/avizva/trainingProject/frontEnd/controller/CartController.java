@@ -1,7 +1,9 @@
 package com.avizva.trainingProject.frontEnd.controller;
 
+import java.net.URI;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
@@ -35,9 +37,9 @@ public class CartController {
 	//Have to add the the current request url for calling this thing xP
 	
 	@RequestMapping("/addtocart")
-	public ModelAndView addToCart(@RequestParam("productId") int productId , @RequestParam(value="productQuantity",defaultValue="1") int productQuantity, @RequestParam(value="forwardUrl" ,required=false) String forwardUrl , HttpSession session){
+	public ModelAndView addToCart(@RequestParam("productId") int productId , @RequestParam(value="productQuantity",defaultValue="1") int productQuantity, HttpSession session , HttpServletRequest request){
 		if(session.getAttribute("username") == null){
-			return new ModelAndView("redirect:/login?forwardUrl?="+ forwardUrl).addObject("msg", "You Must be Logged in to Shop");
+			return new ModelAndView("redirect:/login?forwardUrl?="+request.getHeader("Referer")).addObject("msg", "You Must be Logged in to Shop");
 		}
 		LOGGER.info("<-- Inside add to Cart Controller -->" + productId + productQuantity);
 		boolean cartQuantity  = cartService.hasCartProduct(productId);
@@ -60,7 +62,7 @@ public class CartController {
 	@RequestMapping("/removefromcart")
 	public ModelAndView removeFromCart(@RequestParam("cartId") int cartId , HttpSession session ){
 		if(session.getAttribute("username") == null){
-			return new ModelAndView("login").addObject("msg", "You Must be Logged in to Shop");
+			return new ModelAndView("redirect:/login").addObject("msg", "You Must be Logged in to Shop");
 		}
 		if(cartService.removeProductFromCart(cartId)){
 			return new ModelAndView("redirect:/cart").addObject("msg" , "Item removed from Cart");
@@ -74,7 +76,7 @@ public class CartController {
 	public ModelAndView updateCart(@RequestParam("productId") int productId , @RequestParam("cartQuantity") int cartQuantity , HttpSession session ){
 		LOGGER.error("<-- Add To Cart bhejde idhar -->" + cartQuantity + productId);
 		if(session.getAttribute("username") == null){
-			return new ModelAndView("login").addObject("msg", "You Must be Logged in to Shop");
+			return new ModelAndView("redirect:/login").addObject("msg", "You Must be Logged in to Shop");
 		}
 		if(cartService.updateCartQuantity(productId, cartQuantity , (String)session.getAttribute("username"))){
 			return new ModelAndView("redirect:/cart").addObject("msg" , "Cart Updated Successfully");
@@ -85,22 +87,24 @@ public class CartController {
 	}
 	
 	@RequestMapping("/cart")
-	public ModelAndView viewCart(HttpSession session , @RequestParam(value="discount",defaultValue="0")Long discount){
+	public ModelAndView viewCart(HttpSession session , @RequestParam(value="discount",defaultValue="0")Long discount , HttpServletRequest request){
 		if(session.getAttribute("username") == null){
-			return new ModelAndView("login").addObject("msg", "You Must be Logged in to Shop");
+			return new ModelAndView("redirect:/login").addObject("msg", "You Must be Logged in to Shop");
 		}
 		
 		List<Product> listCart = cartService.allProductInCart();
 		List<Integer> quantityList = cartService.getQuantityOfProductInCart(listCart, (String)session.getAttribute("username"));
-		
-		
 		
 		Gson g = new Gson();
 		String cartList = g.toJson(listCart);
 		String quantity = g.toJson(quantityList);
 		Long totalPrice = cartService.priceCalculator((String)session.getAttribute("username"),discount);
 		String totalPriceJ = g.toJson(totalPrice);
-		return new ModelAndView("cart").addObject("msg" , "Shopping Cart").addObject("cartList" , cartList).addObject("quantity" , quantity).addObject("totalPrice" , totalPriceJ).addObject("cartactive" , "active");
+		return new ModelAndView("cart").addObject("msg" , "Shopping Cart")
+				.addObject("cartList" , cartList)
+				.addObject("quantity" , quantity)
+				.addObject("totalPrice" , totalPriceJ)
+				.addObject("cartactive" , "active");
 		
 	}
 	

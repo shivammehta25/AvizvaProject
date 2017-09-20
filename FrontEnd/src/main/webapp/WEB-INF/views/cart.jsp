@@ -62,11 +62,20 @@
 	box-shadow: 4px 7px 38px -2px rgba(0, 0, 0 0, 1) !important;
 
 }
+
 .radhead{
 	color:black;
 
 }
-
+.headerez {
+    color: #2e2f31 !important;
+    -webkit-text-shadow: 1px 2px 10px #FFFFFF !important;
+	-moz-text-shadow: 1px 2px 10px #FFFFFF !important;
+	text-shadow: 1px 2px 10px #FFFFFF !important;
+  
+}
+h1:hover {
+}
 </style>
 
 
@@ -91,8 +100,20 @@
 					</ul>
 				</div>
 		<div class="col-md-10">
-		<div ng-repeat="product in cartList">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="page-header">
+						<h1 class="headerez">
+							<i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
+							Your Cart <small> </small>
+						</h1>
+					</div>
+				</div>
+			</div>
 		
+		
+		<div ng-repeat="product in cartList">
+					
 		
 					<div class="panel panel-info">
 						<div class="panel-heading">
@@ -142,6 +163,7 @@
 	
 	</div>
 </div>
+${prevUrl }
 
 {{cartList}}
 {{quantity}}
