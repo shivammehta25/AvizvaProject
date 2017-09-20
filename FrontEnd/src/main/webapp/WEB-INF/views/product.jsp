@@ -206,6 +206,17 @@ a.preview {
 	bottom: 20%;
 	left: 25%;
 }
+.nav-stacked {
+-webkit-box-shadow: 4px 7px 38px -2px rgba(0, 0, 0, 1) !important;
+	-moz-box-shadow: 4px 7px 38px -2px rgba(0, 0, 0, 1) !important;
+	box-shadow: 4px 7px 38px -2px rgba(0, 0, 0 0, 1) !important;
+
+}
+.radhead{
+	color:black;
+
+}
+
 
 p.category.ng-binding {
 	font-size: 13px;

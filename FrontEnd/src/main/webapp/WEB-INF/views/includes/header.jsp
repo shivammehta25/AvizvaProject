@@ -93,14 +93,9 @@
 								<li><a href="products?categoryName=${category.categoryName }">${category.categoryName }</a></li>
 							</c:forEach>	
 							</ul></li>
-
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown"><i class="fa fa-lg fa-2x fa-cart-plus"
-								aria-hidden="true"></i> Cart<strong class="caret"></strong></a>
-							<ul class="dropdown-menu">
-								<li><a href="#"> Item 1</a></li>
-								<li><a href="#"> Item 2</a></li>
-							</ul></li>
+						<li class="${cartactive } "><a href="cart"> <i
+								class="fa fa-lg fa-2x fa-cart-plus" aria-hidden="true"></i> Cart
+						</a></li>
 						
 						<c:if test="${username == null }">
 

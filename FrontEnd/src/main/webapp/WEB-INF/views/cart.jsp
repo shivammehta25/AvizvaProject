@@ -15,6 +15,70 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GAMAZON | Contact Us</title>
+<style>
+.panel-body{
+	color:black;
+	height: 150px;
+}
+
+.panel-info>.panel-heading:HOVER{
+	background-color: #27A967 !important;
+	color:white !important;
+}
+
+.panel-info>.panel-heading{
+	background-color: #2e2f31 !important;
+	color: #27A967 !important;
+}
+
+.panel-footer {
+    background-color: rgba(194, 220, 243, 0.63) !important;
+    color: black !important;
+    height: 50px;
+}
+
+.totalBar {
+    background: #2e2f31 !important;
+    padding: 20px;
+    -webkit-box-shadow: 4px 7px 38px -2px rgba(0, 0, 0, 1) !important;
+	-moz-box-shadow: 4px 7px 38px -2px rgba(0, 0, 0, 1) !important;
+	box-shadow: 4px 7px 38px -2px rgba(0, 0, 0 0, 1) !important;
+	border-radius: 20px;
+}
+.totprice {
+	padding-top: 20px;
+		
+	
+}
+.panel {
+-webkit-box-shadow: 4px 7px 38px -2px rgba(0, 0, 0, 1) !important;
+	-moz-box-shadow: 4px 7px 38px -2px rgba(0, 0, 0, 1) !important;
+	box-shadow: 4px 7px 38px -2px rgba(0, 0, 0 0, 1) !important;
+}
+
+.nav-stacked {
+-webkit-box-shadow: 4px 7px 38px -2px rgba(0, 0, 0, 1) !important;
+	-moz-box-shadow: 4px 7px 38px -2px rgba(0, 0, 0, 1) !important;
+	box-shadow: 4px 7px 38px -2px rgba(0, 0, 0 0, 1) !important;
+
+}
+
+.radhead{
+	color:black;
+
+}
+.headerez {
+    color: #2e2f31 !important;
+    -webkit-text-shadow: 1px 2px 10px #FFFFFF !important;
+	-moz-text-shadow: 1px 2px 10px #FFFFFF !important;
+	text-shadow: 1px 2px 10px #FFFFFF !important;
+  
+}
+h1:hover {
+}
+</style>
+
+
 </head>
 <body ng-app="myApp" ng-controller="cartController">
 	<jsp:include page="/WEB-INF/views/includes/header.jsp"></jsp:include>
@@ -36,28 +100,42 @@
 					</ul>
 				</div>
 		<div class="col-md-10">
-		<div ng-repeat="product in cartList">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="page-header">
+						<h1 class="headerez">
+							<i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
+							Your Cart <small> </small>
+						</h1>
+					</div>
+				</div>
+			</div>
 		
+		
+		<div ng-repeat="product in cartList">
+					
 		
 					<div class="panel panel-info">
 						<div class="panel-heading">
 							<h3 class="panel-title">
-								{{product.productId}}
+								Product Id: #{{product.productId}}
 							</h3>
 						</div>
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-md-3">
-									Hello
+									Hello {{product.productName}}
 								</div>
 								<div class="col-md-3">
-									World
+									{{product.productDesc}}
+									<hr>
+									<small>Category: <a style="text-decoration: none !important" href="products?categoryName={{product.productCatName}}">{{product.productCatName}} </a></small>
 								</div>
 								<div class="col-md-3">
-									Sup
+									Quantity
 								</div>
 								<div class="col-md-3">
-									huahahha
+									<i class="fa fa-inr" ></i> {{product.productPrice}}
 								</div>
 							
 							</div>
@@ -66,17 +144,30 @@
 							
 						</div>
 						<div class="panel-footer">
-							Panel footer
+							<div class="col-md-3 col-md-offset-9">
+								<button class="btn btn-success">Update</button>
+								<button class="btn btn-danger">Remove</button>
+							</div>
 						</div>
 					</div>
 		</div>
+		<div class="totalBar">
+			<div class="row">
+				<div class="col-md-3 col-md-offset-9">
+				<span class="totprice">{{totalPrice}} </span> <span class="pull-right"><button class="btn btn-success">Checkout</button></span> 
+				</div>
+				
+			</div>
 		</div>
+		</div>
+	
 	</div>
 </div>
+${prevUrl }
 
 {{cartList}}
 {{quantity}}
-
+{{totalPrice}}
 <script>
 var app = angular.module('myApp', []);
 
@@ -84,9 +175,8 @@ app.controller('cartController',function($scope){
 
 $scope.cartList = ${cartList};
 $scope.quantity = ${quantity};
-$scope.quantityfun = function(productId){
+$scope.totalPrice = ${totalPrice};
 	
-}
 
 });
 
