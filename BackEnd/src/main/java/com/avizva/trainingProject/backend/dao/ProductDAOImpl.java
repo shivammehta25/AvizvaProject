@@ -31,7 +31,6 @@ public class ProductDAOImpl implements ProductDAO {
 	
 
 	public boolean addProduct(Product product) {
-		System.out.println("DAO"+product);
 
 		boolean flag=false;
 		try{
@@ -103,7 +102,7 @@ public class ProductDAOImpl implements ProductDAO {
 			listProduct=q.list();
 			LOGGER.info("<-- Fetched all the Products -->");
 		}catch(Exception e){
-			LOGGER.error("<-- Couldn't Not Fetch All Products");
+			LOGGER.error("<-- Couldn't Fetch All Products");
 		}
 		
 		return listProduct;

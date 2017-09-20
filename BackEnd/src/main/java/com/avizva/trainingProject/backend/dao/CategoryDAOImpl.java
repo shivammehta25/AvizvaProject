@@ -57,7 +57,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 			LOGGER.info("<-- Fetched Category's Object");
 			return category;
 			}catch(Exception e){
-				LOGGER.error("<-- Couldnt not fetch Category's Object from ID");
+				LOGGER.error("<-- Couldnt fetch Category's Object from ID");
 			}
 			return null;	
 	}
@@ -71,7 +71,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 			listCatgeory=q.list();
 			LOGGER.info("<-- Fetched all the Categories -->");
 		}catch(Exception e){
-			LOGGER.error("<-- Couldn't Not Fetch All Categories");
+			LOGGER.error("<-- Couldn't Fetch All Categories");
 		}
 		
 		return listCatgeory;
