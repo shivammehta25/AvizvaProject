@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import com.avizva.trainingProject.backend.model.Cart;
 import com.avizva.trainingProject.backend.model.Product;
 
 public interface CartService {
@@ -15,5 +16,6 @@ public interface CartService {
 	public List<Product> allProductInCart();
 	public List<Integer> getQuantityOfProductInCart(List<Product> listCart,String username);
 	public int getQuantity(int productId);
+	public Cart getCartFromProductId(int productId , String username);
 	
 }

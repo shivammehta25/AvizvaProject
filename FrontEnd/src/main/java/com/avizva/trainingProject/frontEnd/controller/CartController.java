@@ -60,11 +60,12 @@ public class CartController {
 	}
 	
 	@RequestMapping("/removefromcart")
-	public ModelAndView removeFromCart(@RequestParam("cartId") int cartId , HttpSession session ){
+	public ModelAndView removeFromCart(@RequestParam("productId") int productId , HttpSession session ){
 		if(session.getAttribute("username") == null){
 			return new ModelAndView("redirect:/login").addObject("msg", "You Must be Logged in to Shop");
 		}
-		if(cartService.removeProductFromCart(cartId)){
+		Cart c = cartService.getCartFromProductId(productId , (String)session.getAttribute("username"));
+		if(cartService.removeProductFromCart(c.getCardId())){
 			return new ModelAndView("redirect:/cart").addObject("msg" , "Item removed from Cart");
 		}
 		return new ModelAndView("redirect:/cart").addObject("msg" , "Error removing Item from Cart Try again later");
