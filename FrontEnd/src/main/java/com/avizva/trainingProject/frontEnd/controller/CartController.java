@@ -30,7 +30,7 @@ import com.google.gson.Gson;
 @SuppressWarnings("unused")
 @Controller
 public class CartController {
-	private static final Logger LOGGER = Logger.getLogger(CategoryController.class);
+	private static final Logger LOGGER = Logger.getLogger(CartController.class);
 	
 	@Autowired
 	CartService cartService;
