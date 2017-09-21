@@ -28,10 +28,10 @@ public class Order {
 	@NotNull
 	private String orderNumber;
 	
-	@Column(columnDefinition="VARCHAR DEFAULT 'Placed'")
+//	@Column(columnDefinition="VARCHAR DEFAULT 'Placed'")
 	private String orderStatus;
 	
-	@CreationTimestamp
+//	@CreationTimestamp
 	@DateTimeFormat(pattern="dd/MM/yyyy")
 	private Date orderDate;
 	
@@ -135,7 +135,10 @@ public class Order {
 		this.shippingCity = shippingCity;
 	}
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9ac91e4c8e7ce1f14a0abd00f62bd6fbf81c2998
 	public String getShippingCountry() {
 		return shippingCountry;
 	}
@@ -150,6 +153,15 @@ public class Order {
 
 	public void setShippingPin(int shippingPin) {
 		this.shippingPin = shippingPin;
+	}
+
+	@Override
+	public String toString() {
+		return "Order [orderId=" + orderId + ", orderNumber=" + orderNumber + ", orderStatus=" + orderStatus
+				+ ", orderDate=" + orderDate + ", orderQuantity=" + orderQuantity + ", orderPaymentDetails="
+				+ orderPaymentDetails + ", username=" + username + ", productId=" + productId + ", shippingAddress="
+				+ shippingAddress + ", shippingCity=" + shippingCity + ", shippingCountry=" + shippingCountry
+				+ ", shippingPin=" + shippingPin + "]";
 	}
 	
 	

@@ -44,7 +44,7 @@
 	</div>
 	
 				<div class="row">
-					<div class="col-md-4">
+					<div class="col-md-3">
 						<div class="jumbotron well">
 							<h2>Products</h2>
 							<p>Total Number of Products : ${totalprod }
@@ -54,7 +54,7 @@
 							</p>
 						</div>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-3">
 						<div class="jumbotron well">
 							<h2>Suppliers</h2>
 							<p>Total Number of Suppliers : ${totalsupp }</p>
@@ -64,13 +64,23 @@
 							</p>
 						</div>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-3">
 						<div class="jumbotron well">
 							<h2>Categories</h2>
 							<p>Total Categories : ${totalcat }</p>
 							<p>
 								<a class="btn btn-primary btn-large" href="adminmanagecat">Manage
 									Categories</a>
+							</p>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="jumbotron well">
+							<h2>Orders</h2>
+							<p>Total Orders : ${totalorder }</p> 
+							<p>
+								<a class="btn btn-primary btn-large" href="adminmanageorder">Manage
+									Orders</a>
 							</p>
 						</div>
 					</div>

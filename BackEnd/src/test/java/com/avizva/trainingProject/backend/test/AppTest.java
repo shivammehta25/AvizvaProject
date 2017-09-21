@@ -1,4 +1,4 @@
-package com.avizva.trainingProject.backend;
+package com.avizva.trainingProject.backend.test;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

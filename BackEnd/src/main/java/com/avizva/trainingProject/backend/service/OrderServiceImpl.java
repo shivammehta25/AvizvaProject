@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.avizva.trainingProject.backend.dao.OrderDAO;
 import com.avizva.trainingProject.backend.model.Category;
 import com.avizva.trainingProject.backend.model.Order;
+import com.avizva.trainingProject.backend.model.Supplier;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -66,6 +67,18 @@ public class OrderServiceImpl implements OrderService {
 		if(listOrder != null){
 			return listOrder;
 		}else{
+			return null;
+		}
+	}
+	
+	public List<Order> searchOrder(String orderNumber){
+		LOGGER.info("<-- OrderService.searchOrder Called--->");
+		List<Order> listOrder = orderDAO.getOrderByOrderNumber(orderNumber);
+		LOGGER.info("searchOrder yielded" + listOrder.size());
+		if(listOrder != null){
+			return listOrder;
+		}
+		else{
 			return null;
 		}
 	}
