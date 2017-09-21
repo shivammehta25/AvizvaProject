@@ -135,7 +135,6 @@ public class Order {
 		this.shippingCity = shippingCity;
 	}
 
-
 	public String getShippingCountry() {
 		return shippingCountry;
 	}

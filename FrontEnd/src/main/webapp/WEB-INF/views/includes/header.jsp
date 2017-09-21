@@ -141,14 +141,15 @@
 	</div>
 </div>
 <!-- Navbar End -->
-<c:if test="${msg !=null }">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
+<c:if test="${msg !=null } ">
 
 		<div class="alert alert-info alert-dismissable" id="success-alert">
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			<div class="text-center"><strong > ${msg }</strong></div>
 		</div>
 
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
+
 <script>	
 
 
@@ -169,3 +170,32 @@ $(document).ready (function(){
 
 	</script>
 </c:if>
+
+<c:if test="${not empty param.msg }">
+
+		<div class="alert alert-info alert-dismissable" id="success-alert">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<div class="text-center"><strong > ${param.msg }</strong></div>
+		</div>
+
+<script>	
+
+
+	
+$(document).ready (function(){
+
+        $
+        setTimeout(function showAlert() {
+            $("#success-alert").slideUp(500, function(){
+           $("#success-alert").slideUp(500);
+           $("#success-alert").remove();
+            });   
+        }, 2000);
+        
+        	
+});
+
+
+	</script>
+</c:if>
+

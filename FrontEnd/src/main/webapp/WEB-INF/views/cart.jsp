@@ -159,7 +159,7 @@
 										<input type="hidden" value="{{fwdList}}" name="cartList" >
 										<input type="hidden" value="${quantity }" name="quantity">
 										<input type="hidden" value="${totalPrice }" name="totalPrice">
-							<!--  Ending here -->
+									<!--  Ending here -->
 					<div class="totalBar">
 						<div class="row">
 							<div class="col-md-3 col-md-offset-9">Total Price:

@@ -37,16 +37,10 @@
 	<div class="container-fluid">
 		<div class="row">
 			
-			<div class="navcontainer">
 				<div class="col-md-2">
-					<!-- <ul class="nav nav-pills nav-stacked">
-					<li><a href="/">Home</a>
-					<li><a href=""></a>	
-					</ul> -->
 				</div>
-			</div>
 			
-			<div class="col-md-10">
+			<div class="col-md-8">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h2 class="panel-title" style="text-align: center">ABOUT US
