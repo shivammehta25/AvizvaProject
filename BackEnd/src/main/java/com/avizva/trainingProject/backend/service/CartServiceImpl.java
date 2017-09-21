@@ -14,7 +14,11 @@ import com.avizva.trainingProject.backend.dao.CartDAO;
 import com.avizva.trainingProject.backend.dao.ProductDAO;
 import com.avizva.trainingProject.backend.model.Cart;
 import com.avizva.trainingProject.backend.model.Product;
-
+/**
+ * 
+ * @author Akshay.Chourasia
+ * @Service
+ */
 
 @Service
 public class CartServiceImpl implements CartService {
@@ -26,7 +30,9 @@ public class CartServiceImpl implements CartService {
 	ProductDAO productDAO;
 	@Autowired
 	CartDAO cartDAO;
-	
+	/**
+	 * 
+	 */
 	public boolean addProductToCart(int productId , int productQuantity , HttpSession session) {
 		boolean flag = false; 
 		Product product = productDAO.getProductById(productId);

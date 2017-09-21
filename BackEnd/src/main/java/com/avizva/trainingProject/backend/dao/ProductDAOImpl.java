@@ -13,6 +13,20 @@ import org.springframework.transaction.annotation.Transactional;
 import com.avizva.trainingProject.backend.model.Category;
 import com.avizva.trainingProject.backend.model.Product;
 
+/**
+ * 
+ * @author Akshay.Chourasia
+ * 
+ * @repository
+ * @transactional
+ * <p>
+ * This is the CartDAOImpl class in
+ * which there are unimplemented methods
+ * which contains the business logic of
+ * add product to cart, removeProductFromCart,updateCartQuantity,
+ * priceCalculator,getAllCartByUser,getCartByProductId,getAllCart.
+ * 
+ */
 
 @Repository
 @Transactional
@@ -29,7 +43,15 @@ public class ProductDAOImpl implements ProductDAO {
 		return sessionFactory.getCurrentSession();
 	}
 	
-
+	
+	/**
+	 * @param product.
+	 * @return its return type is boolean.
+	 * <p>
+	 * This method is used to add product in cart
+	 * in which we have performed the operation 
+	 * of saving product in Database. 
+	 */
 	public boolean addProduct(Product product) {
 		System.out.println("DAO"+product);
 
@@ -48,7 +70,13 @@ public class ProductDAOImpl implements ProductDAO {
 		
 	}
 
-
+	/**
+	 * @param ProductId.
+	 * @return its return type is boolean.
+	 * <p>
+	 * This method is used to get the productId from cart
+	 * which is further returned. 
+	 */
 	public Product getProductById(int productId) {
 		try{
 		Session session=getSession();
@@ -63,7 +91,15 @@ public class ProductDAOImpl implements ProductDAO {
 		}
 		return null;
 	}
-
+	
+	/**
+	 * @param product.
+	 * @return its return type is boolean.
+	 * <p>
+	 * This method is used to update product in cart
+	 * in which we have performed the operation 
+	 * of updating product in Database. 
+	 */
 	public boolean updateProduct(Product product) {
 		boolean flag=false;
 		Session session=getSession();
@@ -79,7 +115,15 @@ public class ProductDAOImpl implements ProductDAO {
 		
 		return flag;
 	}
-
+	
+	/**
+	 * @param product.
+	 * @return its return type is boolean.
+	 * <p>
+	 * This method is used to remove product in cart
+	 * in which we have performed the operation 
+	 * of saving product in Database. 
+	 */
 	public boolean removeProduct(Product product) {
 		try{
 		boolean flag=false;
@@ -94,7 +138,16 @@ public class ProductDAOImpl implements ProductDAO {
 
 		return false;
 	}
-
+	
+	
+	/**
+	 *  
+	 * @return its return type is boolean.
+	 * <p>
+	 * This method is used to add product in cart
+	 * in which we have performed the operation 
+	 * of saving product in Database. 
+	 */
 	public List<Product> getAllProduct() {
 		List<Product> listProduct=null;
 		try {
@@ -110,7 +163,15 @@ public class ProductDAOImpl implements ProductDAO {
 		
 		
 	}
-
+	
+	/**
+	 * @param name.
+	 * @return its return type is List of type Product.
+	 * <p>
+	 * This method is used to search product 
+	 * in which we have performed the operation 
+	 * of searching the product in Database and further retrived and returned . 
+	 */
 	public List<Product> searchProduct(String name) {
 		Session session  = getSession();
 		try{
@@ -127,12 +188,20 @@ public class ProductDAOImpl implements ProductDAO {
 		
 	}
 
-
+	/**
+	 * @param productCatName.
+	 * @return its return type is List of type Product.
+	 * <p>
+	 * This method is used to add product in cart
+	 * in which we have performed the operation 
+	 * of saving product in Database. 
+	 */
 	public List<Product> getProductByCategory(String productCatName) {
 		Session session = getSession();
 		try {
 			Query q = session.createQuery("from Product where productCatName =:productCatName");
 			q.setParameter("productCatName", productCatName);
+			@SuppressWarnings("unchecked")
 			List<Product> listProduct = q.list();
 			LOGGER.info("Listed Product " +  listProduct);
 			return listProduct;

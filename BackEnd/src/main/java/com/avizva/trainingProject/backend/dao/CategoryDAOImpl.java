@@ -17,8 +17,18 @@ import com.avizva.trainingProject.backend.model.Category;
 import com.avizva.trainingProject.backend.model.Supplier;
 
 /**
- * @author Saurabh.Miglani
- *
+ * 
+ * @author Akshay.Chourasia
+ * 
+ * @repository
+ * @transactional
+ * <p>
+ * This is the CartDAOImpl class in
+ * which there are unimplemented methods
+ * which contains the business logic of
+ * add product to cart, removeProductFromCart,updateCartQuantity,
+ * priceCalculator,getAllCartByUser,getCartByProductId,getAllCart.
+ * 
  */
 @Repository
 @Transactional
@@ -32,8 +42,17 @@ public class CategoryDAOImpl implements CategoryDAO {
 	public Session getSession() {
 		return sessionFactory.getCurrentSession();
 	}
-
-	public boolean createCategory(Category category) {
+	
+	/**
+	 * @param Category
+	 * @return its return type is boolean.
+	 * <p>
+	 * This method is used to create the category
+	 * in which we have performed the operation 
+	 * of saving category in database and the enabled
+	 * is set true for the category.
+	 */
+		public boolean createCategory(Category category) {
 		
 		boolean flag=false;
 		try{
@@ -49,7 +68,15 @@ public class CategoryDAOImpl implements CategoryDAO {
 		return flag;
 		
 	}
-	
+	/**
+	 * @param categoryId
+	 * @return Its return type is Category.
+	 * <p>
+	 * This method is used to create the category
+	 * in which we have performed the operation 
+	 * of saving category in database and the enabled
+	 * is set true for the category.
+	 */
 	public Category getCategoryById(int categoryId) {
 		Session session = getSession();
 		try{
@@ -63,6 +90,16 @@ public class CategoryDAOImpl implements CategoryDAO {
 	}
 	
 	
+	/**
+	 * @return Its return type is List of type Category.
+	 * <p>
+	 * This method is used to create the category
+	 * in which we have performed the operation 
+	 * of saving category in database and the enabled
+	 * is set true for the category.
+	 */
+	 
+	@SuppressWarnings("unchecked")
 	public List<Category> getAllCategory(){
 		List<Category> listCatgeory=null;
 		try {
@@ -79,7 +116,15 @@ public class CategoryDAOImpl implements CategoryDAO {
 	
 
 	
-
+	/**
+	 * @param category
+	 * @return Its return type is Boolean.
+	 * <p>
+	 * This method is used to update the category
+	 * in which we have performed the operation 
+	 * of updating category in database and the enabled
+	 * is set true for the category.
+	 */
 	public boolean updateCategory(Category category) {
 		
 		boolean flag=false;
@@ -94,7 +139,17 @@ public class CategoryDAOImpl implements CategoryDAO {
 		}
 		return flag;
 	}
-
+	
+	
+	/**
+	 * @param category
+	 * @return Its return type is Boolean.
+	 * <p>
+	 * This method is used to Deactivate the category
+	 * in which we have performed the operation 
+	 * of Deactivating category in database and the enabled
+	 * is set false for the category.
+	 */
 	public boolean deactivateCategory(Category category) {
 		boolean flag=false;
 		try{
@@ -109,6 +164,15 @@ public class CategoryDAOImpl implements CategoryDAO {
 		return flag;
 	}
 	
+	/**
+	 * @param name
+	 * @return Its return type is List of type Category.
+	 * <p>
+	 * This method is used to Deactivate the category
+	 * in which we have performed the operation 
+	 * of Deactivating category in database and the enabled
+	 * is set false for the category.
+	 */
 	public List<Category> searchCategory(String name) {
 		
 		Session session  = getSession();

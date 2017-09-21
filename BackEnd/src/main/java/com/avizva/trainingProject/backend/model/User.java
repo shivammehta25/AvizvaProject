@@ -26,7 +26,11 @@ import org.springframework.stereotype.Component;
 
 
 
-
+/**
+ * 
+ * @author Akshay.Chourasia
+ * @entity annotation used to map the class instances with the entities of Database. 
+ */
 @Entity
 @Component
 public class User {
