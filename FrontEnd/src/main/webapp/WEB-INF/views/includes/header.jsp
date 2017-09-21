@@ -17,8 +17,7 @@
 <c:url var="rimages" value="resources/images"></c:url>
 
 <link rel="stylesheet" href="${rcss}/navbar-fixed-top.css">
-<link rel="stylesheet" href="${rcss}/styling.css">
-<link rel="stylesheet" href="${rcss}/footerstyle.css">
+
 
 <style>
 #demo_box{
@@ -62,7 +61,7 @@
 								height="75">
 						</a></li>
 						<li><h1>
-								<a class="navbar-brand" href="./">GAMAZON</a>
+								<!-- <a class="navbar-brand" href="./">GAMAZON</a> -->
 							</h1></li>
 
 
@@ -71,12 +70,13 @@
 					<ul class="nav navbar-nav navbar-right">
 						<form class="navbar-form navbar-left" role="search">
 							<div class="form-group">
-								<input type="text" class="form-control">
-								<button class="btn btn-primary btn-lg" type="button">
-									<i class="fa fa-search "></i>
+								<input type="text" class="form-control" placeholder="Search" name="search">
+								<button class="btn btn-primary " type="button">
+									<i class="fa fa-search fa-large"></i>
 								</button>
 							</div>
 						</form>
+						
 						<li class="${homeactive } "><a href="./"> <i
 								class="fa fa-lg fa-2x fa-home" aria-hidden="true"></i> Home
 						</a></li>
@@ -141,14 +141,15 @@
 	</div>
 </div>
 <!-- Navbar End -->
-<c:if test="${msg !=null }">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
+<c:if test="${msg !=null } ">
 
 		<div class="alert alert-info alert-dismissable" id="success-alert">
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 			<div class="text-center"><strong > ${msg }</strong></div>
 		</div>
 
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
+
 <script>	
 
 
@@ -169,3 +170,32 @@ $(document).ready (function(){
 
 	</script>
 </c:if>
+
+<c:if test="${not empty param.msg }">
+
+		<div class="alert alert-info alert-dismissable" id="success-alert">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<div class="text-center"><strong > ${param.msg }</strong></div>
+		</div>
+
+<script>	
+
+
+	
+$(document).ready (function(){
+
+        $
+        setTimeout(function showAlert() {
+            $("#success-alert").slideUp(500, function(){
+           $("#success-alert").slideUp(500);
+           $("#success-alert").remove();
+            });   
+        }, 2000);
+        
+        	
+});
+
+
+	</script>
+</c:if>
+

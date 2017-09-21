@@ -2,18 +2,26 @@ package com.avizva.trainingProject.frontEnd.controller;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.avizva.trainingProject.backend.model.Category;
+import com.avizva.trainingProject.backend.model.Order;
 import com.avizva.trainingProject.backend.model.Supplier;
 import com.avizva.trainingProject.backend.service.CategoryService;
+import com.avizva.trainingProject.backend.service.OrderService;
 import com.avizva.trainingProject.backend.service.ProductService;
 import com.avizva.trainingProject.backend.service.SupplierService;
 
 @Controller
 public class AdminController {
+	
+	private static final Logger LOGGER = Logger.getLogger(AdminController.class);
+
 	@Autowired
 	SupplierService supplierService;
 		
@@ -22,14 +30,18 @@ public class AdminController {
 	
 	@Autowired
 	ProductService productService;
+	
+	@Autowired
+	OrderService orderService;
 
 	@RequestMapping("/admin")
 	public ModelAndView adminPanel( ) {
 		int totalsupp  = supplierService.getAllSupplier().size();
 		int totalcat = categoryService.getAllCategory().size();
 		int totalprod = productService.getAllProduct().size();
+		int totalorder= orderService.getAllOrder().size();
 		List<Supplier> allSupp = supplierService.getAllSupplier();
-		return new ModelAndView("admin/index").addObject("totalsupp" , totalsupp).addObject("totalcat" , totalcat).addObject("allSupp" , allSupp).addObject("totalprod" , totalprod);
+		return new ModelAndView("admin/index").addObject("totalsupp" , totalsupp).addObject("totalcat" , totalcat).addObject("allSupp" , allSupp).addObject("totalprod" , totalprod).addObject("totalorder" , totalorder);
 	}
 
 	@RequestMapping("/loginadmin")
@@ -47,5 +59,8 @@ public class AdminController {
 	//AdminManageCategory in Category Controller
 	
 	//AdminManageProduct in Product Controller
+	
+	//AdminManageOrder in Order Controller
+	
 
 }

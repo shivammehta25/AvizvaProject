@@ -17,13 +17,15 @@ public class FileUploadServiceImpl implements FileUploadService {
 
 	private static final Logger LOGGER = LogManager.getLogger(FileUploadServiceImpl.class);
 
-	private final String fileDir = "/tmp/Gamazon/productImages/";
+	private final String fileDir = "/Users/Shared/";
 
 	public boolean saveFile(Path path, byte[] file) {
+		LOGGER.info("<-- FileUploadService.savePath Called--->");
 		try {
 			Files.write(path, file);
+			LOGGER.info("<-- Files.write() successful-->");
 		} catch (IOException e) {
-			LOGGER.error(e);
+			LOGGER.error("Exception Occured, error excecuting saveFile");
 			return false;
 		}
 		return true;
@@ -31,9 +33,9 @@ public class FileUploadServiceImpl implements FileUploadService {
 
 	
 	public boolean uploadProductImage(Product product, MultipartFile file) {
-		
+		LOGGER.info("<-- FileUploadService.uploadProductImage Called--->");
 		if (file.isEmpty()){
-			LOGGER.info("Empty image file");
+			LOGGER.info("Empty image file passed");
 			return false;
 		}
 		String fileName = "Product"+product.getProductName() ;
@@ -46,7 +48,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 				return true;
 			}
 		} catch (IOException e) {
-			LOGGER.error(e);
+			LOGGER.error("Exception Occured, error excecuting uploadProductImage");
 		}
 		return false;
 	}

@@ -3,7 +3,6 @@ package com.avizva.trainingProject.backend.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.mail.Session;
 import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
@@ -34,6 +33,7 @@ public class CartServiceImpl implements CartService {
 	 * 
 	 */
 	public boolean addProductToCart(int productId , int productQuantity , HttpSession session) {
+		LOGGER.info("<-- CartService.addProductToCart Called--->");
 		boolean flag = false; 
 		Product product = productDAO.getProductById(productId);
 		Cart cart = new Cart();
@@ -54,6 +54,7 @@ public class CartServiceImpl implements CartService {
 	
 	
 	public boolean removeProductFromCart(int cartId) {
+		LOGGER.info("<-- CartService.removeProductfromCart Called--->");
 		boolean flag = false;
 		Cart cart = cartDAO.getCartById(cartId);
 		if(cart != null){
@@ -66,7 +67,14 @@ public class CartServiceImpl implements CartService {
 	
 	
 	public boolean updateCartQuantity(int productId, int cartQuantity , String username) {
-		Cart cart = cartDAO.getCartByProductId(productId ,username);		
+		LOGGER.info("<-- CartService.updateCartQuantity Called--->");
+		Cart cart = cartDAO.getCartByProductId(productId ,username);	
+		Product p = productDAO.getProductById(productId);
+		LOGGER.info("Product Quantity " + p.getProductQuantity() + " Cart QUantity" + cartQuantity);
+		if(p.getProductQuantity() < cartQuantity){
+			LOGGER.error("Cart Has more product than Stock");
+			return false;
+		}
 		if( cart != null)
 		{
 			Product product  = productDAO.getProductById(cart.getProductId());
@@ -86,11 +94,12 @@ public class CartServiceImpl implements CartService {
 	
 	
 	public Long priceCalculator(String username, Long... discount) {
+		LOGGER.info("<-- CartService.priceCalculator Called--->");
 		List<Cart> listCart = cartDAO.getAllCartByUser(username);
 		Long price = 0L;
 		for(Cart c : listCart){
 			Product p = productDAO.getProductById(c.getProductId());
-			price += p.getProductPrice();
+			price += p.getProductPrice()* c.getCartQuantity();
 		}
 		if(discount[0] != null){
 			price -= discount[0];
@@ -100,8 +109,8 @@ public class CartServiceImpl implements CartService {
 
 
 
-	public boolean hasCartProduct(int productId) {
-		Cart cart = cartDAO.getCartById(productId);
+	public boolean hasCartProduct(int productId,String username) {
+		Cart cart = cartDAO.getCartByProductId(productId, username);
 		LOGGER.info("<-------------------------------------------- Product feetched " + cart);
 		if(cart != null)
 			return true;
@@ -111,8 +120,8 @@ public class CartServiceImpl implements CartService {
 
 
 
-	public List<Product> allProductInCart() {
-		List<Cart> listCart = cartDAO.getAllCart();
+	public List<Product> allProductInCart(String username) {
+		List<Cart> listCart = cartDAO.getAllCartByUser(username);
 		LOGGER.info(listCart + "product");
 		List<Product> listProduct = new ArrayList<Product>();
 		try {
@@ -139,8 +148,8 @@ public class CartServiceImpl implements CartService {
 
 
 
-	public int getQuantity(int productId) {
-		Cart c = cartDAO.getCartById(productId);
+	public int getQuantity(int productId , String username) {
+		Cart c = cartDAO.getCartByProductId(productId, username);
 		
 		return c.getCartQuantity();
 	}

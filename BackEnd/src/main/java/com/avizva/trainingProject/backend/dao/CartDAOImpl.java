@@ -1,5 +1,6 @@
 package com.avizva.trainingProject.backend.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -82,6 +83,8 @@ public class CartDAOImpl implements CartDAO {
 		boolean flag = false;
 		Session session = getSession();
 		try{
+			session.flush();
+			session.clear();
 			session.delete(cart);
 			flag = true;
 			LOGGER.info("<-- Item from Cart Deleted -->");
@@ -106,6 +109,8 @@ public class CartDAOImpl implements CartDAO {
 		boolean flag = false;
 		Session session = getSession();
 		try{
+			session.flush();
+			session.clear();
 			session.update(cart);
 			flag = true;
 			LOGGER.info("<--  Cart Quantity Updated -->");
@@ -153,12 +158,12 @@ public class CartDAOImpl implements CartDAO {
 	 */
 	public List<Cart> getAllCartByUser(String username) {
 		Session session = getSession();
-		List<Cart> cartList = null;
+		List<Cart> cartList = new ArrayList<Cart>();
 		try{
 			Query q = session.createQuery("from Cart where username =:username");
 			q.setParameter("username", username);
 			cartList = q.list();
-			LOGGER.info("<-- Fetched all queries --> ");
+			LOGGER.info("<-- Fetched all queries --> " + cartList);
 		}catch (Exception e) {
 			LOGGER.error("<-- Erorr fetching all Query -->");
 		}

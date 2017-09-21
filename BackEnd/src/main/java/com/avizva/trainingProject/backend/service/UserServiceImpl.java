@@ -52,6 +52,7 @@ public class UserServiceImpl implements UserService {
 	private static final Logger LOGGER = Logger.getLogger(UserServiceImpl.class);
 
 	public boolean registerUser(User user) {
+		LOGGER.info("<-- UserService.registerUser Called--->");
 		boolean flag = false;
 		if (userDAO.registerUser(user)) {
 			SimpleMailMessage message = new SimpleMailMessage();
@@ -60,11 +61,13 @@ public class UserServiceImpl implements UserService {
 			message.setSubject("Congratulations on Success");
 			message.setText("Congratulations " + user.getName() + " on Your Successful Registration. ");
 			mailSender.send(message);
-			LOGGER.info("<-- Mail Sent and User " + user.getName()+ " --->");
+			LOGGER.info("<-- Mail Sent and User " + user.getName()+ " Registered --->");
 			flag = true;
 			
 		}
-		LOGGER.error("<-- Registration Failed -->");
+		else{
+			LOGGER.error("<-- Registration Failed -->");
+		}
 
 		return flag;
 	}
@@ -80,13 +83,13 @@ public class UserServiceImpl implements UserService {
 	 * using userDAO.
 	 */
 	public boolean authLogin(String username, String password, HttpServletRequest request) {
+		LOGGER.info("<-- UserService.authLogin Called--->");
 		boolean flag = false;
-
 		HttpSession session = request.getSession();
 		if (userDAO.authLogin(username, password)) {
 			session.setAttribute("username", username);
 			session.setAttribute("user", userDAO.getUserByUsername(username));
-			LOGGER.info("<--- User Authenticated "+ username +" --->");
+			LOGGER.info("<--- User "+ username +" Authenticated --->");
 
 			flag = true;
 		}
@@ -110,6 +113,7 @@ public class UserServiceImpl implements UserService {
 	 * @return Its return type is boolean.
 	 */
 	public boolean forgotPass(String email) {
+		LOGGER.info("<-- UserService.forgotPass Called--->");
 		boolean flag = false;
 		User user = forgotPassDAO.findEmail(email);
 		if(user == null){
@@ -119,12 +123,10 @@ public class UserServiceImpl implements UserService {
 		else
 		 {
 			Random random = new Random();
-
 			StringBuilder builder = new StringBuilder();
 			for (int count = 0; count <= 4; count++) {
 				builder.append(random.nextInt(10));
 			}
-
 			
 			forgotPass.setEmail(user.getEmail());
 			forgotPass.setOtp(builder.toString());
@@ -137,10 +139,11 @@ public class UserServiceImpl implements UserService {
 				message.setText("Dear " + user.getName() + ", Your OTP is " + forgotPass.getOtp());
 				mailSender.send(message);
 				LOGGER.info("<-- Mailed The OTP to " + user.getEmail() + "-->");
-
 				flag = true;
 			}
-			LOGGER.error("Mail Cannot be sent to " + user.getEmail()+ "-->");
+			else{
+				LOGGER.error("Mail Cannot be Sent to " + user.getEmail()+ "-->");
+			}
 		}
 
 		return flag;
@@ -156,6 +159,7 @@ public class UserServiceImpl implements UserService {
 	 * The resetPass field checks weather the user has entered the correct OTP or not is yea it will change its password
 	 */
 	public boolean resetPass(String email, String otp, String password) {
+		LOGGER.info("<-- UserService.resetPass Called--->");		
 		boolean flag = false;
 		User user = forgotPassDAO.findEmail(email);
 		forgotPass.setEmail(user.getEmail());
@@ -167,7 +171,9 @@ public class UserServiceImpl implements UserService {
 
 			flag = true;
 		}
-		LOGGER.error("<-- Password Cannot be Changed for " + user.getEmail()+ " -->");
+		else {
+			LOGGER.error("<-- Password Cannot be Changed for " + user.getEmail() + " -->");
+		}
 		return flag;
 	}
 	/**
@@ -178,6 +184,7 @@ public class UserServiceImpl implements UserService {
 	 */
 	public boolean deactivate(HttpServletRequest request)
 	{	
+		
 		boolean flag=false;
 		User user = null;
 		HttpSession session=request.getSession();
@@ -187,10 +194,10 @@ public class UserServiceImpl implements UserService {
 			return flag;
 		}
 		if(userDAO.deactivate(user)){
-			LOGGER.info("<-- User Deactivated "  + user.getEmail()+ "  -->");
+			LOGGER.info("<-- User "  + user.getEmail()+ " Deactivated -->");
 			flag = true;
 		}else{
-			LOGGER.error("<-- User Couldnt Not be Deactivated " + user.getEmail() + "  -->");
+			LOGGER.error("<-- User " + user.getEmail() + " Couldnt Not be Deactivated -->");
 			
 		}
 		
@@ -209,13 +216,14 @@ public class UserServiceImpl implements UserService {
 	 * @return Its return type is boolean.
 	 */
 	public boolean updateUser(User user) {
+		LOGGER.info("<-- UserService.updateUser Called--->");
 		boolean flag = false;
 		if (userDAO.updateUser(user)) {
-			LOGGER.info("<-- User Updated " + user.getEmail() + "  -->");
+			LOGGER.info("<-- User " + user.getEmail() + " Updated -->");
 
 			flag = true;
 		}else {
-			LOGGER.error("<-- Error Updating User  --> " + user.getEmail());
+			LOGGER.error("<-- Error Updating User " + user.getEmail()+" -->");
 		}
 		return flag;
 	}
@@ -225,8 +233,9 @@ public class UserServiceImpl implements UserService {
 	 * It is used to return the User object by its username
 	 */
 	public User getUserByUsername(String username){
+		LOGGER.info("<-- UserService.getUserByUsername Called -->");
 		User user=userDAO.getUserByUsername(username);
-		LOGGER.info("<-- Got Username from the Database -->" + user.getEmail());
+		LOGGER.info("<-- Got User from the Database from Username -->" + user.getUsername());
 		return user;
 	}
 

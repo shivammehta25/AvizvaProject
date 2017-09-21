@@ -255,6 +255,7 @@ option {
 				</div>
 			</div>
 	<div class="container-fluid col-md-offset-2">
+
 		<div class="row">
 			<div class="col-md-12">
 				<div class="jumbotron well">
@@ -264,8 +265,8 @@ option {
 		</div>
 		<div class="row">
 			<div class="col-md-4">
-				<img alt="Bootstrap Image Preview"
-					src="http://lorempixel.com/140/140/" class="img-rounded " />
+				<img src="download?productName=${product.productName}" alt="Thumbnail Not Available" class="img img-rounded img-responsive " >
+
 			</div>
 			<div class="col-md-8 ">
 				<div class="list-group ">
@@ -280,6 +281,15 @@ option {
 						<h4 style="color: black">Sold by ${product.productSuppName}</h4>
 					</div>
 					<div class="list-group-item active product ">
+
+						<c:if test="${product.productQuantity > 1}">
+							<h4 style="color: black">
+								Item In Stock
+							</h4>
+						</c:if>
+					</div>
+					<div class="list-group-item active product ">
+
 						<h4 style="color: black">Rs. ${product.productPrice}</h4>
 					</div>
 					<div class="list-group-item active product ">
@@ -287,7 +297,9 @@ option {
 							<input type="hidden" value="${product.productId}" name="productId">
 							<div class="form-group">
 								<div class="col-md-3">
-									<h4 style="color: black">Item Quantity</h4>
+
+									<h4 style="color: black">Enter Item Quantity</h4>
+
 								</div>
 								<div class="col-md-3">
 									<input type="number" name="productQuantity" id="productQuantity"

@@ -18,7 +18,7 @@ import com.sun.istack.internal.NotNull;
 public class Cart {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int cardId;
+	private int cartId;
 	
 	@NotEmpty
 	private String username;
@@ -41,11 +41,11 @@ public class Cart {
 	public void setCartQuantity(int cartQuantity) {
 		this.cartQuantity = cartQuantity;
 	}
-	public int getCardId() {
-		return cardId;
+	public int getCartId() {
+		return cartId;
 	}
-	public void setCardId(int cardId) {
-		this.cardId = cardId;
+	public void setCartId(int cartId) {
+		this.cartId = cartId;
 	}
 	public int getProductId() {
 		return productId;

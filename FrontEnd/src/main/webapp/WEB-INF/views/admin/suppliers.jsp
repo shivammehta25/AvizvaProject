@@ -52,8 +52,11 @@
 										<td><c:out value="${supplier.supplierName}"></c:out></td>
 										<td><c:out value="${supplier.supplierAddress}"></c:out></td>
 										<td><c:out value="${supplier.supplierContact}"></c:out></td>
-										<td> <a style="cursor: pointer" onclick="populate(${supplier.supplierId} ,'${supplier.supplierName}' , '${supplier.supplierAddress }' , '${supplier.supplierContact}' )" >Edit</a></td>
-										<td><a style="cursor: pointer" onclick = "deleteit(${supplier.supplierId})"> Delete</a>
+										<td> <a style="cursor: pointer" 
+										onclick="populate(${supplier.supplierId} ,'${supplier.supplierName}' , '${supplier.supplierAddress }' ,
+										 '${supplier.supplierContact}' )" data-toggle="collapse" href="#updatePanel">Edit</a></td>
+										<td><a style="cursor: pointer" onclick = "deleteit(${supplier.supplierId})"
+										data-toggle="collapse" href="#deletePanel"> Delete</a>
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -62,10 +65,14 @@
 				</div>
 
 				<div class="panel panel-default">
+					<a data-toggle="collapse" href="#searchPanel" style="text-decoration: none;"
+						class="collapsed" aria-expanded="false">
 					<div class="panel-heading">
 						<h4 class="panel-title" style="text-align: left">Search for
 							<spring:message code='supplier.heading'></spring:message></h4>
 					</div>
+					</a>
+					<div class="panel-collapse collapse" id="searchPanel" aria-expanded="false" style="height: 0px;">
 					<div class="panel-body">
 						<form class="form-horizontal" method="post "
 							action="searchSupplierForm" role="form">
@@ -84,12 +91,17 @@
 							</div>
 						</form>
 					</div>
+					</div>
 				</div>
 
 				<div class="panel panel-default">
+					<a data-toggle="collapse" href="#addPanel" style="text-decoration: none;"
+						class="collapsed" aria-expanded="false">
 					<div class="panel-heading">
 						<h4 class="panel-title" style="text-align: left">Add <spring:message code='supplier.heading'></spring:message> </h4>
 					</div>
+					</a>
+					<div class="panel-collapse collapse" id="addPanel" aria-expanded="false" style="height: 0px;">
 					<div class="panel-body">
 						<form class="form-horizontal" method="post "
 							action="addSupplierForm" role="form">
@@ -129,12 +141,17 @@
 
 						</form>
 					</div>
+					</div>
 				</div>
 
 				<div class="panel panel-default">
+					<a data-toggle="collapse" href="#updatePanel" style="text-decoration: none;"
+						class="collapsed" aria-expanded="false">
 					<div class="panel-heading">
 						<h4 class="panel-title" style="text-align: left"><spring:message code='supplier.update'></spring:message> </h4>
 					</div>
+					</a>
+					<div class="panel-collapse collapse" id="updatePanel" aria-expanded="false" style="height: 0px;">
 					<div class="panel-body">
 						<form class="form-horizontal" method="post "
 							action="updateSupplierForm" role="form">
@@ -186,13 +203,18 @@
 
 						</form>
 					</div>
+					</div>
 				</div>
 				
 				<div class="panel panel-default">
+					<a data-toggle="collapse" href="#deletePanel" style="text-decoration: none;"
+						class="collapsed" aria-expanded="false">
 					<div class="panel-heading">
 						<h4 class="panel-title" style="text-align: left">Delete
 							<spring:message code='supplier.heading'></spring:message> </h4>
 					</div>
+					</a>
+					<div class="panel-collapse collapse" id="deletePanel" aria-expanded="false" style="height: 0px;">
 					<div class="panel-body">
 						<form class="form-horizontal" method="post "
 							action="deleteSupplierForm" role="form">
@@ -212,6 +234,7 @@
 							</div>
 
 						</form>
+					</div>
 					</div>
 				</div>
 
