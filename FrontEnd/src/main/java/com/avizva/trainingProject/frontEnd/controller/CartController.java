@@ -66,7 +66,7 @@ public class CartController {
 			return new ModelAndView("redirect:/login").addObject("msg", "You Must be Logged in to Shop");
 		}
 		Cart c = cartService.getCartFromProductId(productId , (String)session.getAttribute("username"));
-		if(cartService.removeProductFromCart(c.getCardId())){
+		if(cartService.removeProductFromCart(c.getCartId())){
 			return new ModelAndView("redirect:/cart").addObject("msg" , "Item removed from Cart");
 		}
 		return new ModelAndView("redirect:/cart").addObject("msg" , "Error removing Item from Cart Try again later");
