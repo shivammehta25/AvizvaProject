@@ -47,7 +47,7 @@
 					<div class="col-md-3">
 						<div class="jumbotron well">
 							<h2>Products</h2>
-							<p>Total Number of Products : ${totalprod }
+							<p>Total Products : ${totalprod }
 							<p>
 								<a class="btn btn-primary btn-large" href="adminmanageprod">Manage
 									Products</a>
@@ -57,7 +57,7 @@
 					<div class="col-md-3">
 						<div class="jumbotron well">
 							<h2>Suppliers</h2>
-							<p>Total Number of Suppliers : ${totalsupp }</p>
+							<p>Total Suppliers : ${totalsupp }</p>
 							<p>
 								<a class="btn btn-primary btn-large" href="adminmanagesupp">Manage
 									Suppliers</a>

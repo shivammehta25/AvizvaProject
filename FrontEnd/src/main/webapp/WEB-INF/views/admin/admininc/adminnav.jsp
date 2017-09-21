@@ -30,6 +30,9 @@
 	if(filename.equals("products")){
 		%><c:set var="prodactive" value="active"></c:set> <%
 	}
+	if(filename.equals("orders")){
+		%> <c:set var="orderactive" value="active"></c:set> <%
+	}
 %>
 
 <ul class="nav nav-pills nav-stacked">
@@ -38,6 +41,7 @@
 					<li class="${suppactive}"><a href="adminmanagesupp">Manage Suppliers</a></li>
 					<li class="${catactive }"><a href="adminmanagecat">Manage Categories</a></li>
 					<li class="${prodactive }"><a href="adminmanageprod">Manage Products</a></li>
+					<li class="${orderactive }"><a href="adminmanageorder">Manage Orders</a></li>
 					<!-- <li class="dropdown pull-right"><a href="#"
 						data-toggle="dropdown" class="dropdown-toggle">Dropdown<strong
 							class="caret"></strong></a>

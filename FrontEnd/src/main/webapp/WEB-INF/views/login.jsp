@@ -24,9 +24,8 @@
 			<div class="col-md-4 col-md-offset-4">
 				
 				<div class="text-center">
-					<img alt="User" src="${rimages }/logo.png" class="img-circle"
-						width="100" />
-					<h1>GAMAZON</h1>
+					<img alt="User" src="${rimages }/logo.png" 
+						width="200" />
 				</div>
 				<div class="col-md-8 col-md-offset-2">
 					<div class="panel panel-default">

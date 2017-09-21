@@ -1,3 +1,4 @@
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8" isELIgnored="false"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -96,7 +97,7 @@ pageEncoding="UTF-8" isELIgnored="false"%>
 					</h1>
 				</div>
 			</div>
-			<form class="form-horizontal" action="orderplaced">
+			<form class="form-horizontal" action="adduserproduct" method="post">
 				<div class="row">
 					<div class="col-md-10">
 						
@@ -116,9 +117,9 @@ pageEncoding="UTF-8" isELIgnored="false"%>
 											Number</label>
 											<div class="col-sm-10">
 												<input type="email" class="form-control" id="orderNumber"
-												placeholder="OrderNumber" 
+												placeholder="OrderNumber" value="#${orderNumber}" 
 												disabled>
-												<input type="hidden" name="orderNumber" value="#${orderNumber }">
+												<input type="hidden" name="orderNumber" value="${orderNumber }">
 											</div>
 										</div>
 										<div class="form-group">
@@ -258,8 +259,8 @@ pageEncoding="UTF-8" isELIgnored="false"%>
 											</div>
 											<div class="col-md-5 pull-right">
 												<div class="form-group">
-													<label for="cardCVC">CV CODE</label> <input type="number"
-													class="form-control" id="cvv" placeholder="CVC"
+													<label for="cardCVC">CVV CODE</label> <input type="number"
+													class="form-control" id="cvv" placeholder="CVV"
 													 />
 												</div>
 											</div>
