@@ -1,4 +1,4 @@
-package com.avizva.trainingProject.backend.test.dao;
+package com.avizva.trainingProject.backend.dao.test;
 
 import static org.junit.Assert.*;
 

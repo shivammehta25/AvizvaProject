@@ -46,6 +46,8 @@ public class CartDAOImpl implements CartDAO {
 		boolean flag = false;
 		Session session = getSession();
 		try{
+			session.flush();
+			session.clear();
 			session.delete(cart);
 			flag = true;
 			LOGGER.info("<-- Item from Cart Deleted -->");
@@ -61,6 +63,8 @@ public class CartDAOImpl implements CartDAO {
 		boolean flag = false;
 		Session session = getSession();
 		try{
+			session.flush();
+			session.clear();
 			session.update(cart);
 			flag = true;
 			LOGGER.info("<--  Cart Quantity Updated -->");
