@@ -6,13 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.avizva.trainingProject.backend.dao.OrderDAO;
+import com.avizva.trainingProject.backend.dao.ProductDAO;
 import com.avizva.trainingProject.backend.model.Order;
+import com.avizva.trainingProject.backend.model.Product;
 
 @Service
 public class CheckoutServiceImpl implements CheckoutService {
 
 	@Autowired
 	OrderDAO orderDAO;
+	
+	@Autowired
+	ProductDAO productDAO;
 
 	public boolean addUserProduct(String orderNumber, String username, String shippingAddress, String shippingCountry,
 			String shippingCity, int shippingPin, String orderPaymentDetails, Date orderDate) {
@@ -39,8 +44,17 @@ public class CheckoutServiceImpl implements CheckoutService {
 			if(!(orderDAO.addOrder(order))){
 				return false;
 			}
-			
+			Product p = productDAO.getProductById(productId);
+			int newQuant = p.getProductQuantity();
+			newQuant = newQuant - orderQuantity;
+			p.setProductQuantity(newQuant);
+			productDAO.updateProduct(p);
 		}
+		
+
+		
+		
+		
 		return true;
 	}
 

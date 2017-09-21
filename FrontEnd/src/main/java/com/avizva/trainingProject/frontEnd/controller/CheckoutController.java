@@ -84,15 +84,9 @@ public class CheckoutController {
 	@RequestMapping("/adduserproduct")
 	public ModelAndView addUserProduct(@RequestParam("orderNumber") String orderNumber , @RequestParam("username") String username , @RequestParam("shippingAddress") String shippingAddress , @RequestParam("shippingCountry") String shippingCountry,
 										@RequestParam("shippingCity")String shippingCity , @RequestParam("shippingPin")int shippingPin , @RequestParam("orderPaymentDetails") String orderPaymentDetails){
-	/*	LOGGER.info(" Order Date = " + orderDateString);
-		Date orderDate = null;
-		try {
-			orderDate = new SimpleDateFormat("dd/MM/yyyy").parse(orderDateString);
-		} catch (ParseException e) {
-			LOGGER.error("Cannot Parse Date");
-		}*/
 		Date orderDate = new Date();
 		if(checkoutService.addUserProduct(orderNumber, username, shippingAddress, shippingCountry, shippingCity, shippingPin, orderPaymentDetails , orderDate)){
+			
 			return new ModelAndView("orderconfirmation").addObject("msg" , "Order Placed Successfully");
 		}
 			return new ModelAndView("cart").addObject("Error while Placing Order ");		
