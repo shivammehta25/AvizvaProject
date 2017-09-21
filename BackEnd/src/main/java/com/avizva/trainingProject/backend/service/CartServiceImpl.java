@@ -64,7 +64,13 @@ public class CartServiceImpl implements CartService {
 	
 	public boolean updateCartQuantity(int productId, int cartQuantity , String username) {
 		LOGGER.info("<-- CartService.updateCartQuantity Called--->");
-		Cart cart = cartDAO.getCartByProductId(productId ,username);		
+		Cart cart = cartDAO.getCartByProductId(productId ,username);	
+		Product p = productDAO.getProductById(productId);
+		LOGGER.info("Product Quantity " + p.getProductQuantity() + " Cart QUantity" + cartQuantity);
+		if(p.getProductQuantity() < cartQuantity){
+			LOGGER.error("Cart Has more product than Stock");
+			return false;
+		}
 		if( cart != null)
 		{
 			Product product  = productDAO.getProductById(cart.getProductId());
@@ -110,8 +116,8 @@ public class CartServiceImpl implements CartService {
 
 
 
-	public List<Product> allProductInCart() {
-		List<Cart> listCart = cartDAO.getAllCart();
+	public List<Product> allProductInCart(String username) {
+		List<Cart> listCart = cartDAO.getAllCartByUser(username);
 		LOGGER.info(listCart + "product");
 		List<Product> listProduct = new ArrayList<Product>();
 		try {

@@ -75,7 +75,7 @@ public class CartController {
 	}
 	
 	@RequestMapping("/updateCart")
-	public ModelAndView updateCart(@RequestParam("productId") int productId , @RequestParam("cartQuantity") int cartQuantity , HttpSession session ){
+	public ModelAndView updateCart(@RequestParam("productId") int productId , @RequestParam(value="cartQuantity",defaultValue="1") int cartQuantity , HttpSession session ){
 		LOGGER.error("<-- Add To Cart bhejde idhar -->" + cartQuantity + productId);
 		if(session.getAttribute("username") == null){
 			return new ModelAndView("redirect:/login").addObject("msg", "You Must be Logged in to Shop");
@@ -94,7 +94,7 @@ public class CartController {
 			return new ModelAndView("redirect:/login").addObject("msg", "You Must be Logged in to Shop");
 		}
 		
-		List<Product> listCart = cartService.allProductInCart();
+		List<Product> listCart = cartService.allProductInCart((String)session.getAttribute("username"));
 		List<Integer> quantityList = cartService.getQuantityOfProductInCart(listCart, (String)session.getAttribute("username"));
 		
 		Gson g = new Gson();
@@ -102,7 +102,7 @@ public class CartController {
 		String quantity = g.toJson(quantityList);
 		Long totalPrice = cartService.priceCalculator((String)session.getAttribute("username"),discount);
 		String totalPriceJ = g.toJson(totalPrice);
-		return new ModelAndView("cart").addObject("msg" , "Shopping Cart")
+		return new ModelAndView("cart").addObject("msg","Shopping Cart")
 				.addObject("cartList" , cartList)
 				.addObject("quantity" , quantity)
 				.addObject("totalPrice" , totalPriceJ)
