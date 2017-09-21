@@ -133,7 +133,7 @@
 								<label for="inputEmail3"
 									class="col-sm-2 label-register control-label">  <spring:message code='label.address'></spring:message> </label>
 								<div class="col-sm-10">
-									<input type="text" placeholder="Enter Your House Number" name="address.address"
+									<input type="text" placeholder="Please Enter Complete Address" name="address.address"
 										required="true" class="form-control" id="inputEmail3" />
 								</div>
 							</div>
