@@ -65,6 +65,9 @@
 <jsp:include page="/WEB-INF/views/includes/footer.jsp"></jsp:include>
 <script>
 $(document).ready(function() {  
+	    setInterval(function(){
+	    	
+	    }, 3000);
 
 	window.setTimeout(function() {
 	    window.location.href = 'products';

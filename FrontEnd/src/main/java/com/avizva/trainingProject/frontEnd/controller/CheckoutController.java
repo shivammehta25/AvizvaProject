@@ -93,6 +93,10 @@ public class CheckoutController {
 	}
 	
 	
+	@RequestMapping("orderconfirmation")
+	public ModelAndView orderConfirm(){
+		return new ModelAndView("orderconfirmation");
+	}
 	
 	
 	
