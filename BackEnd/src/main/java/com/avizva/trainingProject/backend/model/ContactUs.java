@@ -14,7 +14,7 @@ import com.sun.istack.internal.NotNull;
  * 
  * @author Akshay.Chourasia
  * This is used to generate contactus requests.
- *
+ * @entity annotation used to map the class instances with the entities of Database. 
  */
 @Entity
 @Component

@@ -17,8 +17,10 @@ import org.springframework.web.servlet.ModelAndView;
 import com.avizva.trainingProject.backend.dao.CartDAO;
 import com.avizva.trainingProject.backend.dao.ProductDAO;
 import com.avizva.trainingProject.backend.model.Cart;
+import com.avizva.trainingProject.backend.model.Order;
 import com.avizva.trainingProject.backend.model.Product;
 import com.avizva.trainingProject.backend.service.CartService;
+import com.avizva.trainingProject.backend.service.OrderService;
 import com.avizva.trainingProject.backend.service.ProductService;
 import com.google.gson.Gson;
 
@@ -35,6 +37,9 @@ public class CartController {
 	@Autowired
 	CartService cartService;
 	//Have to add the the current request url for calling this thing xP
+	
+	@Autowired
+	OrderService orderService;
 	
 	@RequestMapping("/addtocart")
 	public ModelAndView addToCart(@RequestParam("productId") int productId , @RequestParam(value="productQuantity",defaultValue="1") int productQuantity, HttpSession session , HttpServletRequest request){
@@ -108,6 +113,24 @@ public class CartController {
 				.addObject("totalPrice" , totalPriceJ)
 				.addObject("cartactive" , "active");
 		
+	}
+	
+	
+	//Used to call MyOrders page
+	@RequestMapping("/orders")
+	public ModelAndView viewMyOrders(HttpSession session, HttpServletRequest request){
+		if(session.getAttribute("username") == null){
+			return new ModelAndView("redirect:/login").addObject("msg", "You Must be Logged in to Shop");
+		}
+		
+		List<Order> listOrder = orderService.getAllOrder();
+		
+		Gson g=new Gson();
+		String orderList=g.toJson(listOrder);
+		return new ModelAndView("orders").addObject("msg" , "My Orders")
+				.addObject("orderList" , orderList)
+				.addObject("orderactive" , "active");
+	
 	}
 	
 	
