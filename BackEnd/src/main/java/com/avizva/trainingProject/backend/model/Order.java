@@ -51,8 +51,6 @@ public class Order {
 	
 	private String shippingCity;
 	
-	private String shippingState;
-	
 	private String shippingCountry;
 	
 	private int shippingPin;
@@ -137,13 +135,6 @@ public class Order {
 		this.shippingCity = shippingCity;
 	}
 
-	public String getShippingState() {
-		return shippingState;
-	}
-
-	public void setShippingState(String shippingState) {
-		this.shippingState = shippingState;
-	}
 
 	public String getShippingCountry() {
 		return shippingCountry;

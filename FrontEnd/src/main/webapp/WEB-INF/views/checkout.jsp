@@ -79,7 +79,7 @@ pageEncoding="UTF-8" isELIgnored="false"%>
 							</h3>
 						</div>
 						<div class="col-md-4">
-							<h3 class="text-center text-danger">
+							<h3 class="text-center text-danger" id="paymenthead">
 							<i class="fa fa-2x fa-lg fa-arrow-up" aria-hidden="true"></i>
 							Payment Options <i id="paymentTick"
 							aria-hidden="true"></i>
@@ -314,10 +314,22 @@ pageEncoding="UTF-8" isELIgnored="false"%>
 				$("#paymentPanel").click(function() {
 					$('.progress-bar').attr("style", "width: 50%;");
 					$("#detailTick").attr("class", "fa fa-check-square-o")
+					$("#shippinghead").attr("class" , "text-center text-success");
+					$("#paymenthead").attr("class" , "text-center text-danger");
+					$("#paymentTick").attr("class" , "");
+
+
 				});
+				
+				
 				$("#panelDetailz").click(function() {
 					$('.progress-bar').attr("style", "width: 22%");
 					$("#detailTick").attr("class", "");
+					$("#shippinghead").attr("class" , "text-center text-primary");
+					$("#paymenthead").attr("class" , "text-center text-danger");
+					$("#paymentTick").attr("class" , "");
+
+
 				});
 				$("#creditCartPanel").hide();
 				$("#paybutton").hide();
@@ -330,7 +342,8 @@ pageEncoding="UTF-8" isELIgnored="false"%>
 						$(".progress-bar").attr("style" , "width : 100%");
 						$("#paymentTick").attr("class" , "fa fa-check-square-o");
 						$("#paybutton").show(500);
-						
+						$("#paymenthead").attr("class" , "text-center text-success");
+
 					});
 					
 				});
@@ -342,6 +355,9 @@ pageEncoding="UTF-8" isELIgnored="false"%>
 					$(".progress-bar").attr("style" , "width : 100%");
 					$("#paymentTick").attr("class" , "fa fa-check-square-o");
 					$("#paybutton").show(500);
+					$("#paymenthead").attr("class" , "text-center text-success");
+
+					
 				});
 			});
 </script>

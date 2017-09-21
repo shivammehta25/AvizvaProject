@@ -61,7 +61,7 @@
 								height="75">
 						</a></li>
 						<li><h1>
-								<a class="navbar-brand" href="./">GAMAZON</a>
+								<!-- <a class="navbar-brand" href="./">GAMAZON</a> -->
 							</h1></li>
 
 
