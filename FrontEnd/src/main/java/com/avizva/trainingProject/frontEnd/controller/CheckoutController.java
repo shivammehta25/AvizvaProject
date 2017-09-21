@@ -4,6 +4,7 @@ package com.avizva.trainingProject.frontEnd.controller;
 import java.lang.reflect.Type;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -26,7 +27,10 @@ import com.avizva.trainingProject.backend.dao.UserDAO;
 import com.avizva.trainingProject.backend.model.Cart;
 import com.avizva.trainingProject.backend.model.Product;
 import com.avizva.trainingProject.backend.model.User;
+import com.avizva.trainingProject.backend.service.CartService;
 import com.avizva.trainingProject.backend.service.CheckoutService;
+import com.avizva.trainingProject.backend.service.ProductService;
+import com.avizva.trainingProject.backend.service.UserService;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -37,15 +41,13 @@ public class CheckoutController {
 	
 	
 	@Autowired
-	UserDAO userDAO;
-//	
-	@Autowired
 	CheckoutService checkoutService;
-//	
+
 	@Autowired
-	CartDAO cartDAO;
+	CartService cartService;
 	
-	
+	@Autowired
+	UserService userService;
 	
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
@@ -58,7 +60,7 @@ public class CheckoutController {
 	@RequestMapping("/checkout")
 	public ModelAndView checkoutCart(@RequestParam("cartList") String cartList , @RequestParam("quantity") String quantity , @RequestParam("totalPrice") String totalPrice , HttpSession session){
 		
-		User user =  userDAO.getUserByUsername((String)session.getAttribute("username"));
+		User user =  userService.getUserByUsername((String)session.getAttribute("username"));
 		String orderNumber ;
 		orderNumber = user.getName();
 		
@@ -69,7 +71,7 @@ public class CheckoutController {
 		Type type = new TypeToken<List<Product>>(){}.getType();
 		List<Product> prodList =  g.fromJson(cartList, type);
 		for(Product p : prodList){
-			Cart c = cartDAO.getCartByProductId(p.getProductId(), user.getUsername());
+			Cart c = cartService.getCartFromProductId(p.getProductId(), user.getUsername());
 			
 			orderNumber += "-" + p.getProductId() +"," + c.getCartQuantity();
 		}
@@ -86,7 +88,14 @@ public class CheckoutController {
 										@RequestParam("shippingCity")String shippingCity , @RequestParam("shippingPin")int shippingPin , @RequestParam("orderPaymentDetails") String orderPaymentDetails){
 		Date orderDate = new Date();
 		if(checkoutService.addUserProduct(orderNumber, username, shippingAddress, shippingCountry, shippingCity, shippingPin, orderPaymentDetails , orderDate)){
-			
+				String[] getProducts = orderNumber.split("-");
+				
+				for(int i = 1 ; i < getProducts.length ; i++ ){
+					String temp = getProducts[i].split(",")[0];
+						Cart c = cartService.getCartFromProductId(Integer.parseInt(temp), username);
+						cartService.removeProductFromCart(c.getCartId());
+			            LOGGER.info("Removed Product From Cart " + c.getCartId());
+				}
 			return new ModelAndView("orderconfirmation").addObject("msg" , "Order Placed Successfully");
 		}
 			return new ModelAndView("cart").addObject("Error while Placing Order ");		

@@ -1,6 +1,7 @@
 package com.avizva.trainingProject.frontEnd.controller;
 
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -40,6 +41,8 @@ public class CartController {
 	
 	@Autowired
 	OrderService orderService;
+	@Autowired
+	ProductService productService;
 	
 	@RequestMapping("/addtocart")
 	public ModelAndView addToCart(@RequestParam("productId") int productId , @RequestParam(value="productQuantity",defaultValue="1") int productQuantity, HttpSession session , HttpServletRequest request){
@@ -124,12 +127,18 @@ public class CartController {
 		}
 		
 		List<Order> listOrder = orderService.getAllOrder();
+		List<String> productName = new ArrayList<String>();
 		
+		for(Order o :listOrder){
+			productName.add(productService.getProductById(o.getProductId()).getProductName());
+		}
 		Gson g=new Gson();
 		String orderList=g.toJson(listOrder);
+		String jProductName = g.toJson(productName);
 		return new ModelAndView("orders").addObject("msg" , "My Orders")
 				.addObject("orderList" , orderList)
-				.addObject("orderactive" , "active");
+				.addObject("orderactive" , "active")
+				.addObject("productName",jProductName);
 	
 	}
 	

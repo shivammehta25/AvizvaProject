@@ -77,6 +77,10 @@
 .panel.panel-primary {
 	margin-top: 120px;
 }
+.thumbnailStyling {
+height : 110px !important;
+width : 110px !important;
+}
 </style>
 
 
@@ -98,15 +102,16 @@
 						</div>
 					</div>
 				</div>
-				<div ng-repeat="(i,order) in orderList">
 					<div class="panel panel-info">
 						<div class="panel-heading">
 							<h3 class="panel-title">Order Number: {{order.orderNumber}}
 							</h3>
 						</div>
+						<div ng-repeat="(i,order) in orderList">
+						
 						<div class="panel-body">
 							<div class="row">
-								<div class="col-md-3">Hello {{order.username}}</div>
+								<div class="col-md-3"><img src="download?productName={{order.productName}}" class="img-thumbnail thumbnailStyling">{{order.productName}}</div>
 								<div class="col-md-3">
 									Product Id
 									<hr>
@@ -124,6 +129,7 @@
 								</div>
 							</div>
 						</div>
+						<hr>
 					</div>
 				</div>
 			</div>
@@ -144,6 +150,10 @@ var app = angular.module('myApp', []);
 
 app.controller('orderController',function($scope){
 	$scope.orderList = ${orderList};
+	$scope.productName = ${productName};
+	for(i = 0 ; i < $scope.orderList.length ; i++){
+		$scope.orderList[i].productName=$scope.productName[i];
+	}
 });
 
 </script>

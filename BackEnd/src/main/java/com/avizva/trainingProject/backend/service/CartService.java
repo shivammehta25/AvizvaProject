@@ -56,13 +56,13 @@ public interface CartService {
 	 * @param productId
 	 * @return
 	 */
-	public boolean hasCartProduct(int productId);
+	public boolean hasCartProduct(int productId,String username);
 	
 	/**
 	 * 
 	 * @return
 	 */
-	public List<Product> allProductInCart();
+	public List<Product> allProductInCart(String username);
 	/**
 	 * 
 	 * @param listCart
@@ -76,7 +76,7 @@ public interface CartService {
 	 * @param productId
 	 * @return
 	 */
-	public int getQuantity(int productId);
+	public int getQuantity(int productId,String username);
 	/**
 	 * 
 	 * @param productId

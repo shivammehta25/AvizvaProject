@@ -5,10 +5,12 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.avizva.trainingProject.backend.dao.SupplierDAO;
 import com.avizva.trainingProject.backend.model.Supplier;
 
+@Transactional
 @Service
 public class SupplierServiceImpl implements SupplierService {
 	private static final Logger LOGGER = Logger.getLogger(SupplierServiceImpl.class);
