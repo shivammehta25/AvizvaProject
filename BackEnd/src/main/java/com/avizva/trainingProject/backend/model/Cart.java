@@ -8,6 +8,12 @@ import javax.validation.constraints.NotEmpty;
 
 import com.sun.istack.internal.NotNull;
 
+
+/**
+ * 
+ * @author Akshay.Chourasia
+ * @entity annotation used to map the class instances with the entities of Database. 
+ */
 @Entity
 public class Cart {
 	@Id

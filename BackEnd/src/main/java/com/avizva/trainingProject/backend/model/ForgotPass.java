@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author Akshay.Chourasia
  * This module is helpful in resetting user password.
+ * @entity annotation used to map the class instances with the entities of Database. 
  */
 
 @Entity

@@ -17,6 +17,12 @@ import org.springframework.stereotype.Component;
 
 import com.sun.mail.handlers.multipart_mixed;
 
+
+/**
+ * 
+ * @author Akshay.Chourasia
+ * @entity annotation used to map the class instances with the entities of Database. 
+ */
 @Entity
 @Component
 public class Product {

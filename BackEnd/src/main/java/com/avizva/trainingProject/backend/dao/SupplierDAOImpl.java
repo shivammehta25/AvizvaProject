@@ -12,6 +12,18 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.avizva.trainingProject.backend.model.Supplier;
 
+
+
+/**
+ * 
+ * @author Akshay Chourasia
+ * @repository is been used as such beans are eligible for persistence exception translation.
+ * @Transactional is been used such that if any of the four methods failed to execute
+ * then the whole process will get rollback.
+ * 
+ *
+ */
+
 @Repository
 @Transactional
 public class SupplierDAOImpl implements SupplierDAO {
@@ -24,7 +36,15 @@ public class SupplierDAOImpl implements SupplierDAO {
 	public Session getSession() {
 		return sessionFactory.getCurrentSession();
 	}
-
+	
+	/**
+	 * @param Supplier.
+	 * @return its return type is boolean.
+	 * <p>
+	 * This method is used to Create supplier 
+	 * in which we have performed the operation 
+	 * of saving the supplier object in Database and further returned flag. 
+	 */
 	public boolean createSupplier(Supplier supplier) {
 		
 		boolean flag=false;
@@ -43,13 +63,20 @@ public class SupplierDAOImpl implements SupplierDAO {
 	}
 
 	
-
+	/**
+	 * @param supplier.
+	 * @return its return type is boolean.
+	 * <p>
+	 * This method is used to update supplier 
+	 * in which we have performed the operation 
+	 * of updating the supplier in Database and returned the flag . 
+	 */
 	public boolean updateSupplier(Supplier supplier) {
 		
 		boolean flag=false;
 		Session session=getSession();
 		try{
-			supplier.setEnabled(true);
+		supplier.setEnabled(true);
 		session.update(supplier);
 		flag=true;
 		LOGGER.info("<-- Supplier Updated " + supplier.getSupplierName() + " -->");
@@ -58,7 +85,15 @@ public class SupplierDAOImpl implements SupplierDAO {
 		}
 		return flag;
 	}
-
+	
+	/**
+	 * @param supplier.
+	 * @return its return type is List of type Product.
+	 * <p>
+	 * This method is used to remove supplier 
+	 * in which we have performed the operation 
+	 * of setting enable false and further update the supplier in Database and returned the flag . 
+	 */
 	public boolean deactivateSupplier(Supplier supplier) {
 		boolean flag=false;
 		try{
@@ -73,7 +108,13 @@ public class SupplierDAOImpl implements SupplierDAO {
 		return flag;
 	}
 
-	
+	/**
+	 * @return its return type is List of type Supplier.
+	 * <p>
+	 * This method is used to get all supplier 
+	 * in which we have performed the operation 
+	 * of getting all the supplier from Database and returned List of supplier . 
+	 */
 	public List<Supplier> getAllSupplier() {
 		List<Supplier> listSupplier = null;
 		try{
@@ -87,7 +128,15 @@ public class SupplierDAOImpl implements SupplierDAO {
 		
 		return listSupplier;
 	}
-
+	
+	/**
+	 * @param id.
+	 * @return its return type is supplier.
+	 * <p>
+	 * This method is used to get the supplier by id 
+	 * in which we have performed the operation 
+	 * of getting supplier id from Database  and returned supplier object . 
+	 */
 	public Supplier getSupplierById(int id) {
 		Session session = getSession();
 		try{
@@ -99,7 +148,17 @@ public class SupplierDAOImpl implements SupplierDAO {
 		}
 		return null;
 	}
-
+	
+	
+	
+	/**
+	 * @param name.
+	 * @return its return type is List of type supplier.
+	 * <p>
+	 * This method is used to search supplier 
+	 * in which we have performed the operation 
+	 * of searching the supplier in Database and further retrived and returned list of supplier . 
+	 */
 	public List<Supplier> searchSupplier(String name) {
 		
 		Session session  = getSession();
