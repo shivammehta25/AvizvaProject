@@ -156,7 +156,14 @@ public class User {
 		this.address = address;
 	}
 
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", username=" + username + ", password=" + password + ", email="
+				+ email + ", address=" + address + ", contact=" + contact + ", dob=" + dob + ", role=" + role
+				+ ", enabled=" + enabled + "]";
+	}
 
+	
 	
 	
 	

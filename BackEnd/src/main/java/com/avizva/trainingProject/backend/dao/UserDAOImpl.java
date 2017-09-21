@@ -134,6 +134,7 @@ public class UserDAOImpl implements UserDAO {
 		boolean flag = false;
 		try {
 			Session session = getSession();
+			
 			session.update(user);
 			flag = true;
 		} catch (Exception e) {

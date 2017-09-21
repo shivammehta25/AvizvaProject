@@ -135,10 +135,7 @@ public class Order {
 		this.shippingCity = shippingCity;
 	}
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 9ac91e4c8e7ce1f14a0abd00f62bd6fbf81c2998
 	public String getShippingCountry() {
 		return shippingCountry;
 	}
