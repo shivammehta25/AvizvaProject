@@ -25,8 +25,7 @@
 				
 				<div class="text-center">
 					<img alt="User" src="${rimages }/logo.png" 
-						width="100" />
-					<h1>GAMAZON</h1>
+						width="200" />
 				</div>
 				<div class="col-md-8 col-md-offset-2">
 					<div class="panel panel-default">

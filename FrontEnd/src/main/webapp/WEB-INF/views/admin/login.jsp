@@ -25,7 +25,7 @@
 				
 				<div class="text-center">
 					<img alt="User" src="${rimages }/logo.png"
-						width="100" />
+						width="200" />
 					<h1>GAMAZON</h1>
 				</div>
 
