@@ -10,4 +10,5 @@ public interface OrderDAO {
 	public boolean removeOrder(Order order);
 	public List<Order> getAllOrder();
 	public Order getOrderById(int orderId);
+	public List<Order> getOrderByOrderNumber(String orderNumber);
 }

@@ -77,7 +77,7 @@
 					<div class="col-md-3">
 						<div class="jumbotron well">
 							<h2>Orders</h2>
-							<%-- <p>Total Orders : ${totalcat }</p> --%>
+							<p>Total Orders : ${totalorder }</p> 
 							<p>
 								<a class="btn btn-primary btn-large" href="adminmanageorder">Manage
 									Orders</a>

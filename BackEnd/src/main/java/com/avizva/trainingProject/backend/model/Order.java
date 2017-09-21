@@ -31,7 +31,7 @@ public class Order {
 //	@Column(columnDefinition="VARCHAR DEFAULT 'Placed'")
 	private String orderStatus;
 	
-	@CreationTimestamp
+//	@CreationTimestamp
 	@DateTimeFormat(pattern="dd/MM/yyyy")
 	private Date orderDate;
 	
@@ -149,6 +149,15 @@ public class Order {
 
 	public void setShippingPin(int shippingPin) {
 		this.shippingPin = shippingPin;
+	}
+
+	@Override
+	public String toString() {
+		return "Order [orderId=" + orderId + ", orderNumber=" + orderNumber + ", orderStatus=" + orderStatus
+				+ ", orderDate=" + orderDate + ", orderQuantity=" + orderQuantity + ", orderPaymentDetails="
+				+ orderPaymentDetails + ", username=" + username + ", productId=" + productId + ", shippingAddress="
+				+ shippingAddress + ", shippingCity=" + shippingCity + ", shippingCountry=" + shippingCountry
+				+ ", shippingPin=" + shippingPin + "]";
 	}
 	
 	

@@ -12,4 +12,6 @@ public interface OrderService {
 	public boolean deleteOrder(int orderId);
 	
 	public List<Order> getAllOrder();
+	
+	public List<Order> searchOrder(String orderNumber);
 }

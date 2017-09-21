@@ -59,6 +59,7 @@
 										<td><c:out value="${order.orderNumber}"></c:out></td>
 										<td><c:out value="${order.orderDate}"></c:out></td>
 										<td><c:out value="${order.username}"></c:out></td>
+										<td><c:out value="${order.productId}"></c:out></td>
 										<td><c:out value="${order.orderQuantity}"></c:out></td>	
 										<td><c:out value="${order.orderPaymentDetails}"></c:out></td>
 										<td><c:out value="${order.shippingAddress}"></c:out></td>
@@ -67,7 +68,7 @@
 										<td><c:out value="${order.shippingPin}"></c:out></td>
 										<td><c:out value="${order.orderStatus}"></c:out></td>
 										<td> <a style="cursor: pointer" data-toggle="collapse" href="#updatePanel"
-										onclick="populate('${order.orderNumber}','${order.orderStatus}','${order.orderDate}',
+										onclick="populate('${order.orderId}','${order.orderNumber}','${order.orderStatus}','${order.orderDate}',
 										'${order.orderQuantity}','${order.orderPaymentDetails}','${order.username}',
 										'${order.productId}','${order.shippingAddress}','${order.shippingCity}',
 										'${order.shippingCountry}','${order.shippingPin}',)">
@@ -97,11 +98,11 @@
 							action="searchOrderForm" role="form">
 							<div class="form-group">
 
-								<label for="name" class="col-md-2 label-register control-label">
-									<spring:message code="order.namesearch"></spring:message> </label>
+								<label for="orderNumberSearch" class="col-md-2 label-register control-label">
+									<spring:message code="order.orderNumberSearch"></spring:message> </label>
 								<div class="col-md-8">
-									<input type="text" placeholder="Enter Order Name"
-										name="name" required="true" class="form-control" id="name" />
+									<input type="text" placeholder="Enter Order Number"
+										name="orderNumberSearch" required="true" class="form-control" id="orderNumberSearch" />
 								</div>
 								<div class="col-md-2">
 
@@ -125,7 +126,7 @@
 					<div class="panel-body">
 						<form class="form-horizontal" method="post "
 							action="addOrderForm" role="form">
-							<form:hidden path="orderId"/>
+							<%-- <form:hidden path="orderId"/> --%>
 							<div class="form-group">
 								<label for="orderNumber"
 									class="col-md-2 label-register control-label"> 
@@ -202,7 +203,7 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label for=shippingCity
+								<label for="shippingCity"
 									class="col-md-2 label-register control-label"> 
 									<spring:message code='order.shippingCity.input'></spring:message>  </label>
 								<div class="col-md-8">
@@ -253,109 +254,109 @@
 					<div class="panel-body">
 						<form class="form-horizontal" method="post "
 							action="updateOrderForm" role="form">
-							<form:hidden path="orderId"/>
+							<input type="hidden" id="orderIdUpdate" name="orderId">
 							<div class="form-group">
-								<label for="orderNumber"
+								<label for="orderNumberUpdate"
 									class="col-md-2 label-register control-label"> 
 									<spring:message code='order.orderNumber.input'></spring:message>  </label>
 								<div class="col-md-8">
 									<input type="text" placeholder="Enter Order Number"
 										name="orderNumber" required="true" class="form-control"
-										id="orderNumber" />
+										id="orderNumberUpdate" />
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="orderStatus" class="col-md-2 label-register control-label">
+								<label for="orderStatusUpdate" class="col-md-2 label-register control-label">
 									<spring:message code='order.orderStatus.input'></spring:message>  </label>
 								<div class="col-md-8">
 									<input type="text" placeholder="Enter Order Status"
-										name="orderStatus" required="true" class="form-control" id="orderStatus" />
+										name="orderStatus" required="true" class="form-control" id="orderStatusUpdate" />
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="orderDate"
+								<label for="orderDateUpdate"
 									class="col-md-2 label-register control-label"> 
 									<spring:message code='order.orderDate.input'></spring:message>  </label>
 								<div class="col-md-8">
 									<input type="date" class="form-control" required="true"
-										name="orderDate" id="orderDate" />
+										name="orderDate" id="orderDateUpdate" />
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="orderQuantity"
+								<label for="orderQuantityUpdate"
 									class="col-md-2 label-register control-label"> 
 									<spring:message code='order.orderQuantity.input'></spring:message>  </label>
 								<div class="col-md-8">
 									<input type="number" name="orderQuantity" required="true" 
-									class="form-control" id="orderQuantity" />
+									class="form-control" id="orderQuantityUpdate" />
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="orderPaymentDetails"
+								<label for="orderPaymentDetailsUpdate"
 									class="col-md-2 label-register control-label"> 
 									<spring:message code='order.orderPaymentDetails.input'></spring:message>  </label>
 								<div class="col-md-8">
 									<input type="text" placeholder="Enter Payment Details"
 										name="orderPaymentDetails" required="true" class="form-control"
-										id="orderPaymentDetails" />
+										id="orderPaymentDetailsUpdate" />
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="username"
+								<label for="usernameUpdate"
 									class="col-md-2 label-register control-label"> 
 									<spring:message code='order.username.input'></spring:message>  </label>
 								<div class="col-md-8">
 									<input type="text" placeholder="Enter Customer Name"
 										name="username" required="true" class="form-control"
-										id="username" />
+										id="usernameUpdate" />
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="productId"
+								<label for="productIdUpdate"
 									class="col-md-2 label-register control-label"> 
 									<spring:message code='order.productId.input'></spring:message>  </label>
 								<div class="col-md-8">
 									<input type="number" name="productId" required="true" 
-									class="form-control" id="productId" />
+									class="form-control" id="productIdUpdate" />
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="shippingAddress"
+								<label for="shippingAddressUpdate"
 									class="col-md-2 label-register control-label"> 
 									<spring:message code='order.shippingAddress.input'></spring:message>  </label>
 								<div class="col-md-8">
 									<input type="text" placeholder="Enter Shipping Address"
 										name="shippingAddress" required="true" class="form-control"
-										id="shippingAddress" />
+										id="shippingAddressUpdate" />
 								</div>
 							</div>
 							<div class="form-group">
-								<label for=shippingCity
+								<label for="shippingCityUpdate"
 									class="col-md-2 label-register control-label"> 
 									<spring:message code='order.shippingCity.input'></spring:message>  </label>
 								<div class="col-md-8">
 									<input type="text" placeholder="Enter City"
 										name="shippingCity" required="true" class="form-control"
-										id="shippingCity" />
+										id="shippingCityUpdate" />
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="shippingCountry"
+								<label for="shippingCountryUpdate"
 									class="col-md-2 label-register control-label"> 
 									<spring:message code='order.shippingCountry.input'></spring:message>  </label>
 								<div class="col-md-8">
 									<input type="text" placeholder="Enter Country"
 										name="shippingCountry" required="true" class="form-control"
-										id="shippingCountry" />
+										id="shippingCountryUpdate" />
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="shippingPin"
+								<label for="shippingPinUpdate"
 									class="col-md-2 label-register control-label"> 
 									<spring:message code='order.shippingPin.input'></spring:message>  </label>
 								<div class="col-md-8">
 									<input type="number" name="shippingPin" required="true" 
-									class="form-control" id="shippingPin" />
+									class="form-control" id="shippingPinUpdate" />
 								</div>
 							</div>
 							<div class="form-group">
@@ -382,11 +383,11 @@
 						<form class="form-horizontal" method="post "
 							action="deleteOrderForm" role="form">
 							<div class="form-group">
-								<label for="orderId" class="col-md-2 label-register control-label">
+								<label for="orderIdDelete" class="col-md-2 label-register control-label">
 									<spring:message code='order.heading'></spring:message> Id </label>
 								<div class="col-md-8">
 									<input type="text" placeholder="Enter Order Id"
-										name="orderId" required="true" class="form-control" id="orderId" />
+										name="orderId" required="true" class="form-control" id="orderIdDelete" />
 								</div>
 							</div>
 							<div class="form-group">
@@ -410,25 +411,27 @@
 			
 	
 	<script>
-	var populate = function(orderNumber , orderStatus , orderDate , orderQuantity, 
+	var populate = function(orderId,orderNumber , orderStatus , orderDate , orderQuantity, 
 			orderPaymentDetails, username, productId, shippingAddress, shippingCity,
 			shippingCountry, shippingPin)
 	{
-		document.getElementById("orderNumber").setAttribute("value" , orderNumber);
-		document.getElementById("orderStatus").setAttribute("value" , orderStatus);
-		document.getElementById("orderDate").setAttribute("value" , orderDate);
-		document.getElementById("orderQuantity").setAttribute("value" , orderQuantity);
-		document.getElementById("orderPaymentDetails").setAttribute("value" , orderPaymentDetails);
-		document.getElementById("username").setAttribute("value" , username);
-		document.getElementById("productId").setAttribute("value" , productId);
-		document.getElementById("shippingAddress").setAttribute("value" , shippingAddress);
-		document.getElementById("shippingCity").setAttribute("value" , shippingCity);
-		document.getElementById("shippingCountry").setAttribute("value" , shippingCountry);
-		document.getElementById("shippingPin").setAttribute("value" , shippingPin);
+		document.getElementById("orderIdUpdate").setAttribute("value" , orderId);
+		
+		document.getElementById("orderNumberUpdate").setAttribute("value" , orderNumber);
+		document.getElementById("orderStatusUpdate").setAttribute("value" , orderStatus);
+	document.getElementById("orderDateUpdate").value=orderDate.split(" ")[0];
+ 		document.getElementById("orderQuantityUpdate").setAttribute("value" , orderQuantity);
+		document.getElementById("orderPaymentDetailsUpdate").setAttribute("value" , orderPaymentDetails);
+		document.getElementById("usernameUpdate").setAttribute("value" , username);
+		document.getElementById("productIdUpdate").setAttribute("value" , productId);
+		document.getElementById("shippingAddressUpdate").setAttribute("value" , shippingAddress);
+		document.getElementById("shippingCityUpdate").setAttribute("value" , shippingCity);
+		document.getElementById("shippingCountryUpdate").setAttribute("value" , shippingCountry);
+		document.getElementById("shippingPinUpdate").setAttribute("value" , shippingPin);
 		$("html, body").animate({ scrollTop: $("#updatePanel").offset().top }, 1500);
 	}	
 	var deleteit = function(id){
-		document.getElementById("orderId").setAttribute("value" , id);
+		document.getElementById("orderIdDelete").setAttribute("value" , id);
 		$("html, body").animate({ scrollTop: $("#deletePanel").offset().top }, 1500);
 
 	}
