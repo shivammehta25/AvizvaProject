@@ -14,20 +14,47 @@ import org.springframework.transaction.annotation.Transactional;
 import com.avizva.trainingProject.backend.model.Cart;
 import com.avizva.trainingProject.backend.model.Product;
 
+/**
+ * 
+ * @author Akshay.Chourasia
+ * 
+ * @repository
+ * @transactional
+ * <p>
+ * This is the CartDAOImpl class in
+ * which there are unimplemented methods
+ * which contains the business logic of
+ * add product to cart, removeProductFromCart,updateCartQuantity,
+ * priceCalculator,getAllCartByUser,getCartByProductId,getAllCart.
+ * 
+ */
 @Repository
 @Transactional
 public class CartDAOImpl implements CartDAO {
-
+	
+	
+	
+	
 	private static final Logger LOGGER = Logger.getLogger(CartDAOImpl.class);
 
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-
+	
 	public Session getSession() {
 		return sessionFactory.getCurrentSession();
 	}
 	
+	
+	
+	/**
+	 * @param Cart
+	 * @return its return type is boolean.
+	 * <p>
+	 * This method is used to add product in cart
+	 * in which we have performed the operation 
+	 * of saving cart in database. 
+	 */
 	public boolean addProductToCart(Cart cart) {
 		boolean flag = false; 
 		Session session = getSession();
@@ -41,6 +68,16 @@ public class CartDAOImpl implements CartDAO {
 		}
 		return flag;
 	}
+	
+	
+	/**
+	 * @param Cart
+	 * @return its return type is boolean.
+	 * <p>
+	 * This method is used to remove product from cart
+	 * in which we have performed the operation 
+	 * of removing cart object from database. 
+	 */
 
 	public boolean removeProductFromCart(Cart cart) {
 		boolean flag = false;
@@ -58,6 +95,15 @@ public class CartDAOImpl implements CartDAO {
 		
 		return flag;
 	}
+	
+	/**
+	 * @param Cart
+	 * @return its return type is boolean.
+	 * <p>
+	 * This method is used to update product in cart
+	 * in which we have performed the operation 
+	 * of updating cart object in database. 
+	 */
 
 	public boolean updateCartQuantity(Cart cart) {
 		boolean flag = false;
@@ -77,11 +123,21 @@ public class CartDAOImpl implements CartDAO {
 	public Long priceCalculator(Long... discount) {
 		return null;
 	}
-
+	
+	
+	
+	/**
+	 * @param CartId
+	 * @return its return type is Cart.
+	 * <p>
+	 * This method is used to get the cart 
+	 * using cartid in which we have performed
+	 * the operation of getting cart using cartid. 
+	 */
 	public Cart getCartById(int cartId) {
-		Session session = getSession();
-		Cart cart = null;
-		try {
+	Session session = getSession();
+	Cart cart = null;
+	try {
 			cart = session.get(Cart.class, cartId);
 			LOGGER.info("<-- Got Cart from the cartId : " + cartId);
 		}catch (Exception e) {
@@ -91,7 +147,15 @@ public class CartDAOImpl implements CartDAO {
 		
 		return cart;
 	}
-
+	
+	/**
+	 * @param username
+	 * @return its return type is list of type Cart.
+	 * <p>
+	 * This method is used to get the cart 
+	 * using cartid in which we have performed
+	 * the operation of getting cart using cartid. 
+	 */
 	public List<Cart> getAllCartByUser(String username) {
 		Session session = getSession();
 		List<Cart> cartList = new ArrayList<Cart>();
@@ -106,6 +170,15 @@ public class CartDAOImpl implements CartDAO {
 		
 		return cartList;
 	}
+	
+	/**
+	 * @param productId , username
+	 * @return its return type is Cart.
+	 * <p>
+	 * This method is used to get the cart 
+	 * using cartid in which we have performed
+	 * the operation of getting cart using cartid. 
+	 */
 
 	public Cart getCartByProductId(int productId , String username) {
 		Session session = getSession();
@@ -123,7 +196,15 @@ public class CartDAOImpl implements CartDAO {
 		}
 		return cart;
 	}
-
+	
+	
+	/**
+	 * @return its return type is list of type Cart.
+	 * <p>
+	 * This method is used to get the product
+	 * of cart in which we have performed
+	 * the operation of getting all product. 
+	 */
 	public List<Cart> getAllCart() {
 		Session session = getSession();
 		try{

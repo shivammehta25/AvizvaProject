@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 /**
  * 
  * @author Akshay Chourasia
- * @Entity
+ * @entity annotation used to map the class instances with the entities of Database. 
  */
 @Entity
 @Component

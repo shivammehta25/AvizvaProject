@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
  * 
  * @author Saurabh.Miglani	
  * This is to manage categories of products
+ * @Entity  annotation used to map the class instances with the entities of Database. 
  *
  */
 @Entity
