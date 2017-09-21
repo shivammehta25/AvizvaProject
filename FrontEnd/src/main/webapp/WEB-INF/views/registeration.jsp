@@ -155,6 +155,16 @@
 								</div>
 							</div>
 							
+							<div class="form-group">
+								<label for="inputEmail3"
+									class="col-sm-2 label-register control-label">   <spring:message code='label.address.pin'></spring:message>  </label>
+								<div class="col-sm-10">
+									<input type="number" placeholder="Enter Your Pin" name="address.pin"
+										required="true" class="form-control" id="inputEmail3" />
+								</div>
+							</div>
+							
+							
 							
 
 							<div class="form-group">

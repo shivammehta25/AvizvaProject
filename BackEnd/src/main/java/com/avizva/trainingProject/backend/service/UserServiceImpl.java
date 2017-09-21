@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.avizva.trainingProject.backend.dao.ForgotPassDAO;
 import com.avizva.trainingProject.backend.dao.UserDAO;
@@ -22,6 +23,7 @@ import com.avizva.trainingProject.backend.model.User;
  * @service It makes an automatic bean userServiceImpl acts similar to the repository annotation but is used for service layer  
  */
 
+@Transactional
 @Service
 public class UserServiceImpl implements UserService {
 

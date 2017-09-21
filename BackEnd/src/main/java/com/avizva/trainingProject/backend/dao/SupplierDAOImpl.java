@@ -51,6 +51,8 @@ public class SupplierDAOImpl implements SupplierDAO {
 		try{
 		Session session=getSession();
 		supplier.setEnabled(true);
+		session.flush();
+		session.clear();
 		session.save(supplier);
 		flag=true;
 		LOGGER.info("<-- Supplier added " + supplier.getSupplierName() + "--> ");

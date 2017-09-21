@@ -57,6 +57,7 @@ public interface CartService {
 	 * @return
 	 */
 	public boolean hasCartProduct(int productId , String username);
+
 	
 	/**
 	 * 

@@ -79,6 +79,10 @@
 .panel.panel-primary {
     margin-top: 120px;
 }
+.thumbnailStyling {
+height : 110px !important;
+width : 110px !important;
+}
 </style>
 
 
@@ -126,7 +130,7 @@
 									<div class="panel-body">
 										<div class="row">
 											<div class="col-md-3">
-												Hello {{product.productName}}
+												<img src="download?productName={{product.productName}}" class="img-thumbnail thumbnailStyling"> {{product.productName}}
 											</div>
 											<div class="col-md-3">
 												{{product.productDesc}}
@@ -197,7 +201,6 @@
 	
 	</div>
 </div>
-${prevUrl }
 
 
 

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.avizva.trainingProject.backend.dao.CartDAO;
 import com.avizva.trainingProject.backend.dao.ProductDAO;
@@ -19,6 +20,7 @@ import com.avizva.trainingProject.backend.model.Product;
  * @Service
  */
 
+@Transactional
 @Service
 public class CartServiceImpl implements CartService {
 	

@@ -8,10 +8,12 @@ import java.nio.file.Path;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.avizva.trainingProject.backend.model.Product;
 
+@Transactional
 @Service
 public class FileUploadServiceImpl implements FileUploadService {
 

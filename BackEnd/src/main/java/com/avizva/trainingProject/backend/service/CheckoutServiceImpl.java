@@ -4,12 +4,14 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.avizva.trainingProject.backend.dao.OrderDAO;
 import com.avizva.trainingProject.backend.dao.ProductDAO;
 import com.avizva.trainingProject.backend.model.Order;
 import com.avizva.trainingProject.backend.model.Product;
 
+@Transactional
 @Service
 public class CheckoutServiceImpl implements CheckoutService {
 
