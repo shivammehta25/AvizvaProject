@@ -114,21 +114,20 @@
 						</c:if>
 						<c:if test="${username != null }">
 
-							
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle"
 								data-toggle="dropdown"><i
 									class="fa fa-lg fa-2x fa-user-circle" aria-hidden="true"></i>
-									${user.name}<strong class="caret"></strong></a>
-							
+									${user.name}<strong class="caret"></strong>
+								</a>
 								<ul class="dropdown-menu">
-									<li><a href="#">My Orders</a></li>
+									<li><a href="orders">My Orders</a></li>
 									<li class="divider"></li>
 									<c:if test="${user.role=='ROLE_ADMIN' }"><li><a href="admin">Admin Panel</a></li> </c:if>
 									<li><a href="profile">Profile</a></li>
 									<li><a href="logout">Logout</a></li>
-									
-									
-								</ul></li>
+								</ul>
+							</li>
 
 						</c:if>
 
