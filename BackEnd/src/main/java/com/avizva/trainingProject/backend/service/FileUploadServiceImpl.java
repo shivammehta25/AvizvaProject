@@ -17,10 +17,20 @@ import com.avizva.trainingProject.backend.model.Product;
 @Service
 public class FileUploadServiceImpl implements FileUploadService {
 
+	/**
+	 * Initialized the LOGGER 
+	 */
 	private static final Logger LOGGER = LogManager.getLogger(FileUploadServiceImpl.class);
 
+	/**
+	 * This variable is used to Define the path of stored files
+	 */
 	private final String fileDir = "/Users/Shared/";
 
+	/**
+	 * This method takes file path and the byte stream as a variable
+	 *  and returns boolean based on false and true 
+	 */
 	public boolean saveFile(Path path, byte[] file) {
 		LOGGER.info("<-- FileUploadService.savePath Called--->");
 		try {
@@ -34,6 +44,9 @@ public class FileUploadServiceImpl implements FileUploadService {
 	}
 
 	
+	/**
+	 *  This method uploads the product image and saves it from the multipart file
+	 */
 	public boolean uploadProductImage(Product product, MultipartFile file) {
 		LOGGER.info("<-- FileUploadService.uploadProductImage Called--->");
 		if (file.isEmpty()){

@@ -29,7 +29,7 @@ public class ContactUsServiceImpl implements ContactUsService {
 
 	
 	/**
-	 * The contact
+	 * The contact us page invokes the simple mail message and adds it to the contact us table
 	 * 
 	 */
 	public boolean contactUs(ContactUs contactUs){

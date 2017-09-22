@@ -1,3 +1,8 @@
+<style>
+.fa-large {
+	font-size: 40px !important;
+}
+</style>
 <footer>
 	<nav class="navbar navbar-inverse navbar-relative-bottom" >
 		<div class="container-fluid">
