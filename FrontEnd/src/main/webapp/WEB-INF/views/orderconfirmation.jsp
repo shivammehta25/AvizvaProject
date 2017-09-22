@@ -73,7 +73,7 @@ $(document).ready(function() {
 	    }, 3000);
 
 	window.setTimeout(function() {
-	    window.location.href = 'products';
+	    window.location.href = 'products?msg=Order Placed Successfully';
 	}, 3000);
 	
 	$(".progress-bar").animate({

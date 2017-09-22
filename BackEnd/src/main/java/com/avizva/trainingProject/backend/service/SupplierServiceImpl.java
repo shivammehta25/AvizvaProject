@@ -17,7 +17,9 @@ public class SupplierServiceImpl implements SupplierService {
 
 	@Autowired
 	SupplierDAO supplierDAO;
-	
+	/**
+	 * This methods add the suppliers
+	 */
 	public boolean addSupplierService(Supplier supplier){
 		LOGGER.info("<-- SupplierService.addSupplierService Called--->");
 		boolean flag = false;
@@ -31,6 +33,10 @@ public class SupplierServiceImpl implements SupplierService {
 		return flag;
 	}
 	
+	/**
+	 * This methods Searchs the suppliers
+	 */
+	
 	public List<Supplier> searchSupplier(String name){
 		LOGGER.info("<-- SupplierService.searchSupplier Called--->");
 		List<Supplier> listSupplier = supplierDAO.searchSupplier(name);
@@ -42,6 +48,10 @@ public class SupplierServiceImpl implements SupplierService {
 			return null;
 		}
 	}
+	
+	/**
+	 * This methods update the suppliers
+	 */
 	
 	public boolean updateSupplier(Supplier supplier){
 		LOGGER.info("<-- SupplierService.updateSupplier Called--->");
@@ -56,6 +66,9 @@ public class SupplierServiceImpl implements SupplierService {
 			return flag;
 		}
 	}
+	/**
+	 * This methods delete the suppliers
+	 */
 	
 	public boolean deleteSupplier(int id){
 		LOGGER.info("<-- SupplierService.deleteSupplier Called--->");
@@ -75,6 +88,9 @@ public class SupplierServiceImpl implements SupplierService {
 		
 	}
 
+	/**
+	 * This methods gets all the suppliers
+	 */
 	public List<Supplier> getAllSupplier() {
 		LOGGER.info("<-- SupplierService.getAllSupplier Called--->");
 		List<Supplier> listSupplier = supplierDAO.getAllSupplier();

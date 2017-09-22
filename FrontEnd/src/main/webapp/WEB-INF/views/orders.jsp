@@ -104,7 +104,7 @@ width : 110px !important;
 				</div>
 					<div class="panel panel-info">
 						<div class="panel-heading">
-							<h3 class="panel-title">Order Number: {{order.orderNumber}}
+							<h3 class="panel-title">Order
 							</h3>
 						</div>
 						<div ng-repeat="(i,order) in orderList">
@@ -120,7 +120,7 @@ width : 110px !important;
 								<div class="col-md-3">
 									Status
 									<hr>
-									<small>{{order.orderStatus}}</small>
+									<small>{{order.orderStatus}} on {{order.orderDate}}</small>
 								</div>
 								<div class="col-md-3">
 									Payment Details

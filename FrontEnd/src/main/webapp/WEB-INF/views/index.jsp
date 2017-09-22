@@ -106,7 +106,7 @@
 				</a>
 			</div>
 			<div class="col-md-2">
-				<a href="products?categoryName=Headsets" style="text-decoration: none">
+				<a href="products?categoryName=HeadSet" style="text-decoration: none">
 				<div class="thumbnail">
 					<div class="thumbnailStyling">
 						<img alt="Bootstrap Thumbnail First" class="img-rounded thumbnailStyling" src="https://images-na.ssl-images-amazon.com/images/I/71oEkQkjutL._SX425_.jpg">

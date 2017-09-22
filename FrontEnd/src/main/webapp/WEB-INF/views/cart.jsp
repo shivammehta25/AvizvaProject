@@ -185,7 +185,7 @@ width : 110px !important;
 									<hr>
 									Total Price : <span class="pull-right"> <i class="fa fa-inr"></i> {{totalPrice}} </span> 
 									</div>
-										<div style="cursor: pointer;" class="panel-footer text-center" onclick="document.forms[1].submit()" >
+										<div style="cursor: pointer;" class="panel-footer text-center" id="formsubmit" >
 												<i class="fa fa-2x fa-lg fa-credit-card" aria-hidden="true"></i>  Proceed to Checkout 
 										</div>
 								</div>
@@ -223,6 +223,13 @@ $scope.totalPrice = ${totalPrice};
 
 });
 
+
+$(document).ready(function(){
+	$('#formsubmit').click(function(){
+        $("form").submit();		
+	});
+	
+});
 
 </script>
 

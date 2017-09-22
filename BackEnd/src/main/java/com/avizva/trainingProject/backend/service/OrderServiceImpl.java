@@ -23,9 +23,15 @@ import com.avizva.trainingProject.backend.model.Supplier;
 public class OrderServiceImpl implements OrderService {
 	private static final Logger LOGGER=Logger.getLogger(OrderServiceImpl.class);
 
+	/**
+	 * Autowired Order DAO
+	 */
 	@Autowired
 	OrderDAO orderDAO;
 	
+	/**
+	 * This method adds order
+	 */
 	public boolean addOrder(Order order){
 		LOGGER.info("<-- OrderService.addOrder Called--->");
 		boolean flag=false;
@@ -38,6 +44,10 @@ public class OrderServiceImpl implements OrderService {
 		}
 		return flag;
 	}
+	
+	/**
+	 * This method Updates order
+	 */
 	
 	public boolean updateOrder(Order order){
 		LOGGER.info("<-- OrderService.updateOrder Called--->");
@@ -53,6 +63,9 @@ public class OrderServiceImpl implements OrderService {
 		}
 	}
 	
+	/**
+	 * This method delete order 
+	 */
 	public boolean deleteOrder(int orderId){
 		LOGGER.info("<-- OrderService.deleteOrder Called--->");
 		boolean flag = false;
@@ -67,18 +80,22 @@ public class OrderServiceImpl implements OrderService {
 		return flag;
 	}
 	
-
+	/**
+	 *  This method gets all order
+	 */
 	public List<Order> getAllOrder() {
 		LOGGER.info("<-- OrderService.getAllOrder Called--->");
 		List<Order> listOrder = orderDAO.getAllOrder();
 		LOGGER.info("getAllOrder yielded" + listOrder.size());
 		if(listOrder != null){
 			return listOrder;
-		}else{
-			return null;
 		}
+			return null;
 	}
 	
+	/**
+	 * This method Searchs order
+	 */
 	public List<Order> searchOrder(String orderNumber){
 		LOGGER.info("<-- OrderService.searchOrder Called--->");
 		List<Order> listOrder = orderDAO.getOrderByOrderNumber(orderNumber);
@@ -86,8 +103,6 @@ public class OrderServiceImpl implements OrderService {
 		if(listOrder != null){
 			return listOrder;
 		}
-		else{
 			return null;
-		}
 	}
 }

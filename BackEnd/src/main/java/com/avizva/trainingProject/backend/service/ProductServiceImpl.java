@@ -12,6 +12,11 @@ import com.avizva.trainingProject.backend.dao.ProductDAO;
 import com.avizva.trainingProject.backend.model.Product;
 import com.avizva.trainingProject.backend.model.Supplier;
 
+/**
+ * This is the implementation of the Product Service which uses the ProductDAO to access and save Products
+ * @author Shivam.Mehta
+ *
+ */
 @Transactional
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -22,7 +27,9 @@ public class ProductServiceImpl implements ProductService {
 	
 	@Autowired
 	private FileUploadService fileUploadService;
-
+	/**
+	 *  This method adds product 
+	 */
 	public boolean addProductService(Product product, MultipartFile file) {
 		LOGGER.info("<-- ProductService.addProductService Called--->");
 		boolean flag=false;
@@ -36,6 +43,9 @@ public class ProductServiceImpl implements ProductService {
 		return flag;
 	}
 
+	/**
+	 * This method searches for the product
+	 */
 	@SuppressWarnings("unused")
 	public List<Product> searchProduct(String name) {
 		LOGGER.info("<-- ProductService.searchProduct Called--->");
@@ -50,7 +60,9 @@ public class ProductServiceImpl implements ProductService {
 		}
 		
 	}
-
+	/**
+	 *	This method updates the product
+	 */
 	public boolean updateProduct(Product product, MultipartFile file) {
 		LOGGER.info("<-- ProductService.updateProduct Called--->");
 		boolean flag=false;
@@ -66,7 +78,9 @@ public class ProductServiceImpl implements ProductService {
 		
 		
 	}
-
+	/**
+	 * This method deletes the product
+	 */
 	@SuppressWarnings("unused")
 	public boolean deleteProduct(int id) {
 		LOGGER.info("<-- ProductService.deleteProduct Called--->");
@@ -82,7 +96,9 @@ public class ProductServiceImpl implements ProductService {
 		LOGGER.error("<-- Could Not Delete the Product -->");
 		return flag;
 	}
-
+	/**
+	 *  This method lists all the product 
+	 */
 	public List<Product> getAllProduct() {
 		LOGGER.info("<-- ProductService.getAllProduct Called--->");
 		List<Product> listProduct=productDAO.getAllProduct();
@@ -92,6 +108,10 @@ public class ProductServiceImpl implements ProductService {
 		}
 		return null;
 	}
+	/**
+	 * 	This methods gets the product by category sent using the get parameter
+	 * 
+	 */
 
 	public List<Product> getProductByCategory(String productCatName) {
 		LOGGER.info("<-- ProductService.getProductByCategory Called--->");
@@ -102,6 +122,11 @@ public class ProductServiceImpl implements ProductService {
 		}
 		return null;
 	}
+	
+	/**
+	 * 	This methods is used to get products by ID
+	 * 
+	 */
 	
 	public Product getProductById(int productId) {
 

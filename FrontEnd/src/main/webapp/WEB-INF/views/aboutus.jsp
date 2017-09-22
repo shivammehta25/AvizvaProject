@@ -86,7 +86,7 @@
 					</div>
 					<div class="col-md-2">
 						<img alt="Bootstrap Image Preview"
-							src="http://lorempixel.com/140/140/" class="img-circle" />
+							src="${rimages }/saurabh.jpg" width="150px" class="img-circle" />
 					</div>
 				</div>
 				<div class="progress progress-striped active">
@@ -97,7 +97,7 @@
 				<div class="row">
 					<div class="col-md-2">
 						<img alt="Bootstrap Image Preview"
-							src="http://lorempixel.com/140/140/" class="img-circle" />
+							src="${rimages }/akshay.jpg"  height="300px" class="img-circle" />
 					</div>
 					<div class="col-md-10">
 						<blockquote class="pull-right">
