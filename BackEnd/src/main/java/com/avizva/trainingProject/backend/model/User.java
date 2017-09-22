@@ -66,7 +66,7 @@ public class User {
 	private Date dob;
 
 	/**
-	 * This variable is for determining whether the user is admistrator or not.
+	 * This variable is for determining whether the user is administrator or not.
 	 */
 	private String role;
 	

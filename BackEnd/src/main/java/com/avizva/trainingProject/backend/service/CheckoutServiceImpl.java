@@ -14,13 +14,23 @@ import com.avizva.trainingProject.backend.model.Product;
 @Transactional
 @Service
 public class CheckoutServiceImpl implements CheckoutService {
-
+	
+	/**
+	 * The Order DAO object is used to access order operations
+	 */
 	@Autowired
 	OrderDAO orderDAO;
 	
+	/**
+	 * The product DAO object is used to acccess Product operations
+	 */
 	@Autowired
-	ProductDAO productDAO;
+	ProductDAO productDAO; 
 
+	/**
+	 * This method is used to checkout the data and update them from the cart to my orders 
+	 * 
+	 */
 	public boolean addUserProduct(String orderNumber, String username, String shippingAddress, String shippingCountry,
 			String shippingCity, int shippingPin, String orderPaymentDetails, Date orderDate) {
 

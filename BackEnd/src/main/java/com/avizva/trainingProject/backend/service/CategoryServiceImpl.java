@@ -12,13 +12,27 @@ import com.avizva.trainingProject.backend.dao.SupplierDAO;
 import com.avizva.trainingProject.backend.model.Category;
 import com.avizva.trainingProject.backend.model.Supplier;
 
+/**
+ * These Methods are used to do CRUD operations onto categories
+ * @author Shivam.Mehta
+ * @Transactional This makes the class transactional
+ * @Service Used to make the class a Service
+ */
+
 @Transactional
 @Service
 public class CategoryServiceImpl implements CategoryService{
 	private static final Logger LOGGER = Logger.getLogger(CategoryServiceImpl.class);
 
+	/**
+	 * The Category DAO is autowired
+	 */
 	@Autowired
 	CategoryDAO categoryDAO;
+	
+	/**
+	 * A new category is added 
+	 */
 	
 	public boolean addCategoryService(Category category){
 		LOGGER.info("<-- CategoryService.addCategoryService Called--->");
@@ -33,6 +47,10 @@ public class CategoryServiceImpl implements CategoryService{
 		return flag;
 	}
 	
+	/**
+	 * List of all Categories matching the search string is returned
+	 */
+	
 	public List<Category> searchCategory(String name){
 		LOGGER.info("<-- CategoryService.searchCategory Called--->");
 		List<Category> listCategory= categoryDAO.searchCategory(name);
@@ -42,6 +60,11 @@ public class CategoryServiceImpl implements CategoryService{
 		}
 			return null;
 	}
+	
+	/**
+	 * The Category is updated 
+	 * 
+	 */
 	
 	public boolean updateCategory(Category category){
 		LOGGER.info("<-- CategoryService.updateCategory Called--->");
@@ -57,6 +80,10 @@ public class CategoryServiceImpl implements CategoryService{
 		}
 	}
 	
+	/** 
+	 *  The Cateogry is deleted
+	 */
+	
 	public boolean deleteCategory(int id){
 		LOGGER.info("<-- CategoryService.deleteCategory Called--->");
 		boolean flag = false;
@@ -67,15 +94,15 @@ public class CategoryServiceImpl implements CategoryService{
 			flag = true;
 			categoryDAO.deactivateCategory(category);
 		}
-		else{
 			LOGGER.error("<-- Could Not Delete the Category -->");
-		}
 		return flag;
 
 		
 	}
 
-
+	/**
+	 * Used to fetch all the categories present
+	 */
 
 	public List<Category> getAllCategory() {
 		LOGGER.info("<-- CategoryService.getAllCategory Called--->");
@@ -83,9 +110,8 @@ public class CategoryServiceImpl implements CategoryService{
 		LOGGER.info("getAllCategory yielded" + listCategory.size());
 		if(listCategory != null){
 			return listCategory;
-		}else{
-			return null;
 		}
+		return null;
 	}
 	
 	

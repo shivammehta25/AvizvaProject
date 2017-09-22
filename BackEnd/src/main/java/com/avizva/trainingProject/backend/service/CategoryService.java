@@ -4,6 +4,12 @@ import java.util.List;
 
 import com.avizva.trainingProject.backend.model.Category;
 
+/**
+ * These methods are used to access Catergory Data Access Object
+ * @author Shivam.Mehta
+ *
+ */
+
 public interface CategoryService {
 	
 	public boolean addCategoryService(Category category);

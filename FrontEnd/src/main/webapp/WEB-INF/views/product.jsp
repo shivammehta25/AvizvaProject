@@ -235,6 +235,27 @@ option {
 .radhead {
 	color: black;
 }
+.jumbotron.well{
+  -webkit-box-shadow: 4px 7px 38px -2px rgba(0, 0, 0, 1) !important;
+	-moz-box-shadow: 4px 7px 38px -2px rgba(0, 0, 0, 1) !important;
+	box-shadow: 4px 7px 38px -2px rgba(0, 0, 0 0, 1) !important;
+	background-color: #2e2f31;
+	}
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover{
+   background-color: rgba(155, 136, 255, 0.45) !important;
+   border-color: rgba(3, 139, 255, 0.15) !imporant;
+
+}
+
+.row.well {
+    background-color: rgba(46, 47, 49, 1);
+  
+ 
+}
+.dt.panel-heading {
+    color: white;
+}
 </style>
 
 </head>

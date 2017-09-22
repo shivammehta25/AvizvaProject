@@ -25,6 +25,10 @@
 	    color: #55b7a2 ;
 	
 	}
+	.progress.active .progress-bar {
+    -webkit-transition: none !important;
+    transition: none !important;
+}
 </style>
 </head>
 <body>
@@ -48,10 +52,9 @@
 				<p>
 					<h2 class="text-center">Redirecting</h2>
 					<div class="progress progress-striped active">
-				<div class="progress-bar progress-success" style="width: 100%;">
+				<div class="progress-bar progress-success" >
 				</div>
 			</div>
-				</p>
 			</div>
 			
 		</div>
@@ -72,6 +75,11 @@ $(document).ready(function() {
 	window.setTimeout(function() {
 	    window.location.href = 'products';
 	}, 3000);
+	
+	$(".progress-bar").animate({
+	    width: "100%"
+	}, 3000);
+	
 });
 
 

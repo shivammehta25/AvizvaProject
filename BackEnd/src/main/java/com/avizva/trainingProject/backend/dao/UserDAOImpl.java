@@ -18,7 +18,7 @@ import com.avizva.trainingProject.backend.model.User;
  * 
  * @author Akshay,Shivam,Saurabh
  * @repository
- * @transactional
+ * @Transactional
  * This is the UserDAOImpl class in
  * which there are unimplemented methods
  * which contains the business logic of

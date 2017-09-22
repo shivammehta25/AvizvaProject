@@ -17,7 +17,9 @@ import com.avizva.trainingProject.backend.model.Product;
 /**
  * 
  * @author Akshay.Chourasia
- * @Service
+ * @Service This makes the class a service bean
+ * <p>
+ *  Manages the Request and DAO of Cart
  */
 
 @Transactional
@@ -32,7 +34,7 @@ public class CartServiceImpl implements CartService {
 	@Autowired
 	CartDAO cartDAO;
 	/**
-	 * 
+	 * Method used to add products to the Cart
 	 */
 	public boolean addProductToCart(int productId , int productQuantity , HttpSession session) {
 		LOGGER.info("<-- CartService.addProductToCart Called--->");
@@ -53,7 +55,9 @@ public class CartServiceImpl implements CartService {
 		return flag;
 	}
 
-	
+	/**
+	 * Method used to remove products from cart
+	 */
 	
 	public boolean removeProductFromCart(int cartId) {
 		LOGGER.info("<-- CartService.removeProductfromCart Called--->");
@@ -66,7 +70,10 @@ public class CartServiceImpl implements CartService {
 		return flag;
 	}
 
-	
+	/**
+	 * Method used to Update Quantity in the cart
+	 * 
+	 */
 	
 	public boolean updateCartQuantity(int productId, int cartQuantity , String username) {
 		LOGGER.info("<-- CartService.updateCartQuantity Called--->");
@@ -94,6 +101,9 @@ public class CartServiceImpl implements CartService {
 	}
 
 	
+	/**
+	 * Method used to calculate the total price of items into the cart
+	 */
 	
 	public Long priceCalculator(String username, Long... discount) {
 		LOGGER.info("<-- CartService.priceCalculator Called--->");
@@ -109,7 +119,9 @@ public class CartServiceImpl implements CartService {
 		return price;
 	}
 
-
+/**
+ *  This method checks weather the product already exists in the cart of not
+ */
 
 	public boolean hasCartProduct(int productId,String username) {
 		Cart cart = cartDAO.getCartByProductId(productId, username);
@@ -120,6 +132,10 @@ public class CartServiceImpl implements CartService {
 			return false;
 	}
 
+	/**
+	 * 	This method returns all the products in the cart
+	 * 
+	 */
 
 
 	public List<Product> allProductInCart(String username) {
@@ -138,6 +154,10 @@ public class CartServiceImpl implements CartService {
 	}
 
 
+	/**
+	 * 	This is used to fetch the quantity of all the  product from the cart
+	 * 
+	 */
 
 	public List<Integer> getQuantityOfProductInCart(List<Product> listCart , String username) {
 		List<Integer> quantityList = new ArrayList<Integer>();
@@ -148,7 +168,9 @@ public class CartServiceImpl implements CartService {
 		return quantityList;
 	}
 
-
+	/**
+	 * This is used to fetch quantity of the product from the cart
+	 */
 
 	public int getQuantity(int productId , String username) {
 		Cart c = cartDAO.getCartByProductId(productId, username);
@@ -156,7 +178,9 @@ public class CartServiceImpl implements CartService {
 		return c.getCartQuantity();
 	}
 
-
+	/**
+	 * This is used to fetch the cart from the product Id
+	 */
 
 	public Cart getCartFromProductId(int productId, String username) {
 		Cart c = cartDAO.getCartByProductId(productId, username);

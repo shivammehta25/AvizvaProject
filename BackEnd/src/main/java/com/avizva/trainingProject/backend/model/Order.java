@@ -16,6 +16,11 @@ import org.springframework.stereotype.Component;
 
 import com.sun.istack.internal.NotNull;
 
+/**
+ * This is the Model for Order
+ * @author Shivam.Mehta
+ *
+ */
 @Entity(name="Orders")
 @Component
 @Table(name="Orders")
@@ -25,6 +30,10 @@ public class Order {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public int orderId;
 	
+	/**
+	 * This Number is created by us in a form to help us to find the 
+	 * produt information for user
+	 */
 	@NotNull
 	private String orderNumber;
 	

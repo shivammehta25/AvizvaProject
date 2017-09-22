@@ -13,15 +13,30 @@ import org.springframework.transaction.annotation.Transactional;
 import com.avizva.trainingProject.backend.model.Order;
 import com.avizva.trainingProject.backend.model.Supplier;
 
+
+/**
+ * This is the DAO implementation of Orders
+ * @author Shivam.Mehta
+ * @Repository is used to make this DAO a  data access repository
+ */
 @Repository
 @Transactional
 public class OrderDAOImpl implements OrderDAO {
 	
+	/**
+	 * The bean of session factory is autowired
+	 */
 	@Autowired
 	private SessionFactory sessionFactory;
-	
+	/**
+	 * Logger Initialization for this class
+	 */
 	private static final Logger LOGGER=Logger.getLogger(OrderDAOImpl.class);
 	
+	/**
+	 * Fetches the current session
+	 * @return Session's Object
+	 */
 	public Session getSession(){
 		return sessionFactory.getCurrentSession();
 	}
