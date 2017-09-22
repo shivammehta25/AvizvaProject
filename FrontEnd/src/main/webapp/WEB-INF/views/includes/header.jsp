@@ -47,7 +47,7 @@
 
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse"
-						data-target="#bs-example-navbar-collapse-1">
+						data-target="#headerNavbar">
 						<span class="sr-only">Toggle navigation</span><span
 							class="icon-bar"></span><span class="icon-bar"></span><span
 							class="icon-bar"></span>
@@ -55,7 +55,7 @@
 				</div>
 
 				<div class="collapse navbar-collapse"
-					id="bs-example-navbar-collapse-1">
+					id="#headerNavbar">
 					<ul class="nav navbar-nav navbar-left">
 						<li><a href="./"> <img src="${rimages }/logo.png"
 								height="75">
@@ -68,14 +68,14 @@
 					</ul>
 
 					<ul class="nav navbar-nav navbar-right">
-						<form class="navbar-form navbar-left" role="search">
+						<!-- <form class="navbar-form navbar-left" role="search">
 							<div class="form-group">
 								<input type="text" class="form-control" placeholder="Search" name="search">
 								<button class="btn btn-primary " type="button">
 									<i class="fa fa-search fa-large"></i>
 								</button>
 							</div>
-						</form>
+						</form> -->
 						
 						<li class="${homeactive } "><a href="./"> <i
 								class="fa fa-lg fa-2x fa-home" aria-hidden="true"></i> Home
