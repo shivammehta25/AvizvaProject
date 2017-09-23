@@ -1,0 +1,21 @@
+.pull-right .fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    
+}
+.copytext {
+    padding-top: 20px;
+    
+}
+
+
+.footer-text:hover {
+    text-decoration: none;
+}
+
+footer {
+	padding: 10px;
+}
